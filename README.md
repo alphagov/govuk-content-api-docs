@@ -2,36 +2,23 @@
 
 ## Getting started
 
-To preview or build the website, we need to use the terminal.
-
-Install Ruby with Rubygems, perferably with a [Ruby version manager][rvm],
-and the [Bundler gem][bundler].
-
-In the application folder type the following to install the required gems:
+Setting up the documentation requires Ruby and Node. Run the following to
+install the necessary dependencies:
 
 ```
 make requirements
 ```
 
-## Making changes
+## Build
 
-To make changes edit the source files in the `source` folder.
-
-Although a single page of HTML is generated the markdown is spread across
-multiple files to make it easier to manage. They can be found in
-`source/documentation`.
-
-A new markdown file isn't automatically included in the generated output. If we
-add a new markdown file at the location `source/documentation/agile/scrum.md`,
-the following snippet in `source/index.html.md.erb`, includes it in the
-generated output.
+Type the following to build the HTML:
 
 ```
-<%= partial 'documentation/agile/scrum' %>
+make html API_SPEC=<path/to/openapi.yaml>
 ```
 
-Including files manually like this lets us specify the position they appear in
-the page.
+This will create a `build` subfolder in the application folder which contains
+the HTML and asset files ready to be published.
 
 ## Preview
 
@@ -45,41 +32,20 @@ access it if they are given the link.
 Type the following to start the server:
 
 ```
-make server
-```
-
-If all goes well something like the following output will be displayed:
-
-```
-== The Middleman is loading
-== LiveReload accepting connections from ws://192.168.0.8:35729
-== View your site at "http://Laptop.local:4567", "http://192.168.0.8:4567"
-== Inspect your site configuration at "http://Laptop.local:4567/__middleman", "http://192.168.0.8:4567/__middleman"
+make server API_SPEC=<path/to/openapi.yaml>
 ```
 
 You should now be able to view a live preview at http://localhost:4567.
-
-## Build
-
-If you want to publish the website without using a build script you may need to
-build the static HTML files.
-
-Type the following to build the HTML:
-
-```
-make html
-```
-
-This will create a `build` subfolder in the application folder which contains
-the HTML and asset files ready to be published.
 
 ## Publish
 
 To publish the latest documentation run the following:
 
 ```
-make publish
+make publish API_SPEC=<path/to/openapi.yaml>
 ```
+
+This will push to the `gh-pages` branch and therefore deploy to GitHub Pages.
 
 [rvm]: https://www.ruby-lang.org/en/documentation/installation/#managers
 [bundler]: http://bundler.io/
