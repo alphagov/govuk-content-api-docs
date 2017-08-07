@@ -2,8 +2,8 @@
 host: docs.content-store.publishing.service.gov.uk
 
 # Header-related options
-show_govuk_logo: true
-service_name: Content API
+show_govuk_logo: false
+service_name: Content API (Unavailable)
 service_link: https://www.content-store.publishing.service.gov.uk
 phase: Alpha
 

@@ -20,3 +20,4 @@
 Staticfile.auth
 
 /node_modules
+/source/documentation/index.html.erb
