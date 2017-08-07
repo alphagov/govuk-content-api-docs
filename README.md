@@ -1,4 +1,4 @@
-# Technical Documentation
+# GOV.UK Content API Documentation
 
 ## Getting started
 
@@ -10,7 +10,7 @@ and the [Bundler gem][bundler].
 In the application folder type the following to install the required gems:
 
 ```
-bundle install
+make requirements
 ```
 
 ## Making changes
@@ -45,7 +45,7 @@ access it if they are given the link.
 Type the following to start the server:
 
 ```
-bundle exec middleman server
+make server
 ```
 
 If all goes well something like the following output will be displayed:
@@ -67,11 +67,19 @@ build the static HTML files.
 Type the following to build the HTML:
 
 ```
-bundle exec middleman build
+make html
 ```
 
 This will create a `build` subfolder in the application folder which contains
 the HTML and asset files ready to be published.
+
+## Publish
+
+To publish the latest documentation run the following:
+
+```
+make publish
+```
 
 [rvm]: https://www.ruby-lang.org/en/documentation/installation/#managers
 [bundler]: http://bundler.io/
