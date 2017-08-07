@@ -62,3 +62,5 @@ config[:tech_docs] = YAML.load_file('config/tech-docs.yml')
                          .with_indifferent_access
 
 activate :unique_identifier
+
+activate :relative_assets
