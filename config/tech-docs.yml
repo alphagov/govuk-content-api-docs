@@ -1,5 +1,5 @@
 # Host to use for canonical URL generation (without trailing slash)
-host: docs.content-store.publishing.service.gov.uk
+host: https://alphagov.github.io/govuk-content-api-docs
 
 # Header-related options
 show_govuk_logo: false
