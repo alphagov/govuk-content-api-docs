@@ -23,4 +23,6 @@ publish: html
 	cd build && git add . && git commit --allow-empty -m "Publish documentation from ${LATEST_TAG}"
 	cd build && git push origin gh-pages
 
+all: html
+
 .PHONY: setup requirements clean api html server publish
