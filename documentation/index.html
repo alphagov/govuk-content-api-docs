@@ -1,0 +1,1769 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta charset="utf-8">
+    <meta content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+
+    <!-- Use title if it's in the page YAML frontmatter -->
+    <title>GOV.UK Content API v0.1.0</title>
+
+    <!--[if gt IE 8]><!--><link href="/stylesheets/screen.css" rel="stylesheet" media="screen" /><!--<![endif]-->
+    <!--[if lte IE 8]><link href="/stylesheets/screen-old-ie.css" rel="stylesheet" media="screen" /><![endif]-->
+
+    <link rel="canonical" href="docs.content-store.publishing.service.gov.uk/documentation/">
+
+    <link href="/stylesheets/print.css" rel="stylesheet" media="print" />
+    <script src="/javascripts/application.js"></script>
+  </head>
+
+  <body>
+    <div class="app-pane">
+      <div class="app-pane__header toc-open-disabled">
+        <a href="#content" class="skip-link">Skip to main content</a>
+
+        <header class="header header--full-width">
+  <div class="header__container">
+    <div class="header__brand">
+        <a href="https://www.content-store.publishing.service.gov.uk">
+        <span class="header__title">
+          Content API (Unavailable)
+            <span class="phase-banner">Alpha</span>
+        </span>
+        </a>
+    </div>
+
+      <div data-module="navigation">
+        <button type="button" class="header__navigation-toggle js-nav-toggle" aria-controls="navigation" aria-label="Show or hide top level navigation">Menu</button>
+
+        <nav id="navigation" class="header__navigation js-nav" aria-label="Top Level Navigation" aria-hidden="true">
+          <ul>
+              <li>
+                <a href="/">
+                  Documentation
+                </a>
+              </li>
+          </ul>
+        </nav>
+      </div>
+  </div>
+</header>
+
+      </div>
+
+      <div id="toc-heading" class="toc-show fixedsticky">
+        <a href="#toc" class="toc-show__label js-toc-show" aria-controls="toc">
+          Table of contents <span class="toc-show__icon"></span>
+        </a>
+      </div>
+
+      <div class="app-pane__body" data-module="in-page-navigation">
+        <div class="app-pane__toc">
+          <div class="toc" data-module="table-of-contents">
+            <a href="#" class="toc__close js-toc-close" aria-controls="toc" aria-label="Hide table of contents"></a>
+            <nav id="toc" class="js-toc-list toc__list" aria-labelledby="toc-heading">
+              
+            </nav>
+          </div>
+        </div>
+
+        <div class="app-pane__content toc-open-disabled">
+          <main id="content" class="technical-documentation" data-module="anchored-headings">
+            # GOV.UK Content API v0.1.0
+
+> Scroll down for example requests and responses.
+
+An API for accessing the content available on GOV.UK.
+
+Base URLs:
+
+* <a href="https://gov.uk/api/content">https://gov.uk/api/content</a>
+
+
+
+
+
+# Default
+
+## GET /{id}
+
+*Get a piece of content by ID.*
+
+Returns a single piece of content for an ID.
+
+### Parameters
+
+Parameter|In|Type|Description
+---|---|---|---|---|
+id|path|integer|ID of the thing to return. (required)
+
+
+> Example responses
+
+### Responses
+
+Status|Meaning|Description|Schema
+---|---|---|---|
+200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Successful operation.|[Content](#schemacontent)
+404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|No content with the ID specified.|None
+
+<aside class="success">
+This operation does not require authentication
+</aside>
+
+## GET /lookup/{base_path}
+
+*Get a piece of content by base path.*
+
+Returns a single piece of content for a base path.
+
+### Parameters
+
+Parameter|In|Type|Description
+---|---|---|---|---|
+base_path|path|string|Path of the piece of content to return. (required)
+date|query|string(date-time)|Date at which to access the conent, defaults to right now. 
+
+
+> Example responses
+
+### Responses
+
+Status|Meaning|Description|Schema
+---|---|---|---|
+200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Successful operation.|[Content](#schemacontent)
+404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|No content at the path specified.|None
+
+<aside class="success">
+This operation does not require authentication
+</aside>
+
+## GET /document/{id}
+
+*Get a document by ID.*
+
+Returns a single document.
+
+### Parameters
+
+Parameter|In|Type|Description
+---|---|---|---|---|
+id|path|integer|ID of the thing to return. (required)
+
+
+> Example responses
+
+### Responses
+
+Status|Meaning|Description|Schema
+---|---|---|---|
+200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Successful operation.|[Document](#schemadocument)
+404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|No document with the ID specified.|None
+
+<aside class="success">
+This operation does not require authentication
+</aside>
+
+## GET /document/{id}/history
+
+*Get the history of a document by ID.*
+
+Returns history for a single document.
+
+### Parameters
+
+Parameter|In|Type|Description
+---|---|---|---|---|
+id|path|integer|ID of the thing to return. (required)
+
+
+> Example responses
+
+### Responses
+
+Status|Meaning|Description|Schema
+---|---|---|---|
+200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Successful operation.|[History](#schemahistory)
+404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|No document with the ID specified.|None
+
+<aside class="success">
+This operation does not require authentication
+</aside>
+
+## GET /document/{id}/editions
+
+*Get all the editions by document ID.*
+
+Returns a list of editions for a document ID.
+
+### Parameters
+
+Parameter|In|Type|Description
+---|---|---|---|---|
+id|path|integer|ID of the thing to return. (required)
+
+
+> Example responses
+
+### Responses
+
+Status|Meaning|Description|Schema
+---|---|---|---|
+200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Successful operation.|Inline
+
+### Response Schema
+
+Status Code **200**
+
+Name|Type|Required|Description
+---|---|---|---|---|
+editions|[[Edition](#schemaedition)]|false|No description
+» url|string|true|No description
+» id|integer|true|No description
+» document|[Document](#schemadocument)|true|No description
+»» url|string|true|No description
+»» id|integer|true|No description
+»» content_id|string|true|No description
+»» locale|string|true|No description
+»» schema_name|string|true|No description
+»» type|string|false|No description
+»» supertypes|object|false|No description
+»»» email|string|true|No description
+»»» government|string|true|No description
+»»» navigation|string|true|No description
+»»» user_journey|string|true|No description
+»» first_published_at|string(date-time)|true|No description
+»» history_url|string|true|No description
+»» editions_url|string|true|No description
+» title|string|true|No description
+» description|string|true|No description
+» public_updated_at|string(date-time)|true|No description
+» details|Unknown|true|No description
+» publishing_app|string|true|No description
+» rendering_app|string|true|No description
+» links|Unknown|true|No description
+» expanded_links|Unknown|true|No description
+» access_limited|object|true|No description
+»» users|[integer(int64)]|false|No description
+»» auth_bypass_ids|[integer(int64)]|false|No description
+» phase|string|true|No description
+» analytics_identifier|string|true|No description
+» payload_version|integer|true|No description
+» request_ids|object|true|No description
+»» publishing|string|true|No description
+» need_ids|[integer]|false|No description
+
+
+
+<aside class="success">
+This operation does not require authentication
+</aside>
+
+## GET /document/{id}/editions/{version}
+
+*Get an edition by document ID and version.*
+
+Returns a single edition for a document ID and version.
+
+### Parameters
+
+Parameter|In|Type|Description
+---|---|---|---|---|
+id|path|integer|ID of the thing to return. (required)
+version|path|integer|Version of the edition to return. (required)
+
+
+> Example responses
+
+### Responses
+
+Status|Meaning|Description|Schema
+---|---|---|---|
+200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Successful operation.|[Edition](#schemaedition)
+404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|No edition with the document ID and version specified.|None
+
+<aside class="success">
+This operation does not require authentication
+</aside>
+
+## GET /document/{content_id}/{locale}
+
+*Get a document by content ID and locale.*
+
+Returns a single document for a content ID and locale.
+
+### Parameters
+
+Parameter|In|Type|Description
+---|---|---|---|---|
+content_id|path|string|Content ID of the document. (required)
+locale|path|string|Locale of the document. (required)
+
+
+> Example responses
+
+### Responses
+
+Status|Meaning|Description|Schema
+---|---|---|---|
+200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Successful operation.|[Document](#schemadocument)
+404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|No document with the content ID and locale specified.|None
+
+<aside class="success">
+This operation does not require authentication
+</aside>
+
+## GET /document/{content_id}/{locale}/history
+
+*Get the history of a document by content ID and locale.*
+
+Returns history for a single document.
+
+### Parameters
+
+Parameter|In|Type|Description
+---|---|---|---|---|
+content_id|path|string|Content ID of the document. (required)
+locale|path|string|Locale of the document. (required)
+
+
+> Example responses
+
+### Responses
+
+Status|Meaning|Description|Schema
+---|---|---|---|
+200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Successful operation.|[History](#schemahistory)
+404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|No document with the ID specified.|None
+
+<aside class="success">
+This operation does not require authentication
+</aside>
+
+## GET /document/{content_id}/{locale}/editions
+
+*Get all the editions by content ID and locale.*
+
+Returns a list of editions for a content ID and locale.
+
+### Parameters
+
+Parameter|In|Type|Description
+---|---|---|---|---|
+content_id|path|string|Content ID of the document. (required)
+locale|path|string|Locale of the document. (required)
+
+
+> Example responses
+
+### Responses
+
+Status|Meaning|Description|Schema
+---|---|---|---|
+200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Successful operation.|Inline
+
+### Response Schema
+
+Status Code **200**
+
+Name|Type|Required|Description
+---|---|---|---|---|
+editions|[[Edition](#schemaedition)]|false|No description
+» url|string|true|No description
+» id|integer|true|No description
+» document|[Document](#schemadocument)|true|No description
+»» url|string|true|No description
+»» id|integer|true|No description
+»» content_id|string|true|No description
+»» locale|string|true|No description
+»» schema_name|string|true|No description
+»» type|string|false|No description
+»» supertypes|object|false|No description
+»»» email|string|true|No description
+»»» government|string|true|No description
+»»» navigation|string|true|No description
+»»» user_journey|string|true|No description
+»» first_published_at|string(date-time)|true|No description
+»» history_url|string|true|No description
+»» editions_url|string|true|No description
+» title|string|true|No description
+» description|string|true|No description
+» public_updated_at|string(date-time)|true|No description
+» details|Unknown|true|No description
+» publishing_app|string|true|No description
+» rendering_app|string|true|No description
+» links|Unknown|true|No description
+» expanded_links|Unknown|true|No description
+» access_limited|object|true|No description
+»» users|[integer(int64)]|false|No description
+»» auth_bypass_ids|[integer(int64)]|false|No description
+» phase|string|true|No description
+» analytics_identifier|string|true|No description
+» payload_version|integer|true|No description
+» request_ids|object|true|No description
+»» publishing|string|true|No description
+» need_ids|[integer]|false|No description
+
+
+
+<aside class="success">
+This operation does not require authentication
+</aside>
+
+## GET /document/{content_id}/{locale}/editions/{version}
+
+*Get an edition by content ID, locale and version.*
+
+Returns a single edition for a content ID, locale and version.
+
+### Parameters
+
+Parameter|In|Type|Description
+---|---|---|---|---|
+content_id|path|string|Content ID of the document. (required)
+locale|path|string|Locale of the document. (required)
+undefined|path|integer|Version of the edition to return. (required)
+
+
+> Example responses
+
+### Responses
+
+Status|Meaning|Description|Schema
+---|---|---|---|
+200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Successful operation.|[Edition](#schemaedition)
+404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|No edition with the content ID, locale and version specified.|None
+
+<aside class="success">
+This operation does not require authentication
+</aside>
+
+## GET /edition/{id}
+
+*Get an edition by ID.*
+
+Returns a single edition for an ID.
+
+### Parameters
+
+Parameter|In|Type|Description
+---|---|---|---|---|
+id|path|integer|ID of the thing to return. (required)
+
+
+> Example responses
+
+### Responses
+
+Status|Meaning|Description|Schema
+---|---|---|---|
+200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Successful operation.|[Edition](#schemaedition)
+404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|No edition with the ID specified.|None
+
+<aside class="success">
+This operation does not require authentication
+</aside>
+
+## GET /redirect/{id}
+
+*Get a redirect by ID.*
+
+Returns a single redirect for an ID.
+
+### Parameters
+
+Parameter|In|Type|Description
+---|---|---|---|---|
+id|path|integer|ID of the thing to return. (required)
+
+
+> Example responses
+
+### Responses
+
+Status|Meaning|Description|Schema
+---|---|---|---|
+200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Successful operation.|[Redirect](#schemaredirect)
+404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|No redirect with the ID specified.|None
+
+<aside class="success">
+This operation does not require authentication
+</aside>
+
+## GET /gone/{id}
+
+*Get a gone by ID.*
+
+Returns a single gone for an ID.
+
+### Parameters
+
+Parameter|In|Type|Description
+---|---|---|---|---|
+id|path|integer|ID of the thing to return. (required)
+
+
+> Example responses
+
+### Responses
+
+Status|Meaning|Description|Schema
+---|---|---|---|
+200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Successful operation.|[Gone](#schemagone)
+404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|No gone with the ID specified.|None
+
+<aside class="success">
+This operation does not require authentication
+</aside>
+
+# Schemas
+
+## Content
+
+<a name="schemacontent"></a>
+
+```json
+{
+  "required": [
+    "url",
+    "id",
+    "base_path",
+    "routes",
+    "resource",
+    "start_date",
+    "end_date"
+  ],
+  "properties": {
+    "url": {
+      "type": "string"
+    },
+    "id": {
+      "type": "integer"
+    },
+    "base_path": {
+      "type": "string"
+    },
+    "routes": {
+      "type": "array",
+      "items": {
+        "required": [
+          "path",
+          "type"
+        ],
+        "properties": {
+          "path": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "prefix",
+              "exact"
+            ]
+          }
+        },
+        "type": "object",
+        "x-old-ref": "#/components/schemas/Route"
+      }
+    },
+    "resource": {
+      "properties": {
+        "edition": {
+          "required": [
+            "url",
+            "id",
+            "document",
+            "title",
+            "description",
+            "need_ids",
+            "public_updated_at",
+            "details",
+            "publishing_app",
+            "rendering_app",
+            "links",
+            "expanded_links",
+            "access_limited",
+            "phase",
+            "analytics_identifier",
+            "payload_version",
+            "request_ids"
+          ],
+          "properties": {
+            "url": {
+              "type": "string"
+            },
+            "id": {
+              "type": "integer"
+            },
+            "document": {
+              "required": [
+                "url",
+                "id",
+                "content_id",
+                "locale",
+                "schema_name",
+                "document_type",
+                "document_supertypes",
+                "first_published_at",
+                "history_url",
+                "editions_url"
+              ],
+              "properties": {
+                "url": {
+                  "type": "string"
+                },
+                "id": {
+                  "type": "integer"
+                },
+                "content_id": {
+                  "type": "string"
+                },
+                "locale": {
+                  "type": "string"
+                },
+                "schema_name": {
+                  "type": "string"
+                },
+                "type": {
+                  "type": "string"
+                },
+                "supertypes": {
+                  "required": [
+                    "email",
+                    "government",
+                    "navigation",
+                    "user_journey"
+                  ],
+                  "properties": {
+                    "email": {
+                      "type": "string"
+                    },
+                    "government": {
+                      "type": "string"
+                    },
+                    "navigation": {
+                      "type": "string"
+                    },
+                    "user_journey": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                },
+                "first_published_at": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "history_url": {
+                  "type": "string"
+                },
+                "editions_url": {
+                  "type": "string"
+                }
+              },
+              "type": "object",
+              "x-old-ref": "#/components/schemas/Document"
+            },
+            "title": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "need_ids": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "x-isArray": true
+              }
+            },
+            "public_updated_at": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "details": {
+              "additionalProperties": {
+                "type": "string"
+              }
+            },
+            "publishing_app": {
+              "type": "string"
+            },
+            "rendering_app": {
+              "type": "string"
+            },
+            "links": {
+              "additionalProperties": {
+                "type": "string"
+              }
+            },
+            "expanded_links": {
+              "additionalProperties": {
+                "type": "string"
+              }
+            },
+            "access_limited": {
+              "required": [
+                "users",
+                "auth_bypass_ids"
+              ],
+              "properties": {
+                "users": {
+                  "type": "array",
+                  "items": {
+                    "type": "integer",
+                    "format": "int64",
+                    "x-isArray": true
+                  }
+                },
+                "auth_bypass_ids": {
+                  "type": "array",
+                  "items": {
+                    "type": "integer",
+                    "format": "int64",
+                    "x-isArray": true
+                  }
+                }
+              },
+              "type": "object"
+            },
+            "phase": {
+              "type": "string"
+            },
+            "analytics_identifier": {
+              "type": "string"
+            },
+            "payload_version": {
+              "type": "integer"
+            },
+            "request_ids": {
+              "required": [
+                "publishing"
+              ],
+              "properties": {
+                "publishing": {
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "type": "object",
+          "x-old-ref": "#/components/schemas/Edition",
+          "x-isArray": true
+        },
+        "redirect": {
+          "required": [
+            "url",
+            "id",
+            "destination"
+          ],
+          "properties": {
+            "url": {
+              "type": "string"
+            },
+            "id": {
+              "type": "integer"
+            },
+            "destination": {
+              "type": "string"
+            }
+          },
+          "type": "object",
+          "x-old-ref": "#/components/schemas/Redirect"
+        },
+        "gone": {
+          "required": [
+            "url",
+            "id",
+            "withdrawn_notice"
+          ],
+          "properties": {
+            "url": {
+              "type": "string"
+            },
+            "id": {
+              "type": "integer"
+            },
+            "withdrawn_notice": {
+              "required": [
+                "explanation",
+                "date"
+              ],
+              "properties": {
+                "explanation": {
+                  "type": "string"
+                },
+                "date": {
+                  "type": "string",
+                  "format": "date-time"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "type": "object",
+          "x-old-ref": "#/components/schemas/Gone"
+        }
+      },
+      "type": "object",
+      "x-old-ref": "#/components/schemas/Resource"
+    },
+    "start_date": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "end_date": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "type": "object",
+  "x-old-ref": "#/components/schemas/Content"
+} 
+```
+
+### Properties
+
+Name|Type|Required|Description
+---|---|---|---|---|
+url|string|true|No description
+id|integer|true|No description
+base_path|string|true|No description
+resource|[Resource](#schemaresource)|true|No description
+» edition|[[Edition](#schemaedition)]|false|No description
+»» url|string|true|No description
+»» id|integer|true|No description
+»» document|[Document](#schemadocument)|true|No description
+»»» url|string|true|No description
+»»» id|integer|true|No description
+»»» content_id|string|true|No description
+»»» locale|string|true|No description
+»»» schema_name|string|true|No description
+»»» type|string|false|No description
+»»» supertypes|object|false|No description
+»»»» email|string|true|No description
+»»»» government|string|true|No description
+»»»» navigation|string|true|No description
+»»»» user_journey|string|true|No description
+»»» first_published_at|string(date-time)|true|No description
+»»» history_url|string|true|No description
+»»» editions_url|string|true|No description
+»» title|string|true|No description
+»» description|string|true|No description
+»» public_updated_at|string(date-time)|true|No description
+»» details|Unknown|true|No description
+»» publishing_app|string|true|No description
+»» rendering_app|string|true|No description
+»» links|Unknown|true|No description
+»» expanded_links|Unknown|true|No description
+»» access_limited|object|true|No description
+»»» users|[integer(int64)]|false|No description
+»»» auth_bypass_ids|[integer(int64)]|false|No description
+»» phase|string|true|No description
+»» analytics_identifier|string|true|No description
+»» payload_version|integer|true|No description
+»» request_ids|object|true|No description
+»»» publishing|string|true|No description
+»» need_ids|[integer]|false|No description
+» redirect|[Redirect](#schemaredirect)|false|No description
+»» url|string|true|No description
+»» id|integer|true|No description
+»» destination|string|true|No description
+» gone|[Gone](#schemagone)|false|No description
+»» url|string|true|No description
+»» id|integer|true|No description
+»» withdrawn_notice|object|true|No description
+»»» explanation|string|true|No description
+»»» date|string(date-time)|true|No description
+start_date|string(date-time)|true|No description
+end_date|string(date-time)|true|No description
+routes|[[Route](#schemaroute)]|false|No description
+» path|string|true|No description
+» type|string|true|No description
+
+
+#### Enumerated Values
+
+|Property|Value|
+|---|---|
+» type|prefix|
+» type|exact|
+
+
+## Route
+
+<a name="schemaroute"></a>
+
+```json
+{
+  "required": [
+    "path",
+    "type"
+  ],
+  "properties": {
+    "path": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "prefix",
+        "exact"
+      ]
+    }
+  },
+  "type": "object",
+  "x-old-ref": "#/components/schemas/Route",
+  "x-isArray": true
+} 
+```
+
+### Properties
+
+Name|Type|Required|Description
+---|---|---|---|---|
+path|string|true|No description
+type|string|true|No description
+
+
+#### Enumerated Values
+
+|Property|Value|
+|---|---|
+type|prefix|
+type|exact|
+
+
+## Resource
+
+<a name="schemaresource"></a>
+
+```json
+{
+  "properties": {
+    "edition": {
+      "required": [
+        "url",
+        "id",
+        "document",
+        "title",
+        "description",
+        "need_ids",
+        "public_updated_at",
+        "details",
+        "publishing_app",
+        "rendering_app",
+        "links",
+        "expanded_links",
+        "access_limited",
+        "phase",
+        "analytics_identifier",
+        "payload_version",
+        "request_ids"
+      ],
+      "properties": {
+        "url": {
+          "type": "string"
+        },
+        "id": {
+          "type": "integer"
+        },
+        "document": {
+          "required": [
+            "url",
+            "id",
+            "content_id",
+            "locale",
+            "schema_name",
+            "document_type",
+            "document_supertypes",
+            "first_published_at",
+            "history_url",
+            "editions_url"
+          ],
+          "properties": {
+            "url": {
+              "type": "string"
+            },
+            "id": {
+              "type": "integer"
+            },
+            "content_id": {
+              "type": "string"
+            },
+            "locale": {
+              "type": "string"
+            },
+            "schema_name": {
+              "type": "string"
+            },
+            "type": {
+              "type": "string"
+            },
+            "supertypes": {
+              "required": [
+                "email",
+                "government",
+                "navigation",
+                "user_journey"
+              ],
+              "properties": {
+                "email": {
+                  "type": "string"
+                },
+                "government": {
+                  "type": "string"
+                },
+                "navigation": {
+                  "type": "string"
+                },
+                "user_journey": {
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            },
+            "first_published_at": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "history_url": {
+              "type": "string"
+            },
+            "editions_url": {
+              "type": "string"
+            }
+          },
+          "type": "object",
+          "x-old-ref": "#/components/schemas/Document"
+        },
+        "title": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "need_ids": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "x-isArray": true
+          }
+        },
+        "public_updated_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "details": {
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "publishing_app": {
+          "type": "string"
+        },
+        "rendering_app": {
+          "type": "string"
+        },
+        "links": {
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "expanded_links": {
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "access_limited": {
+          "required": [
+            "users",
+            "auth_bypass_ids"
+          ],
+          "properties": {
+            "users": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "format": "int64",
+                "x-isArray": true
+              }
+            },
+            "auth_bypass_ids": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "format": "int64",
+                "x-isArray": true
+              }
+            }
+          },
+          "type": "object"
+        },
+        "phase": {
+          "type": "string"
+        },
+        "analytics_identifier": {
+          "type": "string"
+        },
+        "payload_version": {
+          "type": "integer"
+        },
+        "request_ids": {
+          "required": [
+            "publishing"
+          ],
+          "properties": {
+            "publishing": {
+              "type": "string"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "type": "object",
+      "x-old-ref": "#/components/schemas/Edition",
+      "x-isArray": true
+    },
+    "redirect": {
+      "required": [
+        "url",
+        "id",
+        "destination"
+      ],
+      "properties": {
+        "url": {
+          "type": "string"
+        },
+        "id": {
+          "type": "integer"
+        },
+        "destination": {
+          "type": "string"
+        }
+      },
+      "type": "object",
+      "x-old-ref": "#/components/schemas/Redirect"
+    },
+    "gone": {
+      "required": [
+        "url",
+        "id",
+        "withdrawn_notice"
+      ],
+      "properties": {
+        "url": {
+          "type": "string"
+        },
+        "id": {
+          "type": "integer"
+        },
+        "withdrawn_notice": {
+          "required": [
+            "explanation",
+            "date"
+          ],
+          "properties": {
+            "explanation": {
+              "type": "string"
+            },
+            "date": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "type": "object",
+      "x-old-ref": "#/components/schemas/Gone"
+    }
+  },
+  "type": "object",
+  "x-old-ref": "#/components/schemas/Resource"
+} 
+```
+
+### Properties
+
+Name|Type|Required|Description
+---|---|---|---|---|
+edition|[[Edition](#schemaedition)]|false|No description
+» url|string|true|No description
+» id|integer|true|No description
+» document|[Document](#schemadocument)|true|No description
+»» url|string|true|No description
+»» id|integer|true|No description
+»» content_id|string|true|No description
+»» locale|string|true|No description
+»» schema_name|string|true|No description
+»» type|string|false|No description
+»» supertypes|object|false|No description
+»»» email|string|true|No description
+»»» government|string|true|No description
+»»» navigation|string|true|No description
+»»» user_journey|string|true|No description
+»» first_published_at|string(date-time)|true|No description
+»» history_url|string|true|No description
+»» editions_url|string|true|No description
+» title|string|true|No description
+» description|string|true|No description
+» public_updated_at|string(date-time)|true|No description
+» details|Unknown|true|No description
+» publishing_app|string|true|No description
+» rendering_app|string|true|No description
+» links|Unknown|true|No description
+» expanded_links|Unknown|true|No description
+» access_limited|object|true|No description
+»» users|[integer(int64)]|false|No description
+»» auth_bypass_ids|[integer(int64)]|false|No description
+» phase|string|true|No description
+» analytics_identifier|string|true|No description
+» payload_version|integer|true|No description
+» request_ids|object|true|No description
+»» publishing|string|true|No description
+» need_ids|[integer]|false|No description
+redirect|[Redirect](#schemaredirect)|false|No description
+» url|string|true|No description
+» id|integer|true|No description
+» destination|string|true|No description
+gone|[Gone](#schemagone)|false|No description
+» url|string|true|No description
+» id|integer|true|No description
+» withdrawn_notice|object|true|No description
+»» explanation|string|true|No description
+»» date|string(date-time)|true|No description
+
+
+
+## Document
+
+<a name="schemadocument"></a>
+
+```json
+{
+  "required": [
+    "url",
+    "id",
+    "content_id",
+    "locale",
+    "schema_name",
+    "document_type",
+    "document_supertypes",
+    "first_published_at",
+    "history_url",
+    "editions_url"
+  ],
+  "properties": {
+    "url": {
+      "type": "string"
+    },
+    "id": {
+      "type": "integer"
+    },
+    "content_id": {
+      "type": "string"
+    },
+    "locale": {
+      "type": "string"
+    },
+    "schema_name": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string"
+    },
+    "supertypes": {
+      "required": [
+        "email",
+        "government",
+        "navigation",
+        "user_journey"
+      ],
+      "properties": {
+        "email": {
+          "type": "string"
+        },
+        "government": {
+          "type": "string"
+        },
+        "navigation": {
+          "type": "string"
+        },
+        "user_journey": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "first_published_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "history_url": {
+      "type": "string"
+    },
+    "editions_url": {
+      "type": "string"
+    }
+  },
+  "type": "object",
+  "x-old-ref": "#/components/schemas/Document"
+} 
+```
+
+### Properties
+
+Name|Type|Required|Description
+---|---|---|---|---|
+url|string|true|No description
+id|integer|true|No description
+content_id|string|true|No description
+locale|string|true|No description
+schema_name|string|true|No description
+type|string|false|No description
+supertypes|object|false|No description
+» email|string|true|No description
+» government|string|true|No description
+» navigation|string|true|No description
+» user_journey|string|true|No description
+first_published_at|string(date-time)|true|No description
+history_url|string|true|No description
+editions_url|string|true|No description
+
+
+
+## ChangeNote
+
+<a name="schemachangenote"></a>
+
+```json
+{
+  "required": [
+    "public_timestamp",
+    "note",
+    "edition_url"
+  ],
+  "properties": {
+    "public_timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "note": {
+      "type": "string"
+    },
+    "edition_url": {
+      "type": "string"
+    }
+  },
+  "type": "object",
+  "x-old-ref": "#/components/schemas/ChangeNote"
+} 
+```
+
+### Properties
+
+Name|Type|Required|Description
+---|---|---|---|---|
+public_timestamp|string(date-time)|true|No description
+note|string|true|No description
+edition_url|string|true|No description
+
+
+
+## History
+
+<a name="schemahistory"></a>
+
+```json
+{
+  "required": [
+    "history"
+  ],
+  "properties": {
+    "history": {
+      "type": "array",
+      "items": {
+        "required": [
+          "public_timestamp",
+          "note",
+          "edition_url"
+        ],
+        "properties": {
+          "public_timestamp": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "note": {
+            "type": "string"
+          },
+          "edition_url": {
+            "type": "string"
+          }
+        },
+        "type": "object",
+        "x-old-ref": "#/components/schemas/ChangeNote"
+      }
+    }
+  },
+  "type": "object",
+  "x-old-ref": "#/components/schemas/History"
+} 
+```
+
+### Properties
+
+Name|Type|Required|Description
+---|---|---|---|---|
+history|[[ChangeNote](#schemachangenote)]|false|No description
+» public_timestamp|string(date-time)|true|No description
+» note|string|true|No description
+» edition_url|string|true|No description
+
+
+
+## Edition
+
+<a name="schemaedition"></a>
+
+```json
+{
+  "required": [
+    "url",
+    "id",
+    "document",
+    "title",
+    "description",
+    "need_ids",
+    "public_updated_at",
+    "details",
+    "publishing_app",
+    "rendering_app",
+    "links",
+    "expanded_links",
+    "access_limited",
+    "phase",
+    "analytics_identifier",
+    "payload_version",
+    "request_ids"
+  ],
+  "properties": {
+    "url": {
+      "type": "string"
+    },
+    "id": {
+      "type": "integer"
+    },
+    "document": {
+      "required": [
+        "url",
+        "id",
+        "content_id",
+        "locale",
+        "schema_name",
+        "document_type",
+        "document_supertypes",
+        "first_published_at",
+        "history_url",
+        "editions_url"
+      ],
+      "properties": {
+        "url": {
+          "type": "string"
+        },
+        "id": {
+          "type": "integer"
+        },
+        "content_id": {
+          "type": "string"
+        },
+        "locale": {
+          "type": "string"
+        },
+        "schema_name": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "supertypes": {
+          "required": [
+            "email",
+            "government",
+            "navigation",
+            "user_journey"
+          ],
+          "properties": {
+            "email": {
+              "type": "string"
+            },
+            "government": {
+              "type": "string"
+            },
+            "navigation": {
+              "type": "string"
+            },
+            "user_journey": {
+              "type": "string"
+            }
+          },
+          "type": "object"
+        },
+        "first_published_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "history_url": {
+          "type": "string"
+        },
+        "editions_url": {
+          "type": "string"
+        }
+      },
+      "type": "object",
+      "x-old-ref": "#/components/schemas/Document"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "need_ids": {
+      "type": "array",
+      "items": {
+        "type": "integer",
+        "x-isArray": true
+      }
+    },
+    "public_updated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "details": {
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "publishing_app": {
+      "type": "string"
+    },
+    "rendering_app": {
+      "type": "string"
+    },
+    "links": {
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "expanded_links": {
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "access_limited": {
+      "required": [
+        "users",
+        "auth_bypass_ids"
+      ],
+      "properties": {
+        "users": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int64",
+            "x-isArray": true
+          }
+        },
+        "auth_bypass_ids": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int64",
+            "x-isArray": true
+          }
+        }
+      },
+      "type": "object"
+    },
+    "phase": {
+      "type": "string"
+    },
+    "analytics_identifier": {
+      "type": "string"
+    },
+    "payload_version": {
+      "type": "integer"
+    },
+    "request_ids": {
+      "required": [
+        "publishing"
+      ],
+      "properties": {
+        "publishing": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    }
+  },
+  "type": "object",
+  "x-old-ref": "#/components/schemas/Edition",
+  "x-isArray": true
+} 
+```
+
+### Properties
+
+Name|Type|Required|Description
+---|---|---|---|---|
+url|string|true|No description
+id|integer|true|No description
+document|[Document](#schemadocument)|true|No description
+» url|string|true|No description
+» id|integer|true|No description
+» content_id|string|true|No description
+» locale|string|true|No description
+» schema_name|string|true|No description
+» type|string|false|No description
+» supertypes|object|false|No description
+»» email|string|true|No description
+»» government|string|true|No description
+»» navigation|string|true|No description
+»» user_journey|string|true|No description
+» first_published_at|string(date-time)|true|No description
+» history_url|string|true|No description
+» editions_url|string|true|No description
+title|string|true|No description
+description|string|true|No description
+public_updated_at|string(date-time)|true|No description
+details|Unknown|true|No description
+publishing_app|string|true|No description
+rendering_app|string|true|No description
+links|Unknown|true|No description
+expanded_links|Unknown|true|No description
+access_limited|object|true|No description
+» users|[integer(int64)]|false|No description
+» auth_bypass_ids|[integer(int64)]|false|No description
+phase|string|true|No description
+analytics_identifier|string|true|No description
+payload_version|integer|true|No description
+request_ids|object|true|No description
+» publishing|string|true|No description
+need_ids|[integer]|false|No description
+
+
+
+## Redirect
+
+<a name="schemaredirect"></a>
+
+```json
+{
+  "required": [
+    "url",
+    "id",
+    "destination"
+  ],
+  "properties": {
+    "url": {
+      "type": "string"
+    },
+    "id": {
+      "type": "integer"
+    },
+    "destination": {
+      "type": "string"
+    }
+  },
+  "type": "object",
+  "x-old-ref": "#/components/schemas/Redirect"
+} 
+```
+
+### Properties
+
+Name|Type|Required|Description
+---|---|---|---|---|
+url|string|true|No description
+id|integer|true|No description
+destination|string|true|No description
+
+
+
+## Gone
+
+<a name="schemagone"></a>
+
+```json
+{
+  "required": [
+    "url",
+    "id",
+    "withdrawn_notice"
+  ],
+  "properties": {
+    "url": {
+      "type": "string"
+    },
+    "id": {
+      "type": "integer"
+    },
+    "withdrawn_notice": {
+      "required": [
+        "explanation",
+        "date"
+      ],
+      "properties": {
+        "explanation": {
+          "type": "string"
+        },
+        "date": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "type": "object"
+    }
+  },
+  "type": "object",
+  "x-old-ref": "#/components/schemas/Gone"
+} 
+```
+
+### Properties
+
+Name|Type|Required|Description
+---|---|---|---|---|
+url|string|true|No description
+id|integer|true|No description
+withdrawn_notice|object|true|No description
+» explanation|string|true|No description
+» date|string(date-time)|true|No description
+
+
+
+
+
+
+          </main>
+
+          <footer class="footer">
+  <div class="footer__licence">
+    <a class="footer__licence-logo" href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence</a>
+    <p class="footer__licence-description">All content is available under the <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence v3.0</a>, except where otherwise stated</p>
+  </div>
+
+  <div class="footer__copyright">
+    <a class="footer__copyright-logo" href="http://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/copyright-and-re-use/crown-copyright/">© Crown copyright</a>
+  </div>
+</footer>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </body>
+</html>
