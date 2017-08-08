@@ -3,9 +3,9 @@ host: https://alphagov.github.io/govuk-content-api-docs
 
 # Header-related options
 show_govuk_logo: false
-service_name: Content API (Unavailable)
-service_link: https://www.content-store.publishing.service.gov.uk
-phase: Alpha
+service_name: GOV.UK Content API
+service_link: https://content.service.gov.uk
+phase: Work In Progress
 
 # Links to show on right-hand-side of header
 header_links:

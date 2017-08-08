@@ -16,7 +16,8 @@
   vertical-align: middle;
 
   @include screen {
-    background: $govuk-blue;
+    //background: $govuk-blue;
+    background: red;
     color: $white;
   }
 }
