@@ -11,7 +11,7 @@ clean:
 
 api:
 	$(if ${API_SPEC},,$(error Must specify path to the OpenAPI spec file in API_SPEC))
-	./node_modules/widdershins/widdershins.js -r -c -u templates/ -y ${API_SPEC} -o source/documentation/index.html.erb
+	./node_modules/widdershins/widdershins.js -r -c -u templates/ -y ${API_SPEC} -o source/reference.html.md.erb
 
 html: requirements clean worktree api
 	bundle exec middleman build --verbose
