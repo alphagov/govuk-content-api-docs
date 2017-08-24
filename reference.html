@@ -290,6 +290,7 @@
             </span><span class="s2">"description"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"document_type"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"locale"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"links"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"public_updated_at"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"schema_name"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"title"</span><span class="p">,</span><span class="w">
@@ -298,14 +299,17 @@
           </span><span class="s2">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
             </span><span class="s2">"analytics_identifier"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
               </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"nullable"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
               </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"An identifier which clients of the Publishing API can include with an edition for later use in analytics software."</span><span class="w">
             </span><span class="p">},</span><span class="w">
             </span><span class="s2">"api_path"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
               </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"nullable"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
               </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The base path of the content item, available from the API."</span><span class="w">
             </span><span class="p">},</span><span class="w">
             </span><span class="s2">"base_path"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
               </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"nullable"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
               </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The path of the content on GOV.UK - or the shortest one for content that spans multiple sub paths."</span><span class="w">
             </span><span class="p">},</span><span class="w">
             </span><span class="s2">"content_id"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -315,6 +319,7 @@
             </span><span class="p">},</span><span class="w">
             </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
               </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"nullable"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
               </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A description of the content which can then be displayed publically."</span><span class="w">
             </span><span class="p">},</span><span class="w">
             </span><span class="s2">"details"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -378,9 +383,21 @@
 <td><a href="#schemacontentitem">ContentItem</a></td>
 </tr>
 <tr>
+<td>303</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.4.4">See Other</a></td>
+<td>The canonical path for this content item is a different path.</td>
+<td>None</td>
+</tr>
+<tr>
 <td>404</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.4">Not Found</a></td>
 <td>No content item is available at that path.</td>
+<td>None</td>
+</tr>
+<tr>
+<td>410</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.9">Gone</a></td>
+<td>The content item is no longer available at that path.</td>
 <td>None</td>
 </tr>
 
@@ -441,6 +458,7 @@ This operation does not require authentication
     </span><span class="s2">"description"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"document_type"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"locale"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"links"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"public_updated_at"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"schema_name"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"title"</span><span class="p">,</span><span class="w">
@@ -449,14 +467,17 @@ This operation does not require authentication
   </span><span class="s2">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="s2">"analytics_identifier"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"nullable"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
       </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"An identifier which clients of the Publishing API can include with an edition for later use in analytics software."</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="s2">"api_path"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"nullable"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
       </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The base path of the content item, available from the API."</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="s2">"base_path"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"nullable"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
       </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The path of the content on GOV.UK - or the shortest one for content that spans multiple sub paths."</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="s2">"content_id"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -466,6 +487,7 @@ This operation does not require authentication
     </span><span class="p">},</span><span class="w">
     </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"nullable"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
       </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A description of the content which can then be displayed publically."</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="s2">"details"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -720,6 +742,7 @@ This operation does not require authentication
             </span><span class="s2">"description"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"document_type"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"locale"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"links"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"public_updated_at"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"schema_name"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"title"</span><span class="p">,</span><span class="w">
@@ -728,14 +751,17 @@ This operation does not require authentication
           </span><span class="s2">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
             </span><span class="s2">"analytics_identifier"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
               </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"nullable"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
               </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"An identifier which clients of the Publishing API can include with an edition for later use in analytics software."</span><span class="w">
             </span><span class="p">},</span><span class="w">
             </span><span class="s2">"api_path"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
               </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"nullable"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
               </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The base path of the content item, available from the API."</span><span class="w">
             </span><span class="p">},</span><span class="w">
             </span><span class="s2">"base_path"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
               </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"nullable"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
               </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The path of the content on GOV.UK - or the shortest one for content that spans multiple sub paths."</span><span class="w">
             </span><span class="p">},</span><span class="w">
             </span><span class="s2">"content_id"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -745,6 +771,7 @@ This operation does not require authentication
             </span><span class="p">},</span><span class="w">
             </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
               </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"nullable"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
               </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A description of the content which can then be displayed publically."</span><span class="w">
             </span><span class="p">},</span><span class="w">
             </span><span class="s2">"details"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
