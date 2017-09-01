@@ -1,5 +1,5 @@
 {
   "dependencies": {
-    "widdershins": "git+https://github.com/alphagov/widdershins.git#master"
+    "widdershins": "2.1.4"
   }
 }

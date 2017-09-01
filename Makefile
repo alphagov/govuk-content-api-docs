@@ -7,7 +7,7 @@ clean:
 
 api:
 	$(if ${API_SPEC},,$(error Must specify path to the OpenAPI spec file in API_SPEC))
-	./node_modules/widdershins/widdershins.js -c -u templates/ -y ${API_SPEC} -o source/reference.html.md.erb
+	./node_modules/widdershins/widdershins.js -u templates/ -y ${API_SPEC} -o source/reference.html.md.erb
 
 html: requirements clean api
 	bundle exec rake build
