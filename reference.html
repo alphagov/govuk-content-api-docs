@@ -77,7 +77,7 @@
     <a href="#gov-uk-content-api-v1-0-0">GOV.UK Content API v1.0.0</a>
   </li>
   <li>
-    <a href="#default">Default</a>
+    <a href="#content">Content</a>
     <ul>
       <li>
         <a href="#get-path">GET /{path}</a>
@@ -140,47 +140,17 @@
 <ul>
 <li><a href="https://www.gov.uk/api/content">https://www.gov.uk/api/content</a></li>
 </ul>
-<h1 id="default">Default</h1><h2 id="get-path">GET /{path}</h2><h3 id="code-samples">Code Samples</h3><div class="highlight"><pre class="highlight shell"><code><span class="c"># You can also use wget</span>
-curl <span class="nt">-X</span> GET https://www.gov.uk/api/content/<span class="o">{</span>path<span class="o">}</span> <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s1">'Accept: application/json'</span>
+<h1 id="content">Content</h1><h2 id="get-path">GET /{path}</h2>
+<p><em>Access a content item by path</em></p>
 
-</code></pre></div><div class="highlight"><pre class="highlight http"><code><span class="nf">GET</span> <span class="nn">https://www.gov.uk/api/content/{path}</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<p>The primary means to access content that is hosted on GOV.UK.</p>
+<h3 id="code-samples">Code Samples</h3>
+<p><details></p>
+<div class="highlight"><pre class="highlight http"><code><span class="nf">GET</span> <span class="nn">https://www.gov.uk/api/content/{path}</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">Host</span><span class="p">:</span> <span class="s">www.gov.uk</span>
 
 Accept: application/json
 
-</code></pre></div><div class="highlight"><pre class="highlight javascript"><code><span class="kd">var</span> <span class="nx">headers</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="s1">'Accept'</span><span class="p">:</span><span class="s1">'application/json'</span>
-
-<span class="p">};</span>
-
-<span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
-  <span class="na">url</span><span class="p">:</span> <span class="s1">'https://www.gov.uk/api/content/{path}'</span><span class="p">,</span>
-  <span class="na">method</span><span class="p">:</span> <span class="s1">'get'</span><span class="p">,</span>
-
-  <span class="na">headers</span><span class="p">:</span> <span class="nx">headers</span><span class="p">,</span>
-  <span class="na">success</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">data</span><span class="p">));</span>
-  <span class="p">}</span>
-<span class="p">})</span>
-</code></pre></div><div class="highlight"><pre class="highlight plaintext"><code>const request = require('node-fetch');
-
-const headers = {
-  'Accept':'application/json'
-
-};
-
-fetch('https://www.gov.uk/api/content/{path}',
-{
-  method: 'GET',
-
-  headers: headers
-})
-.then(function(res) {
-    return res.json();
-}).then(function(body) {
-    console.log(body);
-});
 </code></pre></div><div class="highlight"><pre class="highlight ruby"><code><span class="nb">require</span> <span class="s1">'rest-client'</span>
 <span class="nb">require</span> <span class="s1">'json'</span>
 
@@ -203,25 +173,76 @@ fetch('https://www.gov.uk/api/content/{path}',
 <span class="p">},</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
 
 <span class="k">print</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
-</code></pre></div><div class="highlight"><pre class="highlight java"><code><span class="n">URL</span> <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="n">URL</span><span class="o">(</span><span class="s">"https://www.gov.uk/api/content/{path}"</span><span class="o">);</span>
-<span class="n">HttpURLConnection</span> <span class="n">con</span> <span class="o">=</span> <span class="o">(</span><span class="n">HttpURLConnection</span><span class="o">)</span> <span class="n">obj</span><span class="o">.</span><span class="na">openConnection</span><span class="o">();</span>
-<span class="n">con</span><span class="o">.</span><span class="na">setRequestMethod</span><span class="o">(</span><span class="s">"GET"</span><span class="o">);</span>
-<span class="kt">int</span> <span class="n">responseCode</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="na">getResponseCode</span><span class="o">();</span>
-<span class="n">BufferedReader</span> <span class="n">in</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BufferedReader</span><span class="o">(</span>
-    <span class="k">new</span> <span class="nf">InputStreamReader</span><span class="o">(</span><span class="n">con</span><span class="o">.</span><span class="na">getInputStream</span><span class="o">()));</span>
-<span class="n">String</span> <span class="n">inputLine</span><span class="o">;</span>
-<span class="n">StringBuffer</span> <span class="n">response</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StringBuffer</span><span class="o">();</span>
-<span class="k">while</span> <span class="o">((</span><span class="n">inputLine</span> <span class="o">=</span> <span class="n">in</span><span class="o">.</span><span class="na">readLine</span><span class="o">())</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
-    <span class="n">response</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">inputLine</span><span class="o">);</span>
-<span class="o">}</span>
-<span class="n">in</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">response</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>
 </code></pre></div>
-<p><em>Access a content item by path</em></p>
-
-<p>The primary means to access content that is hosted on GOV.UK.</p>
-<h3 id="example-responses">Example Responses</h3><div class="highlight"><pre class="highlight json"><code><span class="p">{}</span><span class="w">
-</span></code></pre></div><h3 id="responses">Responses</h3><div class="table-container">
+<p></details></p>
+<h3 id="example-responses">Example Responses</h3>
+<p><details></p>
+<div class="highlight"><pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"analytics_identifier"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"base_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"content_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"document_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"email_document_supertype"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"first_published_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-09-04T07:41:43Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"government_document_supertype"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"navigation_document_supertype"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"need_ids"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="s2">"string"</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"phase"</span><span class="p">:</span><span class="w"> </span><span class="s2">"alpha"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"public_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-09-04T07:41:43Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"publishing_app"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"rendering_app"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"schema_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-09-04T07:41:43Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"user_journey_document_supertype"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"withdrawn_notice"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"explanation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"withdrawn_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-09-04T07:41:43Z"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"publishing_request_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"property1"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"analytics_identifier"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"api_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"base_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"content_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"details"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+        </span><span class="s2">"document_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"public_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-09-04T07:41:43Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"schema_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"withdrawn"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"property2"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"analytics_identifier"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"api_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"base_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"content_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"details"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+        </span><span class="s2">"document_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"public_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-09-04T07:41:43Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"schema_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"withdrawn"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"details"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p></details></p>
+<h3 id="responses">Responses</h3><div class="table-container">
       <table>
         <tr>
 <th>Status</th>
@@ -261,8 +282,17 @@ This operation does not require authentication
 </aside>
 <h1 id="schemas">Schemas</h1><h2 id="withdrawnnotice">WithdrawnNotice</h2>
 <p><a name="schemawithdrawnnotice"></a></p>
-<div class="highlight"><pre class="highlight json"><code><span class="p">{}</span><span class="w"> 
-</span></code></pre></div><h3 id="properties">Properties</h3><div class="table-container">
+
+<p><details></p>
+
+<p><summary>JSON Schema</summary></p>
+<div class="highlight"><pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"explanation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"withdrawn_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-09-04T07:41:43Z"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p></details></p>
+<h3 id="properties">Properties</h3><div class="table-container">
       <table>
         <tr>
 <th>Name</th>
@@ -286,8 +316,27 @@ This operation does not require authentication
       </table>
     </div><h2 id="linkedcontentitem">LinkedContentItem</h2>
 <p><a name="schemalinkedcontentitem"></a></p>
-<div class="highlight"><pre class="highlight json"><code><span class="p">{}</span><span class="w"> 
-</span></code></pre></div><h3 id="linkedcontentitem-properties">Properties</h3><div class="table-container">
+
+<p><details></p>
+
+<p><summary>JSON Schema</summary></p>
+<div class="highlight"><pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"analytics_identifier"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"api_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"base_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"content_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"details"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+  </span><span class="s2">"document_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"public_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-09-04T07:41:43Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"schema_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"withdrawn"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p></details></p>
+<h3 id="linkedcontentitem-properties">Properties</h3><div class="table-container">
       <table>
         <tr>
 <th>Name</th>
@@ -371,8 +420,76 @@ This operation does not require authentication
       </table>
     </div><h2 id="contentitem">ContentItem</h2>
 <p><a name="schemacontentitem"></a></p>
-<div class="highlight"><pre class="highlight json"><code><span class="p">{}</span><span class="w"> 
-</span></code></pre></div><h3 id="contentitem-properties">Properties</h3><div class="table-container">
+
+<p><details></p>
+
+<p><summary>JSON Schema</summary></p>
+<div class="highlight"><pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"analytics_identifier"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"base_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"content_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"document_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"email_document_supertype"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"first_published_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-09-04T07:41:43Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"government_document_supertype"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"navigation_document_supertype"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"need_ids"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="s2">"string"</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"phase"</span><span class="p">:</span><span class="w"> </span><span class="s2">"alpha"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"public_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-09-04T07:41:43Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"publishing_app"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"rendering_app"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"schema_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-09-04T07:41:43Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"user_journey_document_supertype"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"withdrawn_notice"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"explanation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"withdrawn_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-09-04T07:41:43Z"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"publishing_request_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"property1"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"analytics_identifier"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"api_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"base_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"content_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"details"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+        </span><span class="s2">"document_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"public_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-09-04T07:41:43Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"schema_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"withdrawn"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"property2"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"analytics_identifier"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"api_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"base_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"content_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"details"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+        </span><span class="s2">"document_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"public_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-09-04T07:41:43Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"schema_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"withdrawn"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"details"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p></details></p>
+<h3 id="contentitem-properties">Properties</h3><div class="table-container">
       <table>
         <tr>
 <th>Name</th>
