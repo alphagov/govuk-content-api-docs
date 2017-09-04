@@ -84,15 +84,17 @@
         <ul>
           <li>
             <a href="#code-samples">Code Samples</a>
-          </li>
-          <li>
-            <a href="#http">HTTP</a>
-          </li>
-          <li>
-            <a href="#ruby">Ruby</a>
-          </li>
-          <li>
-            <a href="#python">Python</a>
+            <ul>
+              <li>
+                <a href="#http">HTTP</a>
+              </li>
+              <li>
+                <a href="#ruby">Ruby</a>
+              </li>
+              <li>
+                <a href="#python">Python</a>
+              </li>
+            </ul>
           </li>
           <li>
             <a href="#example-responses">Example Responses</a>
@@ -155,12 +157,12 @@
 <p>The primary means to access content that is hosted on GOV.UK.</p>
 <h3 id="code-samples">Code Samples</h3>
 <p><details></p>
-<h3 id="http">HTTP</h3><div class="highlight"><pre class="highlight http"><code><span class="nf">GET</span> <span class="nn">https://www.gov.uk/api/content/{path}</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<h4 id="http">HTTP</h4><div class="highlight"><pre class="highlight http"><code><span class="nf">GET</span> <span class="nn">https://www.gov.uk/api/content/{path}</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">Host</span><span class="p">:</span> <span class="s">www.gov.uk</span>
 
 Accept: application/json
 
-</code></pre></div><h3 id="ruby">Ruby</h3><div class="highlight"><pre class="highlight ruby"><code><span class="nb">require</span> <span class="s1">'rest-client'</span>
+</code></pre></div><h4 id="ruby">Ruby</h4><div class="highlight"><pre class="highlight ruby"><code><span class="nb">require</span> <span class="s1">'rest-client'</span>
 <span class="nb">require</span> <span class="s1">'json'</span>
 
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
@@ -172,7 +174,7 @@ Accept: application/json
   <span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
 
 <span class="nb">p</span> <span class="no">JSON</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-</code></pre></div><h3 id="python">Python</h3><div class="highlight"><pre class="highlight python"><code><span class="kn">import</span> <span class="nn">requests</span>
+</code></pre></div><h4 id="python">Python</h4><div class="highlight"><pre class="highlight python"><code><span class="kn">import</span> <span class="nn">requests</span>
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
   <span class="s">'Accept'</span><span class="p">:</span> <span class="s">'application/json'</span>
 <span class="p">}</span>
@@ -192,7 +194,7 @@ Accept: application/json
   </span><span class="s2">"content_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"document_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"email_document_supertype"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"first_published_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-09-04T13:05:48Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"first_published_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-09-04T13:37:37Z"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"government_document_supertype"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"navigation_document_supertype"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
@@ -200,16 +202,16 @@ Accept: application/json
     </span><span class="s2">"string"</span><span class="w">
   </span><span class="p">],</span><span class="w">
   </span><span class="s2">"phase"</span><span class="p">:</span><span class="w"> </span><span class="s2">"alpha"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"public_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-09-04T13:05:48Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"public_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-09-04T13:37:37Z"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"publishing_app"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"rendering_app"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"schema_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-09-04T13:05:48Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-09-04T13:37:37Z"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"user_journey_document_supertype"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"withdrawn_notice"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="s2">"explanation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"withdrawn_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-09-04T13:05:48Z"</span><span class="w">
+    </span><span class="s2">"withdrawn_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-09-04T13:37:37Z"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="s2">"publishing_request_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -223,7 +225,7 @@ Accept: application/json
         </span><span class="s2">"details"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
         </span><span class="s2">"document_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"public_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-09-04T13:05:48Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"public_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-09-04T13:37:37Z"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"schema_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"withdrawn"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
@@ -239,7 +241,7 @@ Accept: application/json
         </span><span class="s2">"details"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
         </span><span class="s2">"document_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"public_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-09-04T13:05:48Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"public_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-09-04T13:37:37Z"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"schema_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"withdrawn"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
@@ -297,7 +299,7 @@ This operation does not require authentication
 <p><summary>Sample JSON</summary></p>
 <div class="highlight"><pre class="highlight json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"explanation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"withdrawn_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-09-04T13:05:48Z"</span><span class="w">
+  </span><span class="s2">"withdrawn_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-09-04T13:37:37Z"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p></details></p>
@@ -338,7 +340,7 @@ This operation does not require authentication
   </span><span class="s2">"details"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
   </span><span class="s2">"document_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"public_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-09-04T13:05:48Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"public_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-09-04T13:37:37Z"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"schema_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"withdrawn"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
@@ -439,7 +441,7 @@ This operation does not require authentication
   </span><span class="s2">"content_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"document_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"email_document_supertype"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"first_published_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-09-04T13:05:48Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"first_published_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-09-04T13:37:37Z"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"government_document_supertype"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"navigation_document_supertype"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
@@ -447,16 +449,16 @@ This operation does not require authentication
     </span><span class="s2">"string"</span><span class="w">
   </span><span class="p">],</span><span class="w">
   </span><span class="s2">"phase"</span><span class="p">:</span><span class="w"> </span><span class="s2">"alpha"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"public_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-09-04T13:05:48Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"public_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-09-04T13:37:37Z"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"publishing_app"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"rendering_app"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"schema_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-09-04T13:05:48Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-09-04T13:37:37Z"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"user_journey_document_supertype"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"withdrawn_notice"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="s2">"explanation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"withdrawn_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-09-04T13:05:48Z"</span><span class="w">
+    </span><span class="s2">"withdrawn_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-09-04T13:37:37Z"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="s2">"publishing_request_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -470,7 +472,7 @@ This operation does not require authentication
         </span><span class="s2">"details"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
         </span><span class="s2">"document_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"public_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-09-04T13:05:48Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"public_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-09-04T13:37:37Z"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"schema_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"withdrawn"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
@@ -486,7 +488,7 @@ This operation does not require authentication
         </span><span class="s2">"details"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
         </span><span class="s2">"document_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"public_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-09-04T13:05:48Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"public_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-09-04T13:37:37Z"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"schema_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"withdrawn"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
