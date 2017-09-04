@@ -12,7 +12,7 @@ The GOV.UK Content API is a JSON [RESTful](https://en.wikipedia.org/wiki/Represe
 
 ## Before you start
 
-Read the [reference documentation](./reference.html) for a better understanding of the various endpoints made available by the GOV.UK Content API. The documentation contains further detail of the expected structure of the responses from the API and the expected use of data returned in the response.
+Read the [reference documentation](/govuk-content-api-docs/reference.html) for a better understanding of the various endpoints made available by the GOV.UK Content API. The documentation contains further detail of the expected structure of the responses from the API and the expected use of data returned in the response.
 
 It's useful to have some understanding of how RESTful APIs use HTTP verbs such as `POST`, `GET`,  `PUT` and `DELETE` to retrieve and modify resources at particular URIs.
 
