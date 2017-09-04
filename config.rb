@@ -64,3 +64,4 @@ config[:tech_docs] = YAML.load_file('config/tech-docs.yml')
 activate :unique_identifier
 
 activate :relative_assets
+set :relative_links, true
