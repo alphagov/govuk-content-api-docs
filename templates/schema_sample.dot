@@ -1,6 +1,6 @@
 <details>
 
-<summary>JSON Schema</summary>
+<summary>Sample JSON</summary>
 
 ```json
 {{=JSON.stringify(data.schema,null,2)}}
