@@ -84,15 +84,6 @@
         <ul>
           <li>
             <a href="#parameters">Parameters</a>
-            <ul>
-              <li>
-                <ul>
-                  <li>
-                    <a href="#path">path</a>
-                  </li>
-                </ul>
-              </li>
-            </ul>
           </li>
           <li>
             <a href="#code-samples">Code Samples</a>
@@ -173,6 +164,8 @@
 <p><em>Access a content item by path</em></p>
 
 <p>The primary means to access content that is hosted on GOV.UK.</p>
+
+<p>This request does not require authentication.</p>
 <h3 id="parameters">Parameters</h3><div class="table-container">
       <table>
         <tr>
@@ -187,14 +180,11 @@
 <td>path</td>
 <td>string</td>
 <td>false</td>
-<td>The path parameter is used to identify a content item resource.</td>
+<td>The path parameter is used to identify a content item resource.   This parameter is the same value as the path in the URL for the content on GOV.UK.</td>
 </tr>
 
       </table>
-    </div><h5 id="path">path</h5>
-<p>The path parameter is used to identify a content item resource.<br>
-This parameter is the same value as the path in the URL for the content on GOV.UK.  </p>
-<h3 id="code-samples">Code Samples</h3>
+    </div><h3 id="code-samples">Code Samples</h3>
 <p><details></p>
 <h4 id="http">HTTP</h4><div class="highlight"><pre class="highlight http"><code><span class="nf">GET</span> <span class="nn">https://www.gov.uk/api/content/{path}</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">Host</span><span class="p">:</span> <span class="s">www.gov.uk</span>
@@ -540,11 +530,7 @@ Accept: application/json
 </tr>
 
       </table>
-    </div>
-<aside class="success">
-This operation does not require authentication
-</aside>
-<h1 id="schemas">Schemas</h1><h2 id="withdrawnnotice">WithdrawnNotice</h2>
+    </div><h1 id="schemas">Schemas</h1><h2 id="withdrawnnotice">WithdrawnNotice</h2>
 <p><a name="schemawithdrawnnotice"></a></p>
 
 <p><details></p>
