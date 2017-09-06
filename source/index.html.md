@@ -40,7 +40,7 @@ This endpoint responds with a resource containing all the information needed to 
 
 #### `GET /content/{path}` response structure
 
-The JSON response contains metadata about the resource, suchas when it was published and what locale the information corresponds to:
+The JSON response contains metadata about the resource, such as when it was published and what locale the information corresponds to:
 
 ```json
  "title" : "Businesses and charging VAT",
@@ -139,4 +139,3 @@ can be visited at a distinct path.
 While the `details` fields of the API response may differ per format, the _metadata_ fields, those at the top level of the JSON response, are generally very similar as they describe the content resource, eg. when the item was last updated.
 
 The [reference documentation](reference.html#contentitem) contains much more detail on each of the fields in the API response.
-
