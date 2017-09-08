@@ -28,9 +28,17 @@ Aenean nec quam pharetra, rutrum nibh sit amet, tincidunt metus. Praesent ullamc
 
 Maecenas ipsum felis, molestie eget tellus sed, efficitur rhoncus enim. Curabitur ac augue in lorem volutpat bibendum. Donec augue tellus, fermentum in nisl nec, aliquet lacinia turpis. Mauris volutpat hendrerit viverra. In et tortor lobortis, auctor nunc vel, dapibus ex. Nulla facilisi. Duis et sodales dui. Pellentesque aliquam ornare finibus. Aliquam egestas lacinia quam non convallis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In turpis lectus, venenatis dictum ullamcorper non, pharetra sed metus. Pellentesque at sollicitudin massa, et viverra dolor. Aliquam velit sapien, ullamcorper sit amet ultrices eget, pellentesque a magna.
 
-## Support/community
+## Support
 
-Mauris cursus augue libero, a vehicula ante scelerisque ut. Morbi condimentum erat pharetra nisl efficitur placerat. Praesent convallis viverra ipsum. In hac habitasse platea dictumst. Phasellus commodo lorem convallis, feugiat lacus in, commodo est. Fusce suscipit molestie nunc, et auctor nunc lacinia id. Etiam mollis nisl nulla, eu porta ligula cursus et. Sed at tellus posuere, semper nibh ut, ornare nibh.
+Content API is currently in a [beta](https://www.gov.uk/help/beta) phase and may
+be subject to changes and improvements.
+
+If you have any problems with this API or would like to report an issue we have
+a dedicated support email of: [insert email](#). This email is monitored during
+office hours.
+
+To be informed of changes to the API and support status please join our
+[mailing list](#) <- Will we have one?
 
 ## Customer references and case studies
 
