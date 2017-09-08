@@ -22,7 +22,9 @@ Sed commodo non diam a semper. Nullam ut lectus ipsum. Phasellus vitae rutrum du
 
 ## Rate limiting and record limits
 
-Aenean nec quam pharetra, rutrum nibh sit amet, tincidunt metus. Praesent ullamcorper tortor a felis malesuada cursus. Nam varius, turpis sed commodo lacinia, eros quam feugiat nisl, nec malesuada lorem mi non arcu. Cras ac molestie mi. Sed vel tristique nunc. Morbi ipsum arcu, scelerisque ac mauris eget, tristique iaculis felis. Aliquam imperdiet, lacus dignissim vehicula iaculis, leo tellus finibus augue, eu tincidunt quam enim vel tortor. Ut facilisis lectus ipsum, ut sodales tellus ullamcorper ac. Donec iaculis iaculis viverra. Ut tristique blandit elit, sed iaculis enim.
+There is a maximum limit of 10 requests per second per client. If you exceed this, your request won't be processed until the limit is no longer exceeded and you may see timeout errors.
+
+We think this should be sufficient for all users of the API but if you believe you need the limit increasing you can [contact support](#support-community).
 
 ## Versioning
 
