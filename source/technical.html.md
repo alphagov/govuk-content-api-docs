@@ -26,7 +26,9 @@ Aenean nec quam pharetra, rutrum nibh sit amet, tincidunt metus. Praesent ullamc
 
 ## Versioning
 
-Maecenas ipsum felis, molestie eget tellus sed, efficitur rhoncus enim. Curabitur ac augue in lorem volutpat bibendum. Donec augue tellus, fermentum in nisl nec, aliquet lacinia turpis. Mauris volutpat hendrerit viverra. In et tortor lobortis, auctor nunc vel, dapibus ex. Nulla facilisi. Duis et sodales dui. Pellentesque aliquam ornare finibus. Aliquam egestas lacinia quam non convallis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In turpis lectus, venenatis dictum ullamcorper non, pharetra sed metus. Pellentesque at sollicitudin massa, et viverra dolor. Aliquam velit sapien, ullamcorper sit amet ultrices eget, pellentesque a magna.
+This API is currently in beta, so versioning isn't in place at the moment. We have plans to add versioning in future releases, and each new version of this documentation will cover the changes that have been made to the API.
+
+You can be notified of new changes to the API by [getting in contact](#support/community) with the team.
 
 ## Support/community
 
