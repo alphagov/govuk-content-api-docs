@@ -14,6 +14,24 @@ var options = {
   ],
   user_templates: 'templates',
   sample: true,
+  templateCallback: function(templateName,stage,data) {
+    if (templateName == "schema_sample" && stage == "pre") {
+      appendSchemaDescription(data);
+    }
+    return data;
+  }
+}
+
+function appendSchemaDescription(data) {
+  var schemas = data.openapi.components.schemas;
+  for(name in schemas) {
+    var schema = schemas[name];
+    if (schema.example != data.schema || !schema.description) {
+      continue;
+    }
+
+    data.append = schema.description + "\n\n";
+  }
 }
 
 converter.convert(api, options, function(err, output) {
