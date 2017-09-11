@@ -77,29 +77,10 @@
     <a href="#about-the-gov-uk-content-api">About the GOV.UK Content API</a>
     <ul>
       <li>
-        <a href="#before-you-start">Before you start</a>
+        <a href="#quick-start">Quick start</a>
       </li>
       <li>
-        <a href="#quick-start-guide-and-examples">Quick start guide and examples</a>
-        <ul>
-          <li>
-            <a href="#get-content-by-path">GET content by path</a>
-            <ul>
-              <li>
-                <a href="#running-the-example">Running the example</a>
-              </li>
-              <li>
-                <a href="#get-content-path-response-structure">GET /content/{path} response structure</a>
-              </li>
-              <li>
-                <a href="#format-specific-response-fields">Format specific response fields.</a>
-              </li>
-              <li>
-                <a href="#metadata-fields">Metadata fields</a>
-              </li>
-            </ul>
-          </li>
-        </ul>
+        <a href="#support">Support</a>
       </li>
     </ul>
   </li>
@@ -116,109 +97,47 @@
             </div>
 
             <h1 id="about-the-gov-uk-content-api">About the GOV.UK Content API</h1>
-<p>The GOV.UK Content API provides a simple and consistent way to request GOV.UK content as structured data in a predictable format.</p>
+<p>The GOV.UK Content API makes it easy to access the data used to render content
+on <a href="https://www.gov.uk">https://www.gov.uk</a>. For any page on GOV.UK you can
+lookup the <a href="#quick-start">path</a> to the content to access the data and metadata
+of the page.</p>
 
-<p>The API accepts HTTP requests and responds with <a href="https://en.wikipedia.org/wiki/JSON">JSON</a> data containing the same published content as you see presented on GOV.UK. The content retrieved via the API is current, it is published at the same time as the information available on the GOV.UK website.</p>
+<p>This API is useful for applications that incorporate content from GOV.UK and
+for keeping that content up to date. This provides a more accessible and
+predictable interface than what can be achieved through scraping HTML pages.</p>
 
-<p>The GOV.UK Content API is a JSON <a href="https://en.wikipedia.org/wiki/Representational_state_transfer">RESTful</a> API, an architectural software style in which HTTP requests are used to provide a standard approach to requesting and modifying data.</p>
-<h2 id="before-you-start">Before you start</h2>
-<p>Read the <a href="reference.html">reference documentation</a> for a better understanding of the various endpoints made available by the GOV.UK Content API. The documentation contains further detail of the expected structure of the responses from the API and the expected use of data returned in the response.</p>
+<p>This API provides access to content that is currently hosted on GOV.UK if you
+wish to access historic content this can currently be done through the
+<a href="http://webarchive.nationalarchives.gov.uk/*/https://www.gov.uk/">National Archives</a>. Historic data may be made available through future
+developments to this API.</p>
 
-<p>It&rsquo;s useful to have some understanding of how RESTful APIs use HTTP verbs such as <code>POST</code>, <code>GET</code>,  <code>PUT</code> and <code>DELETE</code> to retrieve and modify resources at particular URIs.</p>
-<h2 id="quick-start-guide-and-examples">Quick start guide and examples</h2>
-<p>The GOV.UK Content API can be interrogated using the command line utilities <code>curl</code> or <code>wget</code>. These provide a quick way of seeing the JSON API responses prior to developing more complex integrations.</p>
-<h3 id="get-content-by-path"><code>GET</code> content by <code>path</code></h3>
-<p>The following example makes an HTTP <code>GET</code> request for published content from the GOV.UK Content API via the <a href="reference.html#get-path"><code>/content/{path}</code></a>  <em>endpoint</em>.</p>
+<p>The API is accessed via <a href="https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol">HTTP</a> and returns data in a <a href="https://en.wikipedia.org/wiki/JSON">JSON</a> format. The
+<a href="reference.html">reference documentation</a> provides a thorough overview of the
+endpoints and the response format.</p>
+<h2 id="quick-start">Quick start</h2>
+<p>You can use this API to look up the data that is used to render content on GOV.UK</p>
 
-<p>It responds with the content identified by the <code>path</code> portion of the URI, in this case <code>/vat-businesses</code>. This is referred to as the path <em>parameter</em> which acts as an identifier for a content resource.</p>
+<p>To get started:</p>
 
-<p>The path parameter value also corresponds with the URL <em>path</em> of the matching content on GOV.UK. ie <a href="https://www.gov.uk/vat-businesses">https://www.gov.uk/vat-businesses</a>.</p>
-<h4 id="running-the-example">Running the example</h4>
-<p>Run the following command in a terminal emulator to see a live JSON response from the GOV.UK Content API.</p>
-<div class="highlight"><pre class="highlight shell"><code>curl <span class="nt">-X</span> GET https://www.gov.uk/api/content/vat-businesses <span class="nt">-H</span> <span class="s1">'Accept: application/json'</span> | json_pp
-</code></pre></div>
-<p>This endpoint responds with a resource containing all the information needed to display a web page on GOV.UK.</p>
-<h4 id="get-content-path-response-structure"><code>GET /content/{path}</code> response structure</h4>
-<p>The JSON response contains metadata about the resource, such as when it was published and what locale the information corresponds to:</p>
-<div class="highlight"><pre class="highlight json"><code><span class="w"> </span><span class="s2">"title"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Businesses and charging VAT"</span><span class="p">,</span><span class="w">
- </span><span class="s2">"public_updated_at"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-12-19T15:27:25Z"</span><span class="p">,</span><span class="w">
- </span><span class="s2">"base_path"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"/vat-businesses"</span><span class="p">,</span><span class="w">
- </span><span class="s2">"locale"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="p">,</span><span class="w">
- </span><span class="s2">"api_path"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"/api/content/vat-businesses"</span><span class="w">
-</span></code></pre></div>
-<p>There are also contextual links to other related content resources contained within the response:</p>
-<div class="highlight"><pre class="highlight json"><code><span class="w">  </span><span class="s2">"links"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"mainstream_browse_pages"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-         </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"public_updated_at"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-06-24T13:56:39Z"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"base_path"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"/browse/tax/vat"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"api_path"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"/api/content/browse/tax/vat"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"locale"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="p">,</span><span class="w">
-            </span><span class="err">...</span><span class="w">
-            </span><span class="s2">"description"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Includes online returns, rates, charging and record keeping"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"title"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"VAT"</span><span class="p">,</span><span class="w">
-         </span><span class="p">}</span><span class="w">
-      </span><span class="p">],</span><span class="w">
-      </span><span class="s2">"parent"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-         </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"title"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"VAT"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"description"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Includes online returns, rates, charging and record keeping"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"links"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-               </span><span class="s2">"parent"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-                  </span><span class="p">{</span><span class="w">
-                     </span><span class="s2">"public_updated_at"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-04-08T10:48:40Z"</span><span class="p">,</span><span class="w">
-                     </span><span class="s2">"api_path"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"/api/content/browse/tax"</span><span class="p">,</span><span class="w">
-                     </span><span class="s2">"locale"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="p">,</span><span class="w">
-                     </span><span class="err">...</span><span class="w">
-                     </span><span class="s2">"base_path"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"/browse/tax"</span><span class="p">,</span><span class="w">
-                     </span><span class="s2">"title"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Money and tax"</span><span class="p">,</span><span class="w">
-                     </span><span class="s2">"description"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Includes VAT, debt and inheritance tax"</span><span class="w">
-                  </span><span class="p">}</span><span class="w">
-          </span><span class="err">...</span><span class="w">
-</span></code></pre></div>
-<p>The response also contains the content body:</p>
-<div class="highlight"><pre class="highlight json"><code><span class="w">  </span><span class="s2">"body"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"</span><span class="se">\n</span><span class="s2">&lt;div class=</span><span class="se">\"</span><span class="s2">highlight-answer</span><span class="se">\"</span><span class="s2">&gt;</span><span class="se">\n</span><span class="s2">&lt;p&gt;The standard &lt;abbr title=</span><span class="se">\"</span><span class="s2">Value Added Tax</span><span class="se">\"</span><span class="s2">&gt;VAT&lt;/abbr&gt; rate is &lt;em&gt;20%&lt;/em&gt;&lt;/p&gt;</span><span class="se">\n</span><span class="s2">&lt;/div&gt;..."</span><span class="w">
-</span></code></pre></div><h4 id="format-specific-response-fields">Format specific response fields.</h4>
-<p>Different styles of content on GOV.UK are displayed in distinct <em>formats</em>.</p>
+<ol>
+<li>Pick a page on GOV.UK eg. <a href="https://www.gov.uk/take-pet-abroad">https://www.gov.uk/take-pet-abroad</a></li>
+<li>Make a note of the path eg. <code>/take-pet-abroad</code></li>
+<li>Using a tool such as <a href="https://curl.haxx.se/">curl</a> or <a href="https://www.getpostman.com/">Postman</a> make a GET request to <code>https://www.gov.uk/api/content/take-pet-abroad</code></li>
+<li>You’ll receive a JSON response, the fields for this are explained in the <a href="reference.html">reference documentation</a></li>
+</ol>
 
-<p>For example, simple guidance on current VAT rates can be succinctly displayed in a single page format.
-Whereas <a href="https://www.gov.uk/guidance/the-highway-code">The Highway Code</a> is ordered into multiple sections across several pages.</p>
+<p>For example, using <a href="https://curl.haxx.se/">curl</a> and the <a href="https://stedolan.github.io/jq/">jq</a> utility:</p>
+<div class="highlight"><pre class="highlight shell"><code>curl https://www.gov.uk/api/content/take-pet-abroad | jq
+</code></pre></div><h2 id="support">Support</h2>
+<p>Content API is currently in a <a href="https://www.gov.uk/help/beta">beta</a> phase and may
+be subject to changes and improvements.</p>
 
-<p>The GOV.UK Content API exposes these format specific differences in a discrete field called <code>details</code>.</p>
+<p>If you experience any issues or have questions regarding the Content API please:</p>
 
-<p>In the example above the <code>body</code> field containing the content body is embedded in the <code>details</code> field.</p>
-
-<p>Compare this to the <code>details</code> field from the API response for The Highway Code:</p>
-<div class="highlight"><pre class="highlight shell"><code>curl <span class="nt">-X</span> GET https://www.gov.uk/api/content/guidance/the-highway-code <span class="nt">-H</span> <span class="s1">'Accept: application/json'</span> | json_pp
-</code></pre></div><div class="highlight"><pre class="highlight json"><code><span class="s2">"details"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-  </span><span class="s2">"body"</span><span class="p">:</span><span class="w"> </span><span class="s2">"</span><span class="se">\n</span><span class="s2">&lt;div role=</span><span class="se">\"</span><span class="s2">note</span><span class="se">\"</span><span class="s2"> aria-label=</span><span class="se">\"</span><span class="s2">Information</span><span class="se">\"</span><span class="s2"> class=</span><span class="se">\"</span><span class="s2">application-notice info-notice</span><span class="se">\"</span><span class="s2">&gt;</span><span class="se">\n</span><span class="s2">&lt;p&gt;There&amp;rsquo;s a different version of The Highway Code for &lt;a rel=</span><span class="se">\"</span><span class="s2">external</span><span class="se">\"</span><span class="s2"> href=</span><span class="se">\"</span><span class="s2">https://www.nidirect.gov.uk/articles/highway-code</span><span class="se">\"</span><span class="s2">&gt;Northern Ireland&lt;/a&gt;.&lt;/p&gt;</span><span class="se">\n</span><span class="s2">&lt;/div&gt;</span><span class="se">\n\n</span><span class="s2">&lt;p&gt;You can &lt;a rel=</span><span class="se">\"</span><span class="s2">external</span><span class="se">\"</span><span class="s2"> href=</span><span class="se">\"</span><span class="s2">http://www.safedrivingforlife.info/shop/product/official-highway-code-new-edition-2015</span><span class="se">\"</span><span class="s2">&gt;buy The Highway Code&lt;/a&gt; from the Safe Driving for Life website, or from most high street and online bookshops, app and eBook stores..."</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"child_section_groups"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Contents"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"child_sections"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Introduction"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Who The Highway Code is for, how it's worded, and the consequences of not following the rules. "</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"base_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/guidance/the-highway-code/introduction"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Rules for pedestrians (1 to 35)"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The Highway Code rules for pedestrians, including general guidance, crossing the road, crossings, and situations needing extra care."</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"base_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/guidance/the-highway-code/rules-for-pedestrians-1-to-35"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Rules for users of powered wheelchairs and mobility scooters (36 to 46) "</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The Highway Code rules for powered wheelchairs and mobility scooters, including on pavements and on the road."</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"base_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/guidance/the-highway-code/rules-for-users-of-powered-wheelchairs-and-mobility-scooters-36-to-46"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-  </span><span class="err">...</span><span class="w">
-</span></code></pre></div>
-<p>The chaptered content of this piece of guidance is split into multiple pages and the API response is structured so that these pages, or content resources,
-can be visited at a distinct path.</p>
-<h4 id="metadata-fields">Metadata fields</h4>
-<p>While the <code>details</code> fields of the API response may differ per format, the <em>metadata</em> fields, those at the top level of the JSON response, are generally very similar as they describe the content resource, eg. when the item was last updated.</p>
-
-<p>The <a href="reference.html#contentitem">reference documentation</a> contains much more detail on each of the fields in the API response.</p>
+<ul>
+<li><strong>If you are a government department:</strong> Raise a ticket with <a href="https://support.publishing.service.gov.uk">GOV.UK Support</a></li>
+<li><strong>Otherwise:</strong> <a href="https://www.gov.uk/contact/govuk">Contact GOV.UK</a> with your query</li>
+</ul>
 
           </main>
 

@@ -78,18 +78,23 @@
     <ul>
       <li>
         <a href="#security-and-compliance">Security and compliance</a>
+        <ul>
+          <li>
+            <a href="#reporting-vulnerabilites">Reporting vulnerabilites</a>
+          </li>
+          <li>
+            <a href="#https">HTTPS</a>
+          </li>
+          <li>
+            <a href="#security-patches">Security patches</a>
+          </li>
+        </ul>
       </li>
       <li>
         <a href="#rate-limiting-and-record-limits">Rate limiting and record limits</a>
       </li>
       <li>
         <a href="#versioning">Versioning</a>
-      </li>
-      <li>
-        <a href="#support-community">Support/community</a>
-      </li>
-      <li>
-        <a href="#authors-and-acknowledgments">Authors and acknowledgments</a>
       </li>
     </ul>
   </li>
@@ -105,18 +110,33 @@
               This API is work in progress and not yet ready for use.
             </div>
 
-            <h1 id="technical-information">Technical Information</h1><h2 id="security-and-compliance">Security and compliance</h2>
-<p>Sed commodo non diam a semper. Nullam ut lectus ipsum. Phasellus vitae rutrum dui. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus sed tincidunt lorem. Sed non odio nec urna gravida consequat. Curabitur quis condimentum mauris, at gravida quam. Donec a sapien placerat, pretium magna et, dapibus neque. Curabitur eget placerat nisi, at tincidunt est. Maecenas molestie felis id orci luctus, eget ornare odio facilisis. Ut ullamcorper fringilla varius. Donec ut quam nulla. Maecenas eget diam in orci gravida lobortis. Sed eu posuere urna. Nunc condimentum odio ante, et tristique mi ultrices id. Sed ut nunc diam.</p>
-<h2 id="rate-limiting-and-record-limits">Rate limiting and record limits</h2>
-<p>There is a maximum limit of 10 requests per second per client. If you exceed this, your request won&rsquo;t be processed until the limit is no longer exceeded and you may see timeout errors.</p>
+            <h1 id="technical-information">Technical Information</h1><h2 id="security-and-compliance">Security and compliance</h2><h3 id="reporting-vulnerabilites">Reporting vulnerabilites</h3>
+<p>If you believe there is a security issue with the GOV.UK Content API, please
+<a href="./#support">contact us immediately</a></p>
 
-<p>We think this should be sufficient for all users of the API but if you believe you need the limit increasing you can <a href="#support-community">contact support</a>.</p>
+<p>Please don’t disclose the suspected breach publicly until it has been fixed.</p>
+<h3 id="https">HTTPS</h3>
+<p>GOV.UK Content API follows government HTTPS security guidelines. The Hypertext
+Transfer Protocol Secure (HTTPS), which involves the Transport Layer Security
+(TLS) protocol is used by the platform to provide secure connections.</p>
+<h3 id="security-patches">Security patches</h3>
+<p>We treat security vulnerabilities in the platform and library code in the GOV.UK
+Content API as highest priority. The API codebase will be updated as soon as
+possible when vulnerabilities are discovered or reported.</p>
+
+<p>We frequently upgrade the framework and library code in the GOV.UK Content API
+to latest versions for security and feature enhancements.</p>
+<h2 id="rate-limiting-and-record-limits">Rate limiting and record limits</h2>
+<p>There is a maximum limit of 10 requests per second per client. If you exceed
+this, your request won&rsquo;t be processed until the limit is no longer exceeded
+and you may see timeout errors.</p>
+
+<p>We think this should be sufficient for all users of the API but if you believe
+you need the limit increasing you can <a href="./#support">contact support</a>.</p>
 <h2 id="versioning">Versioning</h2>
-<p>Maecenas ipsum felis, molestie eget tellus sed, efficitur rhoncus enim. Curabitur ac augue in lorem volutpat bibendum. Donec augue tellus, fermentum in nisl nec, aliquet lacinia turpis. Mauris volutpat hendrerit viverra. In et tortor lobortis, auctor nunc vel, dapibus ex. Nulla facilisi. Duis et sodales dui. Pellentesque aliquam ornare finibus. Aliquam egestas lacinia quam non convallis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In turpis lectus, venenatis dictum ullamcorper non, pharetra sed metus. Pellentesque at sollicitudin massa, et viverra dolor. Aliquam velit sapien, ullamcorper sit amet ultrices eget, pellentesque a magna.</p>
-<h2 id="support-community">Support/community</h2>
-<p>Mauris cursus augue libero, a vehicula ante scelerisque ut. Morbi condimentum erat pharetra nisl efficitur placerat. Praesent convallis viverra ipsum. In hac habitasse platea dictumst. Phasellus commodo lorem convallis, feugiat lacus in, commodo est. Fusce suscipit molestie nunc, et auctor nunc lacinia id. Etiam mollis nisl nulla, eu porta ligula cursus et. Sed at tellus posuere, semper nibh ut, ornare nibh.</p>
-<h2 id="authors-and-acknowledgments">Authors and acknowledgments</h2>
-<p>Sed vel justo hendrerit, bibendum nisl ac, condimentum nisi. Integer eros ex, sollicitudin vitae ex sed, faucibus tincidunt arcu. Etiam condimentum sodales semper. Praesent et ligula quis neque varius mollis. Nam ornare efficitur justo, ac egestas libero commodo vel. Interdum et malesuada fames ac ante ipsum primis in faucibus. Etiam tincidunt pretium mi non accumsan. Sed quis interdum dolor, sed ullamcorper risus. Sed maximus diam ac nunc auctor, a mollis risus mollis. Aliquam quis tempor justo. Ut in erat orci. Curabitur venenatis varius velit, eget vehicula metus fermentum in. Integer lacus nisi, aliquet et rutrum in, fermentum ultrices turpis. Integer varius quam ac nulla hendrerit facilisis. Nullam mollis sit amet purus tempus pellentesque. Ut vitae tortor eu ex aliquam lobortis.</p>
+<p>This API is currently beta software and may be subject to changes and
+improvements as we learn from usage. We intend to introduce versioning into
+this API as part of the process to leave beta.</p>
 
           </main>
 
