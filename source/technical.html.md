@@ -6,7 +6,21 @@ title: GOV.UK Content API Documentation
 
 ## Security and compliance
 
-Sed commodo non diam a semper. Nullam ut lectus ipsum. Phasellus vitae rutrum dui. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus sed tincidunt lorem. Sed non odio nec urna gravida consequat. Curabitur quis condimentum mauris, at gravida quam. Donec a sapien placerat, pretium magna et, dapibus neque. Curabitur eget placerat nisi, at tincidunt est. Maecenas molestie felis id orci luctus, eget ornare odio facilisis. Ut ullamcorper fringilla varius. Donec ut quam nulla. Maecenas eget diam in orci gravida lobortis. Sed eu posuere urna. Nunc condimentum odio ante, et tristique mi ultrices id. Sed ut nunc diam.
+### Reporting vulnerabilites
+
+If you believe GOV.UK Content API security has been breached, contact us immediately at govuk-content-api-support@digital.cabinet-office.gov.uk.
+
+Please don’t disclose the suspected breach publically until it has been fixed.
+
+### HTTPS
+
+GOV.UK Content API follows government HTTPS security guidelines. The Hypertext Transfer Protocol Secure (HTTPS), which involves the Transport Layer Security (TLS) protocol is used by the platform to provide secure connections.
+
+### Security patches
+
+We treat security vulnerabilities in the platform and library code in the GOV.UK Content API as highest priority. The API codebase will be updated as soon as possible when vulnerabilites are discovered or reported.
+
+We frequently upgrade the framework and library code in the GOV.UK Content API to latest versions for security and feature enhancements.
 
 ## Rate limiting and record limits
 
