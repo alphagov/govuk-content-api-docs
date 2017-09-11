@@ -30,3 +30,16 @@ For example, using [curl](https://curl.haxx.se/) and the [jq](https://stedolan.g
 ```shell
 curl https://www.gov.uk/api/content/take-pet-abroad | jq
 ```
+
+## Support
+
+Content API is currently in a [beta](https://www.gov.uk/help/beta) phase and may
+be subject to changes and improvements.
+
+If you experience any issues or have questions regarding the Content API please:
+
+- **If you are a government department:** Raise a ticket with [GOV.UK Support][]
+- **Otherwise:** [Contact GOV.UK][] with your query
+
+[GOV.UK Support]: https://support.publishing.service.gov.uk
+[Contact GOV.UK]: https://www.gov.uk/contact/govuk

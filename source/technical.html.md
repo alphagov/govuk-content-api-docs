@@ -34,18 +34,6 @@ This API is currently in beta, so versioning isn't in place at the moment. We ha
 
 You can be notified of new changes to the API by [getting in contact](#support/community) with the team.
 
-## Support
-
-Content API is currently in a [beta](https://www.gov.uk/help/beta) phase and may
-be subject to changes and improvements.
-
-If you have any problems with this API or would like to report an issue we have
-a dedicated support email of: [insert email](#). This email is monitored during
-office hours.
-
-To be informed of changes to the API and support status please join our
-[mailing list](#) <- Will we have one?
-
 ## Authors and acknowledgments
 
 GOV.UK API for Content Team: Emma Beynon, Kevin Dew, Ben Hazell, Steve Laing, Thomas Leese, Hong Nguyen, Patrick Opoosun, Antonia Simmons, Felix Tomlinson
