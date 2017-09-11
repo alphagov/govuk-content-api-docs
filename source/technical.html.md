@@ -38,4 +38,4 @@ Mauris cursus augue libero, a vehicula ante scelerisque ut. Morbi condimentum er
 
 ## Authors and acknowledgments
 
-Sed vel justo hendrerit, bibendum nisl ac, condimentum nisi. Integer eros ex, sollicitudin vitae ex sed, faucibus tincidunt arcu. Etiam condimentum sodales semper. Praesent et ligula quis neque varius mollis. Nam ornare efficitur justo, ac egestas libero commodo vel. Interdum et malesuada fames ac ante ipsum primis in faucibus. Etiam tincidunt pretium mi non accumsan. Sed quis interdum dolor, sed ullamcorper risus. Sed maximus diam ac nunc auctor, a mollis risus mollis. Aliquam quis tempor justo. Ut in erat orci. Curabitur venenatis varius velit, eget vehicula metus fermentum in. Integer lacus nisi, aliquet et rutrum in, fermentum ultrices turpis. Integer varius quam ac nulla hendrerit facilisis. Nullam mollis sit amet purus tempus pellentesque. Ut vitae tortor eu ex aliquam lobortis.
+GOV.UK API for Content Team: Emma Beynon, Kevin Dew, Ben Hazell, Steve Laing, Thomas Leese, Hong Nguyen, Patrick Opoosun, Antonia Simmons, Felix Tomlinson
