@@ -35,14 +35,16 @@
       </div>
 
       <div class="app-pane__body"<%= " data-module=\"#{yield_content(:toc_module)}\"" if content_for? :toc_module %>>
+        <% unless current_page.url == "/404.html" %>
         <div class="app-pane__toc">
           <div class="toc" data-module="table-of-contents">
             <a href="#" class="toc__close js-toc-close" aria-controls="toc" aria-label="Hide table of contents"></a>
             <nav id="toc" class="js-toc-list toc__list" aria-labelledby="toc-heading">
-              <%= yield_content :sidebar %>
+                <%= yield_content :sidebar %>
             </nav>
           </div>
         </div>
+        <% end %>
 
         <div class="app-pane__content toc-open-disabled">
           <main id="content" class="technical-documentation" data-module="anchored-headings">
