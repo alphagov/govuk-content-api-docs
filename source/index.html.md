@@ -14,9 +14,9 @@ The API is provided as a [JSON](https://en.wikipedia.org/wiki/JSON) [RESTful](ht
 
 Read the [reference documentation](reference.html) for a better understanding of the various endpoints made available by the API. The documentation contains further detail of the expected structure of the responses from the API and the expected use of data returned in the response. It may be useful to have some understanding of how RESTful APIs use HTTP verbs such as `POST`, `GET`,  `PUT` and `DELETE` to retrieve and modify resources at particular URIs.
 
-## Quick start guide and examples
+## Quick start
 
-You can use this API to look up the data that is used to power content on GOV.UK
+You can use this API to look up the data that is used to render content on GOV.UK
 
 To get started:
 
