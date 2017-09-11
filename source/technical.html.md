@@ -8,19 +8,25 @@ title: GOV.UK Content API Documentation
 
 ### Reporting vulnerabilites
 
-If you believe GOV.UK Content API security has been breached, contact us immediately at govuk-content-api-support@digital.cabinet-office.gov.uk.
+If you believe there is a security issue with the GOV.UK Content API, please
+[contact us immediately][support]
 
-Please don’t disclose the suspected breach publically until it has been fixed.
+Please don’t disclose the suspected breach publicly until it has been fixed.
 
 ### HTTPS
 
-GOV.UK Content API follows government HTTPS security guidelines. The Hypertext Transfer Protocol Secure (HTTPS), which involves the Transport Layer Security (TLS) protocol is used by the platform to provide secure connections.
+GOV.UK Content API follows government HTTPS security guidelines. The Hypertext
+Transfer Protocol Secure (HTTPS), which involves the Transport Layer Security
+(TLS) protocol is used by the platform to provide secure connections.
 
 ### Security patches
 
-We treat security vulnerabilities in the platform and library code in the GOV.UK Content API as highest priority. The API codebase will be updated as soon as possible when vulnerabilites are discovered or reported.
+We treat security vulnerabilities in the platform and library code in the GOV.UK
+Content API as highest priority. The API codebase will be updated as soon as
+possible when vulnerabilities are discovered or reported.
 
-We frequently upgrade the framework and library code in the GOV.UK Content API to latest versions for security and feature enhancements.
+We frequently upgrade the framework and library code in the GOV.UK Content API
+to latest versions for security and feature enhancements.
 
 ## Rate limiting and record limits
 
@@ -34,3 +40,4 @@ This API is currently in beta, so versioning isn't in place at the moment. We ha
 
 You can be notified of new changes to the API by [getting in contact](#support/community) with the team.
 
+[support]: ./#support
