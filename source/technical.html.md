@@ -39,8 +39,8 @@ you need the limit increasing you can [contact support][support].
 
 ## Versioning
 
-This API is currently in beta, so versioning isn't in place at the moment. We have plans to add versioning in future releases, and each new version of this documentation will cover the changes that have been made to the API.
-
-You can be notified of new changes to the API by [getting in contact](#support/community) with the team.
+This API is currently beta software and may be subject to changes and
+improvements as we learn from usage. We intend to introduce versioning into
+this API as part of the process to leave beta.
 
 [support]: ./#support
