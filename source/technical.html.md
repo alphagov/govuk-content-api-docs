@@ -34,6 +34,3 @@ This API is currently in beta, so versioning isn't in place at the moment. We ha
 
 You can be notified of new changes to the API by [getting in contact](#support/community) with the team.
 
-## Authors and acknowledgments
-
-GOV.UK API for Content Team: Emma Beynon, Kevin Dew, Ben Hazell, Steve Laing, Thomas Leese, Hong Nguyen, Patrick Opoosun, Antonia Simmons, Felix Tomlinson
