@@ -4,15 +4,23 @@ title: GOV.UK Content API Documentation
 
 # About the GOV.UK Content API
 
-The GOV.UK Content API makes it easy to access the current content from GOV.UK as structured data in a machine readable format. If you require to access historical content, the [National Archives provides an archive of GOV.UK pages](http://webarchive.nationalarchives.gov.uk/*/https://www.gov.uk/), but unfortunately this is not available in an API.
+The GOV.UK Content API makes it easy to access the data used to render content
+on [https://www.gov.uk](https://www.gov.uk). For any page on GOV.UK you can
+lookup the [path](#quick-start) to the content to access the data and metadata
+of the page.
 
-You should use this API if you need to read the current content on GOV.UK in a format more accessible and predictable than scraping HTML pages. By using the API you can expect a consistent response format for each page on GOV.UK making it easy to interpret the content provided without having to worry about keeping up with changes in the format of the HTML pages.
+This API is useful for applications that incorporate content from GOV.UK and
+for keeping that content up to date. This provides a more accessible and
+predictable interface than what can be achieved through scraping HTML pages.
 
-Some examples on where you might use the API are provided in the [Quick Start Guide](#quick-start-guide-and-examples).
+This API provides access to content that is currently hosted on GOV.UK if you
+wish to access historic content this can currently be done through the
+[National Archives][]. Historic data may be made available through future
+developments to this API.
 
-The API is provided as a [JSON](https://en.wikipedia.org/wiki/JSON) [RESTful](https://en.wikipedia.org/wiki/Representational_state_transfer) API, an architectural software style in which HTTP requests are used to provide a standard approach to requesting and modifying data. The API accepts HTTP requests and responds with JSON data containing the same published content as you see presented on GOV.UK.
-
-Read the [reference documentation](reference.html) for a better understanding of the various endpoints made available by the API. The documentation contains further detail of the expected structure of the responses from the API and the expected use of data returned in the response. It may be useful to have some understanding of how RESTful APIs use HTTP verbs such as `POST`, `GET`,  `PUT` and `DELETE` to retrieve and modify resources at particular URIs.
+The API is accessed via [HTTP][] and returns data in a [JSON][] format. The
+[reference documentation](reference.html) provides a thorough overview of the
+endpoints and the response format.
 
 ## Quick start
 
@@ -41,5 +49,8 @@ If you experience any issues or have questions regarding the Content API please:
 - **If you are a government department:** Raise a ticket with [GOV.UK Support][]
 - **Otherwise:** [Contact GOV.UK][] with your query
 
+[National Archives]: http://webarchive.nationalarchives.gov.uk/*/https://www.gov.uk/
+[HTTP]: https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol
+[JSON]: https://en.wikipedia.org/wiki/JSON
 [GOV.UK Support]: https://support.publishing.service.gov.uk
 [Contact GOV.UK]: https://www.gov.uk/contact/govuk
