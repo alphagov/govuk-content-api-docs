@@ -30,9 +30,12 @@ to latest versions for security and feature enhancements.
 
 ## Rate limiting and record limits
 
-There is a maximum limit of 10 requests per second per client. If you exceed this, your request won't be processed until the limit is no longer exceeded and you may see timeout errors.
+There is a maximum limit of 10 requests per second per client. If you exceed
+this, your request won't be processed until the limit is no longer exceeded
+and you may see timeout errors.
 
-We think this should be sufficient for all users of the API but if you believe you need the limit increasing you can [contact support](#support-community).
+We think this should be sufficient for all users of the API but if you believe
+you need the limit increasing you can [contact support][support].
 
 ## Versioning
 
