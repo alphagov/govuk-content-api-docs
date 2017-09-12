@@ -24,7 +24,7 @@ endpoints and the response format.
 
 ## Quick start
 
-You can use this API to look up the data that is used to render content on GOV.UK
+You can use this API to lookup the data that is used to render content on GOV.UK
 
 To get started:
 
