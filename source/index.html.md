@@ -90,8 +90,8 @@ you need the limit increasing you can [contact support](#support).
 ## Versioning
 
 This API is currently beta software and may be subject to changes and
-improvements as we learn from usage. We intend to introduce versioning into
-this API as part of the process to leave beta.
+improvements as we learn from usage. We intend to introduce a versioning
+distinction to the API before we complete the beta phase.
 
 [National Archives]: http://webarchive.nationalarchives.gov.uk/*/https://www.gov.uk/
 [HTTP]: https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol
