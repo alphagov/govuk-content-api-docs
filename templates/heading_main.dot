@@ -5,7 +5,7 @@
 {{? data.servers.length == 1}}
 ## Endpoint
 
-<a href="{{=data.servers[0].url}}">{{=data.servers[0].url}}</a>
+{{=data.servers[0].url}}
 {{??}}
 ## Endpoints
 
