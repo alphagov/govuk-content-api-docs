@@ -1,10 +1,10 @@
 # Host to use for canonical URL generation (without trailing slash)
-host: https://alphagov.github.io/govuk-content-api-docs
+host: https://content-api.publishing.service.gov.uk
 
 # Header-related options
 show_govuk_logo: false
 service_name: GOV.UK Content API
-service_link: https://content.service.gov.uk
+service_link: https://content-api.publishing.service.gov.uk
 phase: Work In Progress
 
 # Links to show on right-hand-side of header
