@@ -2,6 +2,13 @@
 
 {{? data.openapi.info.description}}{{=data.openapi.info.description}}{{?}}
 
+{{? data.servers.length == 1}}
+## Endpoint
+
+<a href="{{=data.servers[0].url}}">{{=data.servers[0].url}}</a>
+{{??}}
+## Endpoints
+
 {{~data.servers :s}}
 * <a href="{{=s.url}}">{{=s.url}}</a>
 {{ for(var v in s.variables) { }}
@@ -13,6 +20,7 @@
 {{?}}
 {{ } }}
 {{~}}
+{{?}}
 
 {{? data.openapi.info.termsOfService}}<a href="{{=data.openapi.info.termsOfService}}">Terms of service</a>{{?}}
 {{? data.openapi.info.contact}}{{? data.openapi.info.contact.email}}Email: <a href="mailto:{{=data.openapi.info.contact.email}}">{{=data.contactName}}</a> {{?}}{{? data.openapi.info.contact.url}}Web: <a href="{{=data.openapi.info.contact.url}}">{{=data.contactName}}</a> {{?}}{{?}}
