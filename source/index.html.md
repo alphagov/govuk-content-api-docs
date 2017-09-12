@@ -5,16 +5,16 @@ title: GOV.UK Content API Documentation
 # About the GOV.UK Content API
 
 The GOV.UK Content API makes it easy to access the data used to render content
-on [https://www.gov.uk](https://www.gov.uk). For any page on GOV.UK you can
-lookup the [path](#quick-start) to the content to access the data and metadata
-of the page.
+on [https://www.gov.uk](https://www.gov.uk). For any page hosted on www.gov.uk
+you can lookup the [path](#quick-start) to the content to access the data and
+metadata of the page.
 
 This API is useful for applications that incorporate content from GOV.UK and
 for keeping that content up to date. This provides a more accessible and
 predictable interface than what can be achieved through scraping HTML pages.
 
-This API provides access to content that is currently hosted on GOV.UK. If you
-wish to access historic content this can currently be done through the
+This API provides access to content that is currently hosted on www.gov.uk. If
+you wish to access historic content this can currently be done through the
 [National Archives][]. Historic data may be made available through future
 developments to this API.
 
