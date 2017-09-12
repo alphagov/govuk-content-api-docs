@@ -13,7 +13,7 @@ This API is useful for applications that incorporate content from GOV.UK and
 for keeping that content up to date. This provides a more accessible and
 predictable interface than what can be achieved through scraping HTML pages.
 
-This API provides access to content that is currently hosted on GOV.UK if you
+This API provides access to content that is currently hosted on GOV.UK. If you
 wish to access historic content this can currently be done through the
 [National Archives][]. Historic data may be made available through future
 developments to this API.
@@ -24,7 +24,8 @@ endpoints and the response format.
 
 ## Quick start
 
-You can use this API to lookup the data that is used to render content on GOV.UK
+You can use this API to lookup the data that is used to render content on
+GOV.UK.
 
 To get started:
 
@@ -51,10 +52,10 @@ If you experience any issues or have questions regarding the Content API please:
 
 ## Security and compliance
 
-### Reporting vulnerabilites
+### Reporting vulnerabilities
 
 If you believe there is a security issue with the GOV.UK Content API, please
-[contact us immediately](#support)
+[contact us immediately](#support).
 
 Please don’t disclose the suspected breach publicly until it has been fixed.
 
