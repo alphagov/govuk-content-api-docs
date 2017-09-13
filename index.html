@@ -40,12 +40,7 @@
           <ul>
               <li>
                 <a href="index.html">
-                  Home
-                </a>
-              </li>
-              <li>
-                <a href="technical.html">
-                  Technical Information
+                  About
                 </a>
               </li>
               <li>
@@ -82,6 +77,26 @@
       <li>
         <a href="#support">Support</a>
       </li>
+      <li>
+        <a href="#security-and-compliance">Security and compliance</a>
+        <ul>
+          <li>
+            <a href="#reporting-vulnerabilities">Reporting vulnerabilities</a>
+          </li>
+          <li>
+            <a href="#https">HTTPS</a>
+          </li>
+          <li>
+            <a href="#security-patches">Security patches</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="#rate-limiting-and-record-limits">Rate limiting and record limits</a>
+      </li>
+      <li>
+        <a href="#versioning">Versioning</a>
+      </li>
     </ul>
   </li>
 </ul>
@@ -98,16 +113,16 @@
 
             <h1 id="about-the-gov-uk-content-api">About the GOV.UK Content API</h1>
 <p>The GOV.UK Content API makes it easy to access the data used to render content
-on <a href="https://www.gov.uk">https://www.gov.uk</a>. For any page on GOV.UK you can
-lookup the <a href="#quick-start">path</a> to the content to access the data and metadata
-of the page.</p>
+on <a href="https://www.gov.uk">https://www.gov.uk</a>. For any page hosted on www.gov.uk
+you can lookup the <a href="#quick-start">path</a> to access the content component and
+associated metadata for a page.</p>
 
 <p>This API is useful for applications that incorporate content from GOV.UK and
 for keeping that content up to date. This provides a more accessible and
 predictable interface than what can be achieved through scraping HTML pages.</p>
 
-<p>This API provides access to content that is currently hosted on GOV.UK if you
-wish to access historic content this can currently be done through the
+<p>This API provides access to content that is currently hosted on www.gov.uk. If
+you wish to access historic content this can currently be done through the
 <a href="http://webarchive.nationalarchives.gov.uk/*/https://www.gov.uk/">National Archives</a>. Historic data may be made available through future
 developments to this API.</p>
 
@@ -115,18 +130,23 @@ developments to this API.</p>
 <a href="reference.html">reference documentation</a> provides a thorough overview of the
 endpoints and the response format.</p>
 <h2 id="quick-start">Quick start</h2>
-<p>You can use this API to look up the data that is used to render content on GOV.UK</p>
+<p>You can use this API to lookup the data that is used to render content on
+GOV.UK.</p>
 
 <p>To get started:</p>
 
 <ol>
 <li>Pick a page on GOV.UK eg. <a href="https://www.gov.uk/take-pet-abroad">https://www.gov.uk/take-pet-abroad</a></li>
 <li>Make a note of the path eg. <code>/take-pet-abroad</code></li>
-<li>Using a tool such as <a href="https://curl.haxx.se/">curl</a> or <a href="https://www.getpostman.com/">Postman</a> make a GET request to <code>https://www.gov.uk/api/content/take-pet-abroad</code></li>
-<li>You’ll receive a JSON response, the fields for this are explained in the <a href="reference.html">reference documentation</a></li>
+<li>Using a tool such as <a href="https://curl.haxx.se/">curl</a>,
+<a href="https://www.getpostman.com/">Postman</a> or your web browser make a GET
+request to <a href="https://www.gov.uk/api/content/take-pet-abroad"><code>https://www.gov.uk/api/content/take-pet-abroad</code></a></li>
+<li>You’ll receive a JSON response, the fields for this are
+explained in the <a href="reference.html">reference documentation</a></li>
 </ol>
 
-<p>For example, using <a href="https://curl.haxx.se/">curl</a> and the <a href="https://stedolan.github.io/jq/">jq</a> utility:</p>
+<p>For example, using <a href="https://curl.haxx.se/">curl</a> command line utility and the
+<a href="https://stedolan.github.io/jq/">jq</a> tool to display the response:</p>
 <div class="highlight"><pre class="highlight shell"><code>curl https://www.gov.uk/api/content/take-pet-abroad | jq
 </code></pre></div><h2 id="support">Support</h2>
 <p>Content API is currently in a <a href="https://www.gov.uk/help/beta">beta</a> phase and may
@@ -138,6 +158,33 @@ be subject to changes and improvements.</p>
 <li><strong>If you are a government department:</strong> Raise a ticket with <a href="https://support.publishing.service.gov.uk">GOV.UK Support</a></li>
 <li><strong>Otherwise:</strong> <a href="https://www.gov.uk/contact/govuk">Contact GOV.UK</a> with your query</li>
 </ul>
+<h2 id="security-and-compliance">Security and compliance</h2><h3 id="reporting-vulnerabilities">Reporting vulnerabilities</h3>
+<p>If you believe there is a security issue with the GOV.UK Content API, please
+<a href="#support">contact us immediately</a>.</p>
+
+<p>Please don’t disclose the suspected breach publicly until it has been fixed.</p>
+<h3 id="https">HTTPS</h3>
+<p>GOV.UK Content API follows government HTTPS security guidelines. The Hypertext
+Transfer Protocol Secure (HTTPS), which involves the Transport Layer Security
+(TLS) protocol is used by the platform to provide secure connections.</p>
+<h3 id="security-patches">Security patches</h3>
+<p>We treat security vulnerabilities in the platform and library code in the GOV.UK
+Content API as highest priority. The API codebase will be updated as soon as
+possible when vulnerabilities are discovered or reported.</p>
+
+<p>We frequently upgrade the framework and library code in the GOV.UK Content API
+to latest versions for security and feature enhancements.</p>
+<h2 id="rate-limiting-and-record-limits">Rate limiting and record limits</h2>
+<p>There is a maximum limit of 10 requests per second per client. If you exceed
+this, your request won&rsquo;t be processed until the limit is no longer exceeded
+and you may see timeout errors.</p>
+
+<p>We think this should be sufficient for all users of the API but if you believe
+you need the limit increasing you can <a href="#support">contact support</a>.</p>
+<h2 id="versioning">Versioning</h2>
+<p>This API is currently beta software and may be subject to changes and
+improvements as we learn from usage. We intend to introduce a versioning
+distinction to the API before we complete the beta phase.</p>
 
           </main>
 
