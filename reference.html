@@ -87,17 +87,6 @@
           </li>
           <li>
             <a href="#code-samples">Code Samples</a>
-            <ul>
-              <li>
-                <a href="#http">HTTP</a>
-              </li>
-              <li>
-                <a href="#ruby">Ruby</a>
-              </li>
-              <li>
-                <a href="#python">Python</a>
-              </li>
-            </ul>
           </li>
           <li>
             <a href="#example-responses">Example Responses</a>
@@ -198,25 +187,27 @@ page.</p>
       </table>
     </div><h3 id="code-samples">Code Samples</h3>
 <p><details>
-<summary>Samples</summary></p>
-<h4 id="http">HTTP</h4><div class="highlight"><pre class="highlight http"><code><span class="nf">GET</span> <span class="nn">https://www.gov.uk/api/content/{path}</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
-<span class="na">Host</span><span class="p">:</span> <span class="s">www.gov.uk</span>
+<summary>Samples</summary>
+&ldquo;`http
+GET https://www.gov.uk/api/content/{path} HTTP/1.1
+Host: www.gov.uk</p>
 
-Accept: application/json
+<p>Accept: application/json</p>
+<div class="highlight"><pre class="highlight plaintext"><code>
+```ruby
+require 'rest-client'
+require 'json'
 
-</code></pre></div><h4 id="ruby">Ruby</h4><div class="highlight"><pre class="highlight ruby"><code><span class="nb">require</span> <span class="s1">'rest-client'</span>
-<span class="nb">require</span> <span class="s1">'json'</span>
+headers = {
+  'Accept' =&gt; 'application/json'
+}
 
-<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="s1">'Accept'</span> <span class="o">=&gt;</span> <span class="s1">'application/json'</span>
-<span class="p">}</span>
+result = RestClient.get 'https://www.gov.uk/api/content/{path}',
+  params: {
+  }, headers: headers
 
-<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">get</span> <span class="s1">'https://www.gov.uk/api/content/{path}'</span><span class="p">,</span>
-  <span class="ss">params: </span><span class="p">{</span>
-  <span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
-
-<span class="nb">p</span> <span class="no">JSON</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-</code></pre></div><h4 id="python">Python</h4><div class="highlight"><pre class="highlight python"><code><span class="kn">import</span> <span class="nn">requests</span>
+p JSON.parse(result)
+</code></pre></div><div class="highlight"><pre class="highlight python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
   <span class="s">'Accept'</span><span class="p">:</span> <span class="s">'application/json'</span>
@@ -1041,7 +1032,7 @@ A ContentItem has fields which describe it, such as when it was last updated, fi
 <td>phase</td>
 <td>string</td>
 <td>true</td>
-<td>The &ldquo;phase&rdquo; of an edition can either be alpha, beta or live.</td>
+<td>The &quot;phase&rdquo; of an edition can either be alpha, beta or live.</td>
 </tr>
 <tr>
 <td>public_updated_at</td>
