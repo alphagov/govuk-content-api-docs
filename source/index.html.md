@@ -54,6 +54,9 @@ If you experience any issues or have questions regarding the Content API please:
 - **If you are a government department:** Raise a ticket with [GOV.UK Support][]
 - **Otherwise:** [Contact GOV.UK][] with your query
 
+To keep informed of changes and developments to this API please join our
+[mailing list][google-group].
+
 ## Security and compliance
 
 ### Reporting vulnerabilities
@@ -93,6 +96,7 @@ This API is currently beta software and may be subject to changes and
 improvements as we learn from usage. We intend to introduce a versioning
 distinction to the API before we complete the beta phase.
 
+[google-group]: https://groups.google.com/a/digital.cabinet-office.gov.uk/forum/#!forum/contentapi
 [National Archives]: http://webarchive.nationalarchives.gov.uk/*/https://www.gov.uk/
 [HTTP]: https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol
 [JSON]: https://en.wikipedia.org/wiki/JSON
