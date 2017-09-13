@@ -9,8 +9,7 @@ phase: Work In Progress
 
 # Links to show on right-hand-side of header
 header_links:
-  Home: index.html
-  Technical Information: technical.html
+  About: index.html
   Reference: reference.html
 
 # Tracking ID from Google Analytics (e.g. UA-XXXX-Y)
