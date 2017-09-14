@@ -57,6 +57,10 @@ please:
 To keep informed of changes and developments to this API please join our
 [mailing list][google-group].
 
+## Authentication
+
+Usage of GOV.UK Content API does not require authentication.
+
 ## Security and compliance
 
 ### Reporting vulnerabilities
