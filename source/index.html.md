@@ -37,11 +37,10 @@ To get started:
  4. You’ll receive a JSON response, the fields for this are
     explained in the [reference documentation](reference.html)
 
-For example, using [curl](https://curl.haxx.se/) command line utility and the
-[jq](https://stedolan.github.io/jq/) tool to display the response:
+For example, using [curl](https://curl.haxx.se/) command line utility tool:
 
 ```shell
-curl https://www.gov.uk/api/content/take-pet-abroad | jq
+curl https://www.gov.uk/api/content/take-pet-abroad
 ```
 
 ## Support
