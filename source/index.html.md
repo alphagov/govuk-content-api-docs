@@ -29,8 +29,8 @@ GOV.UK.
 
 To get started:
 
- 1. Pick a page on GOV.UK eg. [https://www.gov.uk/take-pet-abroad](https://www.gov.uk/take-pet-abroad)
- 2. Make a note of the path eg. `/take-pet-abroad`
+ 1. Pick a page on GOV.UK, for example: [https://www.gov.uk/take-pet-abroad](https://www.gov.uk/take-pet-abroad)
+ 2. Make a note of the path, for example: `/take-pet-abroad`
  3. Using a tool such as [curl](https://curl.haxx.se/),
     [Postman](https://www.getpostman.com/) or your web browser make a GET
     request to [`https://www.gov.uk/api/content/take-pet-abroad`](https://www.gov.uk/api/content/take-pet-abroad)
