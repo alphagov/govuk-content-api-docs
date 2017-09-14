@@ -4,12 +4,12 @@ host: https://content-api.publishing.service.gov.uk
 # Header-related options
 show_govuk_logo: true
 service_name: GOV.UK Content API
-service_link: https://content-api.publishing.service.gov.uk
+service_link: /
 phase: Work In Progress
 
 # Links to show on right-hand-side of header
 header_links:
-  About: /index.html
+  About: /
   Reference: /reference.html
 
 # Tracking ID from Google Analytics (e.g. UA-XXXX-Y)
