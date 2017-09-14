@@ -29,19 +29,18 @@ content on GOV.UK.
 
 To get started:
 
- 1. Pick a page on GOV.UK eg. [https://www.gov.uk/take-pet-abroad](https://www.gov.uk/take-pet-abroad)
- 2. Make a note of the path eg. `/take-pet-abroad`
+ 1. Pick a page on GOV.UK, for example: [https://www.gov.uk/take-pet-abroad](https://www.gov.uk/take-pet-abroad)
+ 2. Make a note of the path, for example: `/take-pet-abroad`
  3. Using a tool such as [curl](https://curl.haxx.se/),
     [Postman](https://www.getpostman.com/) or your web browser, make a GET
     request to [`https://www.gov.uk/api/content/take-pet-abroad`](https://www.gov.uk/api/content/take-pet-abroad)
  4. You’ll receive a JSON response and the fields for this are
     explained in the [reference documentation](reference.html)
 
-For example, using [curl](https://curl.haxx.se/) command line utility and the
-[jq](https://stedolan.github.io/jq/) tool to display the response:
+For example, using [curl](https://curl.haxx.se/) command line utility tool:
 
 ```shell
-curl https://www.gov.uk/api/content/take-pet-abroad | jq
+curl https://www.gov.uk/api/content/take-pet-abroad
 ```
 
 ## Support
@@ -82,7 +81,7 @@ possible when vulnerabilities are discovered or reported.
 We frequently upgrade the framework and library code in GOV.UK Content API
 to the latest versions for security and feature enhancements.
 
-## Rate limiting and record limits
+## Rate limiting
 
 There is a maximum limit of 10 requests per second per client. If you exceed
 this your request won't be processed until the limit is no longer exceeded
