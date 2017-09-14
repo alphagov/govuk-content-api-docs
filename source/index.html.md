@@ -80,7 +80,7 @@ possible when vulnerabilities are discovered or reported.
 We frequently upgrade the framework and library code in the GOV.UK Content API
 to latest versions for security and feature enhancements.
 
-## Rate limiting and record limits
+## Rate limiting
 
 There is a maximum limit of 10 requests per second per client. If you exceed
 this, your request won't be processed until the limit is no longer exceeded
