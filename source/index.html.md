@@ -43,20 +43,6 @@ For example, using [curl](https://curl.haxx.se/) command line utility tool:
 curl https://www.gov.uk/api/content/take-pet-abroad
 ```
 
-## Support
-
-GOV.UK Content API is currently in a [beta](https://www.gov.uk/help/beta)
-phase and may be subject to changes and improvements.
-
-If you experience any issues or have questions regarding GOV.UK Content API
-please:
-
-- **If you are a government department:** Raise a ticket with [GOV.UK Support][]
-- **Otherwise:** [Contact GOV.UK][] with your query
-
-To keep informed of changes and developments to this API please join our
-[mailing list][google-group].
-
 ## Security and compliance
 
 ### Reporting vulnerabilities
@@ -95,6 +81,20 @@ if you believe you need the limit increasing you can [contact support](#support)
 GOV.UK Content API is currently beta software and may be subject to changes
 and improvements as we learn from usage. We intend to introduce a versioning
 distinction to this API before we complete the beta phase.
+
+## Support
+
+GOV.UK Content API is currently in a [beta](https://www.gov.uk/help/beta)
+phase and may be subject to changes and improvements.
+
+If you experience any issues or have questions regarding GOV.UK Content API
+please:
+
+- **If you are a government department:** Raise a ticket with [GOV.UK Support][]
+- **Otherwise:** [Contact GOV.UK][] with your query
+
+To keep informed of changes and developments to this API please join our
+[mailing list][google-group].
 
 [google-group]: https://groups.google.com/a/digital.cabinet-office.gov.uk/forum/#!forum/contentapi
 [National Archives]: http://webarchive.nationalarchives.gov.uk/*/https://www.gov.uk/
