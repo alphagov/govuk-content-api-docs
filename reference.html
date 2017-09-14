@@ -106,7 +106,7 @@
     <a href="#objects">Objects</a>
     <ul>
       <li>
-        <a href="#withdrawnnotice">WithdrawnNotice</a>
+        <a href="#contentitem">ContentItem</a>
         <ul>
           <li>
             <a href="#fields">Fields</a>
@@ -122,10 +122,10 @@
         </ul>
       </li>
       <li>
-        <a href="#contentitem">ContentItem</a>
+        <a href="#withdrawnnotice">WithdrawnNotice</a>
         <ul>
           <li>
-            <a href="#contentitem-fields">Fields</a>
+            <a href="#withdrawnnotice-fields">Fields</a>
           </li>
         </ul>
       </li>
@@ -144,12 +144,12 @@
             </div>
 
             <h1 id="gov-uk-content-api-v1-0-0">GOV.UK Content API v1.0.0</h1>
-<p>The GOV.UK Content API provides a simple and consistent way to request
+<p>GOV.UK Content API provides a simple and consistent way to request
 <a href="https://www.gov.uk">GOV.UK</a> content as structured data in a predictable
 format. It is used within the GOV.UK website as the means for applications
 to lookup content in order to render it.</p>
 
-<p>The API accepts HTTP requests and responds with
+<p>This API accepts HTTP requests and responds with
 <a href="https://en.wikipedia.org/wiki/JSON">JSON</a> data containing the same
 published content as is presented on GOV.UK.</p>
 <h2 id="base-url">Base URL</h2>
@@ -160,10 +160,10 @@ published content as is presented on GOV.UK.</p>
 <p>This is the primary interface to lookup the content required to render
 a page on GOV.UK</p>
 
-<p>It accepts an input of the path of the page you are looking up. Eg if
-you were looking up travel advice for Thailand which is hosted on GOV.UK
-at <code>https://www.gov.uk/foreign-travel-advice/thailand</code> you would make
-a request to
+<p>It accepts an input of the path of the page you are looking up. For
+example, if you were looking up travel advice for Thailand which is
+hosted on GOV.UK at <code>https://www.gov.uk/foreign-travel-advice/thailand</code>
+you would make a request to
 <code>https://www.gov.uk/api/content/foreign-travel-advice/thailand</code>.</p>
 
 <p>If the content is available at the requested path you will receive
@@ -189,8 +189,7 @@ page.</p>
 </tr>
 
       </table>
-    </div><h3 id="example-request">Example Request</h3><div class="highlight"><pre class="highlight shell"><code>curl <span class="nt">-X</span> GET https://www.gov.uk/api/content/<span class="o">{</span>path<span class="o">}</span> <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s1">'Accept: application/json'</span>
+    </div><h3 id="example-request">Example Request</h3><div class="highlight"><pre class="highlight shell"><code>curl https://www.gov.uk/api/content/vat-rates
 </code></pre></div><h3 id="example-response">Example Response</h3>
 <p><details>
 <summary>Examples</summary>
@@ -489,7 +488,7 @@ page.</p>
 <tr>
 <td>303</td>
 <td>See Other</td>
-<td>The canonical path for this content item is a different path.</td>
+<td>A content item at a different location is responsible for the content at this path.</td>
 <td>None</td>
 </tr>
 <tr>
@@ -506,155 +505,11 @@ page.</p>
 </tr>
 
       </table>
-    </div><h1 id="objects">Objects</h1><h2 id="withdrawnnotice">WithdrawnNotice</h2>
-<p><a name="schemawithdrawnnotice"></a></p>
-
-<p>Contains information about why and when a ContentItem was withdrawn.</p>
-
-<p><details></p>
-
-<p><summary>Sample JSON</summary></p>
-<div class="highlight"><pre class="highlight json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"explanation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;div class=</span><span class="se">\"</span><span class="s2">govspeak</span><span class="se">\"</span><span class="s2">&gt;&lt;p&gt;This guidance has been withdrawn from use because the Environment Agency no longer provides best practice guidance. See guidance on &lt;a href=</span><span class="se">\"</span><span class="s2">https://www.gov.uk/guidance/prevent-the-spread-of-harmful-invasive-and-non-native-plants</span><span class="se">\"</span><span class="s2">&gt;preventing harmful weeds and invasive non-native plants spreading weeds&lt;/a&gt; for information on controlling specific plants.&lt;/p&gt;</span><span class="se">\n</span><span class="s2">&lt;/div&gt;"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"withdrawn_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-07-11T15:08:02Z"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div>
-<p></details></p>
-<h3 id="fields">Fields</h3><div class="table-container">
-      <table>
-        <tr>
-<th>Name</th>
-<th>Type</th>
-<th>Required</th>
-<th>Description</th>
-</tr>
-<tr>
-<td>explanation</td>
-<td>string</td>
-<td>true</td>
-<td>An explanation as to why the content was withdrawn.</td>
-</tr>
-<tr>
-<td>withdrawn_at</td>
-<td>string(date-time)</td>
-<td>true</td>
-<td>The date when the content was withdrawn.</td>
-</tr>
-
-      </table>
-    </div><h2 id="linkedcontentitem">LinkedContentItem</h2>
-<p><a name="schemalinkedcontentitem"></a></p>
-
-<p>ContentItems are related to one another via <code>links</code>.
-LinkedContentItems contain the data necessary to describe and render a link to a GOV.UK content item.</p>
-
-<p><details></p>
-
-<p><summary>Sample JSON</summary></p>
-<div class="highlight"><pre class="highlight json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"api_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/api/content/browse/tax/vat"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"base_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/browse/tax/vat"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"content_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"895d337a-fa68-4c83-ab79-1c08016afe87"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Includes online returns, rates, charging and record keeping"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"document_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mainstream_browse_page"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"public_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-06-24T13:56:39Z"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"schema_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mainstream_browse_page"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VAT"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"withdrawn"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
-  </span><span class="s2">"api_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.gov.uk/api/content/browse/tax/vat"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"web_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.gov.uk/browse/tax/vat"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div>
-<p></details></p>
-<h3 id="linkedcontentitem-fields">Fields</h3><div class="table-container">
-      <table>
-        <tr>
-<th>Name</th>
-<th>Type</th>
-<th>Required</th>
-<th>Description</th>
-</tr>
-<tr>
-<td>analytics_identifier</td>
-<td>integer</td>
-<td>true</td>
-<td>An identifier which clients of the Publishing API can include with an edition for later use in analytics software.</td>
-</tr>
-<tr>
-<td>api_path</td>
-<td>string</td>
-<td>true</td>
-<td>The base path of the content item, available from the API.</td>
-</tr>
-<tr>
-<td>base_path</td>
-<td>string</td>
-<td>true</td>
-<td>The path of the content on GOV.UK - or the shortest one for content that spans multiple sub paths.</td>
-</tr>
-<tr>
-<td>content_id</td>
-<td>string(uuid)</td>
-<td>true</td>
-<td>A UUID which represents the public identifier for a piece of content, combined with locale this makes the unique identifier for an individual piece of content. Can be null for redirects / gone content.</td>
-</tr>
-<tr>
-<td>description</td>
-<td>string</td>
-<td>true</td>
-<td>A description of the content which can then be displayed publically.</td>
-</tr>
-<tr>
-<td>details</td>
-<td>object</td>
-<td>false</td>
-<td>An object representing data that is structured in a format defined by the schema of the edition. This holds the content for the edition, often in a field called body. Can be null for items without content - eg a redirect.</td>
-</tr>
-<tr>
-<td>document_type</td>
-<td>string</td>
-<td>true</td>
-<td>A particular type of document, used to differentiate between documents that are of different types but share the same schema.</td>
-</tr>
-<tr>
-<td>locale</td>
-<td>string</td>
-<td>true</td>
-<td>The language the document is written in. A fixed list of locales is allowed.</td>
-</tr>
-<tr>
-<td>public_updated_at</td>
-<td>string(date-time)</td>
-<td>true</td>
-<td>Can be set by publishing application, otherwise set automatically in Publishing API each time an edition is published with a major edition.</td>
-</tr>
-<tr>
-<td>schema_name</td>
-<td>string</td>
-<td>true</td>
-<td>The name of the GOV.UK content schema that the request body will be validated against.</td>
-</tr>
-<tr>
-<td>title</td>
-<td>string</td>
-<td>true</td>
-<td>The title of the edition, displayed to the user.</td>
-</tr>
-<tr>
-<td>withdrawn</td>
-<td>boolean</td>
-<td>true</td>
-<td>Holds whether or not the content has been withdrawn.</td>
-</tr>
-
-      </table>
-    </div><h2 id="contentitem">ContentItem</h2>
+    </div><h1 id="objects">Objects</h1><h2 id="contentitem">ContentItem</h2>
 <p><a name="schemacontentitem"></a></p>
 
-<p>Resource containing the content, GOV.UK links and metadata for a page on GOV.UK.
-A ContentItem has fields which describe it, such as when it was last updated, fields containing content text and links to related GOV.UK ContentItems.</p>
+<p>A resource that represents a piece of content on GOV.UK.
+It contains metadata that describe common attributes shared between all content, a details for the particular content and a links field to describe relationships with other content.</p>
 
 <p><details></p>
 
@@ -936,7 +791,7 @@ A ContentItem has fields which describe it, such as when it was last updated, fi
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p></details></p>
-<h3 id="contentitem-fields">Fields</h3><div class="table-container">
+<h3 id="fields">Fields</h3><div class="table-container">
       <table>
         <tr>
 <th>Name</th>
@@ -963,6 +818,18 @@ A ContentItem has fields which describe it, such as when it was last updated, fi
 <td>A UUID which represents the public identifier for a piece of content, combined with locale this makes the unique identifier for an individual piece of content. Can be null for redirects / gone content.</td>
 </tr>
 <tr>
+<td>description</td>
+<td>string</td>
+<td>false</td>
+<td>A description of the content which can then be displayed publically.</td>
+</tr>
+<tr>
+<td>details</td>
+<td>object</td>
+<td>false</td>
+<td>An object representing data that is structured in a format defined by the schema of the edition. This holds the content for the edition, often in a field called body. Can be null for items without content - for example, a redirect.</td>
+</tr>
+<tr>
 <td>document_type</td>
 <td>string</td>
 <td>true</td>
@@ -985,6 +852,18 @@ A ContentItem has fields which describe it, such as when it was last updated, fi
 <td>string</td>
 <td>true</td>
 <td>Grouping for email subscriptions.</td>
+</tr>
+<tr>
+<td>links</td>
+<td>object</td>
+<td>true</td>
+<td>An object that has collections of <a href="#linkedcontentitem">LinkedContentItems</a> objects in arrays, which are grouped by a link type.</td>
+</tr>
+<tr>
+<td>» additionalProperties</td>
+<td>[<a href="#schemalinkedcontentitem">LinkedContentItem</a>]</td>
+<td>false</td>
+<td>No description</td>
 </tr>
 <tr>
 <td>locale</td>
@@ -1015,6 +894,12 @@ A ContentItem has fields which describe it, such as when it was last updated, fi
 <td>string</td>
 <td>true</td>
 <td>The application which published the edition.</td>
+</tr>
+<tr>
+<td>publishing_request_id</td>
+<td>string</td>
+<td>false</td>
+<td>The GOV.UK Request ID which was used when the content item was published.</td>
 </tr>
 <tr>
 <td>rendering_app</td>
@@ -1050,7 +935,7 @@ A ContentItem has fields which describe it, such as when it was last updated, fi
 <td>withdrawn_notice</td>
 <td>object</td>
 <td>false</td>
-<td>Contains information about why and when a ContentItem was withdrawn.</td>
+<td>A WithdrawnNotice is an object that can be embedded within a ContentItem and is used to explain the reason a piece of content has been withdrawn.</td>
 </tr>
 <tr>
 <td>» explanation</td>
@@ -1065,112 +950,166 @@ A ContentItem has fields which describe it, such as when it was last updated, fi
 <td>The date when the content was withdrawn.</td>
 </tr>
 <tr>
-<td>publishing_request_id</td>
-<td>string</td>
+<td>need_ids</td>
+<td>[string]</td>
 <td>false</td>
-<td>The GOV.UK Request ID which was used when the content item was published.</td>
+<td>No description</td>
+</tr>
+
+      </table>
+    </div><h2 id="linkedcontentitem">LinkedContentItem</h2>
+<p><a name="schemalinkedcontentitem"></a></p>
+
+<p>A LinkedContentItem is an abridged form of ContentItem which is used to represent links between ContentItems.
+It is embedded within the <code>links</code> field that is used within ContentItem and LinkedContentItem.</p>
+
+<p><details></p>
+
+<p><summary>Sample JSON</summary></p>
+<div class="highlight"><pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"api_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/api/content/browse/tax/vat"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"base_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/browse/tax/vat"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"content_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"895d337a-fa68-4c83-ab79-1c08016afe87"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Includes online returns, rates, charging and record keeping"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"document_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mainstream_browse_page"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"public_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-06-24T13:56:39Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"schema_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mainstream_browse_page"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VAT"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"withdrawn"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+  </span><span class="s2">"api_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.gov.uk/api/content/browse/tax/vat"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"web_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.gov.uk/browse/tax/vat"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p></details></p>
+<h3 id="linkedcontentitem-fields">Fields</h3><div class="table-container">
+      <table>
+        <tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
 </tr>
 <tr>
-<td>links</td>
-<td>object</td>
-<td>true</td>
-<td>An object containing all the GOV.UK documents that this document links to organised by the link names</td>
-</tr>
-<tr>
-<td>» additionalProperties</td>
-<td>[object]</td>
-<td>false</td>
-<td>ContentItems are related to one another via <code>links</code>. LinkedContentItems contain the data necessary to describe and render a link to a GOV.UK content item.</td>
-</tr>
-<tr>
-<td>»» analytics_identifier</td>
+<td>analytics_identifier</td>
 <td>integer</td>
 <td>true</td>
 <td>An identifier which clients of the Publishing API can include with an edition for later use in analytics software.</td>
 </tr>
 <tr>
-<td>»» api_path</td>
+<td>api_path</td>
 <td>string</td>
 <td>true</td>
 <td>The base path of the content item, available from the API.</td>
 </tr>
 <tr>
-<td>»» base_path</td>
+<td>base_path</td>
 <td>string</td>
 <td>true</td>
 <td>The path of the content on GOV.UK - or the shortest one for content that spans multiple sub paths.</td>
 </tr>
 <tr>
-<td>»» content_id</td>
+<td>content_id</td>
 <td>string(uuid)</td>
 <td>true</td>
 <td>A UUID which represents the public identifier for a piece of content, combined with locale this makes the unique identifier for an individual piece of content. Can be null for redirects / gone content.</td>
 </tr>
 <tr>
-<td>»» description</td>
-<td>string</td>
-<td>true</td>
-<td>A description of the content which can then be displayed publically.</td>
-</tr>
-<tr>
-<td>»» details</td>
-<td>object</td>
-<td>false</td>
-<td>An object representing data that is structured in a format defined by the schema of the edition. This holds the content for the edition, often in a field called body. Can be null for items without content - eg a redirect.</td>
-</tr>
-<tr>
-<td>»» document_type</td>
-<td>string</td>
-<td>true</td>
-<td>A particular type of document, used to differentiate between documents that are of different types but share the same schema.</td>
-</tr>
-<tr>
-<td>»» locale</td>
-<td>string</td>
-<td>true</td>
-<td>The language the document is written in. A fixed list of locales is allowed.</td>
-</tr>
-<tr>
-<td>»» public_updated_at</td>
-<td>string(date-time)</td>
-<td>true</td>
-<td>Can be set by publishing application, otherwise set automatically in Publishing API each time an edition is published with a major edition.</td>
-</tr>
-<tr>
-<td>»» schema_name</td>
-<td>string</td>
-<td>true</td>
-<td>The name of the GOV.UK content schema that the request body will be validated against.</td>
-</tr>
-<tr>
-<td>»» title</td>
-<td>string</td>
-<td>true</td>
-<td>The title of the edition, displayed to the user.</td>
-</tr>
-<tr>
-<td>»» withdrawn</td>
-<td>boolean</td>
-<td>true</td>
-<td>Holds whether or not the content has been withdrawn.</td>
-</tr>
-<tr>
 <td>description</td>
 <td>string</td>
-<td>false</td>
+<td>true</td>
 <td>A description of the content which can then be displayed publically.</td>
 </tr>
 <tr>
 <td>details</td>
 <td>object</td>
 <td>false</td>
-<td>An object representing data that is structured in a format defined by the schema of the edition. This holds the content for the edition, often in a field called body. Can be null for items without content - eg a redirect.</td>
+<td>An object representing data that is structured in a format defined by the schema of the edition. This holds the content for the edition, often in a field called body. Can be null for items without content - for example, a redirect.</td>
 </tr>
 <tr>
-<td>need_ids</td>
-<td>[string]</td>
+<td>document_type</td>
+<td>string</td>
+<td>true</td>
+<td>A particular type of document, used to differentiate between documents that are of different types but share the same schema.</td>
+</tr>
+<tr>
+<td>links</td>
+<td>object</td>
+<td>true</td>
+<td>An object that has collections of <a href="#linkedcontentitem">LinkedContentItems</a> objects in arrays, which are grouped by a link type.</td>
+</tr>
+<tr>
+<td>» additionalProperties</td>
+<td>[<a href="#schemalinkedcontentitem">LinkedContentItem</a>]</td>
 <td>false</td>
 <td>No description</td>
+</tr>
+<tr>
+<td>locale</td>
+<td>string</td>
+<td>true</td>
+<td>The language the document is written in. A fixed list of locales is allowed.</td>
+</tr>
+<tr>
+<td>public_updated_at</td>
+<td>string(date-time)</td>
+<td>true</td>
+<td>Can be set by publishing application, otherwise set automatically in Publishing API each time an edition is published with a major edition.</td>
+</tr>
+<tr>
+<td>schema_name</td>
+<td>string</td>
+<td>true</td>
+<td>The name of the GOV.UK content schema that the request body will be validated against.</td>
+</tr>
+<tr>
+<td>title</td>
+<td>string</td>
+<td>true</td>
+<td>The title of the edition, displayed to the user.</td>
+</tr>
+<tr>
+<td>withdrawn</td>
+<td>boolean</td>
+<td>true</td>
+<td>Holds whether or not the content has been withdrawn.</td>
+</tr>
+
+      </table>
+    </div><h2 id="withdrawnnotice">WithdrawnNotice</h2>
+<p><a name="schemawithdrawnnotice"></a></p>
+
+<p>A WithdrawnNotice is an object that can be embedded within a ContentItem and is used to explain the reason a piece of content has been withdrawn.</p>
+
+<p><details></p>
+
+<p><summary>Sample JSON</summary></p>
+<div class="highlight"><pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"explanation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;div class=</span><span class="se">\"</span><span class="s2">govspeak</span><span class="se">\"</span><span class="s2">&gt;&lt;p&gt;This guidance has been withdrawn from use because the Environment Agency no longer provides best practice guidance. See guidance on &lt;a href=</span><span class="se">\"</span><span class="s2">https://www.gov.uk/guidance/prevent-the-spread-of-harmful-invasive-and-non-native-plants</span><span class="se">\"</span><span class="s2">&gt;preventing harmful weeds and invasive non-native plants spreading weeds&lt;/a&gt; for information on controlling specific plants.&lt;/p&gt;</span><span class="se">\n</span><span class="s2">&lt;/div&gt;"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"withdrawn_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-07-11T15:08:02Z"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p></details></p>
+<h3 id="withdrawnnotice-fields">Fields</h3><div class="table-container">
+      <table>
+        <tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>explanation</td>
+<td>string</td>
+<td>true</td>
+<td>An explanation as to why the content was withdrawn.</td>
+</tr>
+<tr>
+<td>withdrawn_at</td>
+<td>string(date-time)</td>
+<td>true</td>
+<td>The date when the content was withdrawn.</td>
 </tr>
 
       </table>
