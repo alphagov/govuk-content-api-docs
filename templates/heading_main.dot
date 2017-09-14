@@ -3,11 +3,11 @@
 {{? data.openapi.info.description}}{{=data.openapi.info.description}}{{?}}
 
 {{? data.servers.length == 1}}
-## Endpoint
+## Base URL
 
 {{=data.servers[0].url}}
 {{??}}
-## Endpoints
+## Base URLs
 
 {{~data.servers :s}}
 * <a href="{{=s.url}}">{{=s.url}}</a>
