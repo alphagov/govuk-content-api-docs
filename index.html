@@ -25,7 +25,11 @@
         <header class="header header--full-width">
   <div class="header__container">
     <div class="header__brand">
-        <a href="https://content-api.publishing.service.gov.uk">
+        <a href="/">
+          <span class="govuk-logo">
+            <img class="govuk-logo__printable-crown" src="images/gov.uk_logotype_crown_invert_trans.png" height="32" width="36">
+            GOV.UK
+          </span>
         <span class="header__title">
           GOV.UK Content API
             <span class="phase-banner">Work In Progress</span>
@@ -38,13 +42,13 @@
 
         <nav id="navigation" class="header__navigation js-nav" aria-label="Top Level Navigation" aria-hidden="true">
           <ul>
-              <li>
-                <a href="index.html">
+              <li class="active">
+                <a href="/">
                   About
                 </a>
               </li>
               <li>
-                <a href="reference.html">
+                <a href="/reference.html">
                   Reference
                 </a>
               </li>
@@ -92,7 +96,7 @@
         </ul>
       </li>
       <li>
-        <a href="#rate-limiting-and-record-limits">Rate limiting and record limits</a>
+        <a href="#rate-limiting">Rate limiting</a>
       </li>
       <li>
         <a href="#versioning">Versioning</a>
@@ -136,8 +140,8 @@ content on GOV.UK.</p>
 <p>To get started:</p>
 
 <ol>
-<li>Pick a page on GOV.UK eg. <a href="https://www.gov.uk/take-pet-abroad">https://www.gov.uk/take-pet-abroad</a></li>
-<li>Make a note of the path eg. <code>/take-pet-abroad</code></li>
+<li>Pick a page on GOV.UK, for example: <a href="https://www.gov.uk/take-pet-abroad">https://www.gov.uk/take-pet-abroad</a></li>
+<li>Make a note of the path, for example: <code>/take-pet-abroad</code></li>
 <li>Using a tool such as <a href="https://curl.haxx.se/">curl</a>,
 <a href="https://www.getpostman.com/">Postman</a> or your web browser, make a GET
 request to <a href="https://www.gov.uk/api/content/take-pet-abroad"><code>https://www.gov.uk/api/content/take-pet-abroad</code></a></li>
@@ -145,9 +149,8 @@ request to <a href="https://www.gov.uk/api/content/take-pet-abroad"><code>https:
 explained in the <a href="reference.html">reference documentation</a></li>
 </ol>
 
-<p>For example, using <a href="https://curl.haxx.se/">curl</a> command line utility and the
-<a href="https://stedolan.github.io/jq/">jq</a> tool to display the response:</p>
-<div class="highlight"><pre class="highlight shell"><code>curl https://www.gov.uk/api/content/take-pet-abroad | jq
+<p>For example, using <a href="https://curl.haxx.se/">curl</a> command line utility tool:</p>
+<div class="highlight"><pre class="highlight shell"><code>curl https://www.gov.uk/api/content/take-pet-abroad
 </code></pre></div><h2 id="support">Support</h2>
 <p>GOV.UK Content API is currently in a <a href="https://www.gov.uk/help/beta">beta</a>
 phase and may be subject to changes and improvements.</p>
@@ -178,7 +181,7 @@ possible when vulnerabilities are discovered or reported.</p>
 
 <p>We frequently upgrade the framework and library code in GOV.UK Content API
 to the latest versions for security and feature enhancements.</p>
-<h2 id="rate-limiting-and-record-limits">Rate limiting and record limits</h2>
+<h2 id="rate-limiting">Rate limiting</h2>
 <p>There is a maximum limit of 10 requests per second per client. If you exceed
 this your request won&rsquo;t be processed until the limit is no longer exceeded
 and you may see timeout errors.</p>

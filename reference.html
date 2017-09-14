@@ -25,7 +25,11 @@
         <header class="header header--full-width">
   <div class="header__container">
     <div class="header__brand">
-        <a href="https://content-api.publishing.service.gov.uk">
+        <a href="/">
+          <span class="govuk-logo">
+            <img class="govuk-logo__printable-crown" src="images/gov.uk_logotype_crown_invert_trans.png" height="32" width="36">
+            GOV.UK
+          </span>
         <span class="header__title">
           GOV.UK Content API
             <span class="phase-banner">Work In Progress</span>
@@ -39,12 +43,12 @@
         <nav id="navigation" class="header__navigation js-nav" aria-label="Top Level Navigation" aria-hidden="true">
           <ul>
               <li>
-                <a href="index.html">
+                <a href="/">
                   About
                 </a>
               </li>
-              <li>
-                <a href="reference.html">
+              <li class="active">
+                <a href="/reference.html">
                   Reference
                 </a>
               </li>
@@ -72,7 +76,7 @@
     <a href="#gov-uk-content-api-v1-0-0">GOV.UK Content API v1.0.0</a>
     <ul>
       <li>
-        <a href="#endpoint">Endpoint</a>
+        <a href="#base-url">Base URL</a>
       </li>
     </ul>
   </li>
@@ -99,7 +103,7 @@
     </ul>
   </li>
   <li>
-    <a href="#schemas">Schemas</a>
+    <a href="#objects">Objects</a>
     <ul>
       <li>
         <a href="#withdrawnnotice">WithdrawnNotice</a>
@@ -148,7 +152,7 @@ to lookup content in order to render it.</p>
 <p>The API accepts HTTP requests and responds with
 <a href="https://en.wikipedia.org/wiki/JSON">JSON</a> data containing the same
 published content as is presented on GOV.UK.</p>
-<h2 id="endpoint">Endpoint</h2>
+<h2 id="base-url">Base URL</h2>
 <p>https://www.gov.uk/api/content</p>
 <h1 id="content">Content</h1><h2 id="get-path">GET /{path}</h2>
 <p><em>Lookup GOV.UK content by path</em></p>
@@ -502,7 +506,7 @@ page.</p>
 </tr>
 
       </table>
-    </div><h1 id="schemas">Schemas</h1><h2 id="withdrawnnotice">WithdrawnNotice</h2>
+    </div><h1 id="objects">Objects</h1><h2 id="withdrawnnotice">WithdrawnNotice</h2>
 <p><a name="schemawithdrawnnotice"></a></p>
 
 <p>Contains information about why and when a ContentItem was withdrawn.</p>
