@@ -2,7 +2,7 @@
 host: https://content-api.publishing.service.gov.uk
 
 # Header-related options
-show_govuk_logo: false
+show_govuk_logo: true
 service_name: GOV.UK Content API
 service_link: https://content-api.publishing.service.gov.uk
 phase: Work In Progress
