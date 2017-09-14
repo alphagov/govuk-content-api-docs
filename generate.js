@@ -10,7 +10,7 @@ var api = yaml.safeLoad(input_file, { json: true });
 var options = {
   codeSamples: true,
   language_tabs: [
-    { 'http': 'HTTP' }, { 'python': 'Python' }, { 'ruby': 'Ruby' }
+    { 'shell': 'Shell' }
   ],
   user_templates: 'templates',
   sample: true,
