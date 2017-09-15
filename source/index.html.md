@@ -54,8 +54,9 @@ We will communicate those via our [mailing list](#keep-informed).
 
 ## Keep informed
 
-To keep informed of changes and developments to this API please join our
-[mailing list][google-group].
+Join the [GOV.UK Content API mailing list][google-group] to be notified of
+of announcements regarding this API. We will use this channel to communicate
+any breaking changes or updates to the support status of this API.
 
 ## Security and compliance
 
