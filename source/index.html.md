@@ -5,22 +5,41 @@ title: GOV.UK Content API Documentation
 # About GOV.UK Content API
 
 GOV.UK Content API makes it easy to access the data used to render content
-on [https://www.gov.uk](https://www.gov.uk). For any page hosted on www.gov.uk
-you can lookup the [path](#quick-start) to access the content component and
-associated metadata for a page.
-
-This API is useful for applications that incorporate content from GOV.UK and
-for keeping that content up to date. This provides a more accessible and
-predictable interface than what can be achieved through scraping HTML pages.
-
-This API provides access to content that is currently hosted on www.gov.uk. If
-you wish to access historic content this can currently be done through the
-[National Archives][]. Historic data may be made available through future
-developments to this API.
+on [https://www.gov.uk](GOV.UK). For any page hosted on GOV.UK you can use
+the [path](#quick-start) to access the content and associated metadata for
+a page.
 
 GOV.UK Content API is accessed via [HTTP][] and returns data in a [JSON][]
 format. The [reference documentation](reference.html) provides a thorough
 overview of the endpoints and the response format.
+
+## What you can do with this API
+
+This API is useful for applications that incorporate content from GOV.UK and
+for keeping that content up to date. It provides a more accessible and
+predictable interface than what can be achieved through scraping HTML pages.
+
+You can navigate between content within this API by utilising links. For
+example, for a page you could access the government organisation that published
+it and then navigate to their featured policies.
+
+## What you can't do with this API
+
+The content within this API is limited to pages hosted on
+[`www.gov.uk`](https://www.gov.uk) and does not include other websites that are
+subdomains of `gov.uk`.
+
+This API includes only the pages on GOV.UK that are available as HTML and does
+not allow direct access to attachments or images. These files however are
+associated with their HTML content and can be accessed.
+
+Not all content is available. For example, content that is generated
+dynamically (such as through a search) is not available. Some types of content
+may still be being migrated to utilise this API.
+
+This API provides access to content that is currently hosted on GOV.UK. If
+you wish to access historic content this can currently be done through the
+[National Archives][].
 
 ## Quick start
 
@@ -56,6 +75,10 @@ please:
 
 To keep informed of changes and developments to this API please join our
 [mailing list][google-group].
+
+## Authentication
+
+Usage of GOV.UK Content API does not require authentication.
 
 ## Security and compliance
 
