@@ -10,6 +10,7 @@ phase: Work In Progress
 # Links to show on right-hand-side of header
 header_links:
   About: /
+  Getting Started: /getting-started.html
   Reference: /reference.html
 
 # Tracking ID from Google Analytics (e.g. UA-XXXX-Y)
