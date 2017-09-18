@@ -48,6 +48,16 @@
 
         <div class="app-pane__content toc-open-disabled">
           <main id="content" class="technical-documentation" data-module="anchored-headings">
+            <div class="phase-tag">
+              <p>
+                <strong class="phase-banner"><%= config[:tech_docs][:phase] %></strong>
+                <span>
+                  This is a trial service — your
+                  <a href="http://www.smartsurvey.co.uk/s/GPYGP">feedback</a>
+                  will help us to improve it.
+                </span>
+              </p>
+            </div>
             <%= yield %>
           </main>
 
