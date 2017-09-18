@@ -5,7 +5,9 @@
 {{? data.servers.length == 1}}
 ## Base URL
 
-{{=data.servers[0].url}}
+All requests to this API should be prefixed with the following URL:
+
+**{{=data.servers[0].url}}**
 {{??}}
 ## Base URLs
 
