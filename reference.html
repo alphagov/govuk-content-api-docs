@@ -66,7 +66,7 @@
         </a>
       </div>
 
-      <div class="app-pane__body">
+      <div class="app-pane__body" data-module="in-page-navigation">
         <div class="app-pane__toc">
           <div class="toc" data-module="table-of-contents">
             <a href="#" class="toc__close js-toc-close" aria-controls="toc" aria-label="Hide table of contents"></a>
@@ -139,10 +139,6 @@
 
         <div class="app-pane__content toc-open-disabled">
           <main id="content" class="technical-documentation" data-module="anchored-headings">
-            <div class="wip-banner">
-              This API is work in progress and not yet ready for use.
-            </div>
-
             <h1 id="gov-uk-content-api-v1-0-0">GOV.UK Content API v1.0.0</h1>
 <p>GOV.UK Content API provides a simple and consistent way to request
 <a href="https://www.gov.uk">GOV.UK</a> content as structured data in a predictable
@@ -153,7 +149,9 @@ to lookup content in order to render it.</p>
 <a href="https://en.wikipedia.org/wiki/JSON">JSON</a> data containing the same
 published content as is presented on GOV.UK.</p>
 <h2 id="base-url">Base URL</h2>
-<p>https://www.gov.uk/api/content</p>
+<p>All requests to this API should be prefixed with the following URL:</p>
+
+<p><strong>https://www.gov.uk/api/content</strong></p>
 <h1 id="content">Content</h1><h2 id="get-path">GET /{path}</h2>
 <p><em>Lookup GOV.UK content by path</em></p>
 
