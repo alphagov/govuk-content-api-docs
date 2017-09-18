@@ -23,7 +23,7 @@
   <body>
     <div class="app-pane">
       <div class="app-pane__header toc-open-disabled">
-        <a href="#content" class="skip-link">Skip to main content</a>
+        <a href="#main-content" class="skip-link">Skip to main content</a>
 
         <%= partial 'layouts/header' %>
       </div>
@@ -47,17 +47,7 @@
         <% end %>
 
         <div class="app-pane__content toc-open-disabled">
-          <main id="content" class="technical-documentation" data-module="anchored-headings">
-            <div class="phase-tag">
-              <p>
-                <strong class="phase-banner"><%= config[:tech_docs][:phase] %></strong>
-                <span>
-                  This is a trial service — your
-                  <a href="http://www.smartsurvey.co.uk/s/GPYGP">feedback</a>
-                  will help us to improve it.
-                </span>
-              </p>
-            </div>
+          <main id="main-content" class="technical-documentation" data-module="anchored-headings">
             <%= yield %>
           </main>
 
