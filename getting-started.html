@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta charset="utf-8">
+    <meta content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+
+    <!-- Use title if it's in the page YAML frontmatter -->
+    <title>
+          Getting Started
+        -
+      GOV.UK Content API
+    </title>
+
+    <!--[if gt IE 8]><!--><link href="stylesheets/screen.css" rel="stylesheet" media="screen" /><!--<![endif]-->
+    <!--[if lte IE 8]><link href="stylesheets/screen-old-ie.css" rel="stylesheet" media="screen" /><![endif]-->
+
+    <link rel="canonical" href="https://content-api.publishing.service.gov.uk/getting-started.html">
+
+    <link href="stylesheets/print.css" rel="stylesheet" media="print" />
+    <script src="javascripts/application.js"></script>
+  </head>
+
+  <body>
+    <div class="app-pane">
+      <div class="app-pane__header toc-open-disabled">
+        <a href="#main-content" class="skip-link">Skip to main content</a>
+
+        <header class="header header--full-width">
+  <div class="header__container">
+    <div class="header__brand">
+        <a href="/">
+          <span class="govuk-logo">
+            <img class="govuk-logo__printable-crown" src="images/gov.uk_logotype_crown_invert_trans.png" height="32" width="36">
+            GOV.UK
+          </span>
+        <span class="header__title">
+          Content API
+            <span class="phase-banner">Work In Progress</span>
+        </span>
+        </a>
+    </div>
+
+      <div data-module="navigation">
+        <button type="button" class="header__navigation-toggle js-nav-toggle" aria-controls="navigation" aria-label="Show or hide top level navigation">Menu</button>
+
+        <nav id="navigation" class="header__navigation js-nav" aria-label="Top Level Navigation" aria-hidden="true">
+          <ul>
+              <li>
+                <a href="/">
+                  About
+                </a>
+              </li>
+              <li class="active">
+                <a href="/getting-started.html">
+                  Getting Started
+                </a>
+              </li>
+              <li>
+                <a href="/reference.html">
+                  Reference
+                </a>
+              </li>
+          </ul>
+        </nav>
+      </div>
+  </div>
+</header>
+
+      </div>
+
+      <div id="toc-heading" class="toc-show fixedsticky">
+        <a href="#toc" class="toc-show__label js-toc-show" aria-controls="toc">
+          Table of contents <span class="toc-show__icon"></span>
+        </a>
+      </div>
+
+      <div class="app-pane__body" data-module="in-page-navigation">
+        <div class="app-pane__toc">
+          <div class="toc" data-module="table-of-contents">
+            <a href="#" class="toc__close js-toc-close" aria-controls="toc" aria-label="Hide table of contents"></a>
+            <nav id="toc" class="js-toc-list toc__list" aria-labelledby="toc-heading">
+                <ul>
+  <li>
+    <a href="#getting-started">Getting Started</a>
+    <ul>
+      <li>
+        <a href="#accessing-content">Accessing Content</a>
+        <ul>
+          <li>
+            <a href="#base-path">Base path</a>
+          </li>
+          <li>
+            <a href="#document-type-and-schema-name">Document type and schema name</a>
+          </li>
+          <li>
+            <a href="#details">Details</a>
+          </li>
+          <li>
+            <a href="#links">Links</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="#making-use-of-content">Making use of content</a>
+      </li>
+      <li>
+        <a href="#content-that-spans-multiple-pages">Content that spans multiple pages</a>
+      </li>
+      <li>
+        <a href="#withdrawn-content">Withdrawn content</a>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+            </nav>
+          </div>
+        </div>
+
+        <div class="app-pane__content toc-open-disabled">
+          <main id="main-content" class="technical-documentation" data-module="anchored-headings">
+            <h1 id="getting-started">Getting Started</h1>
+<p>This guide introduces a number of key concepts in GOV.UK Content API through
+the usage of examples. It utilises <a href="https://curl.haxx.se/">curl</a> for
+interfacing with the API on the command line and is chosen due to the wide
+availability of curl- however you may prefer the structured output of
+using <a href="https://httpie.org/">HTTPie</a> or piping the curl responses
+through <a href="https://stedolan.github.io/jq/">jq</a>.</p>
+<h2 id="accessing-content">Accessing Content</h2>
+<p>GOV.UK Content API is used to access content that is hosted on
+<a href="https://www.gov.uk">www.gov.uk</a> (referred to as GOV.UK). For a given HTML
+page, for example <a href="https://www.gov.uk/vat-rates">VAT Rates</a>, we can look this
+up through this API:</p>
+<div class="highlight"><pre class="highlight shell"><code>curl https://www.gov.uk/api/content/vat-rates
+</code></pre></div>
+<p>This will return a <a href="reference.html#contentitem"><code>ContentItem</code></a> object. Within this object are
+fields that describe the content itself, metadata and associations
+with other content. This section will explain conceptually some of the key
+fields.</p>
+<h3 id="base-path">Base path</h3><div class="highlight"><pre class="highlight plaintext"><code>{
+  ...
+  "base_path": "/vat-rates",
+  ...
+}
+</code></pre></div>
+<p>Every <a href="reference.html#contentitem"><code>ContentItem</code></a> has a <code>base_path</code> field which is the same
+as the <a href="reference.html#parameters">path parameter</a> used to identify the
+content.</p>
+
+<p>The &ldquo;base&rdquo; aspect of this field is used as it indicates the root path of this
+piece of content as some pieces of content
+<a href="#content-that-spans-multiple-pages">span multiple pages</a>.</p>
+<h3 id="document-type-and-schema-name">Document type and schema name</h3><div class="highlight"><pre class="highlight plaintext"><code>{
+  ...
+  "document_type": "answer",
+  "schema_name": "answer",
+  ...
+}
+</code></pre></div>
+<p>The <code>document_type</code> and <code>schema_name</code> fields are used to define the format of
+the data represented in a <a href="reference.html#contentitem"><code>ContentItem</code></a>. The main fields that
+are affected by this are <a href="#details"><code>details</code></a> and <a href="#links"><code>links</code></a>.</p>
+
+<p>The <code>schema_name</code> refers to a file referenced in
+<a href="https://github.com/alphagov/govuk-content-schemas">GOV.UK Content Schemas</a> which utilises
+<a href="http://json-schema.org/">JSON Schema</a> to describe the rules of the data. The <code>document_type</code> defines
+the name of the format on GOV.UK. Often these fields share the same value as
+there is often only one schema for a particular <code>document_type</code>.</p>
+
+<p>This is the case with <a href="https://www.gov.uk/api/content/vat-rates">Vat Rates</a> where the content returned
+utilises the <a href="https://github.com/alphagov/govuk-content-schemas/blob/d0606b8a1add8066d90bcb00e890fd619340fd81/dist/formats/answer/frontend/schema.json"><code>answer</code> schema</a>.</p>
+<h3 id="details">Details</h3><div class="highlight"><pre class="highlight plaintext"><code>{
+  ...
+  "details": {
+    "body": "\n&lt;div class=\"highlight-answer\"&gt;\n&lt;p&gt;The standard &lt;abbr title=\"Value Added Tax\"&gt;VAT&lt;/abbr&gt; rate is &lt;em&gt;20%&lt;/em&gt;&lt;/p&gt;\n&lt;/div&gt;\n\n&lt;h2 id=\"vat-rates-for-goods-and-services\"&gt;\n&lt;abbr title=\"Value Added Tax\"&gt;VAT&lt;/abbr&gt; rates for goods and services&lt;/h2&gt;\n\n&lt;table&gt;\n  &lt;thead&gt;\n    &lt;tr&gt;\n      &lt;th&gt;Rate&lt;/th&gt;\n      &lt;th&gt;% of &lt;abbr title=\"Value Added Tax\"&gt;VAT&lt;/abbr&gt;\n&lt;/th&gt;\n      &lt;th&gt;What the rate applies to&lt;/th&gt;\n    &lt;/tr&gt;\n  &lt;/thead&gt;\n  &lt;tbody&gt;\n    &lt;tr&gt;\n      &lt;td&gt;Standard&lt;/td&gt;\n      &lt;td&gt;20%&lt;/td&gt;\n      &lt;td&gt;Most goods and services&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;Reduced rate&lt;/td&gt;\n      &lt;td&gt;5%&lt;/td&gt;\n      &lt;td&gt;Some goods and services, eg children’s car seats and home energy&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;Zero rate&lt;/td&gt;\n      &lt;td&gt;0%&lt;/td&gt;\n      &lt;td&gt;Zero-rated goods and services, eg most food and children’s clothes&lt;/td&gt;\n    &lt;/tr&gt;\n  &lt;/tbody&gt;\n&lt;/table&gt;\n\n&lt;p&gt;The standard rate of &lt;abbr title=\"Value Added Tax\"&gt;VAT&lt;/abbr&gt; increased to 20% on 4 January 2011 (from 17.5%).&lt;/p&gt;\n\n&lt;p&gt;Some things are exempt from &lt;abbr title=\"Value Added Tax\"&gt;VAT&lt;/abbr&gt;, eg postage stamps, financial and property transactions.&lt;/p&gt;\n\n&lt;p&gt;The &lt;a href=\"/vat-businesses/vat-rates\"&gt;&lt;abbr title=\"Value Added Tax\"&gt;VAT&lt;/abbr&gt; rate businesses charge&lt;/a&gt; depends on their goods and services.&lt;/p&gt;\n\n&lt;p&gt;Check the &lt;a href=\"https://www.gov.uk/rates-of-vat-on-different-goods-and-services\"&gt;rates of &lt;abbr title=\"Value Added Tax\"&gt;VAT&lt;/abbr&gt;&lt;/a&gt; on different goods and services.&lt;/p&gt;\n\n",
+    "external_related_links": []
+  },
+  ...
+}
+</code></pre></div>
+<p>The <code>details</code> field of a <a href="reference.html#contentitem"><code>ContentItem</code></a> is an object that
+contains data in a particular structure relevant for the type of content. This
+structure is described by the <a href="#document-type-and-schema-name">schema</a>, which
+itself is defined by the <code>schema_name</code> field.</p>
+
+<p>In the case of <a href="https://www.gov.uk/api/content/vat-rates">Vat Rates</a> an <a href="https://github.com/alphagov/govuk-content-schemas/blob/d0606b8a1add8066d90bcb00e890fd619340fd81/dist/formats/answer/frontend/schema.json"><code>answer</code> schema</a>
+is used. The <code>answer</code> schema  allows a <code>body</code> value, which contains the HTML
+for the page and a <code>external_related_links</code> value, which is an array that can
+be used to provide links to associated pages hosted off GOV.UK.</p>
+<h3 id="links">Links</h3>
+<p>The <code>links</code> field is used to describe relationships between content. It is
+presented as an object where the key represents a link type and the
+value represents an array of <a href="reference.html#linkedcontentitem"><code>LinkedContentItems</code></a>. A
+<code>LinkedContentItem</code> is effectively a condensed <a href="reference.html#contentitem"><code>ContentItem</code></a>.</p>
+
+<p>The values that can be used for link types are defined within the
+<a href="#document-type-and-schema-name">schema</a> associated with the content.
+This value describes the type of relationship between content. For example,
+with <a href="https://www.gov.uk/api/content/vat-rates">Vat Rates</a> there is a relationship with a link type of
+<code>mainstream_browse_pages</code>. The purpose of this link type is to enable linking
+to pages to help users find similar content that is suitable for a mainstream
+audience.</p>
+<div class="highlight"><pre class="highlight plaintext"><code>{
+  ...
+  "links": {
+    ...
+    "mainstream_browse_pages": [
+      {
+        "api_path": "/api/content/browse/tax/vat",
+        "api_url": "https://www.gov.uk/api/content/browse/tax/vat",
+        "base_path": "/browse/tax/vat",
+        "content_id": "895d337a-fa68-4c83-ab79-1c08016afe87",
+        "description": "Includes online returns, rates, charging and record keeping",
+        "document_type": "mainstream_browse_page",
+        "links": {},
+        "locale": "en",
+        "public_updated_at": "2015-06-24T13:56:39Z",
+        "schema_name": "mainstream_browse_page",
+        "title": "VAT",
+        "web_url": "https://www.gov.uk/browse/tax/vat",
+        "withdrawn": false
+      }
+    ],
+    ...
+  },
+  ...
+}
+</code></pre></div>
+<p>You may also notice in the above example that there is a <code>links</code> field inside
+the <code>LinkedContentItem</code> object. This is available as it can be useful to have
+a tree of linked content. A common usage of this is to show the hierarchy of
+pages through use of the <code>parent</code> link type.</p>
+<h2 id="making-use-of-content">Making use of content</h2>
+<p>It can be simple to make use of GOV.UK in your application. The example below
+illustrates a example utilising <a href="http://rubyonrails.org/">Ruby on Rails</a>
+with <a href="https://github.com/rest-client/rest-client">Rest Client</a>.</p>
+<div class="highlight"><pre class="highlight ruby"><code><span class="nb">require</span> <span class="s2">"rest-client"</span>
+
+<span class="n">tax_help</span> <span class="o">=</span> <span class="no">Rails</span><span class="p">.</span><span class="nf">cache</span><span class="p">.</span><span class="nf">fetch</span><span class="p">(</span><span class="s2">"govuk/tax-help"</span><span class="p">,</span> <span class="ss">expires_in: </span><span class="mi">1</span><span class="p">.</span><span class="nf">hour</span><span class="p">)</span> <span class="k">do</span>
+  <span class="n">response</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="s2">"https://www.gov.uk/api/content/tax-help"</span><span class="p">,</span> <span class="p">{</span> <span class="ss">content_type: </span><span class="s2">"json"</span> <span class="p">})</span>
+  <span class="no">JSON</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="nf">body</span><span class="p">).</span><span class="nf">dig</span><span class="p">(</span><span class="s2">"details"</span><span class="p">,</span> <span class="s2">"body"</span><span class="p">)</span>
+<span class="k">end</span>
+
+<span class="n">content</span> <span class="o">=</span> <span class="s2">"&lt;h1&gt;GOV.UK Tax Help&lt;/h1&gt;&lt;div&gt;</span><span class="si">#{</span><span class="n">tax_help</span><span class="si">}</span><span class="s2">&lt;/div&gt;"</span>
+</code></pre></div>
+<p>In this example we utilise the Rails cache layer so that we can infrequently
+access the content without concerns of hitting the
+<a href="/#rate-limiting">rate limit</a>.</p>
+
+<p>We then use the API to access the content for
+<a href="https://www.gov.uk/tax-help">Tax Help</a>. In the response we access the <code>body</code>
+field from within the <code>details</code> object. We store this to a variable <code>tax_help</code>.</p>
+
+<p>Finally we embed this in our own HTML and are ready to output to users.</p>
+<h2 id="content-that-spans-multiple-pages">Content that spans multiple pages</h2>
+<p>Sometimes a piece of content served by this API is used to render multiple
+pages on GOV.UK. This is a situation that occurs when the content may be
+presented in different scenarios.</p>
+
+<p>An example of this can be found with travel advice. The
+<a href="https://www.gov.uk/foreign-travel-advice/thailand/local-laws-and-customs">local laws and customs</a> for Thailand can be accessed as
+a single page and is also available as part of a
+<a href="https://www.gov.uk/foreign-travel-advice/thailand/print">complete printable guide</a>. Within the API this is powered by
+a single piece of content available at
+<a href="https://www.gov.uk/api/content/foreign-travel-advice/thailand">/api/content/foreign-travel-advice/thailand</a>.</p>
+
+<p>You can however access this by using the path of the page you wish to access,
+<code>/foreign-travel-advice/thailand/local-laws-and-customs</code>. In this case you will
+receive a 303 redirect response to the canonical source of the content.</p>
+<div class="highlight"><pre class="highlight shell"><code><span class="nv">$ </span>curl <span class="nt">-I</span> https://www.gov.uk/api/content/foreign-travel-advice/thailand/local-laws-and-customs
+HTTP/1.1 303 See Other
+...
+Location: https://www.gov.uk/api/content/foreign-travel-advice/thailand
+...
+</code></pre></div><h2 id="withdrawn-content">Withdrawn content</h2>
+<p>Some content provided on GOV.UK provides information that is no longer
+applicable but has been kept for prosperity. This content is described as
+being &ldquo;withdrawn&rdquo;.</p>
+
+<p>When browsing GOV.UK you may see withdrawn content which is introduced by a
+header describing its status. An example of this is
+<a href="https://www.gov.uk/government/publications/the-complete-routine-immunisation-schedule-201314">The complete routine immunisation schedule 2013 to 2014</a>
+which was withdrawn as the content had become out of date.</p>
+
+<p>Withdrawn status is represented in GOV.UK Content API through the
+<code>withdrawn_notice</code> field. We can look up the value for this using the above
+example.</p>
+<div class="highlight"><pre class="highlight shell"><code>curl https://www.gov.uk/api/content/government/publications/the-complete-routine-immunisation-schedule-201314
+</code></pre></div>
+<p>Within the returned <a href="reference.html#contentitem"><code>ContentItem</code></a> object there is a
+<a href="reference.html#withdrawnnotice"><code>WithdrawnNotice</code></a> object that describes the withdrawn
+status.</p>
+<div class="highlight"><pre class="highlight plaintext"><code>"withdrawn_notice": {
+  "explanation": "&lt;div class=\"govspeak\"&gt;&lt;p&gt;This document is out of date.  See the current &lt;a href=\"https://www.gov.uk/government/publications/the-complete-routine-immunisation-schedule\"&gt;complete routine immunisation schedule&lt;/a&gt;.&lt;/p&gt;\n&lt;/div&gt;",
+  "withdrawn_at": "2015-08-12T13:47:11Z"
+}
+</code></pre></div>
+          </main>
+
+          <footer class="footer">
+  <div class="footer__licence">
+    <a class="footer__licence-logo" href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence</a>
+    <p class="footer__licence-description">All content is available under the <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence v3.0</a>, except where otherwise stated</p>
+  </div>
+
+  <div class="footer__copyright">
+    <a class="footer__copyright-logo" href="http://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/copyright-and-re-use/crown-copyright/">© Crown copyright</a>
+  </div>
+</footer>
+
+        </div>
+      </div>
+    </div>
+
+      <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('set', 'anonymizeIp', true);
+  ga('set', 'displayFeaturesTask', null);
+
+  ga('create', 'UA-26179049-13', 'auto');
+  ga('send', 'pageview');
+  </script>
+
+  </body>
+</html>
