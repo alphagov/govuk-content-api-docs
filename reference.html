@@ -494,7 +494,7 @@ page.</p>
 <tr>
 <td>303</td>
 <td>See Other</td>
-<td>A content item at a different location is responsible for the content at this path.</td>
+<td>A content item at a different location is responsible for the content at this path. <a href="https://content-api.publishing.service.gov.uk/getting-started.html#content-that-spans-multiple-pages">Learn more</a>.</td>
 <td>None</td>
 </tr>
 <tr>
@@ -815,7 +815,7 @@ It contains metadata that describe common attributes shared between all content,
 <td>base_path</td>
 <td>string</td>
 <td>true</td>
-<td>The path of the content on GOV.UK - or the shortest one for content that spans multiple sub paths.</td>
+<td>The path of the content on GOV.UK - or the shortest one for content that spans multiple sub paths. <a href="https://content-api.publishing.service.gov.uk/getting-started.html#base-path">Learn more</a>.</td>
 </tr>
 <tr>
 <td>content_id</td>
@@ -833,13 +833,13 @@ It contains metadata that describe common attributes shared between all content,
 <td>details</td>
 <td>object</td>
 <td>false</td>
-<td>An object representing data that is structured in a format defined by the schema of the edition. This holds the content for the edition, often in a field called body. Can be null for items without content - for example, a redirect.</td>
+<td>An object representing data that is structured in a format defined by the schema of the edition. This holds the content for the edition, often in a field called body. Can be null for items without content - for example, a redirect. <a href="https://content-api.publishing.service.gov.uk/getting-started.html#details">Learn more</a>.</td>
 </tr>
 <tr>
 <td>document_type</td>
 <td>string</td>
 <td>true</td>
-<td>A particular type of document, used to differentiate between documents that are of different types but share the same schema.</td>
+<td>A particular type of document, used to differentiate between documents that are of different types but share the same schema. <a href="https://content-api.publishing.service.gov.uk/getting-started.html#document-type-and-schema-name">Learn more</a>.</td>
 </tr>
 <tr>
 <td>email_document_supertype</td>
@@ -911,7 +911,7 @@ It contains metadata that describe common attributes shared between all content,
 <td>schema_name</td>
 <td>string</td>
 <td>true</td>
-<td>The name of the GOV.UK content schema that the request body will be validated against.</td>
+<td>The name of the GOV.UK content schema that the request body will be validated against. <a href="https://content-api.publishing.service.gov.uk/getting-started.html#document-type-and-schema-name">Learn more</a>.</td>
 </tr>
 <tr>
 <td>title</td>
@@ -935,7 +935,7 @@ It contains metadata that describe common attributes shared between all content,
 <td>withdrawn_notice</td>
 <td>object</td>
 <td>false</td>
-<td>A WithdrawnNotice is an object that can be embedded within a ContentItem and is used to explain the reason a piece of content has been withdrawn.</td>
+<td>A WithdrawnNotice is an object that can be embedded within a ContentItem and is used to explain the reason a piece of content has been withdrawn. <a href="https://content-api.publishing.service.gov.uk/getting-started.html#withdrawn-content">Learn more</a>.</td>
 </tr>
 <tr>
 <td>need_ids</td>
@@ -949,7 +949,7 @@ It contains metadata that describe common attributes shared between all content,
 <p><a name="schemalinkedcontentitem"></a></p>
 
 <p>A LinkedContentItem is an abridged form of ContentItem which is used to represent links between ContentItems.
-It is embedded within the <code>links</code> field that is used within ContentItem and LinkedContentItem.</p>
+It is embedded within the <code>links</code> field that is used within ContentItem and LinkedContentItem. <a href="https://content-api.publishing.service.gov.uk/getting-started.html#links">Learn more</a>.</p>
 
 <p><details></p>
 
@@ -1062,7 +1062,7 @@ It is embedded within the <code>links</code> field that is used within ContentIt
     </div><h2 id="withdrawnnotice">WithdrawnNotice</h2>
 <p><a name="schemawithdrawnnotice"></a></p>
 
-<p>A WithdrawnNotice is an object that can be embedded within a ContentItem and is used to explain the reason a piece of content has been withdrawn.</p>
+<p>A WithdrawnNotice is an object that can be embedded within a ContentItem and is used to explain the reason a piece of content has been withdrawn. <a href="https://content-api.publishing.service.gov.uk/getting-started.html#withdrawn-content">Learn more</a>.</p>
 
 <p><details></p>
 
