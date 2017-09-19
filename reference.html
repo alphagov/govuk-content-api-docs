@@ -866,12 +866,6 @@ It contains metadata that describe common attributes shared between all content,
 <td>An object that has collections of <a href="#linkedcontentitem">LinkedContentItems</a> objects in arrays, which are grouped by a link type.</td>
 </tr>
 <tr>
-<td>» additionalProperties</td>
-<td>[<a href="#schemalinkedcontentitem">LinkedContentItem</a>]</td>
-<td>false</td>
-<td>No description</td>
-</tr>
-<tr>
 <td>locale</td>
 <td>string</td>
 <td>false</td>
@@ -944,22 +938,10 @@ It contains metadata that describe common attributes shared between all content,
 <td>A WithdrawnNotice is an object that can be embedded within a ContentItem and is used to explain the reason a piece of content has been withdrawn.</td>
 </tr>
 <tr>
-<td>» explanation</td>
-<td>string</td>
-<td>true</td>
-<td>An explanation as to why the content was withdrawn.</td>
-</tr>
-<tr>
-<td>» withdrawn_at</td>
-<td>string(date-time)</td>
-<td>true</td>
-<td>The date when the content was withdrawn.</td>
-</tr>
-<tr>
 <td>need_ids</td>
 <td>[string]</td>
 <td>false</td>
-<td>No description</td>
+<td>An array of need IDs from Maslow.</td>
 </tr>
 
       </table>
@@ -1044,12 +1026,6 @@ It is embedded within the <code>links</code> field that is used within ContentIt
 <td>object</td>
 <td>true</td>
 <td>An object that has collections of <a href="#linkedcontentitem">LinkedContentItems</a> objects in arrays, which are grouped by a link type.</td>
-</tr>
-<tr>
-<td>» additionalProperties</td>
-<td>[<a href="#schemalinkedcontentitem">LinkedContentItem</a>]</td>
-<td>false</td>
-<td>No description</td>
 </tr>
 <tr>
 <td>locale</td>
