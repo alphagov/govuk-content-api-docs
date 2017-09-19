@@ -9,7 +9,18 @@
     <% end %>
 
     <!-- Use title if it's in the page YAML frontmatter -->
-    <title><%= current_page.data.title || "GOV.UK Documentation" %></title>
+    <title>
+      <% if current_page.data.title %>
+        <%# Workaround for ugly title from reference file %>
+        <% if current_page.data.title =~ /GOV.UK Content API (v.*)/ %>
+          Reference <%= $1 %>
+        <% else %>
+          <%= current_page.data.title %>
+        <% end %>
+        -
+      <% end %>
+      GOV.UK Content API
+    </title>
 
     <!--[if gt IE 8]><!--><%= stylesheet_link_tag :screen, media: 'screen' %><!--<![endif]-->
     <!--[if lte IE 8]><%= stylesheet_link_tag 'screen-old-ie', media: 'screen' %><![endif]-->
