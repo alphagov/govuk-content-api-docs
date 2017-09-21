@@ -196,7 +196,7 @@ Location: https://www.gov.uk/api/content/foreign-travel-advice/thailand
 ## Withdrawn content
 
 Some content provided on GOV.UK provides information that is no longer
-applicable but has been kept for prosperity. This content is described as
+applicable but has been kept for posterity. This content is described as
 being "withdrawn".
 
 When browsing GOV.UK you may see withdrawn content which is introduced by a
