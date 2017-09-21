@@ -7,7 +7,7 @@ title: Getting Started
 This guide introduces a number of key concepts in GOV.UK Content API through
 the usage of examples. It utilises [curl](https://curl.haxx.se/) for
 interfacing with the API on the command line and is chosen due to the wide
-availability of curl- however you may prefer the structured output of
+availability of curl, however you may prefer the structured output of
 using [HTTPie](https://httpie.org/) or piping the curl responses
 through [jq](https://stedolan.github.io/jq/).
 
