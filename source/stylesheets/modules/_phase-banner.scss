@@ -16,8 +16,8 @@
   vertical-align: middle;
 
   @include screen {
-    // background: $beta-colour;
-    background: red;
+    background: $beta-colour;
+    // background: red;
     color: $white;
   }
 }
