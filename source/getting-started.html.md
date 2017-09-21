@@ -66,7 +66,7 @@ The `schema_name` refers to a file referenced in
 the name of the format on GOV.UK. Often these fields share the same value as
 there is often only one schema for a particular `document_type`.
 
-This is the case with [Vat Rates][vat-rates-api] where the content returned
+This is the case with [VAT Rates][vat-rates-api] where the content returned
 utilises the [`answer` schema][answer-schema].
 
 ### Details
@@ -87,7 +87,7 @@ contains data in a particular structure relevant for the type of content. This
 structure is described by the [schema](#document-type-and-schema-name), which
 itself is defined by the `schema_name` field.
 
-In the case of [Vat Rates][vat-rates-api] an [`answer` schema][answer-schema]
+In the case of [VAT Rates][vat-rates-api] an [`answer` schema][answer-schema]
 is used. The `answer` schema  allows a `body` value, which contains the HTML
 for the page and a `external_related_links` value, which is an array that can
 be used to provide links to associated pages hosted off GOV.UK.
@@ -102,7 +102,7 @@ value represents an array of [`LinkedContentItems`][linked-content-item]. A
 The values that can be used for link types are defined within the
 [schema](#document-type-and-schema-name) associated with the content.
 This value describes the type of relationship between content. For example,
-with [Vat Rates][vat-rates-api] there is a relationship with a link type of
+with [VAT Rates][vat-rates-api] there is a relationship with a link type of
 `mainstream_browse_pages`. The purpose of this link type is to enable linking
 to pages to help users find similar content that is suitable for a mainstream
 audience.
