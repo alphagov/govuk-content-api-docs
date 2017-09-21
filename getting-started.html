@@ -36,7 +36,7 @@
           </span>
         <span class="header__title">
           Content API
-            <span class="phase-banner">Work In Progress</span>
+            <span class="phase-banner">Beta</span>
         </span>
         </a>
     </div>
@@ -124,7 +124,7 @@
 <p>This guide introduces a number of key concepts in GOV.UK Content API through
 the usage of examples. It utilises <a href="https://curl.haxx.se/">curl</a> for
 interfacing with the API on the command line and is chosen due to the wide
-availability of curl- however you may prefer the structured output of
+availability of curl, however you may prefer the structured output of
 using <a href="https://httpie.org/">HTTPie</a> or piping the curl responses
 through <a href="https://stedolan.github.io/jq/">jq</a>.</p>
 <h2 id="accessing-content">Accessing Content</h2>
@@ -168,7 +168,7 @@ are affected by this are <a href="#details"><code>details</code></a> and <a href
 the name of the format on GOV.UK. Often these fields share the same value as
 there is often only one schema for a particular <code>document_type</code>.</p>
 
-<p>This is the case with <a href="https://www.gov.uk/api/content/vat-rates">Vat Rates</a> where the content returned
+<p>This is the case with <a href="https://www.gov.uk/api/content/vat-rates">VAT Rates</a> where the content returned
 utilises the <a href="https://github.com/alphagov/govuk-content-schemas/blob/d0606b8a1add8066d90bcb00e890fd619340fd81/dist/formats/answer/frontend/schema.json"><code>answer</code> schema</a>.</p>
 <h3 id="details">Details</h3><div class="highlight"><pre class="highlight plaintext"><code>{
   ...
@@ -184,7 +184,7 @@ contains data in a particular structure relevant for the type of content. This
 structure is described by the <a href="#document-type-and-schema-name">schema</a>, which
 itself is defined by the <code>schema_name</code> field.</p>
 
-<p>In the case of <a href="https://www.gov.uk/api/content/vat-rates">Vat Rates</a> an <a href="https://github.com/alphagov/govuk-content-schemas/blob/d0606b8a1add8066d90bcb00e890fd619340fd81/dist/formats/answer/frontend/schema.json"><code>answer</code> schema</a>
+<p>In the case of <a href="https://www.gov.uk/api/content/vat-rates">VAT Rates</a> an <a href="https://github.com/alphagov/govuk-content-schemas/blob/d0606b8a1add8066d90bcb00e890fd619340fd81/dist/formats/answer/frontend/schema.json"><code>answer</code> schema</a>
 is used. The <code>answer</code> schema  allows a <code>body</code> value, which contains the HTML
 for the page and a <code>external_related_links</code> value, which is an array that can
 be used to provide links to associated pages hosted off GOV.UK.</p>
@@ -197,7 +197,7 @@ value represents an array of <a href="reference.html#linkedcontentitem"><code>Li
 <p>The values that can be used for link types are defined within the
 <a href="#document-type-and-schema-name">schema</a> associated with the content.
 This value describes the type of relationship between content. For example,
-with <a href="https://www.gov.uk/api/content/vat-rates">Vat Rates</a> there is a relationship with a link type of
+with <a href="https://www.gov.uk/api/content/vat-rates">VAT Rates</a> there is a relationship with a link type of
 <code>mainstream_browse_pages</code>. The purpose of this link type is to enable linking
 to pages to help users find similar content that is suitable for a mainstream
 audience.</p>
