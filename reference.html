@@ -6,11 +6,7 @@
     <meta content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
 
     <!-- Use title if it's in the page YAML frontmatter -->
-    <title>
-          Reference v1.0.0
-        -
-      GOV.UK Content API
-    </title>
+    <title>GOV.UK Content API v1.0.0</title>
 
     <!--[if gt IE 8]><!--><link href="stylesheets/screen.css" rel="stylesheet" media="screen" /><!--<![endif]-->
     <!--[if lte IE 8]><link href="stylesheets/screen-old-ie.css" rel="stylesheet" media="screen" /><![endif]-->
@@ -24,7 +20,7 @@
   <body>
     <div class="app-pane">
       <div class="app-pane__header toc-open-disabled">
-        <a href="#main-content" class="skip-link">Skip to main content</a>
+        <a href="#content" class="skip-link">Skip to main content</a>
 
         <header class="header header--full-width">
   <div class="header__container">
@@ -80,7 +76,7 @@
           <div class="toc" data-module="table-of-contents">
             <a href="#" class="toc__close js-toc-close" aria-controls="toc" aria-label="Hide table of contents"></a>
             <nav id="toc" class="js-toc-list toc__list" aria-labelledby="toc-heading">
-                <ul>
+              <ul>
   <li>
     <a href="#gov-uk-content-api-v1-0-0">GOV.UK Content API v1.0.0</a>
     <ul>
@@ -147,7 +143,7 @@
         </div>
 
         <div class="app-pane__content toc-open-disabled">
-          <main id="main-content" class="technical-documentation" data-module="anchored-headings">
+          <main id="content" class="technical-documentation" data-module="anchored-headings">
             <h1 id="gov-uk-content-api-v1-0-0">GOV.UK Content API v1.0.0</h1>
 <p>GOV.UK Content API provides a simple and consistent way to request
 <a href="https://www.gov.uk">GOV.UK</a> content as structured data in a predictable
@@ -179,8 +175,8 @@ page.</p>
 
 <p>This request does not require authentication.</p>
 <h3 id="parameters">Parameters</h3><div class="table-container">
-      <table>
-        <tr>
+        <table>
+          <tr>
 <th>Parameter</th>
 <th>In</th>
 <th>Type</th>
@@ -195,291 +191,19 @@ page.</p>
 <td>The path to the content on GOV.UK e.g for <code>https://www.gov.uk/vat-rates</code> you&rsquo;d use <code>vat-rates</code></td>
 </tr>
 
-      </table>
-    </div><h3 id="example-request">Example Request</h3><div class="highlight"><pre class="highlight shell"><code>curl https://www.gov.uk/api/content/vat-rates
+        </table>
+      </div><h3 id="example-request">Example Request</h3><div class="highlight"><pre class="highlight shell"><code>curl https://www.gov.uk/api/content/vat-rates
 </code></pre></div><h3 id="example-response">Example Response</h3>
 <p><details>
 <summary>Examples</summary></p>
 <div class="highlight"><pre class="highlight json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"analytics_identifier"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"base_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/vat-rates"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"content_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"f838c22a-b2aa-49be-bd95-153f593293a3"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"document_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"answer"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"email_document_supertype"</span><span class="p">:</span><span class="w"> </span><span class="s2">"other"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"first_published_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-02-29T09:24:10.000+00:00"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"government_document_supertype"</span><span class="p">:</span><span class="w"> </span><span class="s2">"other"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"navigation_document_supertype"</span><span class="p">:</span><span class="w"> </span><span class="s2">"guidance"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"need_ids"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
-  </span><span class="s2">"phase"</span><span class="p">:</span><span class="w"> </span><span class="s2">"live"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"public_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-12-12T14:55:23.000+00:00"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"publishing_app"</span><span class="p">:</span><span class="w"> </span><span class="s2">"publisher"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"rendering_app"</span><span class="p">:</span><span class="w"> </span><span class="s2">"government-frontend"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"schema_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"answer"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VAT rates"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-08-31T11:35:14.024Z"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"user_journey_document_supertype"</span><span class="p">:</span><span class="w"> </span><span class="s2">"thing"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"withdrawn_notice"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
-  </span><span class="s2">"publishing_request_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3592-1504179295.816-10.3.3.1-410"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"mainstream_browse_pages"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"api_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/api/content/browse/tax/vat"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"base_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/browse/tax/vat"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"content_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"895d337a-fa68-4c83-ab79-1c08016afe87"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Includes online returns, rates, charging and record keeping"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"document_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mainstream_browse_page"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"public_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-06-24T13:56:39Z"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"schema_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mainstream_browse_page"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VAT"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"withdrawn"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
-        </span><span class="s2">"api_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.gov.uk/api/content/browse/tax/vat"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"web_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.gov.uk/browse/tax/vat"</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-    </span><span class="p">],</span><span class="w">
-    </span><span class="s2">"ordered_related_items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"api_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/api/content/tax-on-shopping"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"base_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/tax-on-shopping"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"content_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ca839010-1a5e-4049-93b5-577a40286701"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VAT and other taxes on shopping and services, including tax-free shopping, energy-saving equipment and mobility aids"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"document_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"guide"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"public_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-12-18T14:31:58Z"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"schema_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"guide"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tax on shopping and services"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"withdrawn"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"mainstream_browse_pages"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-            </span><span class="p">{</span><span class="w">
-              </span><span class="s2">"api_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/api/content/browse/tax/vat"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"base_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/browse/tax/vat"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"content_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"895d337a-fa68-4c83-ab79-1c08016afe87"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Includes online returns, rates, charging and record keeping"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"document_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mainstream_browse_page"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"public_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-06-24T13:56:39Z"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"schema_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mainstream_browse_page"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VAT"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"withdrawn"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="s2">"parent"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-                  </span><span class="p">{</span><span class="w">
-                    </span><span class="s2">"api_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/api/content/browse/tax"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"base_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/browse/tax"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"content_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"71255733-af6c-4887-9991-9b288d8d431f"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Includes VAT, debt and inheritance tax"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"document_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mainstream_browse_page"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"public_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-04-08T10:48:40Z"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"schema_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mainstream_browse_page"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Money and tax"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"withdrawn"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
-                    </span><span class="s2">"api_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.gov.uk/api/content/browse/tax"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"web_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.gov.uk/browse/tax"</span><span class="w">
-                  </span><span class="p">}</span><span class="w">
-                </span><span class="p">]</span><span class="w">
-              </span><span class="p">},</span><span class="w">
-              </span><span class="s2">"api_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.gov.uk/api/content/browse/tax/vat"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"web_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.gov.uk/browse/tax/vat"</span><span class="w">
-            </span><span class="p">}</span><span class="w">
-          </span><span class="p">]</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="s2">"api_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.gov.uk/api/content/tax-on-shopping"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"web_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.gov.uk/tax-on-shopping"</span><span class="w">
-      </span><span class="p">},</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"api_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/api/content/vat-businesses"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"base_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/vat-businesses"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"content_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"727e4b52-b760-4bd6-844d-48d8df888e32"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VAT for business - VAT rates, exempt and zero-rated items, when to charge VAT, credit and debit notes, discounts and VAT on offers"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"document_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"guide"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"public_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-12-19T15:27:25Z"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"schema_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"guide"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Businesses and charging VAT"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"withdrawn"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"mainstream_browse_pages"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-            </span><span class="p">{</span><span class="w">
-              </span><span class="s2">"api_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/api/content/browse/business/business-tax"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"base_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/browse/business/business-tax"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"content_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"b7d6588c-a056-47fc-9528-0b9ff42c3866"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Includes Corporation Tax, Capital Gains Tax, Construction Industry Scheme (CIS) and VAT"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"document_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mainstream_browse_page"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"public_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-11-18T16:02:29Z"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"schema_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mainstream_browse_page"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Business tax"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"withdrawn"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="s2">"parent"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-                  </span><span class="p">{</span><span class="w">
-                    </span><span class="s2">"api_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/api/content/browse/business"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"base_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/browse/business"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"content_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2e47e500-8d91-4747-b6d8-cf6524d570f1"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Information about starting up and running a business in the UK, including help if you're self employed or a sole trader."</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"document_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mainstream_browse_page"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"public_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-11-18T16:02:29Z"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"schema_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mainstream_browse_page"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Business and self-employed"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"withdrawn"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
-                    </span><span class="s2">"api_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.gov.uk/api/content/browse/business"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"web_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.gov.uk/browse/business"</span><span class="w">
-                  </span><span class="p">}</span><span class="w">
-                </span><span class="p">]</span><span class="w">
-              </span><span class="p">},</span><span class="w">
-              </span><span class="s2">"api_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.gov.uk/api/content/browse/business/business-tax"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"web_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.gov.uk/browse/business/business-tax"</span><span class="w">
-            </span><span class="p">},</span><span class="w">
-            </span><span class="p">{</span><span class="w">
-              </span><span class="s2">"api_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/api/content/browse/tax/vat"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"base_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/browse/tax/vat"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"content_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"895d337a-fa68-4c83-ab79-1c08016afe87"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Includes online returns, rates, charging and record keeping"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"document_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mainstream_browse_page"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"public_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-06-24T13:56:39Z"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"schema_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mainstream_browse_page"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VAT"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"withdrawn"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="s2">"parent"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-                  </span><span class="p">{</span><span class="w">
-                    </span><span class="s2">"api_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/api/content/browse/tax"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"base_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/browse/tax"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"content_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"71255733-af6c-4887-9991-9b288d8d431f"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Includes VAT, debt and inheritance tax"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"document_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mainstream_browse_page"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"public_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-04-08T10:48:40Z"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"schema_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mainstream_browse_page"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Money and tax"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"withdrawn"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
-                    </span><span class="s2">"api_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.gov.uk/api/content/browse/tax"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"web_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.gov.uk/browse/tax"</span><span class="w">
-                  </span><span class="p">}</span><span class="w">
-                </span><span class="p">]</span><span class="w">
-              </span><span class="p">},</span><span class="w">
-              </span><span class="s2">"api_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.gov.uk/api/content/browse/tax/vat"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"web_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.gov.uk/browse/tax/vat"</span><span class="w">
-            </span><span class="p">}</span><span class="w">
-          </span><span class="p">]</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="s2">"api_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.gov.uk/api/content/vat-businesses"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"web_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.gov.uk/vat-businesses"</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-    </span><span class="p">],</span><span class="w">
-    </span><span class="s2">"organisations"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"analytics_identifier"</span><span class="p">:</span><span class="w"> </span><span class="s2">"D25"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"api_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/api/content/government/organisations/hm-revenue-customs"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"base_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/government/organisations/hm-revenue-customs"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"content_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6667cce2-e809-4e21-ae09-cb0bdc1ddda3"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"document_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"organisation"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"public_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-05-13T10:09:06Z"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"schema_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"placeholder"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HM Revenue &amp; Customs"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"withdrawn"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"details"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"brand"</span><span class="p">:</span><span class="w"> </span><span class="s2">"hm-revenue-customs"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"logo"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"formatted_title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HM Revenue&lt;br/&gt;&amp;amp; Customs"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"crest"</span><span class="p">:</span><span class="w"> </span><span class="s2">"hmrc"</span><span class="w">
-          </span><span class="p">}</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
-        </span><span class="s2">"api_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.gov.uk/api/content/government/organisations/hm-revenue-customs"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"web_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.gov.uk/government/organisations/hm-revenue-customs"</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-    </span><span class="p">],</span><span class="w">
-    </span><span class="s2">"parent"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"api_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/api/content/browse/tax/vat"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"base_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/browse/tax/vat"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"content_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"895d337a-fa68-4c83-ab79-1c08016afe87"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Includes online returns, rates, charging and record keeping"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"document_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mainstream_browse_page"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"public_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-06-24T13:56:39Z"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"schema_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mainstream_browse_page"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VAT"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"withdrawn"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"parent"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-            </span><span class="p">{</span><span class="w">
-              </span><span class="s2">"api_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/api/content/browse/tax"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"base_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/browse/tax"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"content_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"71255733-af6c-4887-9991-9b288d8d431f"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Includes VAT, debt and inheritance tax"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"document_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mainstream_browse_page"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"public_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-04-08T10:48:40Z"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"schema_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mainstream_browse_page"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Money and tax"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"withdrawn"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
-              </span><span class="s2">"api_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.gov.uk/api/content/browse/tax"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"web_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.gov.uk/browse/tax"</span><span class="w">
-            </span><span class="p">}</span><span class="w">
-          </span><span class="p">]</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="s2">"api_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.gov.uk/api/content/browse/tax/vat"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"web_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.gov.uk/browse/tax/vat"</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-    </span><span class="p">],</span><span class="w">
-    </span><span class="s2">"topics"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"api_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/api/content/topic/business-tax/vat"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"base_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/topic/business-tax/vat"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"content_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1ddaaacb-0981-4abc-a532-a5111f2bea6b"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"List of information about VAT."</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"document_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"topic"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"public_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-11-30T14:17:03Z"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"schema_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"topic"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VAT"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"withdrawn"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
-        </span><span class="s2">"api_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.gov.uk/api/content/topic/business-tax/vat"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"web_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.gov.uk/topic/business-tax/vat"</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-    </span><span class="p">],</span><span class="w">
-    </span><span class="s2">"available_translations"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VAT rates"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"public_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-12-12T14:55:23Z"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"document_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"answer"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"schema_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"answer"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"base_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/vat-rates"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Current VAT rates - standard 20% and rates for reduced rate and zero-rated items"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"api_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/api/content/vat-rates"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"withdrawn"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"content_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"f838c22a-b2aa-49be-bd95-153f593293a3"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"api_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.gov.uk/api/content/vat-rates"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"web_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.gov.uk/vat-rates"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-    </span><span class="p">]</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Current VAT rates - standard 20% and rates for reduced rate and zero-rated items"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"details"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"body"</span><span class="p">:</span><span class="w"> </span><span class="s2">"</span><span class="se">\n</span><span class="s2">&lt;div class=</span><span class="se">\"</span><span class="s2">highlight-answer</span><span class="se">\"</span><span class="s2">&gt;</span><span class="se">\n</span><span class="s2">&lt;p&gt;The standard &lt;abbr title=</span><span class="se">\"</span><span class="s2">Value Added Tax</span><span class="se">\"</span><span class="s2">&gt;VAT&lt;/abbr&gt; rate is &lt;em&gt;20%&lt;/em&gt;&lt;/p&gt;</span><span class="se">\n</span><span class="s2">&lt;/div&gt;</span><span class="se">\n\n</span><span class="s2">&lt;h2 id=</span><span class="se">\"</span><span class="s2">vat-rates-for-goods-and-services</span><span class="se">\"</span><span class="s2">&gt;</span><span class="se">\n</span><span class="s2">&lt;abbr title=</span><span class="se">\"</span><span class="s2">Value Added Tax</span><span class="se">\"</span><span class="s2">&gt;VAT&lt;/abbr&gt; rates for goods and services&lt;/h2&gt;</span><span class="se">\n\n</span><span class="s2">&lt;table&gt;</span><span class="se">\n</span><span class="s2">  &lt;thead&gt;</span><span class="se">\n</span><span class="s2">    &lt;tr&gt;</span><span class="se">\n</span><span class="s2">      &lt;th&gt;Rate&lt;/th&gt;</span><span class="se">\n</span><span class="s2">      &lt;th&gt;% of &lt;abbr title=</span><span class="se">\"</span><span class="s2">Value Added Tax</span><span class="se">\"</span><span class="s2">&gt;VAT&lt;/abbr&gt;</span><span class="se">\n</span><span class="s2">&lt;/th&gt;</span><span class="se">\n</span><span class="s2">      &lt;th&gt;What the rate applies to&lt;/th&gt;</span><span class="se">\n</span><span class="s2">    &lt;/tr&gt;</span><span class="se">\n</span><span class="s2">  &lt;/thead&gt;</span><span class="se">\n</span><span class="s2">  &lt;tbody&gt;</span><span class="se">\n</span><span class="s2">    &lt;tr&gt;</span><span class="se">\n</span><span class="s2">      &lt;td&gt;Standard&lt;/td&gt;</span><span class="se">\n</span><span class="s2">      &lt;td&gt;20%&lt;/td&gt;</span><span class="se">\n</span><span class="s2">      &lt;td&gt;Most goods and services&lt;/td&gt;</span><span class="se">\n</span><span class="s2">    &lt;/tr&gt;</span><span class="se">\n</span><span class="s2">    &lt;tr&gt;</span><span class="se">\n</span><span class="s2">      &lt;td&gt;Reduced rate&lt;/td&gt;</span><span class="se">\n</span><span class="s2">      &lt;td&gt;5%&lt;/td&gt;</span><span class="se">\n</span><span class="s2">      &lt;td&gt;Some goods and services, eg children’s car seats and home energy&lt;/td&gt;</span><span class="se">\n</span><span class="s2">    &lt;/tr&gt;</span><span class="se">\n</span><span class="s2">    &lt;tr&gt;</span><span class="se">\n</span><span class="s2">      &lt;td&gt;Zero rate&lt;/td&gt;</span><span class="se">\n</span><span class="s2">      &lt;td&gt;0%&lt;/td&gt;</span><span class="se">\n</span><span class="s2">      &lt;td&gt;Zero-rated goods and services, eg most food and children’s clothes&lt;/td&gt;</span><span class="se">\n</span><span class="s2">    &lt;/tr&gt;</span><span class="se">\n</span><span class="s2">  &lt;/tbody&gt;</span><span class="se">\n</span><span class="s2">&lt;/table&gt;</span><span class="se">\n\n</span><span class="s2">&lt;p&gt;The standard rate of &lt;abbr title=</span><span class="se">\"</span><span class="s2">Value Added Tax</span><span class="se">\"</span><span class="s2">&gt;VAT&lt;/abbr&gt; increased to 20% on 4 January 2011 (from 17.5%).&lt;/p&gt;</span><span class="se">\n\n</span><span class="s2">&lt;p&gt;Some things are exempt from &lt;abbr title=</span><span class="se">\"</span><span class="s2">Value Added Tax</span><span class="se">\"</span><span class="s2">&gt;VAT&lt;/abbr&gt;, eg postage stamps, financial and property transactions.&lt;/p&gt;</span><span class="se">\n\n</span><span class="s2">&lt;p&gt;The &lt;a href=</span><span class="se">\"</span><span class="s2">/vat-businesses/vat-rates</span><span class="se">\"</span><span class="s2">&gt;&lt;abbr title=</span><span class="se">\"</span><span class="s2">Value Added Tax</span><span class="se">\"</span><span class="s2">&gt;VAT&lt;/abbr&gt; rate businesses charge&lt;/a&gt; depends on their goods and services.&lt;/p&gt;</span><span class="se">\n\n</span><span class="s2">&lt;p&gt;Check the &lt;a href=</span><span class="se">\"</span><span class="s2">https://www.gov.uk/rates-of-vat-on-different-goods-and-services</span><span class="se">\"</span><span class="s2">&gt;rates of &lt;abbr title=</span><span class="se">\"</span><span class="s2">Value Added Tax</span><span class="se">\"</span><span class="s2">&gt;VAT&lt;/abbr&gt;&lt;/a&gt; on different goods and services.&lt;/p&gt;</span><span class="se">\n\n</span><span class="s2">"</span><span class="w">
-  </span><span class="p">}</span><span class="w">
+  </span><span class="s2">"$ref"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#/components/examples/ContentItemExample"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p></details></p>
 <h3 id="responses">Responses</h3><div class="table-container">
-      <table>
-        <tr>
+        <table>
+          <tr>
 <th>Status</th>
 <th>Meaning</th>
 <th>Description</th>
@@ -510,8 +234,8 @@ page.</p>
 <td>None</td>
 </tr>
 
-      </table>
-    </div><h1 id="objects">Objects</h1><h2 id="contentitem">ContentItem</h2>
+        </table>
+      </div><h1 id="objects">Objects</h1><h2 id="contentitem">ContentItem</h2>
 <p><a name="schemacontentitem"></a></p>
 
 <p>A resource that represents a piece of content on GOV.UK.
@@ -521,285 +245,13 @@ It contains metadata that describe common attributes shared between all content,
 
 <p><summary>Sample JSON</summary></p>
 <div class="highlight"><pre class="highlight json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"analytics_identifier"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"base_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/vat-rates"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"content_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"f838c22a-b2aa-49be-bd95-153f593293a3"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"document_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"answer"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"email_document_supertype"</span><span class="p">:</span><span class="w"> </span><span class="s2">"other"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"first_published_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-02-29T09:24:10.000+00:00"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"government_document_supertype"</span><span class="p">:</span><span class="w"> </span><span class="s2">"other"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"navigation_document_supertype"</span><span class="p">:</span><span class="w"> </span><span class="s2">"guidance"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"need_ids"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
-  </span><span class="s2">"phase"</span><span class="p">:</span><span class="w"> </span><span class="s2">"live"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"public_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-12-12T14:55:23.000+00:00"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"publishing_app"</span><span class="p">:</span><span class="w"> </span><span class="s2">"publisher"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"rendering_app"</span><span class="p">:</span><span class="w"> </span><span class="s2">"government-frontend"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"schema_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"answer"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VAT rates"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-08-31T11:35:14.024Z"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"user_journey_document_supertype"</span><span class="p">:</span><span class="w"> </span><span class="s2">"thing"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"withdrawn_notice"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
-  </span><span class="s2">"publishing_request_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3592-1504179295.816-10.3.3.1-410"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"mainstream_browse_pages"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"api_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/api/content/browse/tax/vat"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"base_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/browse/tax/vat"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"content_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"895d337a-fa68-4c83-ab79-1c08016afe87"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Includes online returns, rates, charging and record keeping"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"document_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mainstream_browse_page"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"public_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-06-24T13:56:39Z"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"schema_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mainstream_browse_page"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VAT"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"withdrawn"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
-        </span><span class="s2">"api_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.gov.uk/api/content/browse/tax/vat"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"web_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.gov.uk/browse/tax/vat"</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-    </span><span class="p">],</span><span class="w">
-    </span><span class="s2">"ordered_related_items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"api_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/api/content/tax-on-shopping"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"base_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/tax-on-shopping"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"content_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ca839010-1a5e-4049-93b5-577a40286701"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VAT and other taxes on shopping and services, including tax-free shopping, energy-saving equipment and mobility aids"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"document_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"guide"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"public_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-12-18T14:31:58Z"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"schema_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"guide"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tax on shopping and services"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"withdrawn"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"mainstream_browse_pages"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-            </span><span class="p">{</span><span class="w">
-              </span><span class="s2">"api_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/api/content/browse/tax/vat"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"base_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/browse/tax/vat"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"content_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"895d337a-fa68-4c83-ab79-1c08016afe87"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Includes online returns, rates, charging and record keeping"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"document_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mainstream_browse_page"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"public_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-06-24T13:56:39Z"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"schema_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mainstream_browse_page"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VAT"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"withdrawn"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="s2">"parent"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-                  </span><span class="p">{</span><span class="w">
-                    </span><span class="s2">"api_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/api/content/browse/tax"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"base_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/browse/tax"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"content_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"71255733-af6c-4887-9991-9b288d8d431f"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Includes VAT, debt and inheritance tax"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"document_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mainstream_browse_page"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"public_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-04-08T10:48:40Z"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"schema_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mainstream_browse_page"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Money and tax"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"withdrawn"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
-                    </span><span class="s2">"api_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.gov.uk/api/content/browse/tax"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"web_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.gov.uk/browse/tax"</span><span class="w">
-                  </span><span class="p">}</span><span class="w">
-                </span><span class="p">]</span><span class="w">
-              </span><span class="p">},</span><span class="w">
-              </span><span class="s2">"api_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.gov.uk/api/content/browse/tax/vat"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"web_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.gov.uk/browse/tax/vat"</span><span class="w">
-            </span><span class="p">}</span><span class="w">
-          </span><span class="p">]</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="s2">"api_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.gov.uk/api/content/tax-on-shopping"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"web_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.gov.uk/tax-on-shopping"</span><span class="w">
-      </span><span class="p">},</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"api_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/api/content/vat-businesses"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"base_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/vat-businesses"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"content_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"727e4b52-b760-4bd6-844d-48d8df888e32"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VAT for business - VAT rates, exempt and zero-rated items, when to charge VAT, credit and debit notes, discounts and VAT on offers"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"document_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"guide"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"public_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-12-19T15:27:25Z"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"schema_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"guide"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Businesses and charging VAT"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"withdrawn"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"mainstream_browse_pages"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-            </span><span class="p">{</span><span class="w">
-              </span><span class="s2">"api_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/api/content/browse/business/business-tax"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"base_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/browse/business/business-tax"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"content_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"b7d6588c-a056-47fc-9528-0b9ff42c3866"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Includes Corporation Tax, Capital Gains Tax, Construction Industry Scheme (CIS) and VAT"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"document_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mainstream_browse_page"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"public_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-11-18T16:02:29Z"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"schema_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mainstream_browse_page"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Business tax"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"withdrawn"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="s2">"parent"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-                  </span><span class="p">{</span><span class="w">
-                    </span><span class="s2">"api_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/api/content/browse/business"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"base_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/browse/business"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"content_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2e47e500-8d91-4747-b6d8-cf6524d570f1"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Information about starting up and running a business in the UK, including help if you're self employed or a sole trader."</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"document_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mainstream_browse_page"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"public_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-11-18T16:02:29Z"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"schema_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mainstream_browse_page"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Business and self-employed"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"withdrawn"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
-                    </span><span class="s2">"api_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.gov.uk/api/content/browse/business"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"web_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.gov.uk/browse/business"</span><span class="w">
-                  </span><span class="p">}</span><span class="w">
-                </span><span class="p">]</span><span class="w">
-              </span><span class="p">},</span><span class="w">
-              </span><span class="s2">"api_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.gov.uk/api/content/browse/business/business-tax"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"web_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.gov.uk/browse/business/business-tax"</span><span class="w">
-            </span><span class="p">},</span><span class="w">
-            </span><span class="p">{</span><span class="w">
-              </span><span class="s2">"api_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/api/content/browse/tax/vat"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"base_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/browse/tax/vat"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"content_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"895d337a-fa68-4c83-ab79-1c08016afe87"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Includes online returns, rates, charging and record keeping"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"document_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mainstream_browse_page"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"public_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-06-24T13:56:39Z"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"schema_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mainstream_browse_page"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VAT"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"withdrawn"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="s2">"parent"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-                  </span><span class="p">{</span><span class="w">
-                    </span><span class="s2">"api_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/api/content/browse/tax"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"base_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/browse/tax"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"content_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"71255733-af6c-4887-9991-9b288d8d431f"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Includes VAT, debt and inheritance tax"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"document_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mainstream_browse_page"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"public_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-04-08T10:48:40Z"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"schema_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mainstream_browse_page"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Money and tax"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"withdrawn"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
-                    </span><span class="s2">"api_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.gov.uk/api/content/browse/tax"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"web_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.gov.uk/browse/tax"</span><span class="w">
-                  </span><span class="p">}</span><span class="w">
-                </span><span class="p">]</span><span class="w">
-              </span><span class="p">},</span><span class="w">
-              </span><span class="s2">"api_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.gov.uk/api/content/browse/tax/vat"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"web_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.gov.uk/browse/tax/vat"</span><span class="w">
-            </span><span class="p">}</span><span class="w">
-          </span><span class="p">]</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="s2">"api_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.gov.uk/api/content/vat-businesses"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"web_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.gov.uk/vat-businesses"</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-    </span><span class="p">],</span><span class="w">
-    </span><span class="s2">"organisations"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"analytics_identifier"</span><span class="p">:</span><span class="w"> </span><span class="s2">"D25"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"api_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/api/content/government/organisations/hm-revenue-customs"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"base_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/government/organisations/hm-revenue-customs"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"content_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6667cce2-e809-4e21-ae09-cb0bdc1ddda3"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"document_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"organisation"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"public_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-05-13T10:09:06Z"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"schema_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"placeholder"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HM Revenue &amp; Customs"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"withdrawn"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"details"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"brand"</span><span class="p">:</span><span class="w"> </span><span class="s2">"hm-revenue-customs"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"logo"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"formatted_title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HM Revenue&lt;br/&gt;&amp;amp; Customs"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"crest"</span><span class="p">:</span><span class="w"> </span><span class="s2">"hmrc"</span><span class="w">
-          </span><span class="p">}</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
-        </span><span class="s2">"api_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.gov.uk/api/content/government/organisations/hm-revenue-customs"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"web_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.gov.uk/government/organisations/hm-revenue-customs"</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-    </span><span class="p">],</span><span class="w">
-    </span><span class="s2">"parent"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"api_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/api/content/browse/tax/vat"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"base_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/browse/tax/vat"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"content_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"895d337a-fa68-4c83-ab79-1c08016afe87"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Includes online returns, rates, charging and record keeping"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"document_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mainstream_browse_page"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"public_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-06-24T13:56:39Z"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"schema_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mainstream_browse_page"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VAT"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"withdrawn"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"parent"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-            </span><span class="p">{</span><span class="w">
-              </span><span class="s2">"api_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/api/content/browse/tax"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"base_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/browse/tax"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"content_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"71255733-af6c-4887-9991-9b288d8d431f"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Includes VAT, debt and inheritance tax"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"document_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mainstream_browse_page"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"public_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-04-08T10:48:40Z"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"schema_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mainstream_browse_page"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Money and tax"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"withdrawn"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
-              </span><span class="s2">"api_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.gov.uk/api/content/browse/tax"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"web_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.gov.uk/browse/tax"</span><span class="w">
-            </span><span class="p">}</span><span class="w">
-          </span><span class="p">]</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="s2">"api_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.gov.uk/api/content/browse/tax/vat"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"web_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.gov.uk/browse/tax/vat"</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-    </span><span class="p">],</span><span class="w">
-    </span><span class="s2">"topics"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"api_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/api/content/topic/business-tax/vat"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"base_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/topic/business-tax/vat"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"content_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1ddaaacb-0981-4abc-a532-a5111f2bea6b"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"List of information about VAT."</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"document_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"topic"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"public_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-11-30T14:17:03Z"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"schema_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"topic"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VAT"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"withdrawn"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
-        </span><span class="s2">"api_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.gov.uk/api/content/topic/business-tax/vat"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"web_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.gov.uk/topic/business-tax/vat"</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-    </span><span class="p">],</span><span class="w">
-    </span><span class="s2">"available_translations"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VAT rates"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"public_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-12-12T14:55:23Z"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"document_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"answer"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"schema_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"answer"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"base_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/vat-rates"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Current VAT rates - standard 20% and rates for reduced rate and zero-rated items"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"api_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/api/content/vat-rates"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"withdrawn"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"content_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"f838c22a-b2aa-49be-bd95-153f593293a3"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"api_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.gov.uk/api/content/vat-rates"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"web_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.gov.uk/vat-rates"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-    </span><span class="p">]</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Current VAT rates - standard 20% and rates for reduced rate and zero-rated items"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"details"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"body"</span><span class="p">:</span><span class="w"> </span><span class="s2">"</span><span class="se">\n</span><span class="s2">&lt;div class=</span><span class="se">\"</span><span class="s2">highlight-answer</span><span class="se">\"</span><span class="s2">&gt;</span><span class="se">\n</span><span class="s2">&lt;p&gt;The standard &lt;abbr title=</span><span class="se">\"</span><span class="s2">Value Added Tax</span><span class="se">\"</span><span class="s2">&gt;VAT&lt;/abbr&gt; rate is &lt;em&gt;20%&lt;/em&gt;&lt;/p&gt;</span><span class="se">\n</span><span class="s2">&lt;/div&gt;</span><span class="se">\n\n</span><span class="s2">&lt;h2 id=</span><span class="se">\"</span><span class="s2">vat-rates-for-goods-and-services</span><span class="se">\"</span><span class="s2">&gt;</span><span class="se">\n</span><span class="s2">&lt;abbr title=</span><span class="se">\"</span><span class="s2">Value Added Tax</span><span class="se">\"</span><span class="s2">&gt;VAT&lt;/abbr&gt; rates for goods and services&lt;/h2&gt;</span><span class="se">\n\n</span><span class="s2">&lt;table&gt;</span><span class="se">\n</span><span class="s2">  &lt;thead&gt;</span><span class="se">\n</span><span class="s2">    &lt;tr&gt;</span><span class="se">\n</span><span class="s2">      &lt;th&gt;Rate&lt;/th&gt;</span><span class="se">\n</span><span class="s2">      &lt;th&gt;% of &lt;abbr title=</span><span class="se">\"</span><span class="s2">Value Added Tax</span><span class="se">\"</span><span class="s2">&gt;VAT&lt;/abbr&gt;</span><span class="se">\n</span><span class="s2">&lt;/th&gt;</span><span class="se">\n</span><span class="s2">      &lt;th&gt;What the rate applies to&lt;/th&gt;</span><span class="se">\n</span><span class="s2">    &lt;/tr&gt;</span><span class="se">\n</span><span class="s2">  &lt;/thead&gt;</span><span class="se">\n</span><span class="s2">  &lt;tbody&gt;</span><span class="se">\n</span><span class="s2">    &lt;tr&gt;</span><span class="se">\n</span><span class="s2">      &lt;td&gt;Standard&lt;/td&gt;</span><span class="se">\n</span><span class="s2">      &lt;td&gt;20%&lt;/td&gt;</span><span class="se">\n</span><span class="s2">      &lt;td&gt;Most goods and services&lt;/td&gt;</span><span class="se">\n</span><span class="s2">    &lt;/tr&gt;</span><span class="se">\n</span><span class="s2">    &lt;tr&gt;</span><span class="se">\n</span><span class="s2">      &lt;td&gt;Reduced rate&lt;/td&gt;</span><span class="se">\n</span><span class="s2">      &lt;td&gt;5%&lt;/td&gt;</span><span class="se">\n</span><span class="s2">      &lt;td&gt;Some goods and services, eg children’s car seats and home energy&lt;/td&gt;</span><span class="se">\n</span><span class="s2">    &lt;/tr&gt;</span><span class="se">\n</span><span class="s2">    &lt;tr&gt;</span><span class="se">\n</span><span class="s2">      &lt;td&gt;Zero rate&lt;/td&gt;</span><span class="se">\n</span><span class="s2">      &lt;td&gt;0%&lt;/td&gt;</span><span class="se">\n</span><span class="s2">      &lt;td&gt;Zero-rated goods and services, eg most food and children’s clothes&lt;/td&gt;</span><span class="se">\n</span><span class="s2">    &lt;/tr&gt;</span><span class="se">\n</span><span class="s2">  &lt;/tbody&gt;</span><span class="se">\n</span><span class="s2">&lt;/table&gt;</span><span class="se">\n\n</span><span class="s2">&lt;p&gt;The standard rate of &lt;abbr title=</span><span class="se">\"</span><span class="s2">Value Added Tax</span><span class="se">\"</span><span class="s2">&gt;VAT&lt;/abbr&gt; increased to 20% on 4 January 2011 (from 17.5%).&lt;/p&gt;</span><span class="se">\n\n</span><span class="s2">&lt;p&gt;Some things are exempt from &lt;abbr title=</span><span class="se">\"</span><span class="s2">Value Added Tax</span><span class="se">\"</span><span class="s2">&gt;VAT&lt;/abbr&gt;, eg postage stamps, financial and property transactions.&lt;/p&gt;</span><span class="se">\n\n</span><span class="s2">&lt;p&gt;The &lt;a href=</span><span class="se">\"</span><span class="s2">/vat-businesses/vat-rates</span><span class="se">\"</span><span class="s2">&gt;&lt;abbr title=</span><span class="se">\"</span><span class="s2">Value Added Tax</span><span class="se">\"</span><span class="s2">&gt;VAT&lt;/abbr&gt; rate businesses charge&lt;/a&gt; depends on their goods and services.&lt;/p&gt;</span><span class="se">\n\n</span><span class="s2">&lt;p&gt;Check the &lt;a href=</span><span class="se">\"</span><span class="s2">https://www.gov.uk/rates-of-vat-on-different-goods-and-services</span><span class="se">\"</span><span class="s2">&gt;rates of &lt;abbr title=</span><span class="se">\"</span><span class="s2">Value Added Tax</span><span class="se">\"</span><span class="s2">&gt;VAT&lt;/abbr&gt;&lt;/a&gt; on different goods and services.&lt;/p&gt;</span><span class="se">\n\n</span><span class="s2">"</span><span class="w">
-  </span><span class="p">}</span><span class="w">
+  </span><span class="s2">"$ref"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#/components/examples/ContentItemExample"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p></details></p>
 <h3 id="fields">Fields</h3><div class="table-container">
-      <table>
-        <tr>
+        <table>
+          <tr>
 <th>Name</th>
 <th>Type</th>
 <th>Required</th>
@@ -933,19 +385,13 @@ It contains metadata that describe common attributes shared between all content,
 </tr>
 <tr>
 <td>withdrawn_notice</td>
-<td>object</td>
+<td><a href="#schemawithdrawnnotice">WithdrawnNotice</a></td>
 <td>false</td>
-<td>A WithdrawnNotice is an object that can be embedded within a ContentItem and is used to explain the reason a piece of content has been withdrawn. <a href="https://content-api.publishing.service.gov.uk/getting-started.html#withdrawn-content">Learn more</a>.</td>
-</tr>
-<tr>
-<td>need_ids</td>
-<td>[string]</td>
-<td>false</td>
-<td>An array of need IDs from Maslow.</td>
+<td>If the edition is withdrawn, this will contain the information about when and why it was withdrawn.</td>
 </tr>
 
-      </table>
-    </div><h2 id="linkedcontentitem">LinkedContentItem</h2>
+        </table>
+      </div><h2 id="linkedcontentitem">LinkedContentItem</h2>
 <p><a name="schemalinkedcontentitem"></a></p>
 
 <p>A LinkedContentItem is an abridged form of ContentItem which is used to represent links between ContentItems.
@@ -972,8 +418,8 @@ It is embedded within the <code>links</code> field that is used within ContentIt
 </span></code></pre></div>
 <p></details></p>
 <h3 id="linkedcontentitem-fields">Fields</h3><div class="table-container">
-      <table>
-        <tr>
+        <table>
+          <tr>
 <th>Name</th>
 <th>Type</th>
 <th>Required</th>
@@ -1058,8 +504,8 @@ It is embedded within the <code>links</code> field that is used within ContentIt
 <td>Holds whether or not the content has been withdrawn.</td>
 </tr>
 
-      </table>
-    </div><h2 id="withdrawnnotice">WithdrawnNotice</h2>
+        </table>
+      </div><h2 id="withdrawnnotice">WithdrawnNotice</h2>
 <p><a name="schemawithdrawnnotice"></a></p>
 
 <p>A WithdrawnNotice is an object that can be embedded within a ContentItem and is used to explain the reason a piece of content has been withdrawn. <a href="https://content-api.publishing.service.gov.uk/getting-started.html#withdrawn-content">Learn more</a>.</p>
@@ -1074,8 +520,8 @@ It is embedded within the <code>links</code> field that is used within ContentIt
 </span></code></pre></div>
 <p></details></p>
 <h3 id="withdrawnnotice-fields">Fields</h3><div class="table-container">
-      <table>
-        <tr>
+        <table>
+          <tr>
 <th>Name</th>
 <th>Type</th>
 <th>Required</th>
@@ -1094,8 +540,8 @@ It is embedded within the <code>links</code> field that is used within ContentIt
 <td>The date when the content was withdrawn.</td>
 </tr>
 
-      </table>
-    </div>
+        </table>
+      </div>
           </main>
 
           <footer class="footer">
@@ -1119,10 +565,10 @@ It is embedded within the <code>links</code> field that is used within ContentIt
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
+  ga('create', 'UA-26179049-13', 'auto');
   ga('set', 'anonymizeIp', true);
   ga('set', 'displayFeaturesTask', null);
-
-  ga('create', 'UA-26179049-13', 'auto');
+  ga('set', 'transport', 'beacon');
   ga('send', 'pageview');
   </script>
 
