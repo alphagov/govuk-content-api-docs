@@ -1,136 +1,156 @@
 <!doctype html>
-<html lang="en" class="no-js">
+<html lang="en" class="govuk-template no-js">
   <head>
     <meta content="IE=edge" http-equiv="X-UA-Compatible">
     <meta charset="utf-8">
     <meta content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
 
-    <!-- Use title if it's in the page YAML frontmatter -->
-    <title>GOV.UK Content API v1.0.0</title>
+    <title>GOV.UK Content API v1.0.0 | Content API</title>
 
-    <!--[if gt IE 8]><!--><link href="stylesheets/screen.css" rel="stylesheet" media="screen" /><!--<![endif]-->
-    <!--[if lte IE 8]><link href="stylesheets/screen-old-ie.css" rel="stylesheet" media="screen" /><![endif]-->
+    <link href="stylesheets/manifest.css" rel="stylesheet" />
 
     <link rel="canonical" href="https://content-api.publishing.service.gov.uk/reference.html">
 
-    <link href="stylesheets/print.css" rel="stylesheet" media="print" />
-    <script src="javascripts/application.js"></script>
+
+      <meta property="og:image" content="https://content-api.publishing.service.gov.uk/images/govuk-large.png" />
+      <meta property="og:site_name" content="Content API" />
+      <meta property="og:title" content="GOV.UK Content API v1.0.0" />
+      <meta property="og:type" content="object" />
+      <meta property="og:url" content="https://content-api.publishing.service.gov.uk/reference.html" />
+      <meta property="twitter:card" content="summary" />
+      <meta property="twitter:domain" content="content-api.publishing.service.gov.uk" />
+      <meta property="twitter:image" content="https://content-api.publishing.service.gov.uk/images/govuk-large.png" />
+      <meta property="twitter:title" content="GOV.UK Content API v1.0.0 | Content API" />
+      <meta property="twitter:url" content="https://content-api.publishing.service.gov.uk/reference.html" />
+
+    
   </head>
 
-  <body>
+  <body class="govuk-template__body">
+    <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
+
     <div class="app-pane">
       <div class="app-pane__header toc-open-disabled">
-        <a href="#content" class="skip-link">Skip to main content</a>
+        <a href="#content" class="govuk-skip-link">Skip to main content</a>
 
-        <header class="header header--full-width">
-  <div class="header__container">
-    <div class="header__brand">
-        <a href="/">
-          <span class="govuk-logo">
-            <img class="govuk-logo__printable-crown" src="images/gov.uk_logotype_crown_invert_trans.png" height="32" width="36">
+        <header class="govuk-header " role="banner" data-module="govuk-header">
+  <div class="govuk-header__container govuk-header__container--full-width">
+    <div class="govuk-header__logo">
+      <a href="/" class="govuk-header__link govuk-header__link--homepage">
+        <span class="govuk-header__logotype">
+          <svg
+            role="presentation"
+            focusable="false"
+            class="govuk-header__logotype-crown"
+            xmlns="http://www.w3.org/2000/svg"
+            viewbox="0 0 132 97"
+            height="30"
+            width="36"
+          >
+            <path
+              fill="currentColor" fill-rule="evenodd"
+              d="M25 30.2c3.5 1.5 7.7-.2 9.1-3.7 1.5-3.6-.2-7.8-3.9-9.2-3.6-1.4-7.6.3-9.1 3.9-1.4 3.5.3 7.5 3.9 9zM9 39.5c3.6 1.5 7.8-.2 9.2-3.7 1.5-3.6-.2-7.8-3.9-9.1-3.6-1.5-7.6.2-9.1 3.8-1.4 3.5.3 7.5 3.8 9zM4.4 57.2c3.5 1.5 7.7-.2 9.1-3.8 1.5-3.6-.2-7.7-3.9-9.1-3.5-1.5-7.6.3-9.1 3.8-1.4 3.5.3 7.6 3.9 9.1zm38.3-21.4c3.5 1.5 7.7-.2 9.1-3.8 1.5-3.6-.2-7.7-3.9-9.1-3.6-1.5-7.6.3-9.1 3.8-1.3 3.6.4 7.7 3.9 9.1zm64.4-5.6c-3.6 1.5-7.8-.2-9.1-3.7-1.5-3.6.2-7.8 3.8-9.2 3.6-1.4 7.7.3 9.2 3.9 1.3 3.5-.4 7.5-3.9 9zm15.9 9.3c-3.6 1.5-7.7-.2-9.1-3.7-1.5-3.6.2-7.8 3.7-9.1 3.6-1.5 7.7.2 9.2 3.8 1.5 3.5-.3 7.5-3.8 9zm4.7 17.7c-3.6 1.5-7.8-.2-9.2-3.8-1.5-3.6.2-7.7 3.9-9.1 3.6-1.5 7.7.3 9.2 3.8 1.3 3.5-.4 7.6-3.9 9.1zM89.3 35.8c-3.6 1.5-7.8-.2-9.2-3.8-1.4-3.6.2-7.7 3.9-9.1 3.6-1.5 7.7.3 9.2 3.8 1.4 3.6-.3 7.7-3.9 9.1zM69.7 17.7l8.9 4.7V9.3l-8.9 2.8c-.2-.3-.5-.6-.9-.9L72.4 0H59.6l3.5 11.2c-.3.3-.6.5-.9.9l-8.8-2.8v13.1l8.8-4.7c.3.3.6.7.9.9l-5 15.4v.1c-.2.8-.4 1.6-.4 2.4 0 4.1 3.1 7.5 7 8.1h.2c.3 0 .7.1 1 .1.4 0 .7 0 1-.1h.2c4-.6 7.1-4.1 7.1-8.1 0-.8-.1-1.7-.4-2.4V34l-5.1-15.4c.4-.2.7-.6 1-.9zM66 92.8c16.9 0 32.8 1.1 47.1 3.2 4-16.9 8.9-26.7 14-33.5l-9.6-3.4c1 4.9 1.1 7.2 0 10.2-1.5-1.4-3-4.3-4.2-8.7L108.6 76c2.8-2 5-3.2 7.5-3.3-4.4 9.4-10 11.9-13.6 11.2-4.3-.8-6.3-4.6-5.6-7.9 1-4.7 5.7-5.9 8-.5 4.3-8.7-3-11.4-7.6-8.8 7.1-7.2 7.9-13.5 2.1-21.1-8 6.1-8.1 12.3-4.5 20.8-4.7-5.4-12.1-2.5-9.5 6.2 3.4-5.2 7.9-2 7.2 3.1-.6 4.3-6.4 7.8-13.5 7.2-10.3-.9-10.9-8-11.2-13.8 2.5-.5 7.1 1.8 11 7.3L80.2 60c-4.1 4.4-8 5.3-12.3 5.4 1.4-4.4 8-11.6 8-11.6H55.5s6.4 7.2 7.9 11.6c-4.2-.1-8-1-12.3-5.4l1.4 16.4c3.9-5.5 8.5-7.7 10.9-7.3-.3 5.8-.9 12.8-11.1 13.8-7.2.6-12.9-2.9-13.5-7.2-.7-5 3.8-8.3 7.1-3.1 2.7-8.7-4.6-11.6-9.4-6.2 3.7-8.5 3.6-14.7-4.6-20.8-5.8 7.6-5 13.9 2.2 21.1-4.7-2.6-11.9.1-7.7 8.8 2.3-5.5 7.1-4.2 8.1.5.7 3.3-1.3 7.1-5.7 7.9-3.5.7-9-1.8-13.5-11.2 2.5.1 4.7 1.3 7.5 3.3l-4.7-15.4c-1.2 4.4-2.7 7.2-4.3 8.7-1.1-3-.9-5.3 0-10.2l-9.5 3.4c5 6.9 9.9 16.7 14 33.5 14.8-2.1 30.8-3.2 47.7-3.2z"
+            ></path>
+            <image src="/assets/images/govuk-logotype-crown.png" xlink:href="" class="govuk-header__logotype-crown-fallback-image" width="36" height="32"></image>
+          </svg>
+          <span class="govuk-header__logotype-text">
             GOV.UK
           </span>
-        <span class="header__title">
-          Content API
-            <span class="phase-banner">Beta</span>
         </span>
-        </a>
+        <span class="govuk-header__product-name">
+          Content API
+        </span>
+      </a>
+        <strong class="govuk-tag">Beta</strong>
     </div>
-
-      <div data-module="navigation">
-        <button type="button" class="header__navigation-toggle js-nav-toggle" aria-controls="navigation" aria-label="Show or hide top level navigation">Menu</button>
-
-        <nav id="navigation" class="header__navigation js-nav" aria-label="Top Level Navigation" aria-hidden="true">
-          <ul>
-              <li>
-                <a href="/">
-                  About
-                </a>
-              </li>
-              <li>
-                <a href="/getting-started.html">
-                  Getting Started
-                </a>
-              </li>
-              <li class="active">
-                <a href="/reference.html">
-                  Reference
-                </a>
-              </li>
-          </ul>
-        </nav>
-      </div>
+    <div class="govuk-header__content">
+      <button type="button" role="button" class="govuk-header__menu-button govuk-js-header-toggle" aria-controls="navigation" aria-label="Show or hide Top Level Navigation">Menu</button>
+      <nav>
+        <ul id="navigation" class="govuk-header__navigation govuk-header__navigation--end" aria-label="Top Level Navigation">
+            <li class="govuk-header__navigation-item">
+              <a class="govuk-header__link" href="/">About</a>
+            </li>
+            <li class="govuk-header__navigation-item">
+              <a class="govuk-header__link" href="getting-started.html">Getting Started</a>
+            </li>
+            <li class="govuk-header__navigation-item govuk-header__navigation-item--active">
+              <a class="govuk-header__link" href="reference.html">Reference</a>
+            </li>
+        </ul>
+      </nav>
+    </div>
   </div>
 </header>
 
       </div>
 
-      <div id="toc-heading" class="toc-show fixedsticky">
-        <a href="#toc" class="toc-show__label js-toc-show" aria-controls="toc">
-          Table of contents <span class="toc-show__icon"></span>
-        </a>
-      </div>
+        <div id="toc-heading" class="toc-show fixedsticky">
+          <a href="#toc" class="toc-show__label js-toc-show" aria-controls="toc">
+            Table of contents <span class="toc-show__icon"></span>
+          </a>
+        </div>
 
       <div class="app-pane__body" data-module="in-page-navigation">
-        <div class="app-pane__toc">
-          <div class="toc" data-module="table-of-contents">
-            <a href="#" class="toc__close js-toc-close" aria-controls="toc" aria-label="Hide table of contents"></a>
-            <nav id="toc" class="js-toc-list toc__list" aria-labelledby="toc-heading">
-              <ul>
+          <div class="app-pane__toc">
+            <div class="toc" data-module="table-of-contents">
+              
+              <a href="#" class="toc__close js-toc-close" aria-controls="toc" aria-label="Hide table of contents"></a>
+              <nav id="toc" class="js-toc-list toc__list" aria-labelledby="toc-heading">
+                      <ul>
   <li>
-    <a href="#gov-uk-content-api-v1-0-0">GOV.UK Content API v1.0.0</a>
+    <a href="#gov-uk-content-api-v1-0-0"><span>GOV.UK Content API v1.0.0</span></a>
     <ul>
       <li>
-        <a href="#base-url">Base URL</a>
+        <a href="#base-url"><span>Base URL</span></a>
       </li>
     </ul>
   </li>
   <li>
-    <a href="#content">Content</a>
+    <a href="#content"><span>Content</span></a>
     <ul>
       <li>
-        <a href="#get-path">GET /{path}</a>
+        <a href="#get-path"><span>GET /{path}</span></a>
         <ul>
           <li>
-            <a href="#parameters">Parameters</a>
+            <a href="#parameters"><span>Parameters</span></a>
           </li>
           <li>
-            <a href="#example-request">Example Request</a>
+            <a href="#example-request"><span>Example Request</span></a>
           </li>
           <li>
-            <a href="#example-response">Example Response</a>
+            <a href="#example-response"><span>Example Response</span></a>
           </li>
           <li>
-            <a href="#responses">Responses</a>
+            <a href="#responses"><span>Responses</span></a>
           </li>
         </ul>
       </li>
     </ul>
   </li>
   <li>
-    <a href="#objects">Objects</a>
+    <a href="#objects"><span>Objects</span></a>
     <ul>
       <li>
-        <a href="#contentitem">ContentItem</a>
+        <a href="#contentitem"><span>ContentItem</span></a>
         <ul>
           <li>
-            <a href="#fields">Fields</a>
+            <a href="#fields"><span>Fields</span></a>
           </li>
         </ul>
       </li>
       <li>
-        <a href="#linkedcontentitem">LinkedContentItem</a>
+        <a href="#linkedcontentitem"><span>LinkedContentItem</span></a>
         <ul>
           <li>
-            <a href="#linkedcontentitem-fields">Fields</a>
+            <a href="#linkedcontentitem-fields"><span>Fields</span></a>
           </li>
         </ul>
       </li>
       <li>
-        <a href="#withdrawnnotice">WithdrawnNotice</a>
+        <a href="#withdrawnnotice"><span>WithdrawnNotice</span></a>
         <ul>
           <li>
-            <a href="#withdrawnnotice-fields">Fields</a>
+            <a href="#withdrawnnotice-fields"><span>Fields</span></a>
           </li>
         </ul>
       </li>
@@ -138,41 +158,33 @@
   </li>
 </ul>
 
-            </nav>
+
+              </nav>
+            </div>
           </div>
-        </div>
 
         <div class="app-pane__content toc-open-disabled">
           <main id="content" class="technical-documentation" data-module="anchored-headings">
-            <h1 id="gov-uk-content-api-v1-0-0">GOV.UK Content API v1.0.0</h1>
-<p>GOV.UK Content API provides a simple and consistent way to request
+            <h1 id="gov-uk-content-api-v1-0-0">GOV.UK Content API v1.0.0</h1><p>GOV.UK Content API provides a simple and consistent way to request
 <a href="https://www.gov.uk">GOV.UK</a> content as structured data in a predictable
 format. It is used within the GOV.UK website as the means for applications
 to lookup content in order to render it.</p>
-
 <p>This API accepts HTTP requests and responds with
 <a href="https://en.wikipedia.org/wiki/JSON">JSON</a> data containing the same
 published content as is presented on GOV.UK.</p>
-<h2 id="base-url">Base URL</h2>
-<p>All requests to this API should be prefixed with the following URL:</p>
-
+<h2 id="base-url">Base URL</h2><p>All requests to this API should be prefixed with the following URL:</p>
 <p><strong>https://www.gov.uk/api/content</strong></p>
-<h1 id="content">Content</h1><h2 id="get-path">GET /{path}</h2>
-<p><em>Lookup GOV.UK content by path</em></p>
-
+<h1 id="content">Content</h1><h2 id="get-path">GET /{path}</h2><p><em>Lookup GOV.UK content by path</em></p>
 <p>This is the primary interface to lookup the content required to render
 a page on GOV.UK</p>
-
 <p>It accepts an input of the path of the page you are looking up. For
 example, if you were looking up travel advice for Thailand which is
 hosted on GOV.UK at <code>https://www.gov.uk/foreign-travel-advice/thailand</code>
 you would make a request to
 <code>https://www.gov.uk/api/content/foreign-travel-advice/thailand</code>.</p>
-
 <p>If the content is available at the requested path you will receive
 a <a href="#contentitem"><code>ContentItem</code></a> containing the structured data for that
 page.</p>
-
 <p>This request does not require authentication.</p>
 <h3 id="parameters">Parameters</h3><div class="table-container">
         <table>
@@ -193,14 +205,12 @@ page.</p>
 
         </table>
       </div><h3 id="example-request">Example Request</h3><div class="highlight"><pre class="highlight shell"><code>curl https://www.gov.uk/api/content/vat-rates
-</code></pre></div><h3 id="example-response">Example Response</h3>
-<p><details>
+</code></pre></div><h3 id="example-response">Example Response</h3><p><details>
 <summary>Examples</summary></p>
 <div class="highlight"><pre class="highlight json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"$ref"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#/components/examples/ContentItemExample"</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div>
-<p></details></p>
+</span></code></pre></div><p></details></p>
 <h3 id="responses">Responses</h3><div class="table-container">
         <table>
           <tr>
@@ -235,20 +245,15 @@ page.</p>
 </tr>
 
         </table>
-      </div><h1 id="objects">Objects</h1><h2 id="contentitem">ContentItem</h2>
-<p><a name="schemacontentitem"></a></p>
-
+      </div><h1 id="objects">Objects</h1><h2 id="contentitem">ContentItem</h2><p><a name="schemacontentitem"></a></p>
 <p>A resource that represents a piece of content on GOV.UK.
 It contains metadata that describe common attributes shared between all content, a details for the particular content and a links field to describe relationships with other content.</p>
-
 <p><details></p>
-
 <p><summary>Sample JSON</summary></p>
 <div class="highlight"><pre class="highlight json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"$ref"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#/components/examples/ContentItemExample"</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div>
-<p></details></p>
+</span></code></pre></div><p></details></p>
 <h3 id="fields">Fields</h3><div class="table-container">
         <table>
           <tr>
@@ -391,14 +396,10 @@ It contains metadata that describe common attributes shared between all content,
 </tr>
 
         </table>
-      </div><h2 id="linkedcontentitem">LinkedContentItem</h2>
-<p><a name="schemalinkedcontentitem"></a></p>
-
+      </div><h2 id="linkedcontentitem">LinkedContentItem</h2><p><a name="schemalinkedcontentitem"></a></p>
 <p>A LinkedContentItem is an abridged form of ContentItem which is used to represent links between ContentItems.
 It is embedded within the <code>links</code> field that is used within ContentItem and LinkedContentItem. <a href="https://content-api.publishing.service.gov.uk/getting-started.html#links">Learn more</a>.</p>
-
 <p><details></p>
-
 <p><summary>Sample JSON</summary></p>
 <div class="highlight"><pre class="highlight json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"api_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/api/content/browse/tax/vat"</span><span class="p">,</span><span class="w">
@@ -415,8 +416,7 @@ It is embedded within the <code>links</code> field that is used within ContentIt
   </span><span class="s2">"api_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.gov.uk/api/content/browse/tax/vat"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"web_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.gov.uk/browse/tax/vat"</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div>
-<p></details></p>
+</span></code></pre></div><p></details></p>
 <h3 id="linkedcontentitem-fields">Fields</h3><div class="table-container">
         <table>
           <tr>
@@ -505,20 +505,15 @@ It is embedded within the <code>links</code> field that is used within ContentIt
 </tr>
 
         </table>
-      </div><h2 id="withdrawnnotice">WithdrawnNotice</h2>
-<p><a name="schemawithdrawnnotice"></a></p>
-
+      </div><h2 id="withdrawnnotice">WithdrawnNotice</h2><p><a name="schemawithdrawnnotice"></a></p>
 <p>A WithdrawnNotice is an object that can be embedded within a ContentItem and is used to explain the reason a piece of content has been withdrawn. <a href="https://content-api.publishing.service.gov.uk/getting-started.html#withdrawn-content">Learn more</a>.</p>
-
 <p><details></p>
-
 <p><summary>Sample JSON</summary></p>
 <div class="highlight"><pre class="highlight json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"explanation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;div class=</span><span class="se">\"</span><span class="s2">govspeak</span><span class="se">\"</span><span class="s2">&gt;&lt;p&gt;This guidance has been withdrawn from use because the Environment Agency no longer provides best practice guidance. See guidance on &lt;a href=</span><span class="se">\"</span><span class="s2">https://www.gov.uk/guidance/prevent-the-spread-of-harmful-invasive-and-non-native-plants</span><span class="se">\"</span><span class="s2">&gt;preventing harmful weeds and invasive non-native plants spreading weeds&lt;/a&gt; for information on controlling specific plants.&lt;/p&gt;</span><span class="se">\n</span><span class="s2">&lt;/div&gt;"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"withdrawn_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-07-11T15:08:02Z"</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div>
-<p></details></p>
+</span></code></pre></div><p></details></p>
 <h3 id="withdrawnnotice-fields">Fields</h3><div class="table-container">
         <table>
           <tr>
@@ -542,16 +537,46 @@ It is embedded within the <code>links</code> field that is used within ContentIt
 
         </table>
       </div>
+            
           </main>
 
-          <footer class="footer">
-  <div class="footer__licence">
-    <a class="footer__licence-logo" href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence</a>
-    <p class="footer__licence-description">All content is available under the <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence v3.0</a>, except where otherwise stated</p>
-  </div>
+          <aside>
+          </aside>
 
-  <div class="footer__copyright">
-    <a class="footer__copyright-logo" href="http://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/copyright-and-re-use/crown-copyright/">© Crown copyright</a>
+          <footer class="govuk-footer app-footer" role="contentinfo">
+  <div class="govuk-footer__meta">
+    <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
+
+
+      <svg
+        role="presentation"
+        focusable="false"
+        class="govuk-footer__licence-logo"
+        xmlns="http://www.w3.org/2000/svg"
+        viewbox="0 0 483.2 195.7"
+        height="17"
+        width="41"
+      >
+        <path
+          fill="currentColor"
+          d="M421.5 142.8V.1l-50.7 32.3v161.1h112.4v-50.7zm-122.3-9.6A47.12 47.12 0 0 1 221 97.8c0-26 21.1-47.1 47.1-47.1 16.7 0 31.4 8.7 39.7 21.8l42.7-27.2A97.63 97.63 0 0 0 268.1 0c-36.5 0-68.3 20.1-85.1 49.7A98 98 0 0 0 97.8 0C43.9 0 0 43.9 0 97.8s43.9 97.8 97.8 97.8c36.5 0 68.3-20.1 85.1-49.7a97.76 97.76 0 0 0 149.6 25.4l19.4 22.2h3v-87.8h-80l24.3 27.5zM97.8 145c-26 0-47.1-21.1-47.1-47.1s21.1-47.1 47.1-47.1 47.2 21 47.2 47S123.8 145 97.8 145"
+        />
+      </svg>
+      <span class="govuk-footer__licence-description">
+        All content is available under the
+        <a
+          class="govuk-footer__link"
+          href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+          rel="license"
+        >Open Government Licence v3.0</a>, except where otherwise stated
+      </span>
+    </div>
+    <div class="govuk-footer__meta-item">
+      <a
+        class="govuk-footer__link govuk-footer__copyright-logo"
+        href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/"
+      >© Crown copyright</a>
+    </div>
   </div>
 </footer>
 
@@ -569,8 +594,10 @@ It is embedded within the <code>links</code> field that is used within ContentIt
   ga('set', 'anonymizeIp', true);
   ga('set', 'displayFeaturesTask', null);
   ga('set', 'transport', 'beacon');
+  ga('set', 'page', location.pathname+location.search+location.hash);
   ga('send', 'pageview');
   </script>
 
+    <script src="javascripts/application.js"></script>
   </body>
 </html>

@@ -1,130 +1,151 @@
 <!doctype html>
-<html lang="en" class="no-js">
+<html lang="en" class="govuk-template no-js">
   <head>
     <meta content="IE=edge" http-equiv="X-UA-Compatible">
     <meta charset="utf-8">
     <meta content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
 
-    <!-- Use title if it's in the page YAML frontmatter -->
-    <title>About - GOV.UK Content API</title>
+    <title>About - GOV.UK Content API | Content API</title>
 
-    <!--[if gt IE 8]><!--><link href="stylesheets/screen.css" rel="stylesheet" media="screen" /><!--<![endif]-->
-    <!--[if lte IE 8]><link href="stylesheets/screen-old-ie.css" rel="stylesheet" media="screen" /><![endif]-->
+    <link href="stylesheets/manifest.css" rel="stylesheet" />
 
     <link rel="canonical" href="https://content-api.publishing.service.gov.uk/">
 
-    <link href="stylesheets/print.css" rel="stylesheet" media="print" />
-    <script src="javascripts/application.js"></script>
+
+      <meta property="og:image" content="https://content-api.publishing.service.gov.uk/images/govuk-large.png" />
+      <meta property="og:site_name" content="Content API" />
+      <meta property="og:title" content="About - GOV.UK Content API" />
+      <meta property="og:type" content="object" />
+      <meta property="og:url" content="https://content-api.publishing.service.gov.uk/" />
+      <meta property="twitter:card" content="summary" />
+      <meta property="twitter:domain" content="content-api.publishing.service.gov.uk" />
+      <meta property="twitter:image" content="https://content-api.publishing.service.gov.uk/images/govuk-large.png" />
+      <meta property="twitter:title" content="About - GOV.UK Content API | Content API" />
+      <meta property="twitter:url" content="https://content-api.publishing.service.gov.uk/" />
+
+    
   </head>
 
-  <body>
+  <body class="govuk-template__body">
+    <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
+
     <div class="app-pane">
       <div class="app-pane__header toc-open-disabled">
-        <a href="#content" class="skip-link">Skip to main content</a>
+        <a href="#content" class="govuk-skip-link">Skip to main content</a>
 
-        <header class="header header--full-width">
-  <div class="header__container">
-    <div class="header__brand">
-        <a href="/">
-          <span class="govuk-logo">
-            <img class="govuk-logo__printable-crown" src="images/gov.uk_logotype_crown_invert_trans.png" height="32" width="36">
+        <header class="govuk-header " role="banner" data-module="govuk-header">
+  <div class="govuk-header__container govuk-header__container--full-width">
+    <div class="govuk-header__logo">
+      <a href="/" class="govuk-header__link govuk-header__link--homepage">
+        <span class="govuk-header__logotype">
+          <svg
+            role="presentation"
+            focusable="false"
+            class="govuk-header__logotype-crown"
+            xmlns="http://www.w3.org/2000/svg"
+            viewbox="0 0 132 97"
+            height="30"
+            width="36"
+          >
+            <path
+              fill="currentColor" fill-rule="evenodd"
+              d="M25 30.2c3.5 1.5 7.7-.2 9.1-3.7 1.5-3.6-.2-7.8-3.9-9.2-3.6-1.4-7.6.3-9.1 3.9-1.4 3.5.3 7.5 3.9 9zM9 39.5c3.6 1.5 7.8-.2 9.2-3.7 1.5-3.6-.2-7.8-3.9-9.1-3.6-1.5-7.6.2-9.1 3.8-1.4 3.5.3 7.5 3.8 9zM4.4 57.2c3.5 1.5 7.7-.2 9.1-3.8 1.5-3.6-.2-7.7-3.9-9.1-3.5-1.5-7.6.3-9.1 3.8-1.4 3.5.3 7.6 3.9 9.1zm38.3-21.4c3.5 1.5 7.7-.2 9.1-3.8 1.5-3.6-.2-7.7-3.9-9.1-3.6-1.5-7.6.3-9.1 3.8-1.3 3.6.4 7.7 3.9 9.1zm64.4-5.6c-3.6 1.5-7.8-.2-9.1-3.7-1.5-3.6.2-7.8 3.8-9.2 3.6-1.4 7.7.3 9.2 3.9 1.3 3.5-.4 7.5-3.9 9zm15.9 9.3c-3.6 1.5-7.7-.2-9.1-3.7-1.5-3.6.2-7.8 3.7-9.1 3.6-1.5 7.7.2 9.2 3.8 1.5 3.5-.3 7.5-3.8 9zm4.7 17.7c-3.6 1.5-7.8-.2-9.2-3.8-1.5-3.6.2-7.7 3.9-9.1 3.6-1.5 7.7.3 9.2 3.8 1.3 3.5-.4 7.6-3.9 9.1zM89.3 35.8c-3.6 1.5-7.8-.2-9.2-3.8-1.4-3.6.2-7.7 3.9-9.1 3.6-1.5 7.7.3 9.2 3.8 1.4 3.6-.3 7.7-3.9 9.1zM69.7 17.7l8.9 4.7V9.3l-8.9 2.8c-.2-.3-.5-.6-.9-.9L72.4 0H59.6l3.5 11.2c-.3.3-.6.5-.9.9l-8.8-2.8v13.1l8.8-4.7c.3.3.6.7.9.9l-5 15.4v.1c-.2.8-.4 1.6-.4 2.4 0 4.1 3.1 7.5 7 8.1h.2c.3 0 .7.1 1 .1.4 0 .7 0 1-.1h.2c4-.6 7.1-4.1 7.1-8.1 0-.8-.1-1.7-.4-2.4V34l-5.1-15.4c.4-.2.7-.6 1-.9zM66 92.8c16.9 0 32.8 1.1 47.1 3.2 4-16.9 8.9-26.7 14-33.5l-9.6-3.4c1 4.9 1.1 7.2 0 10.2-1.5-1.4-3-4.3-4.2-8.7L108.6 76c2.8-2 5-3.2 7.5-3.3-4.4 9.4-10 11.9-13.6 11.2-4.3-.8-6.3-4.6-5.6-7.9 1-4.7 5.7-5.9 8-.5 4.3-8.7-3-11.4-7.6-8.8 7.1-7.2 7.9-13.5 2.1-21.1-8 6.1-8.1 12.3-4.5 20.8-4.7-5.4-12.1-2.5-9.5 6.2 3.4-5.2 7.9-2 7.2 3.1-.6 4.3-6.4 7.8-13.5 7.2-10.3-.9-10.9-8-11.2-13.8 2.5-.5 7.1 1.8 11 7.3L80.2 60c-4.1 4.4-8 5.3-12.3 5.4 1.4-4.4 8-11.6 8-11.6H55.5s6.4 7.2 7.9 11.6c-4.2-.1-8-1-12.3-5.4l1.4 16.4c3.9-5.5 8.5-7.7 10.9-7.3-.3 5.8-.9 12.8-11.1 13.8-7.2.6-12.9-2.9-13.5-7.2-.7-5 3.8-8.3 7.1-3.1 2.7-8.7-4.6-11.6-9.4-6.2 3.7-8.5 3.6-14.7-4.6-20.8-5.8 7.6-5 13.9 2.2 21.1-4.7-2.6-11.9.1-7.7 8.8 2.3-5.5 7.1-4.2 8.1.5.7 3.3-1.3 7.1-5.7 7.9-3.5.7-9-1.8-13.5-11.2 2.5.1 4.7 1.3 7.5 3.3l-4.7-15.4c-1.2 4.4-2.7 7.2-4.3 8.7-1.1-3-.9-5.3 0-10.2l-9.5 3.4c5 6.9 9.9 16.7 14 33.5 14.8-2.1 30.8-3.2 47.7-3.2z"
+            ></path>
+            <image src="/assets/images/govuk-logotype-crown.png" xlink:href="" class="govuk-header__logotype-crown-fallback-image" width="36" height="32"></image>
+          </svg>
+          <span class="govuk-header__logotype-text">
             GOV.UK
           </span>
-        <span class="header__title">
-          Content API
-            <span class="phase-banner">Beta</span>
         </span>
-        </a>
+        <span class="govuk-header__product-name">
+          Content API
+        </span>
+      </a>
+        <strong class="govuk-tag">Beta</strong>
     </div>
-
-      <div data-module="navigation">
-        <button type="button" class="header__navigation-toggle js-nav-toggle" aria-controls="navigation" aria-label="Show or hide top level navigation">Menu</button>
-
-        <nav id="navigation" class="header__navigation js-nav" aria-label="Top Level Navigation" aria-hidden="true">
-          <ul>
-              <li class="active">
-                <a href="/">
-                  About
-                </a>
-              </li>
-              <li>
-                <a href="/getting-started.html">
-                  Getting Started
-                </a>
-              </li>
-              <li>
-                <a href="/reference.html">
-                  Reference
-                </a>
-              </li>
-          </ul>
-        </nav>
-      </div>
+    <div class="govuk-header__content">
+      <button type="button" role="button" class="govuk-header__menu-button govuk-js-header-toggle" aria-controls="navigation" aria-label="Show or hide Top Level Navigation">Menu</button>
+      <nav>
+        <ul id="navigation" class="govuk-header__navigation govuk-header__navigation--end" aria-label="Top Level Navigation">
+            <li class="govuk-header__navigation-item govuk-header__navigation-item--active">
+              <a class="govuk-header__link" href="/">About</a>
+            </li>
+            <li class="govuk-header__navigation-item">
+              <a class="govuk-header__link" href="getting-started.html">Getting Started</a>
+            </li>
+            <li class="govuk-header__navigation-item">
+              <a class="govuk-header__link" href="reference.html">Reference</a>
+            </li>
+        </ul>
+      </nav>
+    </div>
   </div>
 </header>
 
       </div>
 
-      <div id="toc-heading" class="toc-show fixedsticky">
-        <a href="#toc" class="toc-show__label js-toc-show" aria-controls="toc">
-          Table of contents <span class="toc-show__icon"></span>
-        </a>
-      </div>
+        <div id="toc-heading" class="toc-show fixedsticky">
+          <a href="#toc" class="toc-show__label js-toc-show" aria-controls="toc">
+            Table of contents <span class="toc-show__icon"></span>
+          </a>
+        </div>
 
       <div class="app-pane__body" data-module="in-page-navigation">
-        <div class="app-pane__toc">
-          <div class="toc" data-module="table-of-contents">
-            <a href="#" class="toc__close js-toc-close" aria-controls="toc" aria-label="Hide table of contents"></a>
-            <nav id="toc" class="js-toc-list toc__list" aria-labelledby="toc-heading">
-              <ul>
+          <div class="app-pane__toc">
+            <div class="toc" data-module="table-of-contents">
+              
+              <a href="#" class="toc__close js-toc-close" aria-controls="toc" aria-label="Hide table of contents"></a>
+              <nav id="toc" class="js-toc-list toc__list" aria-labelledby="toc-heading">
+                      <ul>
   <li>
-    <a href="#gov-uk-content-api">GOV.UK Content API</a>
+    <a href="#gov-uk-content-api"><span>GOV.UK Content API</span></a>
     <ul>
       <li>
-        <a href="#what-you-can-do-with-this-api">What you can do with this API</a>
+        <a href="#what-you-can-do-with-this-api"><span>What you can do with this API</span></a>
       </li>
       <li>
-        <a href="#what-you-can-39-t-do-with-this-api">What you can’t do with this API</a>
+        <a href="#what-you-can-39-t-do-with-this-api"><span>What you can’t do with this API</span></a>
       </li>
       <li>
-        <a href="#quick-start">Quick start</a>
+        <a href="#quick-start"><span>Quick start</span></a>
       </li>
       <li>
-        <a href="#beta-software">Beta software</a>
+        <a href="#beta-software"><span>Beta software</span></a>
       </li>
       <li>
-        <a href="#keep-informed">Keep informed</a>
+        <a href="#keep-informed"><span>Keep informed</span></a>
       </li>
       <li>
-        <a href="#authentication">Authentication</a>
+        <a href="#authentication"><span>Authentication</span></a>
       </li>
       <li>
-        <a href="#security-and-compliance">Security and compliance</a>
+        <a href="#security-and-compliance"><span>Security and compliance</span></a>
         <ul>
           <li>
-            <a href="#reporting-vulnerabilities">Reporting vulnerabilities</a>
+            <a href="#reporting-vulnerabilities"><span>Reporting vulnerabilities</span></a>
           </li>
           <li>
-            <a href="#https">HTTPS</a>
+            <a href="#https"><span>HTTPS</span></a>
           </li>
           <li>
-            <a href="#security-patches">Security patches</a>
+            <a href="#security-patches"><span>Security patches</span></a>
           </li>
         </ul>
       </li>
       <li>
-        <a href="#rate-limiting">Rate limiting</a>
+        <a href="#rate-limiting"><span>Rate limiting</span></a>
       </li>
       <li>
-        <a href="#support">Support</a>
+        <a href="#support"><span>Support</span></a>
       </li>
     </ul>
   </li>
 </ul>
 
-            </nav>
+
+              </nav>
+            </div>
           </div>
-        </div>
 
         <div class="app-pane__content toc-open-disabled">
           <main id="content" class="technical-documentation" data-module="anchored-headings">
@@ -140,45 +161,35 @@
     </span>
   </p>
 </div>
-
 <p>GOV.UK Content API makes it easy to access the data used to render content
 on <a href="https://www.gov.uk">https://www.gov.uk</a> (hereafter referred to as GOV.UK).
 For any page hosted on GOV.UK you can use the <a href="#quick-start">path</a> to access
 the content and associated metadata for a page.</p>
-
 <p>GOV.UK Content API is accessed via <a href="https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol">HTTP</a> and returns data in a <a href="https://en.wikipedia.org/wiki/JSON">JSON</a>
 format. The <a href="reference.html">reference documentation</a> provides a thorough
 overview of the endpoints and the response format.</p>
-<h2 id="what-you-can-do-with-this-api">What you can do with this API</h2>
-<p>This API is useful for applications that incorporate content from GOV.UK and
+<h2 id="what-you-can-do-with-this-api">What you can do with this API</h2><p>This API is useful for applications that incorporate content from GOV.UK and
 for keeping that content up to date. It provides a more accessible and
 predictable interface than what can be achieved through scraping HTML pages.</p>
-
 <p>You can navigate between content within this API by utilising links. For
 example, for a page you could access the government organisation that published
 the page and then navigate to feature policies of that organisation.</p>
-<h2 id="what-you-can-39-t-do-with-this-api">What you can&rsquo;t do with this API</h2>
-<p>The content within this API is limited to pages hosted on
+<h2 id="what-you-can-39-t-do-with-this-api">What you can&rsquo;t do with this API</h2><p>The content within this API is limited to pages hosted on
 <a href="https://www.gov.uk"><code>www.gov.uk</code></a> and does not include other websites that are
 subdomains of <code>gov.uk</code>.</p>
-
 <p>This API includes only the pages on GOV.UK that are available as HTML and does
 not allow direct access to attachments or images. These files however are
 associated with their HTML content and can be accessed.</p>
-
 <p>Not all content is available. For example, content that is generated
 dynamically (such as through a search) is not available. Some types of content
 may still be being migrated to utilise this API and these could appear
 as placeholder documents without any content or as redirections to a
 catch-all content item that represents a group of unmigrated content.</p>
-
 <p>This API provides access to content that is currently hosted on GOV.UK. If
 you wish to access historic content this can currently be done through the
 <a href="http://webarchive.nationalarchives.gov.uk/*/https://www.gov.uk/">National Archives</a>.</p>
-<h2 id="quick-start">Quick start</h2>
-<p>You can use GOV.UK Content API to lookup the data that is used to render
+<h2 id="quick-start">Quick start</h2><p>You can use GOV.UK Content API to lookup the data that is used to render
 content on GOV.UK.</p>
-
 <p>To get started:</p>
 
 <ol>
@@ -190,54 +201,38 @@ request to <a href="https://www.gov.uk/api/content/take-pet-abroad"><code>https:
 <li>You’ll receive a JSON response and the fields for this are
 explained in the <a href="reference.html">reference documentation</a>.</li>
 </ol>
-
 <p>For example, using the curl command line utility tool:</p>
 <div class="highlight"><pre class="highlight shell"><code>curl https://www.gov.uk/api/content/take-pet-abroad
-</code></pre></div>
-<p>Or, you can use the <a href="https://github.com/alphagov/govuk-browser-extension">govuk-browser-extension</a>. Note that this is intended for internal use.</p>
-<h2 id="beta-software">Beta software</h2>
-<p>GOV.UK Content API is currently beta software and may be subject to changes
+</code></pre></div><p>Or, you can use the <a href="https://github.com/alphagov/govuk-browser-extension">govuk-browser-extension</a>. Note that this is intended for internal use.</p>
+<h2 id="beta-software">Beta software</h2><p>GOV.UK Content API is currently beta software and may be subject to changes
 and improvements as we learn from usage.</p>
-
 <p>This means that you may use this software and build applications that utilise
 it. However as we learn from feedback we may make changes to the software.
 We will communicate those via our <a href="#keep-informed">mailing list</a>.</p>
-
 <p>If you would like to share your feedback about GOV.UK Content API you can do so
 via <a href="http://www.smartsurvey.co.uk/s/GPYGP">this survey</a>.</p>
-<h2 id="keep-informed">Keep informed</h2>
-<p>Join the <a href="https://groups.google.com/a/digital.cabinet-office.gov.uk/forum/#!forum/contentapi">GOV.UK Content API mailing list</a> to be notified of
+<h2 id="keep-informed">Keep informed</h2><p>Join the <a href="https://groups.google.com/a/digital.cabinet-office.gov.uk/forum/#!forum/contentapi">GOV.UK Content API mailing list</a> to be notified of
 announcements regarding this API. We will use this channel to communicate
 any breaking changes or updates to the support status of this API.</p>
-<h2 id="authentication">Authentication</h2>
-<p>Usage of GOV.UK Content API does not require authentication.</p>
-<h2 id="security-and-compliance">Security and compliance</h2><h3 id="reporting-vulnerabilities">Reporting vulnerabilities</h3>
-<p>If you believe there is a security issue with GOV.UK Content API, please
+<h2 id="authentication">Authentication</h2><p>Usage of GOV.UK Content API does not require authentication.</p>
+<h2 id="security-and-compliance">Security and compliance</h2><h3 id="reporting-vulnerabilities">Reporting vulnerabilities</h3><p>If you believe there is a security issue with GOV.UK Content API, please
 <a href="#support">contact us immediately</a>.</p>
-
 <p>Please don’t disclose the suspected breach publicly until it has been fixed.</p>
-<h3 id="https">HTTPS</h3>
-<p>GOV.UK Content API follows government HTTPS security guidelines. The
+<h3 id="https">HTTPS</h3><p>GOV.UK Content API follows government HTTPS security guidelines. The
 Hypertext Transfer Protocol Secure (HTTPS), which involves the Transport Layer
 Security (TLS) protocol, is used by the platform to provide secure connections.</p>
-<h3 id="security-patches">Security patches</h3>
-<p>We treat security vulnerabilities in the platform and library code in the GOV.UK
+<h3 id="security-patches">Security patches</h3><p>We treat security vulnerabilities in the platform and library code in the GOV.UK
 Content API as our highest priority. The codebase will be updated as soon as
 possible when vulnerabilities are discovered or reported.</p>
-
 <p>We frequently upgrade the framework and library code in GOV.UK Content API
 to the latest versions for security and feature enhancements.</p>
-<h2 id="rate-limiting">Rate limiting</h2>
-<p>There is a maximum limit of 10 requests per second per client. If you exceed
+<h2 id="rate-limiting">Rate limiting</h2><p>There is a maximum limit of 10 requests per second per client. If you exceed
 this your request won&rsquo;t be processed until the limit is no longer exceeded
 and you may see timeout errors.</p>
-
 <p>We think this should be sufficient for all users of GOV.UK Content API but
 if you believe you need the limit increasing you can <a href="#support">contact support</a>.</p>
-<h2 id="support">Support</h2>
-<p>GOV.UK Content API is currently in a <a href="https://www.gov.uk/help/beta">beta</a>
+<h2 id="support">Support</h2><p>GOV.UK Content API is currently in a <a href="https://www.gov.uk/help/beta">beta</a>
 phase and may be subject to changes and improvements.</p>
-
 <p>If you experience any issues or have questions regarding GOV.UK Content API
 please:</p>
 
@@ -246,16 +241,46 @@ please:</p>
 <li><strong>Otherwise:</strong> <a href="https://www.gov.uk/contact/govuk">Contact GOV.UK</a> with your query</li>
 </ul>
 
+            
           </main>
 
-          <footer class="footer">
-  <div class="footer__licence">
-    <a class="footer__licence-logo" href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence</a>
-    <p class="footer__licence-description">All content is available under the <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence v3.0</a>, except where otherwise stated</p>
-  </div>
+          <aside>
+          </aside>
 
-  <div class="footer__copyright">
-    <a class="footer__copyright-logo" href="http://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/copyright-and-re-use/crown-copyright/">© Crown copyright</a>
+          <footer class="govuk-footer app-footer" role="contentinfo">
+  <div class="govuk-footer__meta">
+    <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
+
+
+      <svg
+        role="presentation"
+        focusable="false"
+        class="govuk-footer__licence-logo"
+        xmlns="http://www.w3.org/2000/svg"
+        viewbox="0 0 483.2 195.7"
+        height="17"
+        width="41"
+      >
+        <path
+          fill="currentColor"
+          d="M421.5 142.8V.1l-50.7 32.3v161.1h112.4v-50.7zm-122.3-9.6A47.12 47.12 0 0 1 221 97.8c0-26 21.1-47.1 47.1-47.1 16.7 0 31.4 8.7 39.7 21.8l42.7-27.2A97.63 97.63 0 0 0 268.1 0c-36.5 0-68.3 20.1-85.1 49.7A98 98 0 0 0 97.8 0C43.9 0 0 43.9 0 97.8s43.9 97.8 97.8 97.8c36.5 0 68.3-20.1 85.1-49.7a97.76 97.76 0 0 0 149.6 25.4l19.4 22.2h3v-87.8h-80l24.3 27.5zM97.8 145c-26 0-47.1-21.1-47.1-47.1s21.1-47.1 47.1-47.1 47.2 21 47.2 47S123.8 145 97.8 145"
+        />
+      </svg>
+      <span class="govuk-footer__licence-description">
+        All content is available under the
+        <a
+          class="govuk-footer__link"
+          href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+          rel="license"
+        >Open Government Licence v3.0</a>, except where otherwise stated
+      </span>
+    </div>
+    <div class="govuk-footer__meta-item">
+      <a
+        class="govuk-footer__link govuk-footer__copyright-logo"
+        href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/"
+      >© Crown copyright</a>
+    </div>
   </div>
 </footer>
 
@@ -273,8 +298,10 @@ please:</p>
   ga('set', 'anonymizeIp', true);
   ga('set', 'displayFeaturesTask', null);
   ga('set', 'transport', 'beacon');
+  ga('set', 'page', location.pathname+location.search+location.hash);
   ga('send', 'pageview');
   </script>
 
+    <script src="javascripts/application.js"></script>
   </body>
 </html>
