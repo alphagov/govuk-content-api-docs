@@ -142,10 +142,9 @@ pages through use of the `parent` link type.
 
 ## Making use of content
 
-It can be simple to make use of GOV.UK in your application. The example below
-illustrates a example utilising [Ruby on Rails](http://rubyonrails.org/)
-with [Rest Client](https://github.com/rest-client/rest-client).
-
+The example below illustrates utilising [Ruby on Rails](http://rubyonrails.org/)
+with [Rest Client](https://github.com/rest-client/rest-client) to make use of
+GOV.UK in your application.
 
 ```ruby
 require "rest-client"

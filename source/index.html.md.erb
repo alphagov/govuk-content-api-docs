@@ -4,21 +4,23 @@ title: About - GOV.UK Content API
 
 # GOV.UK Content API
 
-<div class="phase-tag">
-  <p>
-    <strong class="phase-banner"><%= config[:tech_docs][:phase] %></strong>
-    <span>
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      <%= config[:tech_docs][:phase] %>
+    </strong>
+    <span class="govuk-phase-banner__text">
       This is a trial service — your
-      <a href="http://www.smartsurvey.co.uk/s/GPYGP">feedback</a>
-      will help us to improve it. <a href="#beta-software">Find out what
-      this means</a>.
+      <a class="govuk-link" href="http://www.smartsurvey.co.uk/s/GPYGP">feedback</a>
+      will help us to improve it.
+      <a class="govuk-link" href="#beta-software">Find out what this means</a>.
     </span>
   </p>
 </div>
 
-GOV.UK Content API makes it easy to access the data used to render content
+GOV.UK Content API makes it possible to access the data used to render content
 on [https://www.gov.uk](https://www.gov.uk) (hereafter referred to as GOV.UK).
-For any page hosted on GOV.UK you can use the [path](#quick-start) to access
+For any page hosted on GOV.UK you can [use the path](#quick-start) to access
 the content and associated metadata for a page.
 
 GOV.UK Content API is accessed via [HTTP][] and returns data in a [JSON][]
@@ -75,7 +77,8 @@ For example, using the curl command line utility tool:
 curl https://www.gov.uk/api/content/take-pet-abroad
 ```
 
-Or, you can use the [govuk-browser-extension](https://github.com/alphagov/govuk-browser-extension). Note that this is intended for internal use.
+Or, you can [use the govuk-browser-extension](https://github.com/alphagov/govuk-browser-extension).
+Note that this is intended for internal use.
 
 ## Beta software
 
@@ -85,8 +88,8 @@ and improvements as we learn from usage.
 This means that you may use this software and build applications that utilise
 it. However as we learn from feedback we may make changes to the software.
 
-If you would like to share your feedback about GOV.UK Content API you can do so
-via [this survey](http://www.smartsurvey.co.uk/s/GPYGP).
+Please use our survey if you would like to [share your feedback about GOV.UK
+Content API](http://www.smartsurvey.co.uk/s/GPYGP).
 
 ## Authentication
 
@@ -96,7 +99,7 @@ Usage of GOV.UK Content API does not require authentication.
 
 ### Reporting vulnerabilities
 
-If you believe there is a security issue with GOV.UK Content API, read our [security
+If you believe there is a security issue with GOV.UK Content API, [read our security
 policy](https://github.com/alphagov/.github/blob/master/SECURITY.md)
 and [contact us immediately](https://github.com/alphagov/.github/blob/master/SECURITY.md#reporting-a-vulnerability).
 
@@ -134,9 +137,8 @@ phase and may be subject to changes and improvements.
 If you experience any issues or have questions regarding GOV.UK Content API
 please:
 
-- **If you are a government department:** Raise a ticket with [GOV.UK Support][]
+- **If you are a government department:** [Raise a ticket with GOV.UK Support][]
 - **Otherwise:** [Contact GOV.UK][] with your query
-
 
 [National Archives]: http://webarchive.nationalarchives.gov.uk/*/https://www.gov.uk/
 [HTTP]: https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol
