@@ -235,9 +235,9 @@ audience.</p>
 the <code>LinkedContentItem</code> object. This is available as it can be useful to have
 a tree of linked content. A common usage of this is to show the hierarchy of
 pages through use of the <code>parent</code> link type.</p>
-<h2 id="making-use-of-content">Making use of content</h2><p>It can be simple to make use of GOV.UK in your application. The example below
-illustrates a example utilising <a href="http://rubyonrails.org/">Ruby on Rails</a>
-with <a href="https://github.com/rest-client/rest-client">Rest Client</a>.</p>
+<h2 id="making-use-of-content">Making use of content</h2><p>The example below illustrates utilising <a href="http://rubyonrails.org/">Ruby on Rails</a>
+with <a href="https://github.com/rest-client/rest-client">Rest Client</a> to make use of
+GOV.UK in your application.</p>
 <div class="highlight"><pre class="highlight ruby"><code><span class="nb">require</span> <span class="s2">"rest-client"</span>
 
 <span class="n">tax_help</span> <span class="o">=</span> <span class="no">Rails</span><span class="p">.</span><span class="nf">cache</span><span class="p">.</span><span class="nf">fetch</span><span class="p">(</span><span class="s2">"govuk/tax-help"</span><span class="p">,</span> <span class="ss">expires_in: </span><span class="mi">1</span><span class="p">.</span><span class="nf">hour</span><span class="p">)</span> <span class="k">do</span>

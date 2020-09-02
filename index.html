@@ -147,20 +147,22 @@
         <div class="app-pane__content toc-open-disabled">
           <main id="content" class="technical-documentation" data-module="anchored-headings">
             <h1 id="gov-uk-content-api">GOV.UK Content API</h1>
-<div class="phase-tag">
-  <p>
-    <strong class="phase-banner">Beta</strong>
-    <span>
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Beta
+    </strong>
+    <span class="govuk-phase-banner__text">
       This is a trial service — your
-      <a href="http://www.smartsurvey.co.uk/s/GPYGP">feedback</a>
-      will help us to improve it. <a href="#beta-software">Find out what
-      this means</a>.
+      <a class="govuk-link" href="http://www.smartsurvey.co.uk/s/GPYGP">feedback</a>
+      will help us to improve it.
+      <a class="govuk-link" href="#beta-software">Find out what this means</a>.
     </span>
   </p>
 </div>
-<p>GOV.UK Content API makes it easy to access the data used to render content
+<p>GOV.UK Content API makes it possible to access the data used to render content
 on <a href="https://www.gov.uk">https://www.gov.uk</a> (hereafter referred to as GOV.UK).
-For any page hosted on GOV.UK you can use the <a href="#quick-start">path</a> to access
+For any page hosted on GOV.UK you can <a href="#quick-start">use the path</a> to access
 the content and associated metadata for a page.</p>
 <p>GOV.UK Content API is accessed via <a href="https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol">HTTP</a> and returns data in a <a href="https://en.wikipedia.org/wiki/JSON">JSON</a>
 format. The <a href="reference.html">reference documentation</a> details the
@@ -199,16 +201,16 @@ explained in the <a href="reference.html">reference documentation</a>.</li>
 </ol>
 <p>For example, using the curl command line utility tool:</p>
 <div class="highlight"><pre class="highlight shell"><code>curl https://www.gov.uk/api/content/take-pet-abroad
-</code></pre></div><p>Or, you can use the <a href="https://github.com/alphagov/govuk-browser-extension">govuk-browser-extension</a>. Note that this is intended for internal use.</p>
+</code></pre></div><p>Or, you can <a href="https://github.com/alphagov/govuk-browser-extension">use the govuk-browser-extension</a>.
+Note that this is intended for internal use.</p>
 <h2 id="beta-software">Beta software</h2><p>GOV.UK Content API is currently beta software and may be subject to changes
 and improvements as we learn from usage.</p>
 <p>This means that you may use this software and build applications that utilise
-it. However as we learn from feedback we may make changes to the software.
-We will communicate those via our <a href="#keep-informed">mailing list</a>.</p>
-<p>If you would like to share your feedback about GOV.UK Content API you can do so
-via <a href="http://www.smartsurvey.co.uk/s/GPYGP">this survey</a>.</p>
+it. However as we learn from feedback we may make changes to the software.</p>
+<p>Please use our survey if you would like to <a href="http://www.smartsurvey.co.uk/s/GPYGP">share your feedback about GOV.UK
+Content API</a>.</p>
 <h2 id="authentication">Authentication</h2><p>Usage of GOV.UK Content API does not require authentication.</p>
-<h2 id="security-and-compliance">Security and compliance</h2><h3 id="reporting-vulnerabilities">Reporting vulnerabilities</h3><p>If you believe there is a security issue with GOV.UK Content API, read our <a href="https://github.com/alphagov/.github/blob/master/SECURITY.md">security
+<h2 id="security-and-compliance">Security and compliance</h2><h3 id="reporting-vulnerabilities">Reporting vulnerabilities</h3><p>If you believe there is a security issue with GOV.UK Content API, <a href="https://github.com/alphagov/.github/blob/master/SECURITY.md">read our security
 policy</a>
 and <a href="https://github.com/alphagov/.github/blob/master/SECURITY.md#reporting-a-vulnerability">contact us immediately</a>.</p>
 <p>Please don’t disclose the suspected breach publicly until it has been fixed.</p>
@@ -231,7 +233,7 @@ phase and may be subject to changes and improvements.</p>
 please:</p>
 
 <ul>
-<li><strong>If you are a government department:</strong> Raise a ticket with <a href="https://support.publishing.service.gov.uk">GOV.UK Support</a></li>
+<li><strong>If you are a government department:</strong> [Raise a ticket with GOV.UK Support][]</li>
 <li><strong>Otherwise:</strong> <a href="https://www.gov.uk/contact/govuk">Contact GOV.UK</a> with your query</li>
 </ul>
 
