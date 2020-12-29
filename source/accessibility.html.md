@@ -56,7 +56,7 @@ Some parts of this website are not fully accessible because of [issues caused by
 
 ## What we’re doing to improve accessibility
 
-We plan to fix the issues with the Technical Documentation Template by the end of 2020.
+We plan to fix the issues with the Technical Documentation Template by the end of March 2021.
 
 ## Preparation of this accessibility statement
 
