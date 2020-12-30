@@ -60,6 +60,6 @@ We plan to fix the issues with the Technical Documentation Template by the end o
 
 ## Preparation of this accessibility statement
 
-This statement was prepared on 2 September 2020. It was last reviewed on 2 September 2020.
+This statement was prepared on 2 September 2020. It was last reviewed on 30 December 2020.
 
 This website was last tested in August 2020. The test was carried out by the technical writing team at GDS. We used the [WAVE Web Accessibility Evaluation Tool](https://wave.webaim.org/) and a checklist we created with the help of the GDS accessibility team. We tested all the website's pages.
