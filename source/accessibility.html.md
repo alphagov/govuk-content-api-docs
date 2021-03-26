@@ -21,7 +21,7 @@ We’ve also made the website text as simple as possible to understand.
 
 ## How accessible this website is
 
-We know some parts of this website are not fully accessible because of [issues caused by our Technical Documentation Template](http://tdt-documentation.london.cloudapps.digital/accessibility/#using-the-technical-documentation-template-for-your-own-documentation).
+This website should be fully accessible, as it is compliant with the [Web Content Accessibility Guidelines version 2.1](https://www.w3.org/TR/WCAG21/) AA standard.
 
 ## Feedback and contact information
 
@@ -44,22 +44,10 @@ GDS is committed to making its website accessible, in accordance with the Public
 
 ### Compliance status
 
-This website is partially compliant with the [Web Content Accessibility Guidelines version 2.1](https://www.w3.org/TR/WCAG21/) AA standard, due to the non-compliances listed below.
-
-### Non-accessible content
-
-The content listed below is non-accessible for the following reasons.
-
-#### Non-compliance with the accessibility regulations
-
-Some parts of this website are not fully accessible because of [issues caused by our Technical Documentation Template](https://tdt-documentation.london.cloudapps.digital/accessibility#using-the-technical-documentation-template-for-your-own-documentation).
-
-## What we’re doing to improve accessibility
-
-We plan to fix the issues with the Technical Documentation Template by the end of March 2021.
+This website is compliant with the [Web Content Accessibility Guidelines version 2.1](https://www.w3.org/TR/WCAG21/) AA standard.
 
 ## Preparation of this accessibility statement
 
-This statement was prepared on 2 September 2020. It was last reviewed on 30 December 2020.
+This statement was prepared on 2 September 2020. It was last reviewed on 26 March 2021.
 
 This website was last tested in August 2020. The test was carried out by the technical writing team at GDS. We used the [WAVE Web Accessibility Evaluation Tool](https://wave.webaim.org/) and a checklist we created with the help of the GDS accessibility team. We tested all the website's pages.
