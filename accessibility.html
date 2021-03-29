@@ -3,25 +3,25 @@
   <head>
     <meta content="IE=edge" http-equiv="X-UA-Compatible">
     <meta charset="utf-8">
-    <meta content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-    <title>Accessibility statement for GOV.UK Content API documentation | Content API</title>
+    <title>Accessibility statement for GOV.UK Content API documentation - Content API</title>
 
     <link href="stylesheets/manifest.css" rel="stylesheet" />
 
     <link rel="canonical" href="https://content-api.publishing.service.gov.uk/accessibility.html">
 
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:domain" content="content-api.publishing.service.gov.uk" />
+      <meta name="twitter:image" content="https://content-api.publishing.service.gov.uk/images/govuk-large.png" />
+      <meta name="twitter:title" content="Accessibility statement for GOV.UK Content API documentation - Content API" />
+      <meta name="twitter:url" content="https://content-api.publishing.service.gov.uk/accessibility.html" />
 
       <meta property="og:image" content="https://content-api.publishing.service.gov.uk/images/govuk-large.png" />
       <meta property="og:site_name" content="Content API" />
       <meta property="og:title" content="Accessibility statement for GOV.UK Content API documentation" />
       <meta property="og:type" content="object" />
       <meta property="og:url" content="https://content-api.publishing.service.gov.uk/accessibility.html" />
-      <meta property="twitter:card" content="summary" />
-      <meta property="twitter:domain" content="content-api.publishing.service.gov.uk" />
-      <meta property="twitter:image" content="https://content-api.publishing.service.gov.uk/images/govuk-large.png" />
-      <meta property="twitter:title" content="Accessibility statement for GOV.UK Content API documentation | Content API" />
-      <meta property="twitter:url" content="https://content-api.publishing.service.gov.uk/accessibility.html" />
 
     
   </head>
@@ -33,13 +33,13 @@
       <div class="app-pane__header toc-open-disabled">
         <a href="#content" class="govuk-skip-link">Skip to main content</a>
 
-        <header class="govuk-header " role="banner" data-module="govuk-header">
+        <header class="govuk-header app-header" role="banner" data-module="govuk-header">
   <div class="govuk-header__container govuk-header__container--full-width">
     <div class="govuk-header__logo">
       <a href="/" class="govuk-header__link govuk-header__link--homepage">
         <span class="govuk-header__logotype">
           <svg
-            role="presentation"
+            aria-hidden="true"
             focusable="false"
             class="govuk-header__logotype-crown"
             xmlns="http://www.w3.org/2000/svg"
@@ -64,12 +64,9 @@
         <strong class="govuk-tag">Beta</strong>
     </div>
     <div class="govuk-header__content">
-      <button type="button" role="button" class="govuk-header__menu-button govuk-js-header-toggle" aria-controls="navigation" aria-label="Show or hide Top Level Navigation">Menu</button>
+      <button type="button" class="govuk-header__menu-button govuk-js-header-toggle" aria-controls="navigation" aria-label="Show or hide Top Level Navigation">Menu</button>
       <nav>
         <ul id="navigation" class="govuk-header__navigation govuk-header__navigation--end" aria-label="Top Level Navigation">
-            <li class="govuk-header__navigation-item">
-              <a class="govuk-header__link" href="/">About</a>
-            </li>
             <li class="govuk-header__navigation-item">
               <a class="govuk-header__link" href="getting-started.html">Getting Started</a>
             </li>
@@ -85,16 +82,16 @@
       </div>
 
         <div id="toc-heading" class="toc-show fixedsticky">
-          <a href="#toc" class="toc-show__label js-toc-show" aria-controls="toc">
+          <button type="button" class="toc-show__label js-toc-show" aria-controls="toc">
             Table of contents <span class="toc-show__icon"></span>
-          </a>
+          </button>
         </div>
 
       <div class="app-pane__body" data-module="in-page-navigation">
           <div class="app-pane__toc">
-            <div class="toc" data-module="table-of-contents">
+            <div class="toc" data-module="table-of-contents" tabindex="-1" aria-label="Table of contents" role="dialog">
               
-              <a href="#" class="toc__close js-toc-close" aria-controls="toc" aria-label="Hide table of contents"></a>
+              <button type="button" class="toc__close js-toc-close" aria-controls="toc" aria-label="Hide table of contents"></button>
               <nav id="toc" class="js-toc-list toc__list" aria-labelledby="toc-heading">
                       <ul>
   <li>
@@ -120,18 +117,7 @@
           <li>
             <a href="#compliance-status"><span>Compliance status</span></a>
           </li>
-          <li>
-            <a href="#non-accessible-content"><span>Non-accessible content</span></a>
-            <ul>
-              <li>
-                <a href="#non-compliance-with-the-accessibility-regulations"><span>Non-compliance with the accessibility regulations</span></a>
-              </li>
-            </ul>
-          </li>
         </ul>
-      </li>
-      <li>
-        <a href="#what-we-re-doing-to-improve-accessibility"><span>What we’re doing to improve accessibility</span></a>
       </li>
       <li>
         <a href="#preparation-of-this-accessibility-statement"><span>Preparation of this accessibility statement</span></a>
@@ -159,18 +145,15 @@
 </ul>
 <p>We’ve also made the website text as simple as possible to understand.</p>
 <p><a href="https://mcmw.abilitynet.org.uk/">AbilityNet</a> has advice on making your device easier to use if you have a disability.</p>
-<h2 id="how-accessible-this-website-is">How accessible this website is</h2><p>We know some parts of this website are not fully accessible because of <a href="http://tdt-documentation.london.cloudapps.digital/accessibility/#using-the-technical-documentation-template-for-your-own-documentation">issues caused by our Technical Documentation Template</a>.</p>
+<h2 id="how-accessible-this-website-is">How accessible this website is</h2><p>This website should be fully accessible, as it is compliant with the <a href="https://www.w3.org/TR/WCAG21/">Web Content Accessibility Guidelines version 2.1</a> AA standard.</p>
 <h2 id="feedback-and-contact-information">Feedback and contact information</h2><p>If you need any part of this service in a different format like large print, audio recording or braille, <a href="https://www.gov.uk/contact/govuk">contact us using the GOV.UK contact form</a>.</p>
 <p>We’ll consider your request and get back to you within 3 working days.</p>
 <h2 id="reporting-accessibility-problems-with-this-website">Reporting accessibility problems with this website</h2><p>We’re always looking to improve the accessibility of this website. If you find any problems not listed on this page or think we’re not meeting accessibility requirements, <a href="https://www.gov.uk/contact/govuk">contact us using the GOV.UK contact form</a>.</p>
 <h3 id="enforcement-procedure">Enforcement procedure</h3><p>The Equality and Human Rights Commission (EHRC) is responsible for enforcing the Public Sector Bodies (Websites and Mobile Applications) (No. 2) Accessibility Regulations 2018
 (the ‘accessibility regulations’). If you’re not happy with how we respond to your complaint, <a href="https://www.equalityadvisoryservice.com/">contact the Equality Advisory and Support Service (EASS)</a>.</p>
 <h2 id="technical-information-about-this-website-s-accessibility">Technical information about this website’s accessibility</h2><p>GDS is committed to making its website accessible, in accordance with the Public Sector Bodies (Websites and Mobile Applications) (No. 2) Accessibility Regulations 2018.</p>
-<h3 id="compliance-status">Compliance status</h3><p>This website is partially compliant with the <a href="https://www.w3.org/TR/WCAG21/">Web Content Accessibility Guidelines version 2.1</a> AA standard, due to the non-compliances listed below.</p>
-<h3 id="non-accessible-content">Non-accessible content</h3><p>The content listed below is non-accessible for the following reasons.</p>
-<h4 id="non-compliance-with-the-accessibility-regulations">Non-compliance with the accessibility regulations</h4><p>Some parts of this website are not fully accessible because of <a href="https://tdt-documentation.london.cloudapps.digital/accessibility#using-the-technical-documentation-template-for-your-own-documentation">issues caused by our Technical Documentation Template</a>.</p>
-<h2 id="what-we-re-doing-to-improve-accessibility">What we’re doing to improve accessibility</h2><p>We plan to fix the issues with the Technical Documentation Template by the end of March 2021.</p>
-<h2 id="preparation-of-this-accessibility-statement">Preparation of this accessibility statement</h2><p>This statement was prepared on 2 September 2020. It was last reviewed on 30 December 2020.</p>
+<h3 id="compliance-status">Compliance status</h3><p>This website is compliant with the <a href="https://www.w3.org/TR/WCAG21/">Web Content Accessibility Guidelines version 2.1</a> AA standard.</p>
+<h2 id="preparation-of-this-accessibility-statement">Preparation of this accessibility statement</h2><p>This statement was prepared on 2 September 2020. It was last reviewed on 26 March 2021.</p>
 <p>This website was last tested in August 2020. The test was carried out by the technical writing team at GDS. We used the <a href="https://wave.webaim.org/">WAVE Web Accessibility Evaluation Tool</a> and a checklist we created with the help of the GDS accessibility team. We tested all the website&rsquo;s pages.</p>
 
             
@@ -190,7 +173,7 @@
         </ul>
 
       <svg
-        role="presentation"
+        aria-hidden="true"
         focusable="false"
         class="govuk-footer__licence-logo"
         xmlns="http://www.w3.org/2000/svg"

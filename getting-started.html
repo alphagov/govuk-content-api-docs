@@ -3,25 +3,25 @@
   <head>
     <meta content="IE=edge" http-equiv="X-UA-Compatible">
     <meta charset="utf-8">
-    <meta content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-    <title>Getting Started | Content API</title>
+    <title>Getting Started - Content API</title>
 
     <link href="stylesheets/manifest.css" rel="stylesheet" />
 
     <link rel="canonical" href="https://content-api.publishing.service.gov.uk/getting-started.html">
 
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:domain" content="content-api.publishing.service.gov.uk" />
+      <meta name="twitter:image" content="https://content-api.publishing.service.gov.uk/images/govuk-large.png" />
+      <meta name="twitter:title" content="Getting Started - Content API" />
+      <meta name="twitter:url" content="https://content-api.publishing.service.gov.uk/getting-started.html" />
 
       <meta property="og:image" content="https://content-api.publishing.service.gov.uk/images/govuk-large.png" />
       <meta property="og:site_name" content="Content API" />
       <meta property="og:title" content="Getting Started" />
       <meta property="og:type" content="object" />
       <meta property="og:url" content="https://content-api.publishing.service.gov.uk/getting-started.html" />
-      <meta property="twitter:card" content="summary" />
-      <meta property="twitter:domain" content="content-api.publishing.service.gov.uk" />
-      <meta property="twitter:image" content="https://content-api.publishing.service.gov.uk/images/govuk-large.png" />
-      <meta property="twitter:title" content="Getting Started | Content API" />
-      <meta property="twitter:url" content="https://content-api.publishing.service.gov.uk/getting-started.html" />
 
     
   </head>
@@ -33,13 +33,13 @@
       <div class="app-pane__header toc-open-disabled">
         <a href="#content" class="govuk-skip-link">Skip to main content</a>
 
-        <header class="govuk-header " role="banner" data-module="govuk-header">
+        <header class="govuk-header app-header" role="banner" data-module="govuk-header">
   <div class="govuk-header__container govuk-header__container--full-width">
     <div class="govuk-header__logo">
       <a href="/" class="govuk-header__link govuk-header__link--homepage">
         <span class="govuk-header__logotype">
           <svg
-            role="presentation"
+            aria-hidden="true"
             focusable="false"
             class="govuk-header__logotype-crown"
             xmlns="http://www.w3.org/2000/svg"
@@ -64,12 +64,9 @@
         <strong class="govuk-tag">Beta</strong>
     </div>
     <div class="govuk-header__content">
-      <button type="button" role="button" class="govuk-header__menu-button govuk-js-header-toggle" aria-controls="navigation" aria-label="Show or hide Top Level Navigation">Menu</button>
+      <button type="button" class="govuk-header__menu-button govuk-js-header-toggle" aria-controls="navigation" aria-label="Show or hide Top Level Navigation">Menu</button>
       <nav>
         <ul id="navigation" class="govuk-header__navigation govuk-header__navigation--end" aria-label="Top Level Navigation">
-            <li class="govuk-header__navigation-item">
-              <a class="govuk-header__link" href="/">About</a>
-            </li>
             <li class="govuk-header__navigation-item govuk-header__navigation-item--active">
               <a class="govuk-header__link" href="getting-started.html">Getting Started</a>
             </li>
@@ -85,16 +82,16 @@
       </div>
 
         <div id="toc-heading" class="toc-show fixedsticky">
-          <a href="#toc" class="toc-show__label js-toc-show" aria-controls="toc">
+          <button type="button" class="toc-show__label js-toc-show" aria-controls="toc">
             Table of contents <span class="toc-show__icon"></span>
-          </a>
+          </button>
         </div>
 
       <div class="app-pane__body" data-module="in-page-navigation">
           <div class="app-pane__toc">
-            <div class="toc" data-module="table-of-contents">
+            <div class="toc" data-module="table-of-contents" tabindex="-1" aria-label="Table of contents" role="dialog">
               
-              <a href="#" class="toc__close js-toc-close" aria-controls="toc" aria-label="Hide table of contents"></a>
+              <button type="button" class="toc__close js-toc-close" aria-controls="toc" aria-label="Hide table of contents"></button>
               <nav id="toc" class="js-toc-list toc__list" aria-labelledby="toc-heading">
                       <ul>
   <li>
@@ -147,12 +144,12 @@ through <a href="https://stedolan.github.io/jq/">jq</a>.</p>
 <a href="https://www.gov.uk">www.gov.uk</a> (referred to as GOV.UK). For a given HTML
 page, for example <a href="https://www.gov.uk/vat-rates">VAT Rates</a>, we can look this
 up through this API:</p>
-<div class="highlight"><pre class="highlight shell"><code>curl https://www.gov.uk/api/content/vat-rates
+<div class="highlight"><pre class="highlight shell" tabindex="0"><code>curl https://www.gov.uk/api/content/vat-rates
 </code></pre></div><p>This will return a <a href="reference.html#contentitem"><code>ContentItem</code></a> object. Within this object are
 fields that describe the content itself, metadata and associations
 with other content. This section will explain conceptually some of the key
 fields.</p>
-<h3 id="base-path">Base path</h3><div class="highlight"><pre class="highlight plaintext"><code>{
+<h3 id="base-path">Base path</h3><div class="highlight"><pre class="highlight plaintext" tabindex="0"><code>{
   ...
   "base_path": "/vat-rates",
   ...
@@ -163,7 +160,7 @@ content.</p>
 <p>The &ldquo;base&rdquo; aspect of this field is used as it indicates the root path of this
 piece of content as some pieces of content
 <a href="#content-that-spans-multiple-pages">span multiple pages</a>.</p>
-<h3 id="document-type-and-schema-name">Document type and schema name</h3><div class="highlight"><pre class="highlight plaintext"><code>{
+<h3 id="document-type-and-schema-name">Document type and schema name</h3><div class="highlight"><pre class="highlight plaintext" tabindex="0"><code>{
   ...
   "document_type": "answer",
   "schema_name": "answer",
@@ -179,7 +176,7 @@ the name of the format on GOV.UK. Often these fields share the same value as
 there is often only one schema for a particular <code>document_type</code>.</p>
 <p>This is the case with <a href="https://www.gov.uk/api/content/vat-rates">VAT Rates</a> where the content returned
 utilises the <a href="https://github.com/alphagov/govuk-content-schemas/blob/d0606b8a1add8066d90bcb00e890fd619340fd81/dist/formats/answer/frontend/schema.json"><code>answer</code> schema</a>.</p>
-<h3 id="details">Details</h3><div class="highlight"><pre class="highlight plaintext"><code>{
+<h3 id="details">Details</h3><div class="highlight"><pre class="highlight plaintext" tabindex="0"><code>{
   ...
   "details": {
     "body": "\n&lt;div class=\"highlight-answer\"&gt;\n&lt;p&gt;The standard &lt;abbr title=\"Value Added Tax\"&gt;VAT&lt;/abbr&gt; rate is &lt;em&gt;20%&lt;/em&gt;&lt;/p&gt;\n&lt;/div&gt;\n\n&lt;h2 id=\"vat-rates-for-goods-and-services\"&gt;\n&lt;abbr title=\"Value Added Tax\"&gt;VAT&lt;/abbr&gt; rates for goods and services&lt;/h2&gt;\n\n&lt;table&gt;\n  &lt;thead&gt;\n    &lt;tr&gt;\n      &lt;th&gt;Rate&lt;/th&gt;\n      &lt;th&gt;% of &lt;abbr title=\"Value Added Tax\"&gt;VAT&lt;/abbr&gt;\n&lt;/th&gt;\n      &lt;th&gt;What the rate applies to&lt;/th&gt;\n    &lt;/tr&gt;\n  &lt;/thead&gt;\n  &lt;tbody&gt;\n    &lt;tr&gt;\n      &lt;td&gt;Standard&lt;/td&gt;\n      &lt;td&gt;20%&lt;/td&gt;\n      &lt;td&gt;Most goods and services&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;Reduced rate&lt;/td&gt;\n      &lt;td&gt;5%&lt;/td&gt;\n      &lt;td&gt;Some goods and services, eg children’s car seats and home energy&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;Zero rate&lt;/td&gt;\n      &lt;td&gt;0%&lt;/td&gt;\n      &lt;td&gt;Zero-rated goods and services, eg most food and children’s clothes&lt;/td&gt;\n    &lt;/tr&gt;\n  &lt;/tbody&gt;\n&lt;/table&gt;\n\n&lt;p&gt;The standard rate of &lt;abbr title=\"Value Added Tax\"&gt;VAT&lt;/abbr&gt; increased to 20% on 4 January 2011 (from 17.5%).&lt;/p&gt;\n\n&lt;p&gt;Some things are exempt from &lt;abbr title=\"Value Added Tax\"&gt;VAT&lt;/abbr&gt;, eg postage stamps, financial and property transactions.&lt;/p&gt;\n\n&lt;p&gt;The &lt;a href=\"/vat-businesses/vat-rates\"&gt;&lt;abbr title=\"Value Added Tax\"&gt;VAT&lt;/abbr&gt; rate businesses charge&lt;/a&gt; depends on their goods and services.&lt;/p&gt;\n\n&lt;p&gt;Check the &lt;a href=\"https://www.gov.uk/rates-of-vat-on-different-goods-and-services\"&gt;rates of &lt;abbr title=\"Value Added Tax\"&gt;VAT&lt;/abbr&gt;&lt;/a&gt; on different goods and services.&lt;/p&gt;\n\n",
@@ -206,7 +203,7 @@ with <a href="https://www.gov.uk/api/content/vat-rates">VAT Rates</a> there is a
 <code>mainstream_browse_pages</code>. The purpose of this link type is to enable linking
 to pages to help users find similar content that is suitable for a mainstream
 audience.</p>
-<div class="highlight"><pre class="highlight plaintext"><code>{
+<div class="highlight"><pre class="highlight plaintext" tabindex="0"><code>{
   ...
   "links": {
     ...
@@ -238,7 +235,7 @@ pages through use of the <code>parent</code> link type.</p>
 <h2 id="making-use-of-content">Making use of content</h2><p>The example below illustrates utilising <a href="http://rubyonrails.org/">Ruby on Rails</a>
 with <a href="https://github.com/rest-client/rest-client">Rest Client</a> to make use of
 GOV.UK in your application.</p>
-<div class="highlight"><pre class="highlight ruby"><code><span class="nb">require</span> <span class="s2">"rest-client"</span>
+<div class="highlight"><pre class="highlight ruby" tabindex="0"><code><span class="nb">require</span> <span class="s2">"rest-client"</span>
 
 <span class="n">tax_help</span> <span class="o">=</span> <span class="no">Rails</span><span class="p">.</span><span class="nf">cache</span><span class="p">.</span><span class="nf">fetch</span><span class="p">(</span><span class="s2">"govuk/tax-help"</span><span class="p">,</span> <span class="ss">expires_in: </span><span class="mi">1</span><span class="p">.</span><span class="nf">hour</span><span class="p">)</span> <span class="k">do</span>
   <span class="n">response</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="s2">"https://www.gov.uk/api/content/tax-help"</span><span class="p">,</span> <span class="p">{</span> <span class="ss">content_type: </span><span class="s2">"json"</span> <span class="p">})</span>
@@ -265,7 +262,7 @@ a single piece of content available at
 <p>You can however access this by using the path of the page you wish to access,
 <code>/foreign-travel-advice/thailand/local-laws-and-customs</code>. In this case you will
 receive a 303 redirect response to the canonical source of the content.</p>
-<div class="highlight"><pre class="highlight shell"><code><span class="nv">$ </span>curl <span class="nt">-I</span> https://www.gov.uk/api/content/foreign-travel-advice/thailand/local-laws-and-customs
+<div class="highlight"><pre class="highlight shell" tabindex="0"><code><span class="nv">$ </span>curl <span class="nt">-I</span> https://www.gov.uk/api/content/foreign-travel-advice/thailand/local-laws-and-customs
 HTTP/1.1 303 See Other
 ...
 Location: https://www.gov.uk/api/content/foreign-travel-advice/thailand
@@ -280,11 +277,11 @@ which was withdrawn as the content had become out of date.</p>
 <p>Withdrawn status is represented in GOV.UK Content API through the
 <code>withdrawn_notice</code> field. We can look up the value for this using the above
 example.</p>
-<div class="highlight"><pre class="highlight shell"><code>curl https://www.gov.uk/api/content/government/publications/the-complete-routine-immunisation-schedule-201314
+<div class="highlight"><pre class="highlight shell" tabindex="0"><code>curl https://www.gov.uk/api/content/government/publications/the-complete-routine-immunisation-schedule-201314
 </code></pre></div><p>Within the returned <a href="reference.html#contentitem"><code>ContentItem</code></a> object there is a
 <a href="reference.html#withdrawnnotice"><code>WithdrawnNotice</code></a> object that describes the withdrawn
 status.</p>
-<div class="highlight"><pre class="highlight plaintext"><code>"withdrawn_notice": {
+<div class="highlight"><pre class="highlight plaintext" tabindex="0"><code>"withdrawn_notice": {
   "explanation": "&lt;div class=\"govspeak\"&gt;&lt;p&gt;This document is out of date.  See the current &lt;a href=\"https://www.gov.uk/government/publications/the-complete-routine-immunisation-schedule\"&gt;complete routine immunisation schedule&lt;/a&gt;.&lt;/p&gt;\n&lt;/div&gt;",
   "withdrawn_at": "2015-08-12T13:47:11Z"
 }
@@ -306,7 +303,7 @@ status.</p>
         </ul>
 
       <svg
-        role="presentation"
+        aria-hidden="true"
         focusable="false"
         class="govuk-footer__licence-logo"
         xmlns="http://www.w3.org/2000/svg"
