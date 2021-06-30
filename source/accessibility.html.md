@@ -21,7 +21,7 @@ We’ve also made the website text as simple as possible to understand.
 
 ## How accessible this website is
 
-This website should be fully accessible, as it is compliant with the [Web Content Accessibility Guidelines version 2.1](https://www.w3.org/TR/WCAG21/) AA standard.
+We know some parts of this website are not fully accessible as there are issues caused by our Technical Documentation Template.
 
 ## Feedback and contact information
 
@@ -42,12 +42,12 @@ The Equality and Human Rights Commission (EHRC) is responsible for enforcing the
 
 GDS is committed to making its website accessible, in accordance with the Public Sector Bodies (Websites and Mobile Applications) (No. 2) Accessibility Regulations 2018.
 
-### Compliance status
+## Non-compliance with the accessibility regulations
 
-This website is compliant with the [Web Content Accessibility Guidelines version 2.1](https://www.w3.org/TR/WCAG21/) AA standard.
+Some parts of this website are not fully accessible because of [issues caused by our Technical Documentation Template](https://tdt-documentation.london.cloudapps.digital/accessibility/#using-the-technical-documentation-template-for-your-own-documentation).
 
 ## Preparation of this accessibility statement
 
-This statement was prepared on 2 September 2020. It was last reviewed on 26 March 2021.
+This statement was prepared on 2 September 2020. It was last reviewed on 30 June 2021.
 
 This website was last tested in August 2020. The test was carried out by the technical writing team at GDS. We used the [WAVE Web Accessibility Evaluation Tool](https://wave.webaim.org/) and a checklist we created with the help of the GDS accessibility team. We tested all the website's pages.
