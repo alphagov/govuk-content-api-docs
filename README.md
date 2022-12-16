@@ -76,7 +76,7 @@ This will push to the `gh-pages` branch and therefore deploy to GitHub Pages.
 
 ## License
 
-[MIT License](LICENSE)
+[MIT License](LICENCE)
 
 [forked-widdershins]: https://github.com/alphagov/widdershins
 [widdershins]: https://github.com/Mermade/widdershins
