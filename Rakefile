@@ -1,1 +1,3 @@
-require 'middleman-gh-pages'
+# frozen_string_literal: true
+
+require "middleman-gh-pages"
