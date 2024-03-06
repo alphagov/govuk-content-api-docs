@@ -1,4 +1,10 @@
-source 'https://rubygems.org'
+# frozen_string_literal: true
 
-gem 'govuk_tech_docs'
-gem 'middleman-gh-pages', '~> 0.4.1'
+source "https://rubygems.org"
+
+gem "govuk_tech_docs"
+gem "middleman-gh-pages", "~> 0.4.1"
+
+group :development, :test do
+  gem "rubocop-govuk"
+end

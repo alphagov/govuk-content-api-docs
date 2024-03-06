@@ -4,3 +4,7 @@ auto_merge:
     allowed_semver_bumps:
       - patch
       - minor
+  - dependency: rubocop-govuk
+    allowed_semver_bumps:
+      - patch
+      - minor
