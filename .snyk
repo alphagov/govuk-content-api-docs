@@ -1,8 +1,0 @@
-version: v1.5.0
-ignore:
-  'SNYK-JS-ANSIREGEX-1583908':
-  - '* > ansi-regex@2.1.1':
-    reason: 'No fix available, only used at buildtime'
-  'SNYK-JS-AJV-584908':
-  - '* > ajv@5.5.2':
-    reason: 'No fix available, only used at buildtime'
