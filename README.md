@@ -9,18 +9,14 @@ This documentation is built from source files in this repository and an
 [Content Store][content-store] application.
 
 The framework for this documentation
-is provided by the [GOV.UK Tech Docs Template][tech-docs-template] and through
-the use of a [fork][forked-widdershins] of [widdershins][widdershins] to
-convert the [`openapi.yaml`][content-store-openapi] to Markdown.
+is provided by the [GOV.UK Tech Docs Template][tech-docs-template].
 
 ## Updating content
 
 The [`reference.html`][reference-page] page is built using the
 [`openapi.yaml`][content-store-openapi] file. Changes to content on this page
 should be made by opening a pull request against the
-[Content Store][content-store] application. Some aspects of the reference.html
-page are controlled by templates which are stored in the
-[`/templates`][templates-dir] of this repository.
+[Content Store][content-store] application.
 
 Other HTML pages are in the [`/source`][source-dir] of this repository and are
 authored using Markdown. You can suggest edits to these pages by making changes
@@ -33,8 +29,8 @@ as well as the [Content Store][content-store].
 
 ### Installing dependencies
 
-Setting up the documentation requires Ruby and Node. Run the following to
-install the necessary dependencies:
+Setting up the documentation requires Ruby. Run the following to install the
+necessary dependencies:
 
 ```
 make requirements
@@ -53,7 +49,7 @@ access it if they are given the link.
 Type the following to start the server:
 
 ```
-make server API_SPEC=../content-store/openapi.yaml
+make server
 ```
 
 You should now be able to view a live preview at http://localhost:4567.
@@ -69,7 +65,7 @@ If for some reason the automatic deployment fails you can deploy with the
 following command:
 
 ```
-make publish API_SPEC=<path/to/openapi.yaml>
+make publish
 ```
 
 This will push to the `gh-pages` branch and therefore deploy to GitHub Pages.
@@ -78,11 +74,8 @@ This will push to the `gh-pages` branch and therefore deploy to GitHub Pages.
 
 [MIT License](LICENCE)
 
-[forked-widdershins]: https://github.com/alphagov/widdershins
-[widdershins]: https://github.com/Mermade/widdershins
 [content-store-openapi]: https://github.com/alphagov/content-store/blob/main/openapi.yaml
 [content-store]: https://github.com/alphagov/content-store
-[templates-dir]: https://github.com/alphagov/govuk-content-api-docs/tree/
 
 
 /templates
