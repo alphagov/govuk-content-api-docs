@@ -80,7 +80,7 @@ This will push to the `gh-pages` branch and therefore deploy to GitHub Pages.
 
 [forked-widdershins]: https://github.com/alphagov/widdershins
 [widdershins]: https://github.com/Mermade/widdershins
-[content-store-openapi]: https://github.com/alphagov/content-store/blob/deployed-to-production/openapi.yaml
+[content-store-openapi]: https://github.com/alphagov/content-store/blob/main/openapi.yaml
 [content-store]: https://github.com/alphagov/content-store
 [templates-dir]: https://github.com/alphagov/govuk-content-api-docs/tree/
 
