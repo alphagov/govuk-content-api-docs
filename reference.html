@@ -5,21 +5,26 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-    <title>GOV.UK Content API v1.0.0 - Content API</title>
+    <title>API reference - Content API</title>
 
     <link href="stylesheets/manifest.css" rel="stylesheet" />
 
     <link rel="canonical" href="https://content-api.publishing.service.gov.uk/reference.html">
+    <link rel="icon" sizes="48x48" href="assets/govuk/assets/images/favicon.ico">
+    <link rel="icon" sizes="any" href="assets/govuk/assets/images/favicon.svg" type="image/svg+xml">
+    <link rel="mask-icon" href="assets/govuk/assets/images/govuk-icon-mask.svg" color="#0b0c0c">
+    <link rel="apple-touch-icon" href="assets/govuk/assets/images/govuk-icon-180.png">
+    <link rel="manifest" href="/assets/govuk/assets/manifest.json">
 
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:domain" content="content-api.publishing.service.gov.uk" />
-      <meta name="twitter:image" content="https://content-api.publishing.service.gov.uk/images/govuk-large.png" />
-      <meta name="twitter:title" content="GOV.UK Content API v1.0.0 - Content API" />
+      <meta name="twitter:image" content="https://content-api.publishing.service.gov.uk/assets/govuk/assets/images/govuk-opengraph-image.png" />
+      <meta name="twitter:title" content="API reference - Content API" />
       <meta name="twitter:url" content="https://content-api.publishing.service.gov.uk/reference.html" />
 
-      <meta property="og:image" content="https://content-api.publishing.service.gov.uk/images/govuk-large.png" />
+      <meta property="og:image" content="https://content-api.publishing.service.gov.uk/assets/govuk/assets/images/govuk-opengraph-image.png" />
       <meta property="og:site_name" content="Content API" />
-      <meta property="og:title" content="GOV.UK Content API v1.0.0" />
+      <meta property="og:title" content="API reference" />
       <meta property="og:type" content="object" />
       <meta property="og:url" content="https://content-api.publishing.service.gov.uk/reference.html" />
 
@@ -27,7 +32,7 @@
   </head>
 
   <body class="govuk-template__body">
-    <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
+    <script>document.body.className += ' js-enabled' + ('noModule' in HTMLScriptElement.prototype ? ' govuk-frontend-supported' : '');</script>
 
     <div class="app-pane">
       <div class="app-pane__header toc-open-disabled">
@@ -36,26 +41,20 @@
         <header class="govuk-header app-header" role="banner" data-module="govuk-header">
   <div class="govuk-header__container govuk-header__container--full-width">
     <div class="govuk-header__logo">
-      <a href="/" class="govuk-header__link govuk-header__link--homepage">
-        <span class="govuk-header__logotype">
-          <svg
-            aria-hidden="true"
-            focusable="false"
-            class="govuk-header__logotype-crown"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 132 97"
-            height="30"
-            width="36"
-          >
-            <path
-              fill="currentColor" fill-rule="evenodd"
-              d="M25 30.2c3.5 1.5 7.7-.2 9.1-3.7 1.5-3.6-.2-7.8-3.9-9.2-3.6-1.4-7.6.3-9.1 3.9-1.4 3.5.3 7.5 3.9 9zM9 39.5c3.6 1.5 7.8-.2 9.2-3.7 1.5-3.6-.2-7.8-3.9-9.1-3.6-1.5-7.6.2-9.1 3.8-1.4 3.5.3 7.5 3.8 9zM4.4 57.2c3.5 1.5 7.7-.2 9.1-3.8 1.5-3.6-.2-7.7-3.9-9.1-3.5-1.5-7.6.3-9.1 3.8-1.4 3.5.3 7.6 3.9 9.1zm38.3-21.4c3.5 1.5 7.7-.2 9.1-3.8 1.5-3.6-.2-7.7-3.9-9.1-3.6-1.5-7.6.3-9.1 3.8-1.3 3.6.4 7.7 3.9 9.1zm64.4-5.6c-3.6 1.5-7.8-.2-9.1-3.7-1.5-3.6.2-7.8 3.8-9.2 3.6-1.4 7.7.3 9.2 3.9 1.3 3.5-.4 7.5-3.9 9zm15.9 9.3c-3.6 1.5-7.7-.2-9.1-3.7-1.5-3.6.2-7.8 3.7-9.1 3.6-1.5 7.7.2 9.2 3.8 1.5 3.5-.3 7.5-3.8 9zm4.7 17.7c-3.6 1.5-7.8-.2-9.2-3.8-1.5-3.6.2-7.7 3.9-9.1 3.6-1.5 7.7.3 9.2 3.8 1.3 3.5-.4 7.6-3.9 9.1zM89.3 35.8c-3.6 1.5-7.8-.2-9.2-3.8-1.4-3.6.2-7.7 3.9-9.1 3.6-1.5 7.7.3 9.2 3.8 1.4 3.6-.3 7.7-3.9 9.1zM69.7 17.7l8.9 4.7V9.3l-8.9 2.8c-.2-.3-.5-.6-.9-.9L72.4 0H59.6l3.5 11.2c-.3.3-.6.5-.9.9l-8.8-2.8v13.1l8.8-4.7c.3.3.6.7.9.9l-5 15.4v.1c-.2.8-.4 1.6-.4 2.4 0 4.1 3.1 7.5 7 8.1h.2c.3 0 .7.1 1 .1.4 0 .7 0 1-.1h.2c4-.6 7.1-4.1 7.1-8.1 0-.8-.1-1.7-.4-2.4V34l-5.1-15.4c.4-.2.7-.6 1-.9zM66 92.8c16.9 0 32.8 1.1 47.1 3.2 4-16.9 8.9-26.7 14-33.5l-9.6-3.4c1 4.9 1.1 7.2 0 10.2-1.5-1.4-3-4.3-4.2-8.7L108.6 76c2.8-2 5-3.2 7.5-3.3-4.4 9.4-10 11.9-13.6 11.2-4.3-.8-6.3-4.6-5.6-7.9 1-4.7 5.7-5.9 8-.5 4.3-8.7-3-11.4-7.6-8.8 7.1-7.2 7.9-13.5 2.1-21.1-8 6.1-8.1 12.3-4.5 20.8-4.7-5.4-12.1-2.5-9.5 6.2 3.4-5.2 7.9-2 7.2 3.1-.6 4.3-6.4 7.8-13.5 7.2-10.3-.9-10.9-8-11.2-13.8 2.5-.5 7.1 1.8 11 7.3L80.2 60c-4.1 4.4-8 5.3-12.3 5.4 1.4-4.4 8-11.6 8-11.6H55.5s6.4 7.2 7.9 11.6c-4.2-.1-8-1-12.3-5.4l1.4 16.4c3.9-5.5 8.5-7.7 10.9-7.3-.3 5.8-.9 12.8-11.1 13.8-7.2.6-12.9-2.9-13.5-7.2-.7-5 3.8-8.3 7.1-3.1 2.7-8.7-4.6-11.6-9.4-6.2 3.7-8.5 3.6-14.7-4.6-20.8-5.8 7.6-5 13.9 2.2 21.1-4.7-2.6-11.9.1-7.7 8.8 2.3-5.5 7.1-4.2 8.1.5.7 3.3-1.3 7.1-5.7 7.9-3.5.7-9-1.8-13.5-11.2 2.5.1 4.7 1.3 7.5 3.3l-4.7-15.4c-1.2 4.4-2.7 7.2-4.3 8.7-1.1-3-.9-5.3 0-10.2l-9.5 3.4c5 6.9 9.9 16.7 14 33.5 14.8-2.1 30.8-3.2 47.7-3.2z"
-            ></path>
-          </svg>
-          <span class="govuk-header__logotype-text">
-            GOV.UK
-          </span>
-        </span>
+      <a href="./" class="govuk-header__link govuk-header__link--homepage">
+        <svg
+          focusable="false"
+          role="img"
+          class="govuk-header__logotype"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 148 30"
+          height="30"
+          width="148"
+          aria-label="GOV.UK"
+        >
+          <title>GOV.UK</title>
+          <path d="M22.6 10.4c-1 .4-2-.1-2.4-1-.4-.9.1-2 1-2.4.9-.4 2 .1 2.4 1s-.1 2-1 2.4m-5.9 6.7c-.9.4-2-.1-2.4-1-.4-.9.1-2 1-2.4.9-.4 2 .1 2.4 1s-.1 2-1 2.4m10.8-3.7c-1 .4-2-.1-2.4-1-.4-.9.1-2 1-2.4.9-.4 2 .1 2.4 1s0 2-1 2.4m3.3 4.8c-1 .4-2-.1-2.4-1-.4-.9.1-2 1-2.4.9-.4 2 .1 2.4 1s-.1 2-1 2.4M17 4.7l2.3 1.2V2.5l-2.3.7-.2-.2.9-3h-3.4l.9 3-.2.2c-.1.1-2.3-.7-2.3-.7v3.4L15 4.7c.1.1.1.2.2.2l-1.3 4c-.1.2-.1.4-.1.6 0 1.1.8 2 1.9 2.2h.7c1-.2 1.9-1.1 1.9-2.1 0-.2 0-.4-.1-.6l-1.3-4c-.1-.2 0-.2.1-.3m-7.6 5.7c.9.4 2-.1 2.4-1 .4-.9-.1-2-1-2.4-.9-.4-2 .1-2.4 1s0 2 1 2.4m-5 3c.9.4 2-.1 2.4-1 .4-.9-.1-2-1-2.4-.9-.4-2 .1-2.4 1s.1 2 1 2.4m-3.2 4.8c.9.4 2-.1 2.4-1 .4-.9-.1-2-1-2.4-.9-.4-2 .1-2.4 1s0 2 1 2.4m14.8 11c4.4 0 8.6.3 12.3.8 1.1-4.5 2.4-7 3.7-8.8l-2.5-.9c.2 1.3.3 1.9 0 2.7-.4-.4-.8-1.1-1.1-2.3l-1.2 4c.7-.5 1.3-.8 2-.9-1.1 2.5-2.6 3.1-3.5 3-1.1-.2-1.7-1.2-1.5-2.1.3-1.2 1.5-1.5 2.1-.1 1.1-2.3-.8-3-2-2.3 1.9-1.9 2.1-3.5.6-5.6-2.1 1.6-2.1 3.2-1.2 5.5-1.2-1.4-3.2-.6-2.5 1.6.9-1.4 2.1-.5 1.9.8-.2 1.1-1.7 2.1-3.5 1.9-2.7-.2-2.9-2.1-2.9-3.6.7-.1 1.9.5 2.9 1.9l.4-4.3c-1.1 1.1-2.1 1.4-3.2 1.4.4-1.2 2.1-3 2.1-3h-5.4s1.7 1.9 2.1 3c-1.1 0-2.1-.2-3.2-1.4l.4 4.3c1-1.4 2.2-2 2.9-1.9-.1 1.5-.2 3.4-2.9 3.6-1.9.2-3.4-.8-3.5-1.9-.2-1.3 1-2.2 1.9-.8.7-2.3-1.2-3-2.5-1.6.9-2.2.9-3.9-1.2-5.5-1.5 2-1.3 3.7.6 5.6-1.2-.7-3.1 0-2 2.3.6-1.4 1.8-1.1 2.1.1.2.9-.3 1.9-1.5 2.1-.9.2-2.4-.5-3.5-3 .6 0 1.2.3 2 .9l-1.2-4c-.3 1.1-.7 1.9-1.1 2.3-.3-.8-.2-1.4 0-2.7l-2.9.9C1.3 23 2.6 25.5 3.7 30c3.7-.5 7.9-.8 12.3-.8m28.3-11.6c0 .9.1 1.7.3 2.5.2.8.6 1.5 1 2.2.5.6 1 1.1 1.7 1.5.7.4 1.5.6 2.5.6.9 0 1.7-.1 2.3-.4s1.1-.7 1.5-1.1c.4-.4.6-.9.8-1.5.1-.5.2-1 .2-1.5v-.2h-5.3v-3.2h9.4V28H55v-2.5c-.3.4-.6.8-1 1.1-.4.3-.8.6-1.3.9-.5.2-1 .4-1.6.6s-1.2.2-1.8.2c-1.5 0-2.9-.3-4-.8-1.2-.6-2.2-1.3-3-2.3-.8-1-1.4-2.1-1.8-3.4-.3-1.4-.5-2.8-.5-4.3s.2-2.9.7-4.2c.5-1.3 1.1-2.4 2-3.4.9-1 1.9-1.7 3.1-2.3 1.2-.6 2.6-.8 4.1-.8 1 0 1.9.1 2.8.3.9.2 1.7.6 2.4 1s1.4.9 1.9 1.5c.6.6 1 1.3 1.4 2l-3.7 2.1c-.2-.4-.5-.9-.8-1.2-.3-.4-.6-.7-1-1-.4-.3-.8-.5-1.3-.7-.5-.2-1.1-.2-1.7-.2-1 0-1.8.2-2.5.6-.7.4-1.3.9-1.7 1.5-.5.6-.8 1.4-1 2.2-.3.8-.4 1.9-.4 2.7zM71.5 6.8c1.5 0 2.9.3 4.2.8 1.2.6 2.3 1.3 3.1 2.3.9 1 1.5 2.1 2 3.4s.7 2.7.7 4.2-.2 2.9-.7 4.2c-.4 1.3-1.1 2.4-2 3.4-.9 1-1.9 1.7-3.1 2.3-1.2.6-2.6.8-4.2.8s-2.9-.3-4.2-.8c-1.2-.6-2.3-1.3-3.1-2.3-.9-1-1.5-2.1-2-3.4-.4-1.3-.7-2.7-.7-4.2s.2-2.9.7-4.2c.4-1.3 1.1-2.4 2-3.4.9-1 1.9-1.7 3.1-2.3 1.2-.5 2.6-.8 4.2-.8zm0 17.6c.9 0 1.7-.2 2.4-.5s1.3-.8 1.7-1.4c.5-.6.8-1.3 1.1-2.2.2-.8.4-1.7.4-2.7v-.1c0-1-.1-1.9-.4-2.7-.2-.8-.6-1.6-1.1-2.2-.5-.6-1.1-1.1-1.7-1.4-.7-.3-1.5-.5-2.4-.5s-1.7.2-2.4.5-1.3.8-1.7 1.4c-.5.6-.8 1.3-1.1 2.2-.2.8-.4 1.7-.4 2.7v.1c0 1 .1 1.9.4 2.7.2.8.6 1.6 1.1 2.2.5.6 1.1 1.1 1.7 1.4.6.3 1.4.5 2.4.5zM88.9 28 83 7h4.7l4 15.7h.1l4-15.7h4.7l-5.9 21h-5.7zm28.8-3.6c.6 0 1.2-.1 1.7-.3.5-.2 1-.4 1.4-.8.4-.4.7-.8.9-1.4.2-.6.3-1.2.3-2v-13h4.1v13.6c0 1.2-.2 2.2-.6 3.1s-1 1.7-1.8 2.4c-.7.7-1.6 1.2-2.7 1.5-1 .4-2.2.5-3.4.5-1.2 0-2.4-.2-3.4-.5-1-.4-1.9-.9-2.7-1.5-.8-.7-1.3-1.5-1.8-2.4-.4-.9-.6-2-.6-3.1V6.9h4.2v13c0 .8.1 1.4.3 2 .2.6.5 1 .9 1.4.4.4.8.6 1.4.8.6.2 1.1.3 1.8.3zm13-17.4h4.2v9.1l7.4-9.1h5.2l-7.2 8.4L148 28h-4.9l-5.5-9.4-2.7 3V28h-4.2V7zm-27.6 16.1c-1.5 0-2.7 1.2-2.7 2.7s1.2 2.7 2.7 2.7 2.7-1.2 2.7-2.7-1.2-2.7-2.7-2.7z"></path>
+        </svg>
         <span class="govuk-header__product-name">
           Content API
         </span>
@@ -64,13 +63,13 @@
     </div>
     <div class="govuk-header__content">
       <nav class="govuk-header__navigation govuk-header__navigation--end" aria-label="Menu">
-        <button type="button" class="govuk-header__menu-button govuk-js-header-toggle" aria-controls="navigation" aria-label="Show or hide menu">Menu</button>
+        <button type="button" class="govuk-header__menu-button govuk-js-header-toggle" aria-controls="navigation" hidden>Menu</button>
         <ul id="navigation" class="govuk-header__navigation-list">
             <li class="govuk-header__navigation-item">
-              <a class="govuk-header__link" href="getting-started.html">Getting Started</a>
+              <a class="govuk-header__link" href="./getting-started.html">Getting Started</a>
             </li>
             <li class="govuk-header__navigation-item govuk-header__navigation-item--active">
-              <a class="govuk-header__link" href="reference.html">Reference</a>
+              <a class="govuk-header__link" href="./reference.html">Reference</a>
             </li>
         </ul>
       </nav>
@@ -88,65 +87,44 @@
 
       <div class="app-pane__body" data-module="in-page-navigation">
           <div class="app-pane__toc">
-            <div class="toc" data-module="table-of-contents" tabindex="-1" aria-label="Table of contents" role="dialog">
+            <div class="toc" data-module="table-of-contents" tabindex="-1" aria-label="Table of contents">
               
               <button type="button" class="toc__close js-toc-close" aria-controls="toc" aria-label="Hide table of contents"></button>
               <nav id="toc" class="js-toc-list toc__list" aria-labelledby="toc-heading">
                       <ul>
   <li>
-    <a href="#gov-uk-content-api-v1-0-0"><span>GOV.UK Content API v1.0.0</span></a>
+    <a href="#gov-uk-content-api"><span>GOV.UK Content API v1.0.0</span></a>
     <ul>
       <li>
-        <a href="#base-url"><span>Base URL</span></a>
+        <a href="#servers"><span>Servers</span></a>
       </li>
-    </ul>
-  </li>
-  <li>
-    <a href="#content"><span>Content</span></a>
-    <ul>
       <li>
-        <a href="#get-path"><span>GET /{path}</span></a>
+        <a href="#path"><span>/{path}</span></a>
         <ul>
           <li>
-            <a href="#parameters"><span>Parameters</span></a>
-          </li>
-          <li>
-            <a href="#example-request"><span>Example Request</span></a>
-          </li>
-          <li>
-            <a href="#example-response"><span>Example Response</span></a>
-          </li>
-          <li>
-            <a href="#responses"><span>Responses</span></a>
-          </li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <a href="#objects"><span>Objects</span></a>
-    <ul>
-      <li>
-        <a href="#contentitem"><span>ContentItem</span></a>
-        <ul>
-          <li>
-            <a href="#fields"><span>Fields</span></a>
+            <a href="#path-get"><span>get</span></a>
+            <ul>
+              <li>
+                <a href="#path-get-parameters"><span>Parameters</span></a>
+              </li>
+              <li>
+                <a href="#path-get-responses"><span>Responses</span></a>
+              </li>
+            </ul>
           </li>
         </ul>
       </li>
       <li>
-        <a href="#linkedcontentitem"><span>LinkedContentItem</span></a>
+        <a href="#schemas"><span>Schemas</span></a>
         <ul>
           <li>
-            <a href="#linkedcontentitem-fields"><span>Fields</span></a>
+            <a href="#schema-contentitem"><span>ContentItem</span></a>
           </li>
-        </ul>
-      </li>
-      <li>
-        <a href="#withdrawnnotice"><span>WithdrawnNotice</span></a>
-        <ul>
           <li>
-            <a href="#withdrawnnotice-fields"><span>Fields</span></a>
+            <a href="#schema-linkedcontentitem"><span>LinkedContentItem</span></a>
+          </li>
+          <li>
+            <a href="#schema-withdrawnnotice"><span>WithdrawnNotice</span></a>
           </li>
         </ul>
       </li>
@@ -159,9 +137,9 @@
             </div>
           </div>
 
-        <div class="app-pane__content toc-open-disabled">
+        <div class="app-pane__content toc-open-disabled" aria-label="Content" tabindex="0">
           <main id="content" class="technical-documentation" data-module="anchored-headings">
-            <h1 id="gov-uk-content-api-v1-0-0">GOV.UK Content API v1.0.0</h1>
+            <h1 id="gov-uk-content-api">GOV.UK Content API v1.0.0</h1>
 <p>GOV.UK Content API provides a simple and consistent way to request
 <a href="https://www.gov.uk">GOV.UK</a> content as structured data in a predictable
 format. It is used within the GOV.UK website as the means for applications
@@ -169,13 +147,28 @@ to lookup content in order to render it.</p>
 <p>This API accepts HTTP requests and responds with
 <a href="https://en.wikipedia.org/wiki/JSON">JSON</a> data containing the same
 published content as is presented on GOV.UK.</p>
-<h2 id="base-url">Base URL</h2>
-<p>All requests to this API should be prefixed with the following URL:</p>
-<p><strong>https://www.gov.uk/api/content</strong></p>
-<h1 id="content">Content</h1>
-<h2 id="get-path">GET /{path}</h2>
-<p><em>Lookup GOV.UK content by path</em></p>
-<p>This is the primary interface to lookup the content required to render
+
+
+
+
+  <h2 id="servers">Servers</h2>
+  <div id="server-list">
+    
+    
+    <a href="https://www.gov.uk/api/content">https://www.gov.uk/api/content</a>
+  
+  </div>
+
+
+
+<h2 id="path">/{path}</h2>
+
+<h3 id="path-get">get</h3>
+
+  <p><em>Lookup GOV.UK content by path</em></p>
+
+
+  <p>This is the primary interface to lookup the content required to render
 a page on GOV.UK</p>
 <p>It accepts an input of the path of the page you are looking up. For
 example, if you were looking up travel advice for Thailand which is
@@ -185,345 +178,580 @@ you would make a request to
 <p>If the content is available at the requested path you will receive
 a <a href="#contentitem"><code>ContentItem</code></a> containing the structured data for that
 page.</p>
-<p>This request does not require authentication.</p>
-<h3 id="parameters">Parameters</h3>
-<div class="table-container">
-        <table>
-          <tr>
-<th>Parameter</th>
-<th>In</th>
-<th>Type</th>
-<th>Required</th>
-<th>Description</th>
-</tr><tr>
+
+
+
+
+<h4 id="path-get-parameters">Parameters</h4>
+<table>
+<thead>
+<tr><th>Parameter</th><th>In</th><th>Type</th><th>Required</th><th>Description</th></tr>
+</thead>
+<tbody>
+
+<tr>
 <td>path</td>
 <td>path</td>
 <td>string</td>
 <td>true</td>
-<td>The path to the content on GOV.UK e.g for <code>https://www.gov.uk/vat-rates</code> you&rsquo;d use <code>vat-rates</code>
+<td><p>The path to the content on GOV.UK e.g for
+<code>https://www.gov.uk/vat-rates</code> you&rsquo;d use <code>vat-rates</code></p>
+
+
 </td>
 </tr>
-        </table>
-      </div><h3 id="example-request">Example Request</h3>
-<div class="highlight"><pre class="highlight shell" tabindex="0"><code>curl https://www.gov.uk/api/content/vat-rates
-</code></pre></div><h3 id="example-response">Example Response</h3>
 
-<details>
-<summary>Examples</summary>
- 
-&ldquo;`json
-{
-  &rdquo;$ref&quot;: &ldquo;#/components/examples/ContentItemExample&rdquo;
-}
-&ldquo;`
-</details>
-<h3 id="responses">Responses</h3>
-<div class="table-container">
-        <table>
-          <tr>
-<th>Status</th>
-<th>Meaning</th>
-<th>Description</th>
-<th>Schema</th>
-</tr><tr>
+</tbody>
+</table>
+
+
+
+
+<h4 id="path-get-responses">Responses</h4>
+<table>
+<thead>
+<tr><th>Status</th><th>Description</th><th>Schema</th></tr>
+</thead>
+<tbody>
+
+<tr>
 <td>200</td>
-<td>OK</td>
-<td>A content item is available at that path.</td>
-<td><a href="#schemacontentitem">ContentItem</a></td>
-</tr><tr>
-<td>303</td>
-<td>See Other</td>
-<td>A content item at a different location is responsible for the content at this path. <a href="https://content-api.publishing.service.gov.uk/getting-started.html#content-that-spans-multiple-pages">Learn more</a>.</td>
-<td>None</td>
-</tr><tr>
-<td>404</td>
-<td>Not Found</td>
-<td>No content item is available at that path.</td>
-<td>None</td>
-</tr><tr>
-<td>410</td>
-<td>Gone</td>
-<td>The content item is no longer available at that path.</td>
-<td>None</td>
+<td>
+<p>A content item is available at that path.</p>
+
+
+
+<pre><code>{
+  "analytics_identifier": "integer",
+  "base_path": "string",
+  "content_id": "string",
+  "description": "string",
+  "details": {},
+  "document_type": "string",
+  "email_document_supertype": "string",
+  "first_published_at": "string",
+  "government_document_supertype": "string",
+  "links": {},
+  "locale": "string",
+  "navigation_document_supertype": "string",
+  "phase": "string",
+  "public_updated_at": "string",
+  "publishing_app": "string",
+  "publishing_request_id": "string",
+  "rendering_app": "string",
+  "schema_name": "string",
+  "title": "string",
+  "updated_at": "string",
+  "user_journey_document_supertype": "string",
+  "withdrawn_notice": {
+    "explanation": "string",
+    "withdrawn_at": "string"
+  }
+}</code></pre>
+
+</td>
+<td>
+<a href='#schema-contentitem'>ContentItem</a>
+</td>
 </tr>
-        </table>
-      </div><h1 id="objects">Objects</h1>
-<h2 id="contentitem">ContentItem</h2>
-<p><a name="schemacontentitem"></a></p>
+
+<tr>
+<td>303</td>
+<td>
+<p>A content item at a different location is responsible for the content at this path. <a href="https://content-api.publishing.service.gov.uk/getting-started.html#content-that-spans-multiple-pages">Learn more</a>.</p>
+
+
+
+</td>
+<td>
+
+</td>
+</tr>
+
+<tr>
+<td>404</td>
+<td>
+<p>No content item is available at that path.</p>
+
+
+
+</td>
+<td>
+
+</td>
+</tr>
+
+<tr>
+<td>410</td>
+<td>
+<p>The content item is no longer available at that path.</p>
+
+
+
+</td>
+<td>
+
+</td>
+</tr>
+
+</tbody>
+</table>
+
+
+
+
+
+<h2 id="schemas">Schemas</h2>
+<h3 id="schema-contentitem">ContentItem</h3>
 <p>A resource that represents a piece of content on GOV.UK.
 It contains metadata that describe common attributes shared between all content, a details for the particular content and a links field to describe relationships with other content.</p>
 
-<details>
 
-<summary>Sample JSON</summary>
+<table class='schema-contentitem'>
+<thead>
+<tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th><th>Schema</th></tr>
+</thead>
+<tbody>
 
-&rdquo;`json
-{
-  &ldquo;$ref&rdquo;: &ldquo;#/components/examples/ContentItemExample&rdquo;
-}
-&ldquo;`
-
-</details>
-<h3 id="fields">Fields</h3>
-<div class="table-container">
-        <table>
-          <tr>
-<th>Name</th>
-<th>Type</th>
-<th>Required</th>
-<th>Description</th>
-</tr><tr>
+<tr>
 <td>analytics_identifier</td>
 <td>integer</td>
 <td>false</td>
-<td>An identifier which clients of the Publishing API can include with an edition for later use in analytics software.</td>
-</tr><tr>
+<td><p>An identifier which clients of the Publishing API can include with an edition for later use in analytics software.</p>
+</td>
+<td>
+  
+</td>
+</tr>
+
+<tr>
 <td>base_path</td>
 <td>string</td>
 <td>true</td>
-<td>The path of the content on GOV.UK - or the shortest one for content that spans multiple sub paths. <a href="https://content-api.publishing.service.gov.uk/getting-started.html#base-path">Learn more</a>.</td>
-</tr><tr>
+<td><p>The path of the content on GOV.UK - or the shortest one for content that spans multiple sub paths. <a href="https://content-api.publishing.service.gov.uk/getting-started.html#base-path">Learn more</a>.</p>
+</td>
+<td>
+  
+</td>
+</tr>
+
+<tr>
 <td>content_id</td>
-<td>string(uuid)</td>
+<td>string</td>
 <td>false</td>
-<td>A UUID which represents the public identifier for a piece of content, combined with locale this makes the unique identifier for an individual piece of content. Can be null for redirects / gone content.</td>
-</tr><tr>
+<td><p>A UUID which represents the public identifier for a piece of content, combined with locale this makes the unique identifier for an individual piece of content. Can be null for redirects / gone content.</p>
+</td>
+<td>
+  
+</td>
+</tr>
+
+<tr>
 <td>description</td>
 <td>string</td>
 <td>false</td>
-<td>A description of the content which can then be displayed publically.</td>
-</tr><tr>
+<td><p>A description of the content which can then be displayed publically.</p>
+</td>
+<td>
+  
+</td>
+</tr>
+
+<tr>
 <td>details</td>
 <td>object</td>
 <td>false</td>
-<td>An object representing data that is structured in a format defined by the schema of the edition. This holds the content for the edition, often in a field called body. Can be null for items without content - for example, a redirect. <a href="https://content-api.publishing.service.gov.uk/getting-started.html#details">Learn more</a>.</td>
-</tr><tr>
+<td><p>An object representing data that is structured in a format defined by the schema of the edition. This holds the content for the edition, often in a field called body. Can be null for items without content - for example, a redirect. <a href="https://content-api.publishing.service.gov.uk/getting-started.html#details">Learn more</a>.</p>
+</td>
+<td>
+  
+</td>
+</tr>
+
+<tr>
 <td>document_type</td>
 <td>string</td>
 <td>true</td>
-<td>A particular type of document, used to differentiate between documents that are of different types but share the same schema. <a href="https://content-api.publishing.service.gov.uk/getting-started.html#document-type-and-schema-name">Learn more</a>.</td>
-</tr><tr>
+<td><p>A particular type of document, used to differentiate between documents that are of different types but share the same schema. <a href="https://content-api.publishing.service.gov.uk/getting-started.html#document-type-and-schema-name">Learn more</a>.</p>
+</td>
+<td>
+  
+</td>
+</tr>
+
+<tr>
 <td>email_document_supertype</td>
 <td>string</td>
 <td>true</td>
-<td>High level group for email subscriptions used to identify publications and announcement.</td>
-</tr><tr>
+<td><p>High level group for email subscriptions used to identify publications and announcement.</p>
+</td>
+<td>
+  
+</td>
+</tr>
+
+<tr>
 <td>first_published_at</td>
-<td>string(date-time)</td>
+<td>string</td>
 <td>true</td>
-<td>Can be set by publishing application, otherwise set automatically in Publishing API on first publish and copied on subsequent ones.</td>
-</tr><tr>
+<td><p>Can be set by publishing application, otherwise set automatically in Publishing API on first publish and copied on subsequent ones.</p>
+</td>
+<td>
+  
+</td>
+</tr>
+
+<tr>
 <td>government_document_supertype</td>
 <td>string</td>
 <td>true</td>
-<td>Grouping for email subscriptions.</td>
-</tr><tr>
+<td><p>Grouping for email subscriptions.</p>
+</td>
+<td>
+  
+</td>
+</tr>
+
+<tr>
 <td>links</td>
 <td>object</td>
 <td>true</td>
-<td>An object that has collections of <a href="#linkedcontentitem">LinkedContentItems</a> objects in arrays, which are grouped by a link type.</td>
-</tr><tr>
+<td><p>An object that has collections of <a href="#linkedcontentitem">LinkedContentItems</a> objects in arrays, which are grouped by a link type.</p>
+</td>
+<td>
+  
+</td>
+</tr>
+
+<tr>
 <td>locale</td>
 <td>string</td>
 <td>false</td>
-<td>The language the document is written in. A fixed list of locales is allowed.</td>
-</tr><tr>
+<td><p>The language the document is written in. A fixed list of locales is allowed.</p>
+</td>
+<td>
+  
+</td>
+</tr>
+
+<tr>
 <td>navigation_document_supertype</td>
 <td>string</td>
 <td>true</td>
-<td>Used to filter pages on the new taxonomy-based navigation pages.</td>
-</tr><tr>
+<td><p>Used to filter pages on the new taxonomy-based navigation pages.</p>
+</td>
+<td>
+  
+</td>
+</tr>
+
+<tr>
 <td>phase</td>
 <td>string</td>
 <td>true</td>
-<td>The &quot;phase&rdquo; of an edition can either be alpha, beta or live.</td>
-</tr><tr>
+<td><p>The &ldquo;phase&rdquo; of an edition can either be alpha, beta or live.</p>
+</td>
+<td>
+  
+</td>
+</tr>
+
+<tr>
 <td>public_updated_at</td>
-<td>string(date-time)</td>
+<td>string</td>
 <td>true</td>
-<td>Can be set by publishing application, otherwise set automatically in Publishing API each time an edition is published with a major edition.</td>
-</tr><tr>
+<td><p>Can be set by publishing application, otherwise set automatically in Publishing API each time an edition is published with a major edition.</p>
+</td>
+<td>
+  
+</td>
+</tr>
+
+<tr>
 <td>publishing_app</td>
 <td>string</td>
 <td>true</td>
-<td>The application which published the edition.</td>
-</tr><tr>
+<td><p>The application which published the edition.</p>
+</td>
+<td>
+  
+</td>
+</tr>
+
+<tr>
 <td>publishing_request_id</td>
 <td>string</td>
 <td>false</td>
-<td>The GOV.UK Request ID which was used when the content item was published.</td>
-</tr><tr>
+<td><p>The GOV.UK Request ID which was used when the content item was published.</p>
+</td>
+<td>
+  
+</td>
+</tr>
+
+<tr>
 <td>rendering_app</td>
 <td>string</td>
 <td>false</td>
-<td>The application which will be used to render the content of the edition.</td>
-</tr><tr>
+<td><p>The application which will be used to render the content of the edition.</p>
+</td>
+<td>
+  
+</td>
+</tr>
+
+<tr>
 <td>schema_name</td>
 <td>string</td>
 <td>true</td>
-<td>The name of the GOV.UK content schema that the request body will be validated against. <a href="https://content-api.publishing.service.gov.uk/getting-started.html#document-type-and-schema-name">Learn more</a>.</td>
-</tr><tr>
+<td><p>The name of the GOV.UK content schema that the request body will be validated against. <a href="https://content-api.publishing.service.gov.uk/getting-started.html#document-type-and-schema-name">Learn more</a>.</p>
+</td>
+<td>
+  
+</td>
+</tr>
+
+<tr>
 <td>title</td>
 <td>string</td>
 <td>false</td>
-<td>The title of the edition, displayed to the user.</td>
-</tr><tr>
+<td><p>The title of the edition, displayed to the user.</p>
+</td>
+<td>
+  
+</td>
+</tr>
+
+<tr>
 <td>updated_at</td>
-<td>string(date-time)</td>
+<td>string</td>
 <td>true</td>
-<td>Current date time every time the content item changes, which could be an update to one of the dependent links.</td>
-</tr><tr>
+<td><p>Current date time every time the content item changes, which could be an update to one of the dependent links.</p>
+</td>
+<td>
+  
+</td>
+</tr>
+
+<tr>
 <td>user_journey_document_supertype</td>
 <td>string</td>
 <td>true</td>
-<td>Used to distinguish pages used mainly for navigation (finding) from content pages (thing).</td>
-</tr><tr>
-<td>withdrawn_notice</td>
-<td><a href="#schemawithdrawnnotice">WithdrawnNotice</a></td>
-<td>false</td>
-<td>If the edition is withdrawn, this will contain the information about when and why it was withdrawn.</td>
+<td><p>Used to distinguish pages used mainly for navigation (finding) from content pages (thing).</p>
+</td>
+<td>
+  
+</td>
 </tr>
-        </table>
-      </div><h2 id="linkedcontentitem">LinkedContentItem</h2>
-<p><a name="schemalinkedcontentitem"></a></p>
+
+<tr>
+<td>withdrawn_notice</td>
+<td>object</td>
+<td>false</td>
+<td><p>A WithdrawnNotice is an object that can be embedded within a ContentItem and is used to explain the reason a piece of content has been withdrawn. <a href="https://content-api.publishing.service.gov.uk/getting-started.html#withdrawn-content">Learn more</a>.</p>
+</td>
+<td>
+  <a href='#schema-withdrawnnotice'>WithdrawnNotice</a>
+</td>
+</tr>
+
+</tbody>
+</table>
+
+<h3 id="schema-linkedcontentitem">LinkedContentItem</h3>
 <p>A LinkedContentItem is an abridged form of ContentItem which is used to represent links between ContentItems.
 It is embedded within the <code>links</code> field that is used within ContentItem and LinkedContentItem. <a href="https://content-api.publishing.service.gov.uk/getting-started.html#links">Learn more</a>.</p>
 
-<details>
 
-<summary>Sample JSON</summary>
+<table class='schema-linkedcontentitem'>
+<thead>
+<tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th><th>Schema</th></tr>
+</thead>
+<tbody>
 
-&ldquo;`json
-{
-  &quot;api_path&rdquo;: &ldquo;/api/content/browse/tax/vat&rdquo;,
-  &ldquo;base_path&rdquo;: &ldquo;/browse/tax/vat&rdquo;,
-  &ldquo;content_id&rdquo;: &ldquo;895d337a-fa68-4c83-ab79-1c08016afe87&rdquo;,
-  &ldquo;description&rdquo;: &ldquo;Includes online returns, rates, charging and record keeping&rdquo;,
-  &ldquo;document_type&rdquo;: &ldquo;mainstream_browse_page&rdquo;,
-  &ldquo;locale&rdquo;: &ldquo;en&rdquo;,
-  &ldquo;public_updated_at&rdquo;: &ldquo;2015-06-24T13:56:39Z&rdquo;,
-  &ldquo;schema_name&rdquo;: &ldquo;mainstream_browse_page&rdquo;,
-  &ldquo;title&rdquo;: &ldquo;VAT&rdquo;,
-  &ldquo;withdrawn&rdquo;: false,
-  &ldquo;links&rdquo;: {},
-  &ldquo;api_url&rdquo;: &ldquo;https://www.gov.uk/api/content/browse/tax/vat&rdquo;,
-  &ldquo;web_url&rdquo;: &ldquo;https://www.gov.uk/browse/tax/vat&rdquo;
-}
-&ldquo;`
-
-</details>
-<h3 id="linkedcontentitem-fields">Fields</h3>
-<div class="table-container">
-        <table>
-          <tr>
-<th>Name</th>
-<th>Type</th>
-<th>Required</th>
-<th>Description</th>
-</tr><tr>
+<tr>
 <td>analytics_identifier</td>
 <td>integer</td>
 <td>true</td>
-<td>An identifier which clients of the Publishing API can include with an edition for later use in analytics software.</td>
-</tr><tr>
+<td><p>An identifier which clients of the Publishing API can include with an edition for later use in analytics software.</p>
+</td>
+<td>
+  
+</td>
+</tr>
+
+<tr>
 <td>api_path</td>
 <td>string</td>
 <td>true</td>
-<td>The base path of the content item, available from the API.</td>
-</tr><tr>
+<td><p>The base path of the content item, available from the API.</p>
+</td>
+<td>
+  
+</td>
+</tr>
+
+<tr>
 <td>base_path</td>
 <td>string</td>
 <td>true</td>
-<td>The path of the content on GOV.UK - or the shortest one for content that spans multiple sub paths.</td>
-</tr><tr>
+<td><p>The path of the content on GOV.UK - or the shortest one for content that spans multiple sub paths.</p>
+</td>
+<td>
+  
+</td>
+</tr>
+
+<tr>
 <td>content_id</td>
-<td>string(uuid)</td>
+<td>string</td>
 <td>true</td>
-<td>A UUID which represents the public identifier for a piece of content, combined with locale this makes the unique identifier for an individual piece of content. Can be null for redirects / gone content.</td>
-</tr><tr>
+<td><p>A UUID which represents the public identifier for a piece of content, combined with locale this makes the unique identifier for an individual piece of content. Can be null for redirects / gone content.</p>
+</td>
+<td>
+  
+</td>
+</tr>
+
+<tr>
 <td>description</td>
 <td>string</td>
 <td>true</td>
-<td>A description of the content which can then be displayed publically.</td>
-</tr><tr>
+<td><p>A description of the content which can then be displayed publically.</p>
+</td>
+<td>
+  
+</td>
+</tr>
+
+<tr>
 <td>details</td>
 <td>object</td>
 <td>false</td>
-<td>An object representing data that is structured in a format defined by the schema of the edition. This holds the content for the edition, often in a field called body. Can be null for items without content - for example, a redirect.</td>
-</tr><tr>
+<td><p>An object representing data that is structured in a format defined by the schema of the edition. This holds the content for the edition, often in a field called body. Can be null for items without content - for example, a redirect.</p>
+</td>
+<td>
+  
+</td>
+</tr>
+
+<tr>
 <td>document_type</td>
 <td>string</td>
 <td>true</td>
-<td>A particular type of document, used to differentiate between documents that are of different types but share the same schema.</td>
-</tr><tr>
+<td><p>A particular type of document, used to differentiate between documents that are of different types but share the same schema.</p>
+</td>
+<td>
+  
+</td>
+</tr>
+
+<tr>
 <td>links</td>
 <td>object</td>
 <td>true</td>
-<td>An object that has collections of <a href="#linkedcontentitem">LinkedContentItems</a> objects in arrays, which are grouped by a link type.</td>
-</tr><tr>
+<td><p>An object that has collections of <a href="#linkedcontentitem">LinkedContentItems</a> objects in arrays, which are grouped by a link type.</p>
+</td>
+<td>
+  
+</td>
+</tr>
+
+<tr>
 <td>locale</td>
 <td>string</td>
 <td>true</td>
-<td>The language the document is written in. A fixed list of locales is allowed.</td>
-</tr><tr>
+<td><p>The language the document is written in. A fixed list of locales is allowed.</p>
+</td>
+<td>
+  
+</td>
+</tr>
+
+<tr>
 <td>public_updated_at</td>
-<td>string(date-time)</td>
+<td>string</td>
 <td>true</td>
-<td>Can be set by publishing application, otherwise set automatically in Publishing API each time an edition is published with a major edition.</td>
-</tr><tr>
+<td><p>Can be set by publishing application, otherwise set automatically in Publishing API each time an edition is published with a major edition.</p>
+</td>
+<td>
+  
+</td>
+</tr>
+
+<tr>
 <td>schema_name</td>
 <td>string</td>
 <td>true</td>
-<td>The name of the GOV.UK content schema that the request body will be validated against.</td>
-</tr><tr>
+<td><p>The name of the GOV.UK content schema that the request body will be validated against.</p>
+</td>
+<td>
+  
+</td>
+</tr>
+
+<tr>
 <td>title</td>
 <td>string</td>
 <td>true</td>
-<td>The title of the edition, displayed to the user.</td>
-</tr><tr>
+<td><p>The title of the edition, displayed to the user.</p>
+</td>
+<td>
+  
+</td>
+</tr>
+
+<tr>
 <td>withdrawn</td>
 <td>boolean</td>
 <td>true</td>
-<td>Holds whether or not the content has been withdrawn.</td>
+<td><p>Holds whether or not the content has been withdrawn.</p>
+</td>
+<td>
+  
+</td>
 </tr>
-        </table>
-      </div><h2 id="withdrawnnotice">WithdrawnNotice</h2>
-<p><a name="schemawithdrawnnotice"></a></p>
+
+</tbody>
+</table>
+
+<h3 id="schema-withdrawnnotice">WithdrawnNotice</h3>
 <p>A WithdrawnNotice is an object that can be embedded within a ContentItem and is used to explain the reason a piece of content has been withdrawn. <a href="https://content-api.publishing.service.gov.uk/getting-started.html#withdrawn-content">Learn more</a>.</p>
 
-<details>
 
-<summary>Sample JSON</summary>
+<table class='schema-withdrawnnotice'>
+<thead>
+<tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th><th>Schema</th></tr>
+</thead>
+<tbody>
 
-&rdquo;`json
-{
-  &ldquo;explanation&rdquo;: &ldquo;<div class=\"govspeak\"><p>This guidance has been withdrawn from use because the Environment Agency no longer provides best practice guidance. See guidance on <a href=\"https://www.gov.uk/guidance/prevent-the-spread-of-harmful-invasive-and-non-native-plants\">preventing harmful weeds and invasive non-native plants spreading weeds</a> for information on controlling specific plants.</p>\n</div>&rdquo;,
-  &ldquo;withdrawn_at&rdquo;: &ldquo;2016-07-11T15:08:02Z&rdquo;
-}
-&ldquo;`
-
-</details>
-<h3 id="withdrawnnotice-fields">Fields</h3>
-<div class="table-container">
-        <table>
-          <tr>
-<th>Name</th>
-<th>Type</th>
-<th>Required</th>
-<th>Description</th>
-</tr><tr>
+<tr>
 <td>explanation</td>
 <td>string</td>
 <td>true</td>
-<td>An explanation as to why the content was withdrawn.</td>
-</tr><tr>
-<td>withdrawn_at</td>
-<td>string(date-time)</td>
-<td>true</td>
-<td>The date when the content was withdrawn.</td>
+<td><p>An explanation as to why the content was withdrawn.</p>
+</td>
+<td>
+  
+</td>
 </tr>
-        </table>
-      </div>
+
+<tr>
+<td>withdrawn_at</td>
+<td>string</td>
+<td>true</td>
+<td><p>The date when the content was withdrawn.</p>
+</td>
+<td>
+  
+</td>
+</tr>
+
+</tbody>
+</table>
+
+
+
             
           </main>
 
@@ -536,7 +764,7 @@ It is embedded within the <code>links</code> field that is used within ContentIt
 
         <ul class="govuk-footer__inline-list">
             <li class="govuk-footer__inline-list-item">
-              <a class="govuk-footer__link" href="accessibility.html">Accessibility</a>
+              <a class="govuk-footer__link" href="./accessibility.html">Accessibility</a>
             </li>
         </ul>
 
@@ -577,6 +805,7 @@ It is embedded within the <code>links</code> field that is used within ContentIt
     </div>
 
     
+    <script src="javascripts/govuk_frontend.js" type="module"></script>
     <script src="javascripts/application.js"></script>
   </body>
 </html>
