@@ -22,3 +22,6 @@ max_toc_heading_level: 6
 
 # Prevent robots from indexing (e.g. whilst in development)
 prevent_indexing: false
+
+# Generate the API reference
+api_path: https://raw.githubusercontent.com/alphagov/content-store/refs/heads/main/openapi.yaml
