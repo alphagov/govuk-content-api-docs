@@ -4,23 +4,22 @@ This is a microsite for providing documentation for the GOV.UK Content API. It
 is hosted at https://content-api.publishing.service.gov.uk.
 
 This documentation is built from source files in this repository and an
-[OpenAPI](https://github.com/OAI/OpenAPI-Specification) specification
-[file][content-store-openapi] for the
+[OpenAPI][] specification [file][content-store-openapi] for the
 [Content Store][content-store] application.
 
-The framework for this documentation
-is provided by the [GOV.UK Tech Docs Template][tech-docs-template].
+The framework for this documentation is provided by the
+[GOV.UK Tech Docs Template][tech-docs-template].
 
 ## Updating content
 
-The [`reference.html`][reference-page] page is built using the
-[`openapi.yaml`][content-store-openapi] file. Changes to content on this page
+The [reference.html][reference-page] page is built using the
+[openapi.yaml][content-store-openapi] file. Changes to content on this page
 should be made by opening a pull request against the
 [Content Store][content-store] application.
 
-Other HTML pages are in the [`/source`][source-dir] of this repository and are
-authored using Markdown. You can suggest edits to these pages by making changes
-in a branch or fork of this project and then opening a pull request.
+Other HTML pages are in the [/source][source-dir] directory of this repository
+and are authored using Markdown. You can suggest edits to these pages by making
+changes in a branch or fork of this project and then opening a pull request.
 
 ## Running documentation locally
 
@@ -41,7 +40,7 @@ make requirements
 Whilst writing documentation we can run a middleman server to preview how the
 published version will look in the browser. After saving a change the preview in
 the browser will automatically refresh on HTML pages. However for changes to
-[`openapi.yaml`][content-store-openapi] you will need to restart the preview.
+[openapi.yaml][content-store-openapi] you will need to restart the preview.
 
 The preview is only available on our own computer. Others won't be able to
 access it if they are given the link.
@@ -76,11 +75,7 @@ This will push to the `gh-pages` branch and therefore deploy to GitHub Pages.
 
 [content-store-openapi]: https://github.com/alphagov/content-store/blob/main/openapi.yaml
 [content-store]: https://github.com/alphagov/content-store
-
-
-/templates
-[source-dir]: https://github.com/alphagov/govuk-content-api-docs/tree/main/source
+[OpenAPI]: https://github.com/OAI/OpenAPI-Specification
 [reference-page]: https://content-api.publishing.service.gov.uk/reference.html
+[source-dir]: https://github.com/alphagov/govuk-content-api-docs/tree/main/source
 [tech-docs-template]: https://github.com/alphagov/tech-docs-template
-[rvm]: https://www.ruby-lang.org/en/documentation/installation/#managers
-[bundler]: http://bundler.io/
