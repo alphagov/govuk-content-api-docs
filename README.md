@@ -31,7 +31,7 @@ as well as the [Content Store][content-store].
 Setting up the documentation requires Ruby. Run the following to install the
 necessary dependencies:
 
-```
+```shell
 make requirements
 ```
 
@@ -47,7 +47,7 @@ access it if they are given the link.
 
 Type the following to start the server:
 
-```
+```shell
 make server
 ```
 
@@ -63,7 +63,7 @@ changes will automatically display on the site within 30 minutes.
 If for some reason the automatic deployment fails you can deploy with the
 following command:
 
-```
+```shell
 make publish
 ```
 

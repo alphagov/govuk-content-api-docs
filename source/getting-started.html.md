@@ -29,7 +29,7 @@ fields.
 
 ### Base path
 
-```
+```json
 {
   ...
   "base_path": "/vat-rates",
@@ -47,7 +47,7 @@ piece of content as some pieces of content
 
 ### Document type and schema name
 
-```
+```json
 {
   ...
   "document_type": "answer",
@@ -71,7 +71,7 @@ utilises the [`answer` schema][answer-schema].
 
 ### Details
 
-```
+```json
 {
   ...
   "details": {
@@ -107,7 +107,7 @@ with [VAT Rates][vat-rates-api] there is a relationship with a link type of
 to pages to help users find similar content that is suitable for a mainstream
 audience.
 
-```
+```json
 {
   ...
   "links": {
@@ -159,7 +159,6 @@ API.
 It's important to highlight that even though the API response presents HTML, the
 styling is the responsibility of the consuming service that will need to create
 its own CSS to present the content in the best way for their application.
-
 
 ## Making use of content
 
@@ -236,7 +235,7 @@ Within the returned [`ContentItem`][content-item] object there is a
 [`WithdrawnNotice`][withdrawn-notice] object that describes the withdrawn
 status.
 
-```
+```json
 "withdrawn_notice": {
   "explanation": "<div class=\"govspeak\"><p>This document is out of date.  See the current <a href=\"https://www.gov.uk/government/publications/the-complete-routine-immunisation-schedule\">complete routine immunisation schedule</a>.</p>\n</div>",
   "withdrawn_at": "2015-08-12T13:47:11Z"
