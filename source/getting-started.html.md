@@ -38,8 +38,8 @@ fields.
 ```
 
 Every [`ContentItem`][content-item] has a `base_path` field which is the same
-as the [path parameter](/reference.html#parameters) used to identify the
-content.
+as the [path parameter](/reference.html#path-get-parameters) used to identify
+the content.
 
 The "base" aspect of this field is used as it indicates the root path of this
 piece of content as some pieces of content
@@ -140,6 +140,27 @@ the `LinkedContentItem` object. This is available as it can be useful to have
 a tree of linked content. A common usage of this is to show the hierarchy of
 pages through use of the `parent` link type.
 
+## Responses containing HTML
+
+The Content API returns a JSON response containing a details object. Within
+this object, various fields, such as body, may contain content formatted using
+[Govspeak](https://insidegovuk.blog.gov.uk/2022/07/29/how-were-saving-publishers-time-by-converting-formatted-text/).
+Govspeak is a simplified markdown syntax developed for GOV.UK.
+
+The API processes the Govspeak into HTML before returning it in the response.
+This pre-rendering ensures that consuming applications can directly display the
+content with the intended formatting without needing to implement their own
+Govspeak parser. The inclusion of HTML within the JSON payload allows for the
+direct presentation of rich text elements, such as headings, lists, and links,
+as defined by the original content. This approach standardises content delivery
+and maintains consistency across all GOV.UK platforms that utilise the Content
+API.
+
+It's important to highlight that even though the API response presents HTML, the
+styling is the responsibility of the consuming service that will need to create
+its own CSS to present the content in the best way for their application.
+
+
 ## Making use of content
 
 The example below illustrates utilising [Ruby on Rails](http://rubyonrails.org/)
@@ -222,14 +243,14 @@ status.
 }
 ```
 
-[content-item]: /reference.html#contentitem
-[linked-content-item]: /reference.html#linkedcontentitem
+[content-item]: /reference.html#schema-contentitem
+[linked-content-item]: /reference.html#schema-linkedcontentitem
 [withdrawn-notice]: /reference.html#withdrawnnotice
 [vat-rates-api]: https://www.gov.uk/api/content/vat-rates
 [multiple-pages]: #content-that-spans-multiple-pages
-[content-schemas-repo]: https://github.com/alphagov/govuk-content-schemas
+[content-schemas-repo]: https://github.com/alphagov/publishing-api/tree/main/content_schemas
 [JSON Schema]: http://json-schema.org/
-[answer-schema]: https://github.com/alphagov/govuk-content-schemas/blob/d0606b8a1add8066d90bcb00e890fd619340fd81/dist/formats/answer/frontend/schema.json
+[answer-schema]: https://github.com/alphagov/publishing-api/blob/ec396b5c305f740c7b3161d344262e4052ad97f9/content_schemas/dist/formats/answer/frontend/schema.json
 [rate-limiting]: /#rate-limiting
 [thailand-laws-customs]: https://www.gov.uk/foreign-travel-advice/thailand/local-laws-and-customs
 [thailand-print]: https://www.gov.uk/foreign-travel-advice/thailand/print
