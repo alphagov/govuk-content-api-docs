@@ -1,7 +1,7 @@
 # GOV.UK Content API Documentation
 
 This is a microsite for providing documentation for the GOV.UK Content API. It
-is hosted at https://content-api.publishing.service.gov.uk.
+is hosted at [https://content-api.publishing.service.gov.uk](https://content-api.publishing.service.gov.uk).
 
 This documentation is built from source files in this repository and an
 [OpenAPI][] specification [file][content-store-openapi] for the
@@ -31,7 +31,7 @@ as well as the [Content Store][content-store].
 Setting up the documentation requires Ruby. Run the following to install the
 necessary dependencies:
 
-```
+```shell
 make requirements
 ```
 
@@ -47,11 +47,11 @@ access it if they are given the link.
 
 Type the following to start the server:
 
-```
+```shell
 make server
 ```
 
-You should now be able to view a live preview at http://localhost:4567.
+You should now be able to view a live preview at [http://localhost:4567](http://localhost:4567).
 
 ## Publishing changes
 
@@ -63,7 +63,7 @@ changes will automatically display on the site within 30 minutes.
 If for some reason the automatic deployment fails you can deploy with the
 following command:
 
-```
+```shell
 make publish
 ```
 
