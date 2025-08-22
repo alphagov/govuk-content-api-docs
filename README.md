@@ -1,7 +1,7 @@
 # GOV.UK Content API Documentation
 
 This is a microsite for providing documentation for the GOV.UK Content API. It
-is hosted at https://content-api.publishing.service.gov.uk.
+is hosted at [https://content-api.publishing.service.gov.uk](https://content-api.publishing.service.gov.uk).
 
 This documentation is built from source files in this repository and an
 [OpenAPI][] specification [file][content-store-openapi] for the
@@ -51,7 +51,7 @@ Type the following to start the server:
 make server
 ```
 
-You should now be able to view a live preview at http://localhost:4567.
+You should now be able to view a live preview at [http://localhost:4567](http://localhost:4567).
 
 ## Publishing changes
 
