@@ -55,19 +55,15 @@ You should now be able to view a live preview at [http://localhost:4567](http://
 
 ## Publishing changes
 
-The main branch of this repository is published every 30 minutes to the
-`gh-pages` branch. It uses the `deployed-to-production` branch of
-[Content Store][content-store]. Thus once a pull request is merged into main
-changes will automatically display on the site within 30 minutes.
-
-If for some reason the automatic deployment fails you can deploy with the
-following command:
+Run the following command on your local machine to deploy the application:
 
 ```shell
 make publish
 ```
 
 This will push to the `gh-pages` branch and therefore deploy to GitHub Pages.
+
+> There is no automatic or continuous deployment for this application.
 
 ## License
 
