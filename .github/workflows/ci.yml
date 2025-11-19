@@ -13,6 +13,8 @@ jobs:
   codeql-sast:
     name: CodeQL SAST scan
     uses: alphagov/govuk-infrastructure/.github/workflows/codeql-analysis.yml@main
+    with:
+      languages: actions,ruby
     permissions:
       security-events: write
   dependency-review:
