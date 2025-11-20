@@ -3,7 +3,7 @@ host: https://content-api.publishing.service.gov.uk
 
 # Header-related options
 show_govuk_logo: true
-service_name: Content API
+service_name: Content API docs
 service_link: /
 phase: Beta
 
@@ -25,3 +25,6 @@ prevent_indexing: false
 
 # Generate the API reference
 api_path: https://raw.githubusercontent.com/alphagov/content-store/refs/heads/main/openapi.yaml
+
+# Track usage
+ga4_gtm_tracking_id: GTM-TB4X2Z34
