@@ -55,15 +55,15 @@ You should now be able to view a live preview at [http://localhost:4567](http://
 
 ## Publishing changes
 
-Run the following command on your local machine to deploy the application:
+Changes are deployed automatically after merging into the main branch.
+
+To manually deploy a change, run the following command on your local machine:
 
 ```shell
 make publish
 ```
 
 This will push to the `gh-pages` branch and therefore deploy to GitHub Pages.
-
-> There is no automatic or continuous deployment for this application.
 
 ## License
 
