@@ -23,7 +23,7 @@ jobs:
       id-token: write
     steps: 
       - uses: actions/checkout@0c366fd6a839edf440554fa01a7085ccba70ac98 # v4.1.0
-      - uses: ruby/setup-ruby@v1 # pinning to commits is not recommended for this action
+      - uses: ruby/setup-ruby@v1.305.0 # pinning to commits is not recommended for this action
       - name: Install dependencies
         run: |
           gem install bundler
