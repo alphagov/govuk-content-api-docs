@@ -27,7 +27,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.12.2)
-    commonmarker (2.8.1)
+    commonmarker (2.8.2)
       rb_sys (~> 0.9)
     compass (1.0.3)
       chunky_png (~> 1.2)
@@ -59,7 +59,7 @@ GEM
     google-protobuf (4.34.1)
       bigdecimal
       rake (~> 13.3)
-    govuk_tech_docs (6.2.1)
+    govuk_tech_docs (6.2.2)
       autoprefixer-rails
       chronic
       concurrent-ruby
