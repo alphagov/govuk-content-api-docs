@@ -56,10 +56,10 @@ GEM
     fast_blank (1.0.1)
     fastimage (2.4.1)
     ffi (1.17.4)
-    google-protobuf (4.34.1)
+    google-protobuf (4.35.0)
       bigdecimal
       rake (~> 13.3)
-    govuk_tech_docs (6.2.2)
+    govuk_tech_docs (6.2.3)
       autoprefixer-rails
       chronic
       concurrent-ruby
@@ -90,7 +90,7 @@ GEM
     http_parser.rb (0.8.1)
     i18n (1.14.8)
       concurrent-ruby (~> 1.0)
-    json (2.19.5)
+    json (2.19.8)
     kramdown (2.5.2)
       rexml (>= 3.4.4)
     language_server-protocol (3.17.0.5)
@@ -235,7 +235,7 @@ GEM
       rubocop (~> 1.81)
     ruby-progressbar (1.13.0)
     sass (3.4.25)
-    sass-embedded (1.99.0)
+    sass-embedded (1.100.0)
       google-protobuf (~> 4.31)
       rake (>= 13)
     sassc (2.4.0)
