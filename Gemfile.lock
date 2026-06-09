@@ -59,12 +59,12 @@ GEM
     google-protobuf (4.35.0)
       bigdecimal
       rake (~> 13.3)
-    govuk_tech_docs (6.2.3)
+    govuk_tech_docs (6.2.4)
       autoprefixer-rails
       chronic
       concurrent-ruby
       csv
-      haml (~> 6.0)
+      haml (>= 6, < 8)
       middleman
       middleman-autoprefixer
       middleman-compass
