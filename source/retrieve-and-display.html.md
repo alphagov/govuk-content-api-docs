@@ -1,5 +1,9 @@
 ---
 title: Retrieve and display GOV.UK content
+description: tbc
+type: tutorial
+audience: developer
+product: content-api
 weight: 40
 ---
 
@@ -85,8 +89,9 @@ status.
 }
 ```
 
-[withdrawn-notice]: /reference.html#withdrawnnotice
-[rate-limiting]: /#rate-limiting
+[content-item]: /reference.html/#schema-contentitem
+[withdrawn-notice]: /reference.html#schema-withdrawnnotice
+[rate-limiting]: /reference.html#rate-limiting
 [thailand-laws-customs]: https://www.gov.uk/foreign-travel-advice/thailand/local-laws-and-customs
 [thailand-print]: https://www.gov.uk/foreign-travel-advice/thailand/print
 [thailand-api]: https://www.gov.uk/api/content/foreign-travel-advice/thailand

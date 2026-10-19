@@ -1,5 +1,9 @@
 ---
 title: How the GOV.UK Content API works
+description: tbc
+type: concept
+audience: developer
+product: content-api
 weight: 30
 ---
 
@@ -164,7 +168,7 @@ its own CSS to present the content in the best way for their application.
 [content-item]: /reference.html#schema-contentitem
 [linked-content-item]: /reference.html#schema-linkedcontentitem
 [vat-rates-api]: https://www.gov.uk/api/content/vat-rates
-[multiple-pages]: #content-that-spans-multiple-pages
+[multiple-pages]: /retrieve-and-display.html#content-that-spans-multiple-pages
 [content-schemas-repo]: https://github.com/alphagov/publishing-api/tree/main/content_schemas
 [JSON Schema]: http://json-schema.org/
 [answer-schema]: https://github.com/alphagov/publishing-api/blob/ec396b5c305f740c7b3161d344262e4052ad97f9/content_schemas/dist/formats/answer/frontend/schema.json

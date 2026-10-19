@@ -1,5 +1,9 @@
 ---
 title: Support
+description: tbc
+type: concept
+audience: developer
+product: content-api
 weight: 60
 ---
 

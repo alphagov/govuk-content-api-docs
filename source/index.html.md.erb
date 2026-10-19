@@ -1,5 +1,9 @@
 ---
 title: GOV.UK Content API
+description: tbc
+type: concept
+audience: product_owner
+product: content-api
 weight: 10
 ---
 
@@ -18,11 +22,11 @@ weight: 10
 
 GOV.UK Content API makes it possible to access the data used to render content
 on [https://www.gov.uk](https://www.gov.uk) (hereafter referred to as GOV.UK).
-For any page hosted on GOV.UK you can [use the path](#quick-start) to access
+For any page hosted on GOV.UK you can [use the path][quick-start] to access
 the content and associated metadata for a page.
 
 GOV.UK Content API is accessed via [HTTP][] and returns data in a [JSON][]
-format. The [reference documentation](reference.html) details the
+format. The [reference documentation][api-reference] details the
 endpoints and the response format.
 
 ## What you can do with this API
@@ -67,15 +71,8 @@ and improvements as we learn from usage.
 This means that you may use this software and build applications that utilise
 it. However as we learn from feedback we may make changes to the software.
 
-## Rate limiting
-
-There is a maximum limit of 10 requests per second per client. If you exceed
-this your request won’t be processed until the limit is no longer exceeded
-and you may see timeout errors.
-
-We think this should be sufficient for all users of GOV.UK Content API but
-if you believe you need the limit increasing you can [contact support](#support).
-
+[quick-start]: /quick-start.html
+[api-reference]: /reference.html
 [National Archives]: http://webarchive.nationalarchives.gov.uk/*/https://www.gov.uk/
 [HTTP]: https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol
 [JSON]: https://en.wikipedia.org/wiki/JSON
