@@ -10,7 +10,7 @@ phase: Beta
 # Links to show on right-hand-side of header
 header_links:
   Quick start: /quick-start.html
-  Reference: /reference.html
+  API reference: /reference.html
 
 footer_links:
   Accessibility: /accessibility.html

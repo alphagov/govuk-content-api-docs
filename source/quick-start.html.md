@@ -1,5 +1,9 @@
 ---
 title: Quick start
+description: tbc
+type: tutorial
+audience: developer
+product: content-api
 weight: 20
 ---
 

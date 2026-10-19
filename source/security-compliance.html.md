@@ -1,5 +1,9 @@
 ---
 title: Security and compliance
+description: tbc
+type: concept
+audience: developer, product_owner
+product: content-api
 weight: 50
 ---
 
@@ -11,7 +15,7 @@ GOV.UK Content API follows government HTTPS security guidelines. The
 Hypertext Transfer Protocol Secure (HTTPS), which involves the Transport Layer
 Security (TLS) protocol, is used by the platform to provide secure connections.
 
-##  Report vulnerabilities
+## Report vulnerabilities
 
 If you believe there is a security issue with GOV.UK Content API, [read our security
 policy](https://github.com/alphagov/.github/blob/master/SECURITY.md)
