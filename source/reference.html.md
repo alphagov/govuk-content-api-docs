@@ -1,6 +1,6 @@
 ---
 title: API reference
-description: tbc
+description: Reference information for the GOV.UK Content API endpoints, schemas and rate limits.
 type: reference
 audience: developer
 product: content-api
