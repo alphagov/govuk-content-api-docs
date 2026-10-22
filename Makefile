@@ -1,5 +1,9 @@
 requirements:
 	bundle install
+	npm install
+
+lint-md: requirements
+	npx markdownlint-cli2 "**/*.{md,md.erb}" "#node_modules"
 
 clean:
 	rm -rf build
