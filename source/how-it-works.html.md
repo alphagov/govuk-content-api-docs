@@ -76,6 +76,7 @@ utilises the [`answer` schema][answer-schema].
 
 ### Details
 
+<!-- markdownlint-disable MD013 -->
 ```json
 {
   ...
@@ -86,6 +87,7 @@ utilises the [`answer` schema][answer-schema].
   ...
 }
 ```
+<!-- markdownlint-enable MD013 -->
 
 The `details` field of a [`ContentItem`][content-item] is an object that
 contains data in a particular structure relevant for the type of content. This
