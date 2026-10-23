@@ -3,25 +3,41 @@ host: https://content-api.publishing.service.gov.uk
 
 # Header-related options
 show_govuk_logo: true
-service_name: Content API docs
+service_name: Content API technical documentation
 service_link: /
-phase: Beta
 
 # Links to show on right-hand-side of header
 header_links:
-  Getting Started: /getting-started.html
-  Reference: /reference.html
+  Quick start: /quick-start.html
+  API reference: /reference.html
 
 footer_links:
   Accessibility: /accessibility.html
 
+# Enables search functionality. This indexes pages only and is not recommended for single-page sites.
+enable_search: true
+
+# Enable multipage navigation in the sidebar
+multipage_nav: true
+
+# Enable collapsible navigation in the sidebar
+collapsible_nav: true
+
 # Table of contents depth – how many levels to include in the table of contents.
 # If your ToC is too long, reduce this number and we'll only show higher-level
 # headings.
-max_toc_heading_level: 6
+max_toc_heading_level: 4
 
 # Prevent robots from indexing (e.g. whilst in development)
 prevent_indexing: false
+
+# Contribution banner
+show_contribution_banner: true
+github_repo: alphagov/govuk-content-api-docs # used to generate links
+github_branch: main
+
+owner_slack_workspace: gds
+default_owner_slack: "#govuk-content-apis"
 
 # Generate the API reference
 api_path: https://raw.githubusercontent.com/alphagov/content-store/refs/heads/main/openapi.yaml
