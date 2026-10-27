@@ -1,0 +1,5 @@
+# Allow multiple top-level headings or configure specific styles
+MD025: false
+
+# Allow inline HTML elements like badges
+MD033: false
