@@ -55,12 +55,12 @@ GEM
     execjs (2.10.2)
       json (>= 2)
     fast_blank (1.0.1)
-    fastimage (2.4.1)
+    fastimage (2.4.3)
     ffi (1.17.4)
     google-protobuf (4.36.2)
       bigdecimal
       rake (~> 13.3)
-    govuk_tech_docs (6.4.1.0)
+    govuk_tech_docs (6.5.2.1)
       autoprefixer-rails
       chronic
       concurrent-ruby
@@ -86,7 +86,7 @@ GEM
       tilt
     hamster (3.0.0)
       concurrent-ruby (~> 1.0)
-    hashie (5.1.0)
+    hashie (5.2.0)
       logger
     http_parser.rb (0.8.1)
     i18n (1.14.8)
@@ -271,7 +271,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  govuk_tech_docs (~> 6.4.1)
+  govuk_tech_docs (~> 6.5.2)
   middleman-gh-pages (~> 0.4.1)
   rubocop-govuk
 
