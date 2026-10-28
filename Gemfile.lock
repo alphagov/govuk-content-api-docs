@@ -60,7 +60,7 @@ GEM
     google-protobuf (4.36.2)
       bigdecimal
       rake (~> 13.3)
-    govuk_tech_docs (6.5.2.1)
+    govuk_tech_docs (6.4.1.0)
       autoprefixer-rails
       chronic
       concurrent-ruby
