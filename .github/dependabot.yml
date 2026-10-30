@@ -8,6 +8,9 @@ updates:
       time: "07:00"
     allow:
       - dependency-type: direct
+    ignore:
+      - dependency-name: "govuk_tech_docs"
+        versions: ["~> 6.5.0"]
     cooldown:
       default-days: 3
     open-pull-requests-limit: 25

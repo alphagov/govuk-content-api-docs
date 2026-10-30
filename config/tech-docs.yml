@@ -5,7 +5,6 @@ host: https://content-api.publishing.service.gov.uk
 show_govuk_logo: true
 service_name: Content API docs
 service_link: /
-phase: Beta
 
 # Links to show on right-hand-side of header
 header_links:
@@ -19,9 +18,6 @@ footer_links:
 # If your ToC is too long, reduce this number and we'll only show higher-level
 # headings.
 max_toc_heading_level: 6
-
-# Prevent robots from indexing (e.g. whilst in development)
-prevent_indexing: false
 
 # Generate the API reference
 api_path: https://raw.githubusercontent.com/alphagov/content-store/refs/heads/main/openapi.yaml
