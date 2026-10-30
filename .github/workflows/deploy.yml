@@ -15,6 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       url: ${{ steps.pages.outputs.url }}
+      pr_number: ${{ steps.pull-request.outputs.number }}
     steps:
       - name: Get pages URL
         id: pages
@@ -22,6 +23,10 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           echo "url=$(gh api repos/${{ github.repository }}/pages --jq .html_url)" >> "$GITHUB_OUTPUT"
+      - name: Get associated pull request
+        id: pull-request
+        run: |
+          echo "number=$(jq -r '.workflow_run.pull_requests[0].number // empty' "$GITHUB_EVENT_PATH")" >> "$GITHUB_OUTPUT"
 
   build-and-deploy:
     name: Publish main
@@ -64,9 +69,11 @@ jobs:
   build-pr-preview:
     name: Build preview
     runs-on: ubuntu-latest
+    needs: pages-info
     if: |
       github.event.workflow_run.conclusion == 'success' &&
-      github.event.workflow_run.event == 'pull_request'
+      github.event.workflow_run.event == 'pull_request' &&
+      needs.pages-info.outputs.pr_number != ''
     permissions:
       contents: read
     steps:
@@ -94,10 +101,11 @@ jobs:
     needs: [pages-info, build-pr-preview]
     if: |
       github.event.workflow_run.conclusion == 'success' &&
-      github.event.workflow_run.event == 'pull_request'
+      github.event.workflow_run.event == 'pull_request' &&
+      needs.pages-info.outputs.pr_number != ''
     environment:
-      name: github-pages-pr-${{ github.event.workflow_run.pull_requests[0].number }}
-      url: ${{ needs.pages-info.outputs.url }}previews/pr-${{ github.event.workflow_run.pull_requests[0].number }}
+      name: github-pages-pr-${{ needs.pages-info.outputs.pr_number }}
+      url: ${{ needs.pages-info.outputs.url }}previews/pr-${{ needs.pages-info.outputs.pr_number }}
     permissions:
       contents: write
     steps:
@@ -111,7 +119,7 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: build
-          destination_dir: previews/pr-${{ github.event.workflow_run.pull_requests[0].number }}
+          destination_dir: previews/pr-${{ needs.pages-info.outputs.pr_number }}
 
   remove-pr-preview:
     name: Remove preview
