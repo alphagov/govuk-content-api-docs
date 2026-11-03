@@ -1,0 +1,7 @@
+paths:
+  .github/workflows/deploy.yml:
+    ignore:
+      - 'unexpected key "queue" for "concurrency" section'
+  .github/workflows/remove-preview.yml:
+    ignore:
+      - 'unexpected key "queue" for "concurrency" section'
