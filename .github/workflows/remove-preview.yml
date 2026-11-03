@@ -10,7 +10,9 @@ jobs:
   remove-pr-preview:
     name: Remove preview
     runs-on: ubuntu-latest
-    if: github.event.pull_request.head.repo.full_name == github.repository
+    if: |
+      github.event.pull_request.head.repo.full_name == github.repository &&
+      !startsWith(github.event.pull_request.head.ref, 'dependabot/')
     concurrency:
       group: gh-pages
       queue: max
