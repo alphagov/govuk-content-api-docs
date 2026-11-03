@@ -1,0 +1,24 @@
+name: Remove preview
+
+run-name: Remove preview for PR ${{ github.event.pull_request.number }}
+
+on:
+  pull_request_target:
+    types: [closed]
+
+jobs:
+  remove-pr-preview:
+    name: Remove preview
+    runs-on: ubuntu-latest
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    permissions:
+      contents: write
+    steps:
+      - name: Create empty directory
+        run: mkdir empty
+      - name: Remove preview site
+        uses: peaceiris/actions-gh-pages@84c30a85c19949d7eee79c4ff27748b70285e453 # v4.1.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: empty
+          destination_dir: previews/pr-${{ github.event.pull_request.number }}
