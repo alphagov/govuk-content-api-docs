@@ -16,6 +16,7 @@ jobs:
       pages: read
     outputs:
       url: ${{ steps.pages.outputs.url }}
+      preview_url: ${{ steps.pages.outputs.url }}previews/pr-${{ github.event.workflow_run.pull_requests[0].number }}/
     steps:
       - name: Look up URL
         id: pages
@@ -92,6 +93,7 @@ jobs:
       - name: Build
         env:
           PREVIEW: "true"
+          PREVIEW_URL: ${{ needs.pages-url.outputs.preview_url }}
         run: bundle exec rake build
       - name: Upload preview site
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
@@ -132,7 +134,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
           PR_NUMBER: ${{ github.event.workflow_run.pull_requests[0].number }}
-          PREVIEW_URL: ${{ needs.pages-url.outputs.url }}previews/pr-${{ github.event.workflow_run.pull_requests[0].number }}/
+          PREVIEW_URL: ${{ needs.pages-url.outputs.preview_url }}
         run: |
           existing=$(gh pr view "$PR_NUMBER" \
             --repo "$GITHUB_REPOSITORY" \
