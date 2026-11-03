@@ -1,6 +1,6 @@
 name: Deploy
 
-run-name: Site updated to ${{ github.ref }}
+run-name: Deploy branch/ref ${{ github.event.workflow_run.head_branch || github.ref_name }}
 
 on:
   workflow_dispatch: {}
@@ -10,17 +10,36 @@ on:
     branches: [main]
   
 jobs: 
+  pages-url:
+    name: Get Pages URL
+    runs-on: ubuntu-latest
+    permissions:
+      pages: read
+    outputs:
+      url: ${{ steps.pages.outputs.url }}
+    steps:
+      - name: Look up URL
+        id: pages
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          url=$(gh api "repos/${{ github.repository }}/pages" --jq .html_url)
+          echo "url=${url}" >> "$GITHUB_OUTPUT"
+
   build-and-deploy:
     name: Publish to GH pages
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: ${{ needs.pages-url.outputs.url }}
     runs-on: ubuntu-latest
-    if: ${{ github.ref == 'refs/heads/main' }}
+    needs: pages-url
+    if: |
+      (github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main') ||
+      (github.event.workflow_run.conclusion == 'success' &&
+       github.event.workflow_run.event == 'push' &&
+       github.event.workflow_run.head_branch == 'main')
     permissions: 
-      contents: read
-      pages: write
-      id-token: write
+      contents: write
     steps: 
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - uses: ruby/setup-ruby@de492cf36cbab201753d720ce4f4e336cd688c94 # v1.336.0
@@ -28,14 +47,10 @@ jobs:
         run: |
           gem install bundler
           bundle install
-      - name: Setup Pages
-        uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6.0.0
       - name: Build
         run: bundle exec rake build
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
+      - name: Publish main site
+        uses: peaceiris/actions-gh-pages@84c30a85c19949d7eee79c4ff27748b70285e453 # v4.1.0
         with:
-          path: "build"
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: build
