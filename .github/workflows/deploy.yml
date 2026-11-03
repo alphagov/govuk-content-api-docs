@@ -90,6 +90,8 @@ jobs:
           gem install bundler
           bundle install
       - name: Build
+        env:
+          PREVIEW: "true"
         run: bundle exec rake build
       - name: Upload preview site
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2

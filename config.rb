@@ -4,5 +4,9 @@ require "govuk_tech_docs"
 
 GovukTechDocs.configure(self)
 
+if ENV["PREVIEW"] == "true"
+  config[:tech_docs][:prevent_indexing] = true
+end
+
 activate :relative_assets
 set :relative_links, true
