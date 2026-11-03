@@ -6,6 +6,7 @@ GovukTechDocs.configure(self)
 
 if ENV["PREVIEW"] == "true"
   config[:tech_docs][:prevent_indexing] = true
+  config[:tech_docs][:service_name] = "[DRAFT] #{config[:tech_docs][:service_name]}"
 end
 
 activate :relative_assets
