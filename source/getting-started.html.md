@@ -250,7 +250,7 @@ status.
 [content-schemas-repo]: https://github.com/alphagov/publishing-api/tree/main/content_schemas
 [JSON Schema]: http://json-schema.org/
 [answer-schema]: https://github.com/alphagov/publishing-api/blob/ec396b5c305f740c7b3161d344262e4052ad97f9/content_schemas/dist/formats/answer/frontend/schema.json
-[rate-limiting]: /#rate-limiting
+[rate-limiting]: /index.html#rate-limiting
 [thailand-laws-customs]: https://www.gov.uk/foreign-travel-advice/thailand/local-laws-and-customs
 [thailand-print]: https://www.gov.uk/foreign-travel-advice/thailand/print
 [thailand-api]: https://www.gov.uk/api/content/foreign-travel-advice/thailand
