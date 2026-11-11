@@ -280,6 +280,8 @@ there is often only one schema for a particular <code>document_type</code>.</p>
 <p>This is the case with <a href="https://www.gov.uk/api/content/vat-rates">VAT Rates</a> where the content returned
 utilises the <a href="https://github.com/alphagov/publishing-api/blob/ec396b5c305f740c7b3161d344262e4052ad97f9/content_schemas/dist/formats/answer/frontend/schema.json"><code>answer</code> schema</a>.</p>
 <h3 id="details">Details</h3>
+
+<!-- markdownlint-disable MD013 -->
 <div class="highlight"><pre class="highlight json" tabindex="0"><code><span class="p">{</span><span class="w">
   </span><span class="err">...</span><span class="w">
   </span><span class="nl">"details"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -288,7 +290,9 @@ utilises the <a href="https://github.com/alphagov/publishing-api/blob/ec396b5c30
   </span><span class="p">},</span><span class="w">
   </span><span class="err">...</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><p>The <code>details</code> field of a <a href="reference.html#schema-contentitem"><code>ContentItem</code></a> is an object that
+</span></code></pre></div>
+<!-- markdownlint-enable MD013 -->
+<p>The <code>details</code> field of a <a href="reference.html#schema-contentitem"><code>ContentItem</code></a> is an object that
 contains data in a particular structure relevant for the type of content. This
 structure is described by the <a href="#document-type-and-schema-name">schema</a>, which
 itself is defined by the <code>schema_name</code> field.</p>
@@ -357,6 +361,8 @@ its own CSS to present the content in the best way for their application.</p>
 <p>The example below illustrates utilising <a href="http://rubyonrails.org/">Ruby on Rails</a>
 with <a href="https://github.com/rest-client/rest-client">Rest Client</a> to make use of
 GOV.UK in your application.</p>
+
+<!-- markdownlint-disable MD013 -->
 <div class="highlight"><pre class="highlight ruby" tabindex="0"><code><span class="nb">require</span> <span class="s2">"rest-client"</span>
 
 <span class="n">tax_help</span> <span class="o">=</span> <span class="no">Rails</span><span class="p">.</span><span class="nf">cache</span><span class="p">.</span><span class="nf">fetch</span><span class="p">(</span><span class="s2">"govuk/tax-help"</span><span class="p">,</span> <span class="ss">expires_in: </span><span class="mi">1</span><span class="p">.</span><span class="nf">hour</span><span class="p">)</span> <span class="k">do</span>
@@ -365,7 +371,9 @@ GOV.UK in your application.</p>
 <span class="k">end</span>
 
 <span class="n">content</span> <span class="o">=</span> <span class="s2">"&lt;h1&gt;GOV.UK Tax Help&lt;/h1&gt;&lt;div&gt;</span><span class="si">#{</span><span class="n">tax_help</span><span class="si">}</span><span class="s2">&lt;/div&gt;"</span>
-</code></pre></div><p>In this example we utilise the Rails cache layer so that we can infrequently
+</code></pre></div>
+<!-- markdownlint-enable MD013 -->
+<p>In this example we utilise the Rails cache layer so that we can infrequently
 access the content without concerns of hitting the
 <a href="./#rate-limiting">rate limit</a>.</p>
 <p>We then use the API to access the content for
@@ -405,11 +413,15 @@ example.</p>
 </code></pre></div><p>Within the returned <a href="reference.html#schema-contentitem"><code>ContentItem</code></a> object there is a
 <a href="reference.html#withdrawnnotice"><code>WithdrawnNotice</code></a> object that describes the withdrawn
 status.</p>
+
+<!-- markdownlint-disable MD013 -->
 <div class="highlight"><pre class="highlight json" tabindex="0"><code><span class="nl">"withdrawn_notice"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
   </span><span class="nl">"explanation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;div class=</span><span class="se">\"</span><span class="s2">govspeak</span><span class="se">\"</span><span class="s2">&gt;&lt;p&gt;This document is out of date.  See the current &lt;a href=</span><span class="se">\"</span><span class="s2">https://www.gov.uk/government/publications/the-complete-routine-immunisation-schedule</span><span class="se">\"</span><span class="s2">&gt;complete routine immunisation schedule&lt;/a&gt;.&lt;/p&gt;</span><span class="se">\n</span><span class="s2">&lt;/div&gt;"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"withdrawn_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-08-12T13:47:11Z"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
+<!-- markdownlint-enable MD013 -->
+
             
           </main>
 
