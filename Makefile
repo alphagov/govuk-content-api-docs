@@ -1,18 +1,24 @@
-requirements:
+ruby-requirements:
 	bundle install
+
+node-requirements:
+	npm install
+
+lint-md: node-requirements
+	npx markdownlint-cli2 "**/*.{md,md.erb}" "#node_modules"
 
 clean:
 	rm -rf build
 
-html: requirements clean
+html: ruby-requirements clean
 	bundle exec rake build
 
 server: html
 	bundle exec middleman server
 
-publish: requirements clean
+publish: ruby-requirements clean
 	bundle exec rake publish
 
 all: html
 
-.PHONY: setup requirements clean html server publish
+.PHONY: setup ruby-requirements node-requirements lint-md clean html server publish
