@@ -23,3 +23,18 @@ jobs:
   lint-ruby:
     name: Lint Ruby
     uses: alphagov/govuk-infrastructure/.github/workflows/rubocop.yml@main
+  lint-md:
+    name: Lint Markdown
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: DavidAnson/markdownlint-cli2-action@696eb3f2509270d7b882d2aa68347bc676e7af34 # v25
+        with:
+          config: .markdownlint.yml
+          globs: |
+            **/*.{md,md.erb}
+            #node_modules

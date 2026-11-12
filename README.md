@@ -21,6 +21,18 @@ Other HTML pages are in the [/source][source-dir] directory of this repository
 and are authored using Markdown. You can suggest edits to these pages by making
 changes in a branch or fork of this project and then opening a pull request.
 
+### Linting markdown
+
+After updating content locally, you can run a linter on the Markdown files (with
+both the `.md` and `.md.erb` file extensions):
+
+```shell
+make lint-md
+```
+
+This checks your Markdown against the [CommonMark][commonmark] standard plus
+other best practices, and flags any discrepancies.
+
 ## Running documentation locally
 
 To run the documentation locally you should have this repository checked out
@@ -32,7 +44,14 @@ Setting up the documentation requires Ruby. Run the following to install the
 necessary dependencies:
 
 ```shell
-make requirements
+make ruby-requirements
+```
+
+Linting the documentation requires Node. Run the following to install the node
+package and dependencies:
+
+```shell
+make node-requirements
 ```
 
 ### Preview changes
@@ -75,3 +94,4 @@ This will push to the `gh-pages` branch and therefore deploy to GitHub Pages.
 [reference-page]: https://content-api.publishing.service.gov.uk/reference.html
 [source-dir]: https://github.com/alphagov/govuk-content-api-docs/tree/main/source
 [tech-docs-template]: https://github.com/alphagov/tech-docs-template
+[commonmark]: https://commonmark.org/

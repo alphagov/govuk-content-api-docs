@@ -71,6 +71,7 @@ utilises the [`answer` schema][answer-schema].
 
 ### Details
 
+<!-- markdownlint-disable MD013 -->
 ```json
 {
   ...
@@ -81,6 +82,7 @@ utilises the [`answer` schema][answer-schema].
   ...
 }
 ```
+<!-- markdownlint-enable MD013 -->
 
 The `details` field of a [`ContentItem`][content-item] is an object that
 contains data in a particular structure relevant for the type of content. This
@@ -166,6 +168,7 @@ The example below illustrates utilising [Ruby on Rails](http://rubyonrails.org/)
 with [Rest Client](https://github.com/rest-client/rest-client) to make use of
 GOV.UK in your application.
 
+<!-- markdownlint-disable MD013 -->
 ```ruby
 require "rest-client"
 
@@ -176,6 +179,7 @@ end
 
 content = "<h1>GOV.UK Tax Help</h1><div>#{tax_help}</div>"
 ```
+<!-- markdownlint-enable MD013 -->
 
 In this example we utilise the Rails cache layer so that we can infrequently
 access the content without concerns of hitting the
@@ -235,12 +239,14 @@ Within the returned [`ContentItem`][content-item] object there is a
 [`WithdrawnNotice`][withdrawn-notice] object that describes the withdrawn
 status.
 
+<!-- markdownlint-disable MD013 -->
 ```json
 "withdrawn_notice": {
   "explanation": "<div class=\"govspeak\"><p>This document is out of date.  See the current <a href=\"https://www.gov.uk/government/publications/the-complete-routine-immunisation-schedule\">complete routine immunisation schedule</a>.</p>\n</div>",
   "withdrawn_at": "2015-08-12T13:47:11Z"
 }
 ```
+<!-- markdownlint-enable MD013 -->
 
 [content-item]: /reference.html#schema-contentitem
 [linked-content-item]: /reference.html#schema-linkedcontentitem
