@@ -3,13 +3,15 @@ host: https://content-api.publishing.service.gov.uk
 
 # Header-related options
 show_govuk_logo: true
-service_name: Content API docs
+product_name: Content API
+service_name: Technical documentation
+full_service_name: Content API Technical documentation
 service_link: /
 
 # Links to show on right-hand-side of header
 header_links:
   Get started: /get-started.html
-  Reference: /reference.html
+  API reference: /reference.html
 
 footer_links:
   Accessibility: /accessibility.html
