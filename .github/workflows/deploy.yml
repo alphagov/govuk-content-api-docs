@@ -7,8 +7,8 @@ on:
   workflow_run:
     workflows: [CI]
     types: [completed]
-  
-jobs: 
+
+jobs:
   pages-url:
     name: Get Pages URL
     runs-on: ubuntu-latest
@@ -41,9 +41,9 @@ jobs:
     concurrency:
       group: gh-pages
       queue: max
-    permissions: 
+    permissions:
       contents: write
-    steps: 
+    steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - uses: ruby/setup-ruby@b3aaceaef7e0ee231b499e7b5f49c03fc1d32199 # v1.338.0
       - name: Install dependencies
@@ -83,7 +83,6 @@ jobs:
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
-          ref: ${{ github.event.workflow_run.head_sha }}
           persist-credentials: false
       - uses: ruby/setup-ruby@b3aaceaef7e0ee231b499e7b5f49c03fc1d32199 # v1.338.0
       - name: Install dependencies
