@@ -1,5 +1,10 @@
 ---
 title: Get started
+description: Learn how to get up and running with the GOV.UK Content API for the first time.
+type: tutorial
+audience: developer
+product: content-api
+weight: 20
 ---
 
 # Get started

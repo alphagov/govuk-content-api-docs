@@ -1,5 +1,10 @@
 ---
 title: How the GOV.UK Content API works
+description: Understand the key concepts behind what you can expect to send and receive from the GOV.UK Content API.
+type: concept
+audience: developer
+product: content-api
+weight: 30
 ---
 
 # How the GOV.UK Content API works

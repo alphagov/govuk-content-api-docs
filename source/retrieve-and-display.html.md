@@ -1,5 +1,10 @@
 ---
 title: Retrieve and display GOV.UK content
+description: Learn how to retrieve and embed a piece of GOV.UK content in your HTML, and how to recognise non-canonical and withdrawn content.
+type: tutorial
+audience: developer
+product: content-api
+weight: 40
 ---
 
 # Retrieve and display GOV.UK content
