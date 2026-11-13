@@ -1,0 +1,79 @@
+---
+title: Get started
+description: Learn how to get up and running with the GOV.UK Content API for the first time.
+type: tutorial
+audience: developer, product-owner
+product: content-api
+weight: 20
+---
+
+# <%= current_page.data.title %>
+
+This guide walks you through using the GOV.UK Content API for the first time.
+You'll retrieve GOV.UK content by making a GET request to the API, which returns
+the content as JSON.
+
+## Who this is for
+
+You can use this guide if you are a developer or a non-developer who understands
+the basics of [APIs][api-def].
+
+## Before you start
+
+Make sure you have one of the following tools:
+
+- a terminal with a data transfer utility, such as [curl][curl]
+- a dedicated API client such as the [Postman][postman-install] app
+
+## Authentication
+
+You do not need to authenticate or include any custom HTTP headers to use the
+GOV.UK Content API.
+
+## Base URL
+
+The base URL for all requests to the GOV.UK Content API is:
+
+```txt
+https://www.gov.uk/api/content/
+```
+
+## Make your first API request
+
+To make your first request to the GOV.UK Content API:
+
+1. Choose a page on the GOV.UK website, for example [https://www.gov.uk/take-pet-abroad][take-pet-abroad].
+1. Make a note of the URL component after the domain, which for our example is:
+   `/take-pet-abroad`.
+   This URL component is the **path** that you will send to the API.
+1. Add this path to the end of the API's [base URL](#base-url).
+1. Using your preferred tool, make a GET request to the resulting URL. For example,
+   use the curl utility in the terminal:
+   <pre><code class="language-shell">curl https://www.gov.uk/api/content/take-pet-abroad</code></pre>
+
+You get a JSON response containing the GOV.UK content. The fields contained in
+this response are explained in the [API reference][api-reference].
+
+Alternatively, you can use the Postman app to make the GET request. Follow the
+Postman [quick start][postman-quick-start] guide to do this, using the API URL
+in your request in place of the example provided:
+
+```text
+https://www.gov.uk/api/content/take-pet-abroad
+```
+
+## Next steps
+
+Now that you've made your first API request, you can:
+
+- [learn how the GOV.UK Content API works][how-it-works]
+- [retrieve and display GOV.UK content][retrieve-and-display]
+
+[api-def]: https://en.wikipedia.org/wiki/API
+[curl]: https://curl.haxx.se/
+[postman-install]: https://www.postman.com/downloads/
+[postman-quick-start]: https://learning.postman.com/docs/getting-started/quick-start#send-an-api-request
+[take-pet-abroad]: https://www.gov.uk/take-pet-abroad
+[api-reference]: /reference.html
+[how-it-works]: /how-it-works.html
+[retrieve-and-display]: /retrieve-and-display.html
