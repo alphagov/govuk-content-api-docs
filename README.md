@@ -19,7 +19,7 @@ should be made by opening a pull request against the
 
 Other HTML pages are in the [/source][source-dir] directory of this repository
 and are authored using Markdown. You can suggest edits to these pages by making
-changes in a branch or fork of this project and then opening a pull request.
+changes on a branch in this project and then opening a pull request.
 
 ### Metadata
 
@@ -57,8 +57,8 @@ both the `.md` and `.md.erb` file extensions):
 make lint-md
 ```
 
-This checks your Markdown against the [CommonMark][commonmark] standard plus
-other best practices, and flags any discrepancies.
+This checks your Markdown against standards and best practices, and flags any
+discrepancies.
 
 ## Running documentation locally
 
@@ -83,25 +83,25 @@ make node-requirements
 
 ### Preview changes
 
-Whilst writing documentation we can run a middleman server to preview how the
-published version will look in the browser. After saving a change the preview in
-the browser will automatically refresh on HTML pages. However for changes to
-[openapi.yaml][content-store-openapi] you will need to restart the preview.
+Whilst writing documentation you can run a middleman server to preview how the
+published docs will look in the browser. When you save a change, the preview in
+the browser will automatically refresh the HTML pages. However, for changes to
+the [openapi.yaml][content-store-openapi] file, you will need to restart the preview.
 
-The preview is only available on our own computer. Others won't be able to
+This preview is only available on your own computer. Others won't be able to
 access it if they are given the link.
 
-Type the following to start the server:
+Run the following command to start the middleman server:
 
 ```shell
 make server
 ```
 
-You should now be able to view a live preview at [http://localhost:4567](http://localhost:4567).
+You should now be able to access the preview at [http://localhost:4567](http://localhost:4567).
 
 ## Publishing changes
 
-Changes are deployed automatically after merging into the main branch.
+Changes are deployed automatically after merging into the `main` branch.
 
 To manually deploy a change, run the following command on your local machine:
 
@@ -109,7 +109,7 @@ To manually deploy a change, run the following command on your local machine:
 make publish
 ```
 
-This will push to the `gh-pages` branch and therefore deploy to GitHub Pages.
+This will push your change to the `gh-pages` branch and deploy to GitHub Pages.
 
 ## License
 
