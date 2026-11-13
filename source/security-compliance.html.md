@@ -4,7 +4,7 @@ description: Understand the security guidelines and policies followed by the GOV
 type: concept
 audience: developer, product_owner
 product: content-api
-weight: 50
+weight: 60
 ---
 
 # Security and compliance

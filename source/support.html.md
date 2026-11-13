@@ -4,7 +4,7 @@ description: Get support and contact us about the GOV.UK Content API.
 type: concept
 audience: product-owner, developer
 product: content-api
-weight: 60
+weight: 70
 ---
 
 # Support

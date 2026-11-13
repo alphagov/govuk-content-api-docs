@@ -4,7 +4,7 @@ description: Reference information for the GOV.UK Content API endpoints, schemas
 type: reference
 audience: developer
 product: content-api
-weight: 70
+weight: 50
 ---
 
 api>
