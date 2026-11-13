@@ -21,6 +21,33 @@ Other HTML pages are in the [/source][source-dir] directory of this repository
 and are authored using Markdown. You can suggest edits to these pages by making
 changes in a branch or fork of this project and then opening a pull request.
 
+### Metadata
+
+Markdown files may have frontmatter (metadata) added in a [standard format][front-matter]
+at the top of the file.
+
+Mandatory and optional [frontmatter fields][front-matter-template] are specified
+from the [template][tech-docs-template]. In our documentation, we use the following
+as a minimum:
+
+- `title`
+- `description`
+- `weight`
+
+In addition, the following frontmatter/metadata about the content itself has been
+added to each file:
+
+- `type`
+- `audience`
+- `product`
+
+These fields and their purpose are described in the [analysis and planning][analysis-and-planning]
+document, and as a minimum act as a reminder for anyone making future updates to
+the file.
+
+The content metadata may also be useful for future improvements to search (faceted
+search), navigation, or page templates and layouts.
+
 ### Linting markdown
 
 After updating content locally, you can run a linter on the Markdown files (with
@@ -94,4 +121,6 @@ This will push to the `gh-pages` branch and therefore deploy to GitHub Pages.
 [reference-page]: https://content-api.publishing.service.gov.uk/reference.html
 [source-dir]: https://github.com/alphagov/govuk-content-api-docs/tree/main/source
 [tech-docs-template]: https://github.com/alphagov/tech-docs-template
-[commonmark]: https://commonmark.org/
+[front-matter-template]: https://alphagov.github.io/tech-docs-gem/configure_project/frontmatter/index.html
+[front-matter]: https://middlemanapp.com/basics/frontmatter/
+[analysis-and-planning]: https://beisgov.sharepoint.com/:x:/r/sites/GOVUK-Pub/Shared%20Documents/Content%20APIs/Technical%20documentation/Technical%20documentation%20analysis%20and%20planning.xlsx?d=wed7ce3e4ef294e9c8a77c3183c640783&csf=1&web=1&e=RjQISn&nav=MTVfezE2OERFRTY2LTIzNzgtNEQ4MC05M0ZBLUM0MDZBNzU3MUQ5NX0

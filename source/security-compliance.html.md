@@ -1,5 +1,10 @@
 ---
 title: Security and compliance
+description: Understand the security guidelines and policies followed by the GOV.UK Content API.
+type: concept
+audience: developer, product_owner
+product: content-api
+weight: 50
 ---
 
 # Security and compliance
