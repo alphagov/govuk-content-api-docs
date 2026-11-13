@@ -9,7 +9,7 @@ phase: Beta
 
 # Links to show on right-hand-side of header
 header_links:
-  Getting Started: /getting-started.html
+  Get started: /get-started.html
   Reference: /reference.html
 
 footer_links:
