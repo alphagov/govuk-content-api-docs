@@ -1,0 +1,352 @@
+---
+title: Retrieve and display GOV.UK content
+description: Learn how to retrieve a piece of GOV.UK content and embed it in your HTML.
+type: tutorial
+audience: developer
+product: content-api
+weight: 40
+---
+
+# Retrieve and display GOV.UK content
+
+This guide takes you through a complete example of retrieving a piece of content
+from GOV.UK and adding it to your application or service. You'll also apply
+some general best practices in the use of APIs.
+
+You can use this guide if you are a developer working with Ruby, Python or
+Node.js.
+
+## Before you start
+
+Make sure you have:
+
+- a code editor or IDE
+- a local development environment for your chosen programming language
+- an HTTP client library capable of making GET requests and parsing JSON
+  (for example, the [REST Client][ruby-rest-client] for [Ruby on Rails][ruby-on-rails])
+- a command line where you can run your code
+
+You must also complete the [Get started][get-started] guide, and have an
+understanding of [How the GOV.UK Content API works][how-it-works] before you start.
+
+## Retrieve and display a piece of content
+
+In this section, you will learn how to:
+
+- retrieve a piece of content using the GOV.UK Content API
+- extract the content body from the API response
+- cache the HTML from the content body
+- add the HTML to your application
+
+### 1. Retrieve a piece of content from the API
+
+Use the GOV.UK Content API to make a GET request to the API URL for
+[Get help with tax][tax-help]. Parse the API response as JSON and store the result.
+
+<!-- markdownlint-disable MD034 MD037 -->
+<div class="govuk-tabs" data-module="govuk-tabs">
+  <ul class="govuk-tabs__list">
+    <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+      <a class="govuk-tabs__tab" href="#ruby-retrieve">
+        Ruby on Rails
+      </a>
+    </li>
+    <li class="govuk-tabs__list-item">
+      <a class="govuk-tabs__tab" href="#python-retrieve">
+        Python
+      </a>
+    </li>
+    <li class="govuk-tabs__list-item">
+      <a class="govuk-tabs__tab" href="#node-retrieve">
+        Node.js
+      </a>
+    </li>
+  </ul>
+  <div class="govuk-tabs__panel" id="ruby-retrieve">
+    <h5 class="govuk-heading-l">Ruby on Rails</h5>
+    <% code("ruby") do %>
+require "rest-client"
+
+api_response = RestClient.get(
+  "https://www.gov.uk/api/content/tax-help"
+)
+content_data = JSON.parse(api_response.body)
+    <% end %>
+  </div>
+  <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="python-retrieve">
+    <h5 class="govuk-heading-l">Python</h5>
+    <% code("python") do %>
+import requests
+
+api_response = requests.get(
+  "https://www.gov.uk/api/content/tax-help"
+)
+content_data = api_response.json()
+    <% end %>
+  </div>
+  <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="node-retrieve">
+    <h5 class="govuk-heading-l">Node.js</h5>
+    <% code("javascript") do %>
+const apiResponse = await fetch(
+  "https://www.gov.uk/api/content/tax-help"
+);
+const contentData = await apiResponse.json();
+    <% end %>
+  </div>
+</div>
+<!-- markdownlint-enable MD034 MD037 -->
+
+### 2. Extract the content body
+
+Next, access the `body` field in the `details` object, then store the resulting
+HTML.
+
+<!-- markdownlint-disable MD034 MD037 -->
+<div class="govuk-tabs" data-module="govuk-tabs">
+  <ul class="govuk-tabs__list">
+    <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+      <a class="govuk-tabs__tab" href="#ruby-extract">
+        Ruby on Rails
+      </a>
+    </li>
+    <li class="govuk-tabs__list-item">
+      <a class="govuk-tabs__tab" href="#python-extract">
+        Python
+      </a>
+    </li>
+    <li class="govuk-tabs__list-item">
+      <a class="govuk-tabs__tab" href="#node-extract">
+        Node.js
+      </a>
+    </li>
+  </ul>
+  <div class="govuk-tabs__panel" id="ruby-extract">
+    <h5 class="govuk-heading-l">Ruby on Rails</h5>
+    <% code("ruby") do %>
+require "rest-client"
+
+api_response = RestClient.get(
+  "https://www.gov.uk/api/content/tax-help"
+)
+content_data = JSON.parse(api_response.body)
+tax_help = content_data.dig("details", "body")
+    <% end %>
+  </div>
+  <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="python-extract">
+    <h5 class="govuk-heading-l">Python</h5>
+    <% code("python") do %>
+import requests
+
+api_response = requests.get(
+  "https://www.gov.uk/api/content/tax-help"
+)
+content_data = api_response.json()
+tax_help = content_data.get("details", {}).get("body", "")
+    <% end %>
+  </div>
+  <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="node-extract">
+    <h5 class="govuk-heading-l">Node.js</h5>
+    <% code("javascript") do %>
+const apiResponse = await fetch(
+  "https://www.gov.uk/api/content/tax-help"
+);
+const contentData = await apiResponse.json();
+const taxHelp = contentData.details?.body || "";
+    <% end %>
+  </div>
+</div>
+<!-- markdownlint-enable MD034 MD037 -->
+
+### 3. Cache the HTML
+
+Wrap the retrieval and extraction of the HTML in a cache layer, so that you can
+access the content again without needing to retrieve it using the API.
+
+Caching reduces the number of requests to the API, and can help you stay within
+the [rate limit][rate-limiting].
+
+Each of the following code snippets uses a simple in-memory cache and a 1 hour expiry
+time.
+
+<!-- markdownlint-disable MD034 MD037 -->
+<div class="govuk-tabs" data-module="govuk-tabs">
+  <ul class="govuk-tabs__list">
+    <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+      <a class="govuk-tabs__tab" href="#ruby-cache">
+        Ruby on Rails
+      </a>
+    </li>
+    <li class="govuk-tabs__list-item">
+      <a class="govuk-tabs__tab" href="#python-cache">
+        Python
+      </a>
+    </li>
+    <li class="govuk-tabs__list-item">
+      <a class="govuk-tabs__tab" href="#node-cache">
+        Node.js
+      </a>
+    </li>
+  </ul>
+  <div class="govuk-tabs__panel" id="ruby-cache">
+    <h5 class="govuk-heading-l">Ruby on Rails</h5>
+    <% code("ruby") do %>
+require "rest-client"
+
+tax_help = Rails.cache.fetch("govuk/tax-help", expires_in: 1.hour) do
+  api_response = RestClient.get(
+  "https://www.gov.uk/api/content/tax-help"
+  )
+  content_data = JSON.parse(api_response.body)
+  content_data.dig("details", "body")
+end
+    <% end %>
+  </div>
+  <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="python-cache">
+    <h5 class="govuk-heading-l">Python</h5>
+    <% code("python") do %>
+import time, requests
+
+_cache = {"data": None, "expires": 0}
+
+def get_tax_help():
+    if time.time() > _cache["expires"]:
+        api_response = requests.get(
+          "https://www.gov.uk/api/content/tax-help"
+        )
+        content_data = api_response.json()
+        _cache["data"] = (
+            content_data.get("details", {})
+            .get("body", "")
+        )
+        _cache["expires"] = time.time() + 3600
+    return _cache["data"]
+    <% end %>
+  </div>
+  <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="node-cache">
+    <h5 class="govuk-heading-l">Node.js</h5>
+    <% code("javascript") do %>
+let cache = { body: null, expires: 0 };
+
+async function getTaxHelp() {
+    if (Date.now() > cache.expires) {
+        const apiResponse = await fetch(
+          "https://www.gov.uk/api/content/tax-help"
+        );
+        const contentData = await apiResponse.json();
+        cache.body = contentData.details?.body || "";
+        cache.expires = Date.now() + 3600000;
+    }
+    return `${cache.body}`;
+}
+    <% end %>
+  </div>
+</div>
+<!-- markdownlint-enable MD034 MD037 -->
+
+### 4. Add the HTML to your application
+
+Now you can add the returned HTML to your application as needed. Here, we will
+add the content to a simple web page snippet with an `h1` heading.
+
+You also need to provide the CSS needed to style the HTML in your application,
+but this is omitted in the example.
+
+<!-- markdownlint-disable MD034 MD037 -->
+<div class="govuk-tabs" data-module="govuk-tabs">
+  <ul class="govuk-tabs__list">
+    <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+      <a class="govuk-tabs__tab" href="#ruby-display">
+        Ruby on Rails
+      </a>
+    </li>
+    <li class="govuk-tabs__list-item">
+      <a class="govuk-tabs__tab" href="#python-display">
+        Python
+      </a>
+    </li>
+    <li class="govuk-tabs__list-item">
+      <a class="govuk-tabs__tab" href="#node-display">
+        Node.js
+      </a>
+    </li>
+  </ul>
+  <div class="govuk-tabs__panel" id="ruby-display">
+    <h5 class="govuk-heading-l">Ruby on Rails</h5>
+    <% code("ruby") do %>
+require "rest-client"
+
+tax_help = Rails.cache.fetch("govuk/tax-help", expires_in: 1.hour) do
+  api_response = RestClient.get(
+  "https://www.gov.uk/api/content/tax-help"
+  )
+  content_data = JSON.parse(api_response.body)
+  content_data.dig("details", "body")
+end
+
+html = "<h1>GOV.UK Tax Help</h1><div>#{tax_help}</div>"
+    <% end %>
+  </div>
+  <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="python-display">
+    <h5 class="govuk-heading-l">Python</h5>
+    <% code("python") do %>
+import time, requests
+
+_cache = {"data": None, "expires": 0}
+
+def get_tax_help():
+    if time.time() > _cache["expires"]:
+        api_response = requests.get(
+          "https://www.gov.uk/api/content/tax-help"
+        )
+        content_data = api_response.json()
+        _cache["data"] = (
+            content_data.get("details", {})
+            .get("body", "")
+        )
+        _cache["expires"] = time.time() + 3600
+    return _cache["data"]
+
+tax_help = get_tax_help()
+html = f"<h1>GOV.UK Tax Help</h1><div>{tax_help}</div>"
+    <% end %>
+  </div>
+  <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="node-display">
+    <h5 class="govuk-heading-l">Node.js</h5>
+    <% code("javascript") do %>
+let cache = { body: null, expires: 0 };
+
+async function getTaxHelp() {
+    if (Date.now() > cache.expires) {
+        const apiResponse = await fetch(
+          "https://www.gov.uk/api/content/tax-help"
+        );
+        const contentData = await apiResponse.json();
+        cache.body = contentData.details?.body || "";
+        cache.expires = Date.now() + 3600000;
+    }
+    return `${cache.body}`;
+}
+
+const taxHelp = await getTaxHelp();
+const html = `<h1>GOV.UK Tax Help</h1><div>${taxHelp}</div>`;
+    <% end %>
+  </div>
+</div>
+<!-- markdownlint-enable MD034 MD037 -->
+
+## Next steps
+
+Now that you know how to retrieve and display a piece of content from the GOV.UK
+Content API, you can:
+
+- [look up additional data from the API response][api-reference]
+- [understand how the API approaches security and compliance][security-compliance]
+
+[rate-limiting]: /reference.html#rate-limiting
+[get-started]: /get-started.html
+[how-it-works]: /how-it-works.html
+[api-reference]: /reference.html
+[security-compliance]: /security-compliance.html
+[ruby-rest-client]: https://github.com/rest-client/rest-client
+[ruby-on-rails]: http://rubyonrails.org/
+[tax-help]: https://www.gov.uk/tax-help
