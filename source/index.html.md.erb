@@ -27,8 +27,8 @@ This technical documentation gives you information on:
 You can use the GOV.UK Content API for building services, tools and products which
 incorporate content from GOV.UK, and for keeping that content up to date.
 
-The GOV.UK Content API returns a [JSON][json-def] representation of a page from
-the [GOV.UK][gov-uk] website. The response includes page metadata, links to
+The GOV.UK Content API returns a [JSON][json-def] representation of a live page
+from the [GOV.UK][gov-uk] website. The response includes page metadata, links to
 related content, and the page body as HTML. This provides a more convenient and
 predictable interface than scraping the HTML from web pages.
 
@@ -39,29 +39,36 @@ a page. You could then retrieve that organisation's policies from another page.
 Our [API reference][api-reference] describes the API endpoints and response format
 a developer can expect.
 
-## What you can't do with this API
+## What you cannot do with this API
 
 The content and metadata you can access using the GOV.UK Content API are limited
-to pages on the [GOV.UK][gov-uk] website, published at the `www.gov.uk` domain.
+to live pages on the [GOV.UK][gov-uk] website, published on the `www.gov.uk` domain.
 For example, here are some pages that you **can** access using the API:
 
-- ["Holiday entitlement rights" on `www.gov.uk`][holiday-entitlement-rights]
-- ["Registering for Self Assessment" on `www.gov.uk`][self-assessment-tax-returns]
-- ["Pay and conditions" on `www.gov.uk`][pay-and-conditions]
+- [Holiday entitlement rights][holiday-entitlement-rights] on `www.gov.uk`
+- [Registering for Self Assessment][self-assessment-tax-returns] on `www.gov.uk`
+- [Pay and conditions][pay-and-conditions] on `www.gov.uk`
 
 The GOV.UK Content API does not provide access to content from websites on other
 subdomains of `gov.uk`, such as `blog.gov.uk`. The following are examples of pages
 that you **cannot** access using the API:
 
-- ["Transforming towns and cities for people and nature" on `blog.gov.uk`][people-and-nature]
-- ["Using GOV.UK Pay" on `payments.service.gov.uk`][using-govuk-pay]
+- [Transforming towns and cities for people and nature][people-and-nature] on `blog.gov.uk`
+- [Using GOV.UK Pay][using-govuk-pay] on `payments.service.gov.uk`
+
+You also **cannot** use this API to search GOV.UK content, or use any filters
+such as date, type, or page relationship. You can only retrieve content by path,
+as described in [Get started][get-started].
+
+If you want to search or filter for GOV.UK content before retrieving it, use the
+[GOV.UK Search API][search-api].
 
 ### Types of content available from this API
 
 Some fields in the API response from the GOV.UK Content API contain HTML. This
 HTML may reference images, attachments or other files, but you cannot use the API
-to return those files directly. Instead you must retrieve, for example, an image
-file directly from its source by other means.
+to return those files directly. Instead you must retrieve, for example, a referenced
+image file directly from its source by other means.
 
 In addition, you can only access content from static pages on the GOV.UK website
 using this API. Content from dynamic pages (for example, from a search, or using
@@ -82,6 +89,7 @@ permission or sign any agreements to use this API.
 
 [api-reference]: /reference.html
 [support]: /support.html
+[get-started]: /get-started.html
 [gov-uk]: https://www.gov.uk/
 [json-def]: https://en.wikipedia.org/wiki/JSON
 [national-archives]: http://webarchive.nationalarchives.gov.uk/*/https://www.gov.uk/
@@ -90,3 +98,4 @@ permission or sign any agreements to use this API.
 [pay-and-conditions]: https://www.gov.uk/become-apprentice/pay-and-conditions
 [people-and-nature]: https://naturalengland.blog.gov.uk/2026/10/23/transforming-towns-and-cities-for-people-and-nature/
 [using-govuk-pay]: https://payments.service.gov.uk/using-govuk-pay/
+[search-api]: https://docs.publishing.service.gov.uk/repos/search-api.html
