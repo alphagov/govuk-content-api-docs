@@ -212,7 +212,7 @@ data-module="govuk-service-navigation"
         <a href="./index.html#what-you-can-do-with-this-api"><span>What you can do with this API</span></a>
       </li>
       <li>
-        <a href="./index.html#what-you-can-39-t-do-with-this-api"><span>What you can’t do with this API</span></a>
+        <a href="./index.html#what-you-cannot-do-with-this-api"><span>What you cannot do with this API</span></a>
         <ul>
           <li>
             <a href="./index.html#types-of-content-available-from-this-api"><span>Types of content available from this API</span></a>
@@ -351,8 +351,8 @@ tools and products can consume directly.</p>
 <h2 id="what-you-can-do-with-this-api">What you can do with this API</h2>
 <p>You can use the GOV.UK Content API for building services, tools and products which
 incorporate content from GOV.UK, and for keeping that content up to date.</p>
-<p>The GOV.UK Content API returns a <a href="https://en.wikipedia.org/wiki/JSON">JSON</a> representation of a page from
-the <a href="https://www.gov.uk/">GOV.UK</a> website. The response includes page metadata, links to
+<p>The GOV.UK Content API returns a <a href="https://en.wikipedia.org/wiki/JSON">JSON</a> representation of a live page
+from the <a href="https://www.gov.uk/">GOV.UK</a> website. The response includes page metadata, links to
 related content, and the page body as HTML. This provides a more convenient and
 predictable interface than scraping the HTML from web pages.</p>
 <p>The information returned by the API includes links between related GOV.UK content.
@@ -360,29 +360,34 @@ For example, a response may identify the government organisation that published
 a page. You could then retrieve that organisation&rsquo;s policies from another page.</p>
 <p>Our <a href="reference.html">API reference</a> describes the API endpoints and response format
 a developer can expect.</p>
-<h2 id="what-you-can-39-t-do-with-this-api">What you can&rsquo;t do with this API</h2>
+<h2 id="what-you-cannot-do-with-this-api">What you cannot do with this API</h2>
 <p>The content and metadata you can access using the GOV.UK Content API are limited
-to pages on the <a href="https://www.gov.uk/">GOV.UK</a> website, published at the <code>www.gov.uk</code> domain.
+to live pages on the <a href="https://www.gov.uk/">GOV.UK</a> website, published on the <code>www.gov.uk</code> domain.
 For example, here are some pages that you <strong>can</strong> access using the API:</p>
 
 <ul>
-<li><a href="https://www.gov.uk/holiday-entitlement-rights">&ldquo;Holiday entitlement rights&rdquo; on <code>www.gov.uk</code></a></li>
-<li><a href="https://www.gov.uk/self-assessment-tax-returns/registering">&ldquo;Registering for Self Assessment&rdquo; on <code>www.gov.uk</code></a></li>
-<li><a href="https://www.gov.uk/become-apprentice/pay-and-conditions">&ldquo;Pay and conditions&rdquo; on <code>www.gov.uk</code></a></li>
+<li><a href="https://www.gov.uk/holiday-entitlement-rights">Holiday entitlement rights</a> on <code>www.gov.uk</code></li>
+<li><a href="https://www.gov.uk/self-assessment-tax-returns/registering">Registering for Self Assessment</a> on <code>www.gov.uk</code></li>
+<li><a href="https://www.gov.uk/become-apprentice/pay-and-conditions">Pay and conditions</a> on <code>www.gov.uk</code></li>
 </ul>
 <p>The GOV.UK Content API does not provide access to content from websites on other
 subdomains of <code>gov.uk</code>, such as <code>blog.gov.uk</code>. The following are examples of pages
 that you <strong>cannot</strong> access using the API:</p>
 
 <ul>
-<li><a href="https://naturalengland.blog.gov.uk/2026/10/23/transforming-towns-and-cities-for-people-and-nature/">&ldquo;Transforming towns and cities for people and nature&rdquo; on <code>blog.gov.uk</code></a></li>
-<li><a href="https://payments.service.gov.uk/using-govuk-pay/">&ldquo;Using GOV.UK Pay&rdquo; on <code>payments.service.gov.uk</code></a></li>
+<li><a href="https://naturalengland.blog.gov.uk/2026/10/23/transforming-towns-and-cities-for-people-and-nature/">Transforming towns and cities for people and nature</a> on <code>blog.gov.uk</code></li>
+<li><a href="https://payments.service.gov.uk/using-govuk-pay/">Using GOV.UK Pay</a> on <code>payments.service.gov.uk</code></li>
 </ul>
+<p>You also <strong>cannot</strong> use this API to search GOV.UK content, or use any filters
+such as date, type, or page relationship. You can only retrieve content by path,
+as described in <a href="get-started.html">Get started</a>.</p>
+<p>If you want to search or filter for GOV.UK content before retrieving it, use the
+<a href="https://docs.publishing.service.gov.uk/repos/search-api.html">GOV.UK Search API</a>.</p>
 <h3 id="types-of-content-available-from-this-api">Types of content available from this API</h3>
 <p>Some fields in the API response from the GOV.UK Content API contain HTML. This
 HTML may reference images, attachments or other files, but you cannot use the API
-to return those files directly. Instead you must retrieve, for example, an image
-file directly from its source by other means.</p>
+to return those files directly. Instead you must retrieve, for example, a referenced
+image file directly from its source by other means.</p>
 <p>In addition, you can only access content from static pages on the GOV.UK website
 using this API. Content from dynamic pages (for example, from a search, or using
 data that changes over time) is not available from this API.</p>
