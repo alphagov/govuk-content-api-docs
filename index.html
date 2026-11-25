@@ -249,7 +249,12 @@ data-module="govuk-service-navigation"
         <a href="./index.html#what-you-can-do-with-this-api"><span>What you can do with this API</span></a>
       </li>
       <li>
-        <a href="./index.html#what-you-can-39-t-do-with-this-api"><span>What you can’t do with this API</span></a>
+        <a href="./index.html#what-you-cannot-do-with-this-api"><span>What you cannot do with this API</span></a>
+        <ul>
+          <li>
+            <a href="./index.html#types-of-content-available-from-this-api"><span>Types of content available from this API</span></a>
+          </li>
+        </ul>
       </li>
       <li>
         <a href="./index.html#who-can-use-this-api"><span>Who can use this API</span></a>
@@ -260,7 +265,19 @@ data-module="govuk-service-navigation"
     <a href="./get-started.html"><span>Get started</span></a>
     <ul>
       <li>
+        <a href="./get-started.html#before-you-start"><span>Before you start</span></a>
+      </li>
+      <li>
         <a href="./get-started.html#authentication"><span>Authentication</span></a>
+      </li>
+      <li>
+        <a href="./get-started.html#base-url"><span>Base URL</span></a>
+      </li>
+      <li>
+        <a href="./get-started.html#make-your-first-api-request"><span>Make your first API request</span></a>
+      </li>
+      <li>
+        <a href="./get-started.html#next-steps"><span>Next steps</span></a>
       </li>
     </ul>
   </li>
@@ -268,13 +285,13 @@ data-module="govuk-service-navigation"
     <a href="./how-it-works.html"><span>How the GOV.UK Content API works</span></a>
     <ul>
       <li>
-        <a href="./how-it-works.html#accessing-content"><span>Accessing Content</span></a>
+        <a href="./how-it-works.html#what-the-gov-uk-content-api-returns"><span>What the GOV.UK Content API returns</span></a>
         <ul>
           <li>
-            <a href="./how-it-works.html#base-path"><span>Base path</span></a>
+            <a href="./how-it-works.html#base-paths"><span>Base paths</span></a>
           </li>
           <li>
-            <a href="./how-it-works.html#document-type-and-schema-name"><span>Document type and schema name</span></a>
+            <a href="./how-it-works.html#document-types-and-schema-names"><span>Document types and schema names</span></a>
           </li>
           <li>
             <a href="./how-it-works.html#details"><span>Details</span></a>
@@ -285,20 +302,26 @@ data-module="govuk-service-navigation"
         </ul>
       </li>
       <li>
-        <a href="./how-it-works.html#responses-containing-html"><span>Responses containing HTML</span></a>
+        <a href="./how-it-works.html#html-in-responses"><span>HTML in responses</span></a>
+      </li>
+      <li>
+        <a href="./how-it-works.html#content-states-and-paths"><span>Content states and paths</span></a>
+        <ul>
+          <li>
+            <a href="./how-it-works.html#canonical-paths-and-redirects"><span>Canonical paths and redirects</span></a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="./how-it-works.html#withdrawn-content"><span>Withdrawn content</span></a>
+      </li>
+      <li>
+        <a href="./how-it-works.html#how-the-gov-uk-content-api-works-next-steps"><span>Next steps</span></a>
       </li>
     </ul>
   </li>
   <li>
     <a href="./retrieve-and-display.html"><span>Retrieve and display GOV.UK content</span></a>
-    <ul>
-      <li>
-        <a href="./retrieve-and-display.html#content-that-spans-multiple-pages"><span>Content that spans multiple pages</span></a>
-      </li>
-      <li>
-        <a href="./retrieve-and-display.html#withdrawn-content"><span>Withdrawn content</span></a>
-      </li>
-    </ul>
   </li>
   <li>
     <a href="./reference.html"><span>GOV.UK Content API v1.0.0</span></a>
@@ -368,37 +391,70 @@ data-module="govuk-service-navigation"
         <div class="app-pane__content toc-open-disabled" aria-label="Content">
           <main id="content" class="technical-documentation" data-module="anchored-headings">
             <h1 id="gov-uk-content-api">GOV.UK Content API</h1>
-<p>GOV.UK Content API makes it possible to access the data used to render content
-on <a href="https://www.gov.uk">https://www.gov.uk</a> (hereafter referred to as GOV.UK).
-For any page hosted on GOV.UK you can <a href="get-started.html">use the path</a> to access
-the content and associated metadata for a page.</p>
-<p>GOV.UK Content API is accessed via <a href="https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol">HTTP</a> and returns data in a <a href="https://en.wikipedia.org/wiki/JSON">JSON</a>
-format. The <a href="reference.html">reference documentation</a> details the
-endpoints and the response format.</p>
+<p>The GOV.UK Content API is a public, read-only API for retrieving content and metadata
+from supported pages on the <a href="https://www.gov.uk/">GOV.UK</a> website. This information is available
+to any member of the public, but the API provides it in a format that your services,
+tools and products can consume directly.</p>
+<p>This technical documentation gives you information on:</p>
+
+<ul>
+<li>how the GOV.UK Content API works</li>
+<li>what you can and cannot use the API for</li>
+<li>how to retrieve and display GOV.UK content</li>
+</ul>
+<p><a href="support.html">Contact us</a> if you have any questions or feedback.</p>
 <h2 id="what-you-can-do-with-this-api">What you can do with this API</h2>
-<p>This API is useful for applications that incorporate content from GOV.UK and
-for keeping that content up to date. It provides a more accessible and
-predictable interface than what can be achieved through scraping HTML pages.</p>
-<p>You can navigate between content within this API by utilising links. For
-example, for a page you could access the government organisation that published
-the page and then navigate to feature policies of that organisation.</p>
-<h2 id="what-you-can-39-t-do-with-this-api">What you can&rsquo;t do with this API</h2>
-<p>The content within this API is limited to pages hosted on
-<a href="https://www.gov.uk"><code>www.gov.uk</code></a> and does not include other websites that are
-subdomains of <code>gov.uk</code>.</p>
-<p>This API includes only the pages on GOV.UK that are available as HTML and does
-not allow direct access to attachments or images. These files however are
-associated with their HTML content and can be accessed.</p>
-<p>Not all content is available. For example, content that is generated
-dynamically (such as through a search) is not available. Some types of content
-may still be being migrated to utilise this API and these could appear
-as placeholder documents without any content or as redirections to a
-catch-all content item that represents a group of unmigrated content.</p>
-<p>If you wish to access historic content this can currently be done
-through the <a href="http://webarchive.nationalarchives.gov.uk/*/https://www.gov.uk/">National Archives</a>.</p>
+<p>You can use the GOV.UK Content API for building services, tools and products which
+incorporate content from GOV.UK, and for keeping that content up to date.</p>
+<p>The GOV.UK Content API returns a <a href="https://en.wikipedia.org/wiki/JSON">JSON</a> representation of a live page
+from the <a href="https://www.gov.uk/">GOV.UK</a> website. The response includes page metadata, links to
+related content, and the page body as HTML. This provides a more convenient and
+predictable interface than scraping the HTML from web pages.</p>
+<p>The information returned by the API includes links between related GOV.UK content.
+For example, a response may identify the government organisation that published
+a page. You could then retrieve that organisation&rsquo;s policies from another page.</p>
+<p>Our <a href="reference.html">API reference</a> describes the API endpoints and response format
+a developer can expect.</p>
+<h2 id="what-you-cannot-do-with-this-api">What you cannot do with this API</h2>
+<p>The content and metadata you can access using the GOV.UK Content API are limited
+to live pages on the <a href="https://www.gov.uk/">GOV.UK</a> website, published on the <code>www.gov.uk</code> domain.
+For example, here are some pages that you <strong>can</strong> access using the API:</p>
+
+<ul>
+<li><a href="https://www.gov.uk/holiday-entitlement-rights">Holiday entitlement rights</a> on <code>www.gov.uk</code></li>
+<li><a href="https://www.gov.uk/self-assessment-tax-returns/registering">Registering for Self Assessment</a> on <code>www.gov.uk</code></li>
+<li><a href="https://www.gov.uk/become-apprentice/pay-and-conditions">Pay and conditions</a> on <code>www.gov.uk</code></li>
+</ul>
+<p>The GOV.UK Content API does not provide access to content from websites on other
+subdomains of <code>gov.uk</code>, such as <code>blog.gov.uk</code>. The following are examples of pages
+that you <strong>cannot</strong> access using the API:</p>
+
+<ul>
+<li><a href="https://naturalengland.blog.gov.uk/2026/10/23/transforming-towns-and-cities-for-people-and-nature/">Transforming towns and cities for people and nature</a> on <code>blog.gov.uk</code></li>
+<li><a href="https://payments.service.gov.uk/using-govuk-pay/">Using GOV.UK Pay</a> on <code>payments.service.gov.uk</code></li>
+</ul>
+<p>You also <strong>cannot</strong> use this API to search GOV.UK content, or use any filters
+such as date, type, or page relationship. You can only retrieve content by path,
+as described in <a href="get-started.html">Get started</a>.</p>
+<p>If you want to search or filter for GOV.UK content before retrieving it, use the
+<a href="https://docs.publishing.service.gov.uk/repos/search-api.html">GOV.UK Search API</a>.</p>
+<h3 id="types-of-content-available-from-this-api">Types of content available from this API</h3>
+<p>Some fields in the API response from the GOV.UK Content API contain HTML. This
+HTML may reference images, attachments or other files, but you cannot use the API
+to return those files directly. Instead you must retrieve, for example, a referenced
+image file directly from its source by other means.</p>
+<p>In addition, you can only access content from static pages on the GOV.UK website
+using this API. Content from dynamic pages (for example, from a search, or using
+data that changes over time) is not available from this API.</p>
+<p>Some types of content are still being migrated to the GOV.UK Content API. In such
+cases, you may encounter a placeholder page which holds no content, or a redirect
+to a catch-all destination for unmigrated content. You can find more information
+in the <a href="reference.html">API reference</a>.</p>
+<p>You cannot access historic content using this API. If you want to access historic
+content, you can get this from the <a href="http://webarchive.nationalarchives.gov.uk/*/https://www.gov.uk/">UK Government Web Archive</a>.</p>
 <h2 id="who-can-use-this-api">Who can use this API</h2>
-<p>Anyone can use this API for any purpose. There is no need for onboarding or
-signing any agreements.</p>
+<p>The GOV.UK Content API is public, and anyone can use it. You do not need to seek
+permission or sign any agreements to use this API.</p>
 
             
           </main>
