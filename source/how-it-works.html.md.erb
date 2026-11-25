@@ -1,0 +1,265 @@
+---
+title: How the GOV.UK Content API works
+description: Understand the key concepts behind what you can expect to send and receive from the GOV.UK Content API.
+type: concept
+audience: developer
+product: content-api
+weight: 30
+---
+
+# <%= current_page.data.title %>
+
+This page explains how the GOV.UK Content API represents GOV.UK content and
+describes the data it returns.
+
+<%= partial "partials/content_api_def" %>
+
+## What the GOV.UK Content API returns
+
+A successful request to the GOV.UK Content API returns a JSON response representing
+a piece of content, conforming to the [`ContentItem`][content-item] schema.
+
+You can retrieve this data for a supported GOV.UK page by including the page's
+path in a request to the GOV.UK Content API. For example, for the [VAT rates](https://www.gov.uk/vat-rates)
+page:
+
+```shell
+curl https://www.gov.uk/api/content/vat-rates
+```
+
+The response contains fields for the content itself, its metadata and its relationships
+with other GOV.UK content.
+
+The following sections explain the purpose of the key fields in the response
+and what their values mean.
+
+### Base paths
+
+```json
+{
+  ...
+  "base_path": "/vat-rates",
+  ...
+}
+```
+
+Every successful API response has a `base_path` field. This field always has the
+same value as the [path parameter][path-get-parameters] used to identify the content
+in the API request.
+
+This is called the _base_ path because it is the canonical path to the piece
+of content. Some pieces of content may appear on [multiple pages](#canonical-paths-and-redirects)
+on the GOV.UK website.
+
+### Document types and schema names
+
+```json
+{
+  ...
+  "document_type": "answer",
+  "schema_name": "answer",
+  ...
+}
+```
+
+The `document_type` and `schema_name` fields are used to describe the type and
+structure of data returned for a piece of content:
+
+- `document_type`: specifies the type of content represented by the response.
+  This field typically indicates how the piece of content is used on the GOV.UK
+  website.
+- `schema_name`: refers to a [JSON schema][json-schema] file held in
+  [GOV.UK Content Schemas][content-schemas-repo].
+  This schema defines the structure of the object in the response's `details`
+  field.
+
+Often the `document_type` and `schema_name` fields share the same value. In the
+[VAT rates][vat-rates-api] example, both fields have value `answer`.
+
+The `document_type` and `schema_name` can also have different values, because
+multiple document types can conform to the same schema. This allows pieces of content
+with the same data structure to serve different purposes on GOV.UK.
+
+The values of `document_type` and `schema_name` affect the [`details`](#details)
+and [`links`](#links) fields. The following sections explain these effects.
+
+### Details
+
+<!-- markdownlint-disable MD013 -->
+```json
+{
+  ...
+  "details": {
+    "body": "\n<div class=\"highlight-answer\">\n<p>The standard <abbr title=\"Value Added Tax\">VAT</abbr> rate...",
+    "external_related_links": []
+  },
+  ...
+}
+```
+<!-- markdownlint-enable MD013 -->
+
+(The `body` in this example has been shortened for presentation here.)
+
+The `details` field in an API response is an object that contains data in an appropriate
+structure for the piece of content. This structure is defined by the [JSON schema](#document-types-and-schema-names)
+identified in the `schema_name` field.
+
+In the [VAT rates][vat-rates-api] example, the [`answer`][answer-schema] schema
+is used. This `answer` schema specifies the following for the `details` field:
+
+- a `body` field, which contains the HTML for the main body of the piece of content.
+- an `external_related_links` field containing links to related web pages outside
+  the GOV.UK website.
+
+### Links
+
+```json
+{
+  ...
+  "links": {
+    ...
+      "organisations": [
+        {
+          "analytics_identifier": "D25",
+          "api_path": "/api/content/government/organisations/hm-revenue-customs",
+          "api_url": "https://www.gov.uk/api/content/government/organisations/hm-revenue-customs",
+          "base_path": "/government/organisations/hm-revenue-customs",
+          "content_id": "6667cce2-e809-4e21-ae09-cb0bdc1ddda3",
+          "details": {
+            "acronym": "HMRC",
+            "brand": "hm-revenue-customs",
+            ...
+            "organisation_govuk_status": {
+              "status": "live",
+              "updated_at": null,
+              "url": null
+            }
+          },
+          "document_type": "organisation",
+          "links": {},
+          "locale": "en",
+          "schema_name": "organisation",
+          "title": "HM Revenue & Customs",
+          "web_url": "https://www.gov.uk/government/organisations/hm-revenue-customs",
+          "withdrawn": false
+        }
+      ],
+    ...
+  },
+  ...
+}
+```
+
+The `links` field in an API response is used to describe relationships between
+the piece of content represented, and other GOV.UK content. This field is an object
+in which each key identifies a type of content relationship.
+
+The content [schema](#document-types-and-schema-names) identified by the
+`schema_name` field defines which link types can appear as keys in the
+`links` object. The value associated with each key is an array of objects
+representing related pieces of content of that type.
+
+Each object in the array conforms to the [`LinkedContentItem`][linked-content-item]
+schema, containing the fields needed to express the content relationship. This
+may itself include a `links` field, allowing content relationships to be nested.
+You can use nested `links` fields and the `parent` link type to show a hierarchy
+of content in your application or service.
+
+Although these relationships are called _links_, they are not necessarily presented
+as HTML links when the content is rendered on the GOV.UK website.
+
+For example, in the [VAT rates][vat-rates-api] response, the `organisations` link
+type identifies the government organisations related to the piece of content. You
+can use this data to retrieve other content published by those organisations,
+such as news or guidance.
+
+## HTML in responses
+
+Some fields in the API response, such as the `body` of the `details` object, may
+contain content formatted using [Govspeak][govspeak]. Govspeak is a simplified
+Markdown syntax developed for GOV.UK.
+
+The GOV.UK Content API converts this Govspeak into HTML before returning it in
+the response. This means you can render the content in your application with its
+intended structure, such as headings, lists and links, without needing
+to implement your own Govspeak parser.
+
+The API response does not return CSS with this HTML, so you must provide the CSS
+needed to style the content in your application or service.
+
+## Content states and paths
+
+### Canonical paths and redirects
+
+A single piece of content served by the GOV.UK Content API can be used to render
+multiple pages on the GOV.UK website. For example, the [local laws and customs]
+[thailand-laws-customs] for Thailand are available as a standalone page, and also
+as one part of a [printable guide][thailand-print].
+
+The canonical path to the piece of content for both of these pages is
+[/foreign-travel-advice/thailand][thailand-api], and you can retrieve this content
+using the GOV.UK Content API.
+
+If you request this piece of content using the path to the standalone page
+`/foreign-travel-advice/thailand/local-laws-and-customs`, the API returns a 303
+`HTTP` status code redirecting you to the canonical path.
+
+```shell
+$ curl -I https://www.gov.uk/api/content/foreign-travel-advice/thailand/local-laws-and-customs
+HTTP/1.1 303 See Other
+...
+Location: https://www.gov.uk/api/content/foreign-travel-advice/thailand
+...
+```
+
+## Withdrawn content
+
+<!-- markdownlint-disable MD013 -->
+```json
+{
+  ...
+  "withdrawn_notice": {
+  "explanation": "<div class=\"govspeak\"><p>This document is out of date.  See the current <a href=\"https://www.gov.uk/government/publications/the-complete-routine-immunisation-schedule\">complete routine immunisation schedule</a>.</p>\n</div>",
+  "withdrawn_at": "2015-08-12T13:47:11Z"
+  }
+  ...
+}
+
+```
+<!-- markdownlint-enable MD013 -->
+
+Some content on the GOV.UK website provides information that is no longer
+applicable, but remains available for reference. This content is described
+as _withdrawn_.
+
+Withdrawn content is displayed on the GOV.UK website with a header describing
+its status. For example,
+[The complete routine immunisation schedule 2013 to 2014][immunisation-withdrawn]
+was withdrawn because the content became out of date.
+
+In a response from the GOV.UK Content API for a piece of withdrawn content, this
+status is indicated using the [`withdrawn_notice`][withdrawn-notice] field.
+
+## Next steps
+
+Now that you understand how the GOV.UK Content API represents a piece of content,
+you can:
+
+- [retrieve and display GOV.UK content][retrieve-and-display]
+- [look up specific data from the API response][api-reference]
+
+[json-schema]: http://json-schema.org/
+[content-schemas-repo]: https://github.com/alphagov/publishing-api/tree/main/content_schemas
+[answer-schema]: https://github.com/alphagov/publishing-api/blob/ec396b5c305f740c7b3161d344262e4052ad97f9/content_schemas/dist/formats/answer/frontend/schema.json
+[content-item]: /reference.html#schema-contentitem
+[api-reference]: /reference.html
+[linked-content-item]: /reference.html#schema-linkedcontentitem
+[withdrawn-notice]: /reference.html#schema-withdrawnnotice
+[path-get-parameters]: /reference.html#path-get-parameters
+[retrieve-and-display]: /retrieve-and-display.html
+[vat-rates-api]: https://www.gov.uk/api/content/vat-rates
+[govspeak]: https://insidegovuk.blog.gov.uk/2022/07/29/how-were-saving-publishers-time-by-converting-formatted-text/
+[thailand-laws-customs]: https://www.gov.uk/foreign-travel-advice/thailand/local-laws-and-customs
+[thailand-print]: https://www.gov.uk/foreign-travel-advice/thailand/print
+[thailand-api]: https://www.gov.uk/api/content/foreign-travel-advice/thailand
+[immunisation-withdrawn]: https://www.gov.uk/government/publications/the-complete-routine-immunisation-schedule-201314
