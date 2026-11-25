@@ -214,7 +214,12 @@ data-module="govuk-service-navigation"
         <a href="./index.html#what-you-can-do-with-this-api"><span>What you can do with this API</span></a>
       </li>
       <li>
-        <a href="./index.html#what-you-can-39-t-do-with-this-api"><span>What you can’t do with this API</span></a>
+        <a href="./index.html#what-you-cannot-do-with-this-api"><span>What you cannot do with this API</span></a>
+        <ul>
+          <li>
+            <a href="./index.html#types-of-content-available-from-this-api"><span>Types of content available from this API</span></a>
+          </li>
+        </ul>
       </li>
       <li>
         <a href="./index.html#who-can-use-this-api"><span>Who can use this API</span></a>
@@ -225,7 +230,19 @@ data-module="govuk-service-navigation"
     <a href="./get-started.html"><span>Get started</span></a>
     <ul>
       <li>
+        <a href="./get-started.html#before-you-start"><span>Before you start</span></a>
+      </li>
+      <li>
         <a href="./get-started.html#authentication"><span>Authentication</span></a>
+      </li>
+      <li>
+        <a href="./get-started.html#base-url"><span>Base URL</span></a>
+      </li>
+      <li>
+        <a href="./get-started.html#make-your-first-api-request"><span>Make your first API request</span></a>
+      </li>
+      <li>
+        <a href="./get-started.html#next-steps"><span>Next steps</span></a>
       </li>
     </ul>
   </li>
@@ -233,13 +250,13 @@ data-module="govuk-service-navigation"
     <a href="./how-it-works.html"><span>How the GOV.UK Content API works</span></a>
     <ul>
       <li>
-        <a href="./how-it-works.html#accessing-content"><span>Accessing Content</span></a>
+        <a href="./how-it-works.html#what-the-gov-uk-content-api-returns"><span>What the GOV.UK Content API returns</span></a>
         <ul>
           <li>
-            <a href="./how-it-works.html#base-path"><span>Base path</span></a>
+            <a href="./how-it-works.html#base-paths"><span>Base paths</span></a>
           </li>
           <li>
-            <a href="./how-it-works.html#document-type-and-schema-name"><span>Document type and schema name</span></a>
+            <a href="./how-it-works.html#document-types-and-schema-names"><span>Document types and schema names</span></a>
           </li>
           <li>
             <a href="./how-it-works.html#details"><span>Details</span></a>
@@ -250,7 +267,21 @@ data-module="govuk-service-navigation"
         </ul>
       </li>
       <li>
-        <a href="./how-it-works.html#responses-containing-html"><span>Responses containing HTML</span></a>
+        <a href="./how-it-works.html#html-in-responses"><span>HTML in responses</span></a>
+      </li>
+      <li>
+        <a href="./how-it-works.html#content-states-and-paths"><span>Content states and paths</span></a>
+        <ul>
+          <li>
+            <a href="./how-it-works.html#canonical-paths-and-redirects"><span>Canonical paths and redirects</span></a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="./how-it-works.html#withdrawn-content"><span>Withdrawn content</span></a>
+      </li>
+      <li>
+        <a href="./how-it-works.html#how-the-gov-uk-content-api-works-next-steps"><span>Next steps</span></a>
       </li>
     </ul>
   </li>
@@ -258,7 +289,7 @@ data-module="govuk-service-navigation"
     <a href="./retrieve-and-display.html"><span>Retrieve and display GOV.UK content</span></a>
     <ul>
       <li>
-        <a href="./retrieve-and-display.html#before-you-start"><span>Before you start</span></a>
+        <a href="./retrieve-and-display.html#retrieve-and-display-gov-uk-content-before-you-start"><span>Before you start</span></a>
       </li>
       <li>
         <a href="./retrieve-and-display.html#retrieve-and-display-a-piece-of-content"><span>Retrieve and display a piece of content</span></a>
@@ -294,7 +325,7 @@ data-module="govuk-service-navigation"
         </ul>
       </li>
       <li>
-        <a href="./retrieve-and-display.html#next-steps"><span>Next steps</span></a>
+        <a href="./retrieve-and-display.html#retrieve-and-display-gov-uk-content-next-steps"><span>Next steps</span></a>
       </li>
     </ul>
   </li>
@@ -366,32 +397,54 @@ data-module="govuk-service-navigation"
         <div class="app-pane__content toc-open-disabled" aria-label="Content">
           <main id="content" class="technical-documentation" data-module="anchored-headings">
             <h1 id="get-started">Get started</h1>
-<p>You can use the GOV.UK Content API to look up the data that is used to
-render content on GOV.UK.</p>
-<p>To get started:</p>
+<p>This guide walks you through using the GOV.UK Content API for the first time.</p>
+<p>You can use this guide if you are a developer or a non-developer who understands
+the basics of <a href="https://en.wikipedia.org/wiki/API">APIs</a>. You&rsquo;ll retrieve GOV.UK content by making a GET
+request to the API, which returns the content as JSON.</p>
+<h2 id="before-you-start">Before you start</h2>
+<p>Make sure you have one of the following tools:</p>
+
+<ul>
+<li>a terminal with a data transfer utility, such as <a href="https://curl.haxx.se/">curl</a></li>
+<li>a web browser, such as Google Chrome, Microsoft Edge or Firefox</li>
+</ul>
+<h2 id="authentication">Authentication</h2>
+<p>You do not need to authenticate or include any custom HTTP headers to use the
+GOV.UK Content API.</p>
+<h2 id="base-url">Base URL</h2>
+<p>The base URL for all requests to the GOV.UK Content API is:</p>
+<div class="highlight"><pre class="highlight plaintext" tabindex="0"><code>https://www.gov.uk/api/content/
+</code></pre></div><h2 id="make-your-first-api-request">Make your first API request</h2>
+<p>To make your first request to the GOV.UK Content API:</p>
 
 <ol>
-<li>Pick a page on GOV.UK, for example: <a href="https://www.gov.uk/take-pet-abroad">https://www.gov.uk/take-pet-abroad</a>.</li>
-<li>Make a note of the path, for example: <code>/take-pet-abroad</code>.</li>
-<li>Using a tool such as <a href="https://curl.haxx.se/">curl</a>,
-<a href="https://www.getpostman.com/">Postman</a> or your web browser, make a GET
-request to <a href="https://www.gov.uk/api/content/take-pet-abroad"><code>https://www.gov.uk/api/content/take-pet-abroad</code></a>.</li>
-<li>You’ll receive a JSON response and the fields for this are
-explained in the <a href="reference.html">reference documentation</a>.</li>
+<li>Choose a page on the GOV.UK website, for example <a href="https://www.gov.uk/take-pet-abroad">https://www.gov.uk/take-pet-abroad</a>.</li>
+<li>Make a note of the URL component after the domain, which for our example is:
+<code>/take-pet-abroad</code>.
+This URL component is the <strong>path</strong> that you will send to the API.</li>
+<li>Add this path to the end of the API&rsquo;s <a href="#base-url">base URL</a>: <code>https://www.gov.uk/api/content/take-pet-abroad</code></li>
+<li>Using your preferred tool, make a GET request to the resulting URL. For example,
+with the curl utility in your terminal:
+<pre><code class="language-shell">curl https://www.gov.uk/api/content/take-pet-abroad</code></pre>
+Alternatively, you can use your web browser to make the GET request. Navigate
+to the API URL by entering it in your browser&rsquo;s address bar.</li>
 </ol>
-<p>For example, using the curl command line utility tool:</p>
-<div class="highlight"><pre class="highlight shell" tabindex="0"><code>curl https://www.gov.uk/api/content/take-pet-abroad
-</code></pre></div><p>Or, you can <a href="https://github.com/alphagov/govuk-browser-extension">use the govuk-browser-extension</a>.
-Note that this is intended for internal use.</p>
-<h2 id="authentication">Authentication</h2>
-<p>Usage of GOV.UK Content API does not require authentication.</p>
+<p>You get a JSON response containing the GOV.UK content and metadata. The fields
+contained in this response are explained in the <a href="reference.html">API reference</a>.</p>
+<h2 id="next-steps">Next steps</h2>
+<p>Now that you&rsquo;ve made your first API request, you can:</p>
+
+<ul>
+<li><a href="how-it-works.html">learn how the GOV.UK Content API works</a></li>
+<li><a href="retrieve-and-display.html">retrieve and display GOV.UK content</a></li>
+</ul>
 
             
           </main>
 
           <aside>
               <ul class="contribution-banner">
-                <li><a href="https://github.com/alphagov/govuk-content-api-docs/blob/main/source/get-started.html.md">View source</a></li>
+                <li><a href="https://github.com/alphagov/govuk-content-api-docs/blob/main/source/get-started.html.md.erb">View source</a></li>
                 <li><a href="https://github.com/alphagov/govuk-content-api-docs/issues/new?body=Problem+with+%27Get+started%27+%28https%3A%2F%2Fcontent-api.publishing.service.gov.uk%2Fget-started.html%29&amp;labels=bug&amp;title=Re%3A+%27Get+started%27">Report problem</a></li>
                 <li><a href="https://github.com/alphagov/govuk-content-api-docs">GitHub Repo</a></li>
               </ul>

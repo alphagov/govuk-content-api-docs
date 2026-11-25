@@ -212,7 +212,12 @@ data-module="govuk-service-navigation"
         <a href="./index.html#what-you-can-do-with-this-api"><span>What you can do with this API</span></a>
       </li>
       <li>
-        <a href="./index.html#what-you-can-39-t-do-with-this-api"><span>What you can’t do with this API</span></a>
+        <a href="./index.html#what-you-cannot-do-with-this-api"><span>What you cannot do with this API</span></a>
+        <ul>
+          <li>
+            <a href="./index.html#types-of-content-available-from-this-api"><span>Types of content available from this API</span></a>
+          </li>
+        </ul>
       </li>
       <li>
         <a href="./index.html#who-can-use-this-api"><span>Who can use this API</span></a>
@@ -223,7 +228,19 @@ data-module="govuk-service-navigation"
     <a href="./get-started.html"><span>Get started</span></a>
     <ul>
       <li>
+        <a href="./get-started.html#before-you-start"><span>Before you start</span></a>
+      </li>
+      <li>
         <a href="./get-started.html#authentication"><span>Authentication</span></a>
+      </li>
+      <li>
+        <a href="./get-started.html#base-url"><span>Base URL</span></a>
+      </li>
+      <li>
+        <a href="./get-started.html#make-your-first-api-request"><span>Make your first API request</span></a>
+      </li>
+      <li>
+        <a href="./get-started.html#get-started-next-steps"><span>Next steps</span></a>
       </li>
     </ul>
   </li>
@@ -231,13 +248,13 @@ data-module="govuk-service-navigation"
     <a href="./how-it-works.html"><span>How the GOV.UK Content API works</span></a>
     <ul>
       <li>
-        <a href="./how-it-works.html#accessing-content"><span>Accessing Content</span></a>
+        <a href="./how-it-works.html#what-the-gov-uk-content-api-returns"><span>What the GOV.UK Content API returns</span></a>
         <ul>
           <li>
-            <a href="./how-it-works.html#base-path"><span>Base path</span></a>
+            <a href="./how-it-works.html#base-paths"><span>Base paths</span></a>
           </li>
           <li>
-            <a href="./how-it-works.html#document-type-and-schema-name"><span>Document type and schema name</span></a>
+            <a href="./how-it-works.html#document-types-and-schema-names"><span>Document types and schema names</span></a>
           </li>
           <li>
             <a href="./how-it-works.html#details"><span>Details</span></a>
@@ -248,7 +265,21 @@ data-module="govuk-service-navigation"
         </ul>
       </li>
       <li>
-        <a href="./how-it-works.html#responses-containing-html"><span>Responses containing HTML</span></a>
+        <a href="./how-it-works.html#html-in-responses"><span>HTML in responses</span></a>
+      </li>
+      <li>
+        <a href="./how-it-works.html#content-states-and-paths"><span>Content states and paths</span></a>
+        <ul>
+          <li>
+            <a href="./how-it-works.html#canonical-paths-and-redirects"><span>Canonical paths and redirects</span></a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="./how-it-works.html#withdrawn-content"><span>Withdrawn content</span></a>
+      </li>
+      <li>
+        <a href="./how-it-works.html#next-steps"><span>Next steps</span></a>
       </li>
     </ul>
   </li>
@@ -256,7 +287,7 @@ data-module="govuk-service-navigation"
     <a href="./retrieve-and-display.html"><span>Retrieve and display GOV.UK content</span></a>
     <ul>
       <li>
-        <a href="./retrieve-and-display.html#before-you-start"><span>Before you start</span></a>
+        <a href="./retrieve-and-display.html#retrieve-and-display-gov-uk-content-before-you-start"><span>Before you start</span></a>
       </li>
       <li>
         <a href="./retrieve-and-display.html#retrieve-and-display-a-piece-of-content"><span>Retrieve and display a piece of content</span></a>
@@ -292,7 +323,7 @@ data-module="govuk-service-navigation"
         </ul>
       </li>
       <li>
-        <a href="./retrieve-and-display.html#next-steps"><span>Next steps</span></a>
+        <a href="./retrieve-and-display.html#retrieve-and-display-gov-uk-content-next-steps"><span>Next steps</span></a>
       </li>
     </ul>
   </li>
@@ -364,138 +395,205 @@ data-module="govuk-service-navigation"
         <div class="app-pane__content toc-open-disabled" aria-label="Content">
           <main id="content" class="technical-documentation" data-module="anchored-headings">
             <h1 id="how-the-gov-uk-content-api-works">How the GOV.UK Content API works</h1>
-<p>This guide introduces a number of key concepts in GOV.UK Content API through
-the usage of examples. It utilises <a href="https://curl.haxx.se/">curl</a> for
-interfacing with the API on the command line and is chosen due to the wide
-availability of curl, however you may prefer the structured output of
-using <a href="https://httpie.org/">HTTPie</a> or piping the curl responses
-through <a href="https://stedolan.github.io/jq/">jq</a>.</p>
-<h2 id="accessing-content">Accessing Content</h2>
-<p>GOV.UK Content API is used to access content that is hosted on
-<a href="https://www.gov.uk">www.gov.uk</a> (referred to as GOV.UK). For a given HTML
-page, for example <a href="https://www.gov.uk/vat-rates">VAT Rates</a>, we can look this
-up through this API:</p>
+<p>This page explains how the GOV.UK Content API represents GOV.UK content and
+describes the data it returns.</p>
+
+<!-- markdownlint-disable-file MD041 -->
+
+<p>The GOV.UK Content API is a public, read-only API that provides access to the
+content and metadata for supported pages on the <a href="https://www.gov.uk/">GOV.UK</a> website as
+<a href="https://en.wikipedia.org/wiki/JSON">JSON</a>.</p>
+<h2 id="what-the-gov-uk-content-api-returns">What the GOV.UK Content API returns</h2>
+<p>A successful request to the GOV.UK Content API returns a JSON response representing
+a piece of content, conforming to the <a href="reference.html#schema-contentitem"><code>ContentItem</code></a> schema.</p>
+<p>You can retrieve this data for a supported GOV.UK page by including the page&rsquo;s
+path in a request to the GOV.UK Content API. For example, for the <a href="https://www.gov.uk/vat-rates">VAT rates</a>
+page:</p>
 <div class="highlight"><pre class="highlight shell" tabindex="0"><code>curl https://www.gov.uk/api/content/vat-rates
-</code></pre></div><p>This will return a <a href="reference.html#schema-contentitem"><code>ContentItem</code></a> object. Within this object are
-fields that describe the content itself, metadata and associations
-with other content. This section will explain conceptually some of the key
-fields.</p>
-<h3 id="base-path">Base path</h3>
+</code></pre></div><p>The response contains fields for the content itself, its metadata and its relationships
+with other GOV.UK content.</p>
+<p>The following sections explain the purpose of the key fields in the response
+and what their values mean.</p>
+<h3 id="base-paths">Base paths</h3>
 <div class="highlight"><pre class="highlight json" tabindex="0"><code><span class="p">{</span><span class="w">
   </span><span class="err">...</span><span class="w">
   </span><span class="nl">"base_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/vat-rates"</span><span class="p">,</span><span class="w">
   </span><span class="err">...</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><p>Every <a href="reference.html#schema-contentitem"><code>ContentItem</code></a> has a <code>base_path</code> field which is the same
-as the <a href="reference.html#path-get-parameters">path parameter</a> used to identify
-the content.</p>
-<p>The &ldquo;base&rdquo; aspect of this field is used as it indicates the root path of this
-piece of content as some pieces of content
-<a href="retrieve-and-display.html#content-that-spans-multiple-pages">span multiple pages</a>.</p>
-<h3 id="document-type-and-schema-name">Document type and schema name</h3>
+</span></code></pre></div><p>Every successful API response has a <code>base_path</code> field. This field always has the
+same value as the <a href="reference.html#path-get-parameters">path parameter</a> used to identify the content
+in the API request.</p>
+<p>This is called the <em>base</em> path because it is the canonical path to the piece
+of content. Some pieces of content may appear on <a href="#canonical-paths-and-redirects">multiple pages</a>
+on the GOV.UK website.</p>
+<h3 id="document-types-and-schema-names">Document types and schema names</h3>
 <div class="highlight"><pre class="highlight json" tabindex="0"><code><span class="p">{</span><span class="w">
   </span><span class="err">...</span><span class="w">
   </span><span class="nl">"document_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"answer"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"schema_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"answer"</span><span class="p">,</span><span class="w">
   </span><span class="err">...</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><p>The <code>document_type</code> and <code>schema_name</code> fields are used to define the format of
-the data represented in a <a href="reference.html#schema-contentitem"><code>ContentItem</code></a>. The main fields that
-are affected by this are <a href="#details"><code>details</code></a> and <a href="#links"><code>links</code></a>.</p>
-<p>The <code>schema_name</code> refers to a file referenced in
-<a href="https://github.com/alphagov/publishing-api/tree/main/content_schemas">GOV.UK Content Schemas</a> which utilises
-<a href="http://json-schema.org/">JSON Schema</a> to describe the rules of the data. The <code>document_type</code> defines
-the name of the format on GOV.UK. Often these fields share the same value as
-there is often only one schema for a particular <code>document_type</code>.</p>
-<p>This is the case with <a href="https://www.gov.uk/api/content/vat-rates">VAT Rates</a> where the content returned
-utilises the <a href="https://github.com/alphagov/publishing-api/blob/ec396b5c305f740c7b3161d344262e4052ad97f9/content_schemas/dist/formats/answer/frontend/schema.json"><code>answer</code> schema</a>.</p>
-<h3 id="details">Details</h3>
+</span></code></pre></div><p>The <code>document_type</code> and <code>schema_name</code> fields are used to describe the type and
+structure of data returned for a piece of content:</p>
 
-<!-- markdownlint-disable MD013 -->
+<ul>
+<li><code>document_type</code>: specifies the type of content represented by the response.
+This field typically indicates how the piece of content is used on the GOV.UK
+website.</li>
+<li><code>schema_name</code>: refers to a <a href="http://json-schema.org/">JSON schema</a> file held in
+<a href="https://github.com/alphagov/publishing-api/tree/main/content_schemas">GOV.UK Content Schemas</a>.
+This schema defines the structure of the object in the response&rsquo;s <code>details</code>
+field.</li>
+</ul>
+<p>Often the <code>document_type</code> and <code>schema_name</code> fields share the same value. In the
+<a href="https://www.gov.uk/api/content/vat-rates">VAT rates</a> example, both fields have value <code>answer</code>.</p>
+<p>The <code>document_type</code> and <code>schema_name</code> can also have different values, because
+multiple document types can conform to the same schema. This allows pieces of content
+with the same data structure to serve different purposes on GOV.UK.</p>
+<p>The values of <code>document_type</code> and <code>schema_name</code> affect the <a href="#details"><code>details</code></a>
+and <a href="#links"><code>links</code></a> fields. The following sections explain these effects.</p>
+<h3 id="details">Details</h3>
 
 <!-- markdownlint-disable MD013 -->
 <div class="highlight"><pre class="highlight json" tabindex="0"><code><span class="p">{</span><span class="w">
   </span><span class="err">...</span><span class="w">
   </span><span class="nl">"details"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"body"</span><span class="p">:</span><span class="w"> </span><span class="s2">"</span><span class="se">\n</span><span class="s2">&lt;div class=</span><span class="se">\"</span><span class="s2">highlight-answer</span><span class="se">\"</span><span class="s2">&gt;</span><span class="se">\n</span><span class="s2">&lt;p&gt;The standard &lt;abbr title=</span><span class="se">\"</span><span class="s2">Value Added Tax</span><span class="se">\"</span><span class="s2">&gt;VAT&lt;/abbr&gt; rate is &lt;em&gt;20%&lt;/em&gt;&lt;/p&gt;</span><span class="se">\n</span><span class="s2">&lt;/div&gt;</span><span class="se">\n\n</span><span class="s2">&lt;h2 id=</span><span class="se">\"</span><span class="s2">vat-rates-for-goods-and-services</span><span class="se">\"</span><span class="s2">&gt;</span><span class="se">\n</span><span class="s2">&lt;abbr title=</span><span class="se">\"</span><span class="s2">Value Added Tax</span><span class="se">\"</span><span class="s2">&gt;VAT&lt;/abbr&gt; rates for goods and services&lt;/h2&gt;</span><span class="se">\n\n</span><span class="s2">&lt;table&gt;</span><span class="se">\n</span><span class="s2">  &lt;thead&gt;</span><span class="se">\n</span><span class="s2">    &lt;tr&gt;</span><span class="se">\n</span><span class="s2">      &lt;th&gt;Rate&lt;/th&gt;</span><span class="se">\n</span><span class="s2">      &lt;th&gt;% of &lt;abbr title=</span><span class="se">\"</span><span class="s2">Value Added Tax</span><span class="se">\"</span><span class="s2">&gt;VAT&lt;/abbr&gt;</span><span class="se">\n</span><span class="s2">&lt;/th&gt;</span><span class="se">\n</span><span class="s2">      &lt;th&gt;What the rate applies to&lt;/th&gt;</span><span class="se">\n</span><span class="s2">    &lt;/tr&gt;</span><span class="se">\n</span><span class="s2">  &lt;/thead&gt;</span><span class="se">\n</span><span class="s2">  &lt;tbody&gt;</span><span class="se">\n</span><span class="s2">    &lt;tr&gt;</span><span class="se">\n</span><span class="s2">      &lt;td&gt;Standard&lt;/td&gt;</span><span class="se">\n</span><span class="s2">      &lt;td&gt;20%&lt;/td&gt;</span><span class="se">\n</span><span class="s2">      &lt;td&gt;Most goods and services&lt;/td&gt;</span><span class="se">\n</span><span class="s2">    &lt;/tr&gt;</span><span class="se">\n</span><span class="s2">    &lt;tr&gt;</span><span class="se">\n</span><span class="s2">      &lt;td&gt;Reduced rate&lt;/td&gt;</span><span class="se">\n</span><span class="s2">      &lt;td&gt;5%&lt;/td&gt;</span><span class="se">\n</span><span class="s2">      &lt;td&gt;Some goods and services, eg children’s car seats and home energy&lt;/td&gt;</span><span class="se">\n</span><span class="s2">    &lt;/tr&gt;</span><span class="se">\n</span><span class="s2">    &lt;tr&gt;</span><span class="se">\n</span><span class="s2">      &lt;td&gt;Zero rate&lt;/td&gt;</span><span class="se">\n</span><span class="s2">      &lt;td&gt;0%&lt;/td&gt;</span><span class="se">\n</span><span class="s2">      &lt;td&gt;Zero-rated goods and services, eg most food and children’s clothes&lt;/td&gt;</span><span class="se">\n</span><span class="s2">    &lt;/tr&gt;</span><span class="se">\n</span><span class="s2">  &lt;/tbody&gt;</span><span class="se">\n</span><span class="s2">&lt;/table&gt;</span><span class="se">\n\n</span><span class="s2">&lt;p&gt;The standard rate of &lt;abbr title=</span><span class="se">\"</span><span class="s2">Value Added Tax</span><span class="se">\"</span><span class="s2">&gt;VAT&lt;/abbr&gt; increased to 20% on 4 January 2011 (from 17.5%).&lt;/p&gt;</span><span class="se">\n\n</span><span class="s2">&lt;p&gt;Some things are exempt from &lt;abbr title=</span><span class="se">\"</span><span class="s2">Value Added Tax</span><span class="se">\"</span><span class="s2">&gt;VAT&lt;/abbr&gt;, eg postage stamps, financial and property transactions.&lt;/p&gt;</span><span class="se">\n\n</span><span class="s2">&lt;p&gt;The &lt;a href=</span><span class="se">\"</span><span class="s2">/vat-businesses/vat-rates</span><span class="se">\"</span><span class="s2">&gt;&lt;abbr title=</span><span class="se">\"</span><span class="s2">Value Added Tax</span><span class="se">\"</span><span class="s2">&gt;VAT&lt;/abbr&gt; rate businesses charge&lt;/a&gt; depends on their goods and services.&lt;/p&gt;</span><span class="se">\n\n</span><span class="s2">&lt;p&gt;Check the &lt;a href=</span><span class="se">\"</span><span class="s2">https://www.gov.uk/rates-of-vat-on-different-goods-and-services</span><span class="se">\"</span><span class="s2">&gt;rates of &lt;abbr title=</span><span class="se">\"</span><span class="s2">Value Added Tax</span><span class="se">\"</span><span class="s2">&gt;VAT&lt;/abbr&gt;&lt;/a&gt; on different goods and services.&lt;/p&gt;</span><span class="se">\n\n</span><span class="s2">"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"body"</span><span class="p">:</span><span class="w"> </span><span class="s2">"</span><span class="se">\n</span><span class="s2">&lt;div class=</span><span class="se">\"</span><span class="s2">highlight-answer</span><span class="se">\"</span><span class="s2">&gt;</span><span class="se">\n</span><span class="s2">&lt;p&gt;The standard &lt;abbr title=</span><span class="se">\"</span><span class="s2">Value Added Tax</span><span class="se">\"</span><span class="s2">&gt;VAT&lt;/abbr&gt; rate..."</span><span class="p">,</span><span class="w">
     </span><span class="nl">"external_related_links"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="err">...</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <!-- markdownlint-enable MD013 -->
-<p>The <code>details</code> field of a <a href="reference.html#schema-contentitem"><code>ContentItem</code></a> is an object that
-contains data in a particular structure relevant for the type of content. This
-structure is described by the <a href="#document-type-and-schema-name">schema</a>, which
-itself is defined by the <code>schema_name</code> field.</p>
-<p>In the case of <a href="https://www.gov.uk/api/content/vat-rates">VAT Rates</a> an <a href="https://github.com/alphagov/publishing-api/blob/ec396b5c305f740c7b3161d344262e4052ad97f9/content_schemas/dist/formats/answer/frontend/schema.json"><code>answer</code> schema</a>
-is used. The <code>answer</code> schema  allows a <code>body</code> value, which contains the HTML
-for the page and a <code>external_related_links</code> value, which is an array that can
-be used to provide links to associated pages hosted off GOV.UK.</p>
+<p>(The <code>body</code> in this example has been shortened for presentation here.)</p>
+<p>The <code>details</code> field in an API response is an object that contains data in an appropriate
+structure for the piece of content. This structure is defined by the <a href="#document-types-and-schema-names">JSON schema</a>
+identified in the <code>schema_name</code> field.</p>
+<p>In the <a href="https://www.gov.uk/api/content/vat-rates">VAT rates</a> example, the <a href="https://github.com/alphagov/publishing-api/blob/ec396b5c305f740c7b3161d344262e4052ad97f9/content_schemas/dist/formats/answer/frontend/schema.json"><code>answer</code></a> schema
+is used. This <code>answer</code> schema specifies the following for the <code>details</code> field:</p>
+
+<ul>
+<li>a <code>body</code> field, which contains the HTML for the main body of the piece of content.</li>
+<li>an <code>external_related_links</code> field containing links to related web pages outside
+the GOV.UK website.</li>
+</ul>
 <h3 id="links">Links</h3>
-<p>The <code>links</code> field is used to describe relationships between content. It is
-presented as an object where the key represents a link type and the
-value represents an array of <a href="reference.html#schema-linkedcontentitem"><code>LinkedContentItems</code></a>. A
-<code>LinkedContentItem</code> is effectively a condensed <a href="reference.html#schema-contentitem"><code>ContentItem</code></a>.</p>
-<p>The values that can be used for link types are defined within the
-<a href="#document-type-and-schema-name">schema</a> associated with the content.
-This value describes the type of relationship between content. For example,
-with <a href="https://www.gov.uk/api/content/vat-rates">VAT Rates</a> there is a relationship with a link type of
-<code>mainstream_browse_pages</code>. The purpose of this link type is to enable linking
-to pages to help users find similar content that is suitable for a mainstream
-audience.</p>
 <div class="highlight"><pre class="highlight json" tabindex="0"><code><span class="p">{</span><span class="w">
   </span><span class="err">...</span><span class="w">
   </span><span class="nl">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="err">...</span><span class="w">
-    </span><span class="nl">"mainstream_browse_pages"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"api_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/api/content/browse/tax/vat"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"api_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.gov.uk/api/content/browse/tax/vat"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"base_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/browse/tax/vat"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"content_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"895d337a-fa68-4c83-ab79-1c08016afe87"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Includes online returns, rates, charging and record keeping"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"document_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mainstream_browse_page"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
-        </span><span class="nl">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"public_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-06-24T13:56:39Z"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"schema_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mainstream_browse_page"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VAT"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"web_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.gov.uk/browse/tax/vat"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"withdrawn"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-    </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"organisations"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"analytics_identifier"</span><span class="p">:</span><span class="w"> </span><span class="s2">"D25"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"api_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/api/content/government/organisations/hm-revenue-customs"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"api_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.gov.uk/api/content/government/organisations/hm-revenue-customs"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"base_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/government/organisations/hm-revenue-customs"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"content_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6667cce2-e809-4e21-ae09-cb0bdc1ddda3"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"details"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"acronym"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HMRC"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"brand"</span><span class="p">:</span><span class="w"> </span><span class="s2">"hm-revenue-customs"</span><span class="p">,</span><span class="w">
+            </span><span class="err">...</span><span class="w">
+            </span><span class="nl">"organisation_govuk_status"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"live"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="nl">"document_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"organisation"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+          </span><span class="nl">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"schema_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"organisation"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HM Revenue &amp; Customs"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"web_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.gov.uk/government/organisations/hm-revenue-customs"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"withdrawn"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
     </span><span class="err">...</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="err">...</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><p>You may also notice in the above example that there is a <code>links</code> field inside
-the <code>LinkedContentItem</code> object. This is available as it can be useful to have
-a tree of linked content. A common usage of this is to show the hierarchy of
-pages through use of the <code>parent</code> link type.</p>
-<h2 id="responses-containing-html">Responses containing HTML</h2>
-<p>The Content API returns a JSON response containing a details object. Within
-this object, various fields, such as body, may contain content formatted using
-<a href="https://insidegovuk.blog.gov.uk/2022/07/29/how-were-saving-publishers-time-by-converting-formatted-text/">Govspeak</a>.
-Govspeak is a simplified markdown syntax developed for GOV.UK.</p>
-<p>The API processes the Govspeak into HTML before returning it in the response.
-This pre-rendering ensures that consuming applications can directly display the
-content with the intended formatting without needing to implement their own
-Govspeak parser. The inclusion of HTML within the JSON payload allows for the
-direct presentation of rich text elements, such as headings, lists, and links,
-as defined by the original content. This approach standardises content delivery
-and maintains consistency across all GOV.UK platforms that utilise the Content
-API.</p>
-<p>It&rsquo;s important to highlight that even though the API response presents HTML, the
-styling is the responsibility of the consuming service that will need to create
-its own CSS to present the content in the best way for their application.</p>
+</span></code></pre></div><p>The <code>links</code> field in an API response is used to describe relationships between
+the piece of content represented, and other GOV.UK content. This field is an object
+in which each key identifies a type of content relationship.</p>
+<p>The content <a href="#document-types-and-schema-names">schema</a> identified by the
+<code>schema_name</code> field defines which link types can appear as keys in the
+<code>links</code> object. The value associated with each key is an array of objects
+representing related pieces of content of that type.</p>
+<p>Each object in the array conforms to the <a href="reference.html#schema-linkedcontentitem"><code>LinkedContentItem</code></a>
+schema, containing the fields needed to express the content relationship. This
+may itself include a <code>links</code> field, allowing content relationships to be nested.
+You can use nested <code>links</code> fields and the <code>parent</code> link type to show a hierarchy
+of content in your application or service.</p>
+<p>Although these relationships are called <em>links</em>, they are not necessarily presented
+as HTML links when the content is rendered on the GOV.UK website.</p>
+<p>For example, in the <a href="https://www.gov.uk/api/content/vat-rates">VAT rates</a> response, the <code>organisations</code> link
+type identifies the government organisations related to the piece of content. You
+can use this data to retrieve other content published by those organisations,
+such as news or guidance.</p>
+<h2 id="html-in-responses">HTML in responses</h2>
+<p>Some fields in the API response, such as the <code>body</code> of the <code>details</code> object, may
+contain content formatted using <a href="https://insidegovuk.blog.gov.uk/2022/07/29/how-were-saving-publishers-time-by-converting-formatted-text/">Govspeak</a>. Govspeak is a simplified
+Markdown syntax developed for GOV.UK.</p>
+<p>The GOV.UK Content API converts this Govspeak into HTML before returning it in
+the response. This means you can render the content in your application with its
+intended structure, such as headings, lists and links, without needing
+to implement your own Govspeak parser.</p>
+<p>The API response does not return CSS with this HTML, so you must provide the CSS
+needed to style the content in your application or service.</p>
+<h2 id="content-states-and-paths">Content states and paths</h2>
+<h3 id="canonical-paths-and-redirects">Canonical paths and redirects</h3>
+<p>A single piece of content served by the GOV.UK Content API can be used to render
+multiple pages on the GOV.UK website. For example, the <a href="https://www.gov.uk/foreign-travel-advice/thailand/local-laws-and-customs">local laws and customs</a> for Thailand are available as a standalone page, and also
+as one part of a <a href="https://www.gov.uk/foreign-travel-advice/thailand/print">printable guide</a>.</p>
+<p>The canonical path to the piece of content for both of these pages is
+<a href="https://www.gov.uk/api/content/foreign-travel-advice/thailand">/foreign-travel-advice/thailand</a>, and you can retrieve this content
+using the GOV.UK Content API.</p>
+<p>If you request this piece of content using the path to the standalone page
+<code>/foreign-travel-advice/thailand/local-laws-and-customs</code>, the API returns a 303
+<code>HTTP</code> status code redirecting you to the canonical path.</p>
+<div class="highlight"><pre class="highlight shell" tabindex="0"><code><span class="nv">$ </span>curl <span class="nt">-I</span> https://www.gov.uk/api/content/foreign-travel-advice/thailand/local-laws-and-customs
+HTTP/1.1 303 See Other
+...
+Location: https://www.gov.uk/api/content/foreign-travel-advice/thailand
+...
+</code></pre></div><h2 id="withdrawn-content">Withdrawn content</h2>
+
+<!-- markdownlint-disable MD013 -->
+<div class="highlight"><pre class="highlight json" tabindex="0"><code><span class="p">{</span><span class="w">
+  </span><span class="err">...</span><span class="w">
+  </span><span class="nl">"withdrawn_notice"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="nl">"explanation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;div class=</span><span class="se">\"</span><span class="s2">govspeak</span><span class="se">\"</span><span class="s2">&gt;&lt;p&gt;This document is out of date.  See the current &lt;a href=</span><span class="se">\"</span><span class="s2">https://www.gov.uk/government/publications/the-complete-routine-immunisation-schedule</span><span class="se">\"</span><span class="s2">&gt;complete routine immunisation schedule&lt;/a&gt;.&lt;/p&gt;</span><span class="se">\n</span><span class="s2">&lt;/div&gt;"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"withdrawn_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-08-12T13:47:11Z"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+  </span><span class="err">...</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre></div>
+<!-- markdownlint-enable MD013 -->
+<p>Some content on the GOV.UK website provides information that is no longer
+applicable, but remains available for reference. This content is described
+as <em>withdrawn</em>.</p>
+<p>Withdrawn content is displayed on the GOV.UK website with a header describing
+its status. For example,
+<a href="https://www.gov.uk/government/publications/the-complete-routine-immunisation-schedule-201314">The complete routine immunisation schedule 2013 to 2014</a>
+was withdrawn because the content became out of date.</p>
+<p>In a response from the GOV.UK Content API for a piece of withdrawn content, this
+status is indicated using the <a href="reference.html#schema-withdrawnnotice"><code>withdrawn_notice</code></a> field.</p>
+<h2 id="next-steps">Next steps</h2>
+<p>Now that you understand how the GOV.UK Content API represents a piece of content,
+you can:</p>
+
+<ul>
+<li><a href="retrieve-and-display.html">retrieve and display GOV.UK content</a></li>
+<li><a href="reference.html">look up specific data from the API response</a></li>
+</ul>
 
             
           </main>
 
           <aside>
               <ul class="contribution-banner">
-                <li><a href="https://github.com/alphagov/govuk-content-api-docs/blob/main/source/how-it-works.html.md">View source</a></li>
+                <li><a href="https://github.com/alphagov/govuk-content-api-docs/blob/main/source/how-it-works.html.md.erb">View source</a></li>
                 <li><a href="https://github.com/alphagov/govuk-content-api-docs/issues/new?body=Problem+with+%27How+the+GOV.UK+Content+API+works%27+%28https%3A%2F%2Fcontent-api.publishing.service.gov.uk%2Fhow-it-works.html%29&amp;labels=bug&amp;title=Re%3A+%27How+the+GOV.UK+Content+API+works%27">Report problem</a></li>
                 <li><a href="https://github.com/alphagov/govuk-content-api-docs">GitHub Repo</a></li>
               </ul>

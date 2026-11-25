@@ -7752,41 +7752,29 @@
 }
 
 @media screen and (min-width: 40.0625em) {
-  .flexbox body, .flexboxtweener body {
-    overflow: hidden;
-  }
-  .flexbox .app-pane, .flexboxtweener .app-pane {
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    height: 100vh;
-  }
-  .flexbox .app-pane__header, .flexboxtweener .app-pane__header {
-    display: flex;
-    flex-direction: column;
-    flex: 1 0 auto;
-  }
-  .flexbox .app-pane__header > *, .flexboxtweener .app-pane__header > * {
-    flex: 1 0 auto;
-  }
   .flexbox .app-pane__body, .flexboxtweener .app-pane__body {
     display: flex;
-    flex: 1 1 100%;
-    min-height: 0;
+    align-items: flex-start;
     position: relative;
-  }
-  .flexbox .app-pane__body > *, .flexboxtweener .app-pane__body > * {
-    overflow-x: scroll;
-    -webkit-overflow-scrolling: touch;
-    -ms-overflow-style: none;
   }
   .flexbox .app-pane__toc, .flexboxtweener .app-pane__toc {
     flex: 0 0 auto;
     width: 330px;
-    border-right: 1px solid var(--govuk-border-colour, #cecece);
+    position: sticky;
+    top: 0;
+    align-self: flex-start;
+    max-height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: none;
   }
   .flexbox .app-pane__content, .flexboxtweener .app-pane__content {
     flex: 1 1 auto;
+    align-self: stretch;
+    min-width: 0;
+    overflow: visible;
+    border-left: 1px solid var(--govuk-border-colour, #cecece);
   }
   .no-flexbox.no-flexboxtweener .app-pane__toc,
   .no-js .app-pane__toc {
