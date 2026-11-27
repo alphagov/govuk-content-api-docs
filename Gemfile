@@ -2,6 +2,9 @@
 
 source "https://rubygems.org"
 
+gem "dotenv"
+
+gem "govuk_publishing_components"
 gem "govuk_tech_docs", "~> 6.6.0"
 gem "middleman-gh-pages", "~> 0.4.1"
 
